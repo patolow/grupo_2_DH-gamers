@@ -46,3 +46,7 @@ El resto de las webs detalladas se utilizarán también como referencia a la hor
 - [https://www.hardgamers.com.ar/](https://www.hardgamers.com.ar/)
 - [https://compragamer.com/](https://compragamer.com/)
 - [https://www.hypergaming.com.ar/](https://www.hypergaming.com.ar/)
+
+### Enlace al tablero de trabajo:
+
+https://trello.com/invite/grupo_2_dhgamers/ATTIb5788502092e4f9e9a9022806a1d26b0DC5DB9DB
