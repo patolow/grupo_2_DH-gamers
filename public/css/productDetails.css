@@ -1,79 +1,93 @@
-.main-content {
-    color: white;
-    text-align: center;
-    color: #000000;
-    background-color: whitesmoke;
-    padding-bottom: 10px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.titulo-producto h3 {
-    font-size: 11px;
-    text-align: left;
-    padding: 10px;
+body {
+    background-color: white;
 }
 
-.carrousel-producto img {
-    width: 100%;
+.main-imagen img{
+    width: auto; 
+    max-height: 100%; 
+}
+
+.main-imagen  {
     height: 300px;
-    margin-top: 15px;
+    text-align: center;
+    background-color: white;
+    background-color: linear-gradient(to left, #061161, #780206);
+
+   }
+
+.main-titulo {
+    background-color: linear-gradient(to left, #061161, #780206);
+    color: white;
+    height: 70px;
 }
 
-.detalle-producto {
-    text-align: left;
-    margin-top: 20px;
-    padding: 10px
+.main-info {
+    border-top: solid 1px black;
 }
 
-.detalle-producto h4 {
+.precio-final {
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+    font-size: 16px;
+}
+
+.descuento {
     font-size: 13px;
-    font-style: italic;
+}
+
+.precio {
+    text-align: left;
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+.main-detalle h4{
+    font-size: 10px;
     color: grey;
 }
-
-.detalle-producto h2 {
-    font-size: 30px;
+.main-detalle h6{
+    font-size: 13px;
+    color: black;
 }
 
-.detalle-producto h3 {
+.main-detalle h5{
     font-size: 15px;
+    color: green;
+}
+
+.main-detalle {
+    padding:15px;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+.boton-compra {
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    padding: 20px;
+    background-color: white;
+    color: black;
 }
 
 .descripcion h3 {
-    font-size: 15px;
-    padding: 15px;
-    text-align: justify;
+    font-size: 13px;
 }
 
-.descripcion h4 {
-    font-weight: bold;
+.descripcion li {
+    font-size: 10px;
 }
 
-.detalle-producto h5 {
-    color: green;
-    font-size: 15px;
-}
-
-.alinearizq {
-    float: left;
-    width: 30%;
-}
-
-.alinearder {
-    float: right;
-    width: 70%;
-    text-align: left;
-}
-
-.envio {
-    padding-top: 10px;
-}
-
-.botones {
-    text-align: center;
-    padding-top: 20px;
-    margin-bottom: 50px;
-}
-
-.alinearder {
-    font-weight: bold;
+.descripcion ul {
+    padding-left: 1rem;
 }
