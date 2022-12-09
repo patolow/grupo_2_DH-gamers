@@ -1,0 +1,68 @@
+:root {
+    --white: #FFFFF;
+    --light-blue: #02CFB7;
+    --blue: #061161;
+    --red: #780206;
+    --black: #000000;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body.fondo{
+    background:-webkit-linear-gradient(to left, #061161, #780206);
+}
+
+.form-login{
+    width: 460px;
+    background: -webkit-linear-gradient(to left, #061161, #780206);
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: -webkit-linear-gradient(to left, #061161, #780206);
+    box-shadow: 7px 13px 37px #000000;
+}
+.form-login h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+
+}
+.contenido{
+    width:100%;
+    background:-webkit-linear-gradient(to left, #061161, #780206);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid var(--black);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    color:white;
+
+}
+.form-login p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+.form-login a{
+    color:white;
+    text-decoration:none;
+}
+.form-login a:hover{
+    color: white;
+    text-decoration: underline;
+}
+.form-login .botons{
+    width: 100%;
+    background: var(--black);
+    border-radius: 1px;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
