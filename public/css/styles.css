@@ -25,6 +25,8 @@ flex-direction: column;
 /* HEADER */
 
 .nav-container {
+  position: fixed;
+  z-index: 10;
     border: 2px white;
     background-color: #000000;
     display: flex;
@@ -112,6 +114,9 @@ background: linear-gradient(to left, #061161, #780206); /* W3C, IE 10+/ Edge, Fi
 }
 
 .main-product-list {
+  position: fixed;
+  top: 80px;
+  z-index: 10;
   padding-left: 10px;
   padding-right: 10px;
   display: flex;
