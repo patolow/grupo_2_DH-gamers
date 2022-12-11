@@ -1,10 +1,18 @@
 
+
+
+
 .main-content {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
     position: relative;
     margin-top: 120px;
     
-   
+   width: 100%;
     
 }
 
@@ -15,8 +23,11 @@
 
 
 
+
 .slider {
+    max-width: 1400px;
     width: 100%;
+    max-height: 400px;
     margin: auto;
     overflow: hidden;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
@@ -27,6 +38,7 @@
 .slider ul {
     
     display: flex;
+    max-height: 400px;
     padding: 0;
     width: 400%;
     animation: cambio 20s infinite;
@@ -60,24 +72,37 @@
 }
 
 .ofertas-semanales {
-    
+    max-width: 1400px;
+    padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     width: 100%;
     
-    background: -webkit-linear-gradient(to left, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #061161, #780206);
-    border-top: 1px solid black;
+    
+    
     
     justify-content: center;
     align-items: center;
 }
 
+.ofertas-semanales img {
+    
+    padding: 10px 0px 10px 0px;
+    width: 100%;
+}
+
+.banner-ofertas-semanales {
+    border-bottom: 1px solid rgb(90, 89, 89);
+}
+
+
+
 .titular-ofertas-semana {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 1400px;
     width: 100%;
     height: 30px;
     background-color: #000000;
@@ -88,13 +113,83 @@ background: linear-gradient(to left, #061161, #780206);
 
 
 
+.ofertas-index {
+    width: 100%;
+    max-height: 850px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.ofertas-left {
+    width: 15%;
+    height: 828px;
+    
+    
+}
+
+.ofertas-left img {
+    width: 190px;
+    height: 828px;
+    object-fit: cover;
+}
+
+.ofertas-right {
+    width: 15%;
+    height: 828px;
+    display: flex;
+    justify-content: end;
+    
+    
+}
+
+.ofertas-right img {
+    align-self: right;
+    width: 190px;
+    height: 828px;
+    object-fit: cover;
+}
 
 .carrusel-ofertas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 10px;
     margin-top: 10px;
-    width: 90%;
+    width: 70%;
+    
+    
     
     color: transparent;
+}
+
+.carrusel-ofertas img {
+    padding: 0px;
+}
+
+
+.hot-sale-img {
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px !important;
+   margin-top: 20px !important;
+    width: 80% !important;
+    box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.5);
+}
+
+
+.carrusel-ofertas-1 {
+    
+    padding: 10px;
+    margin-top: 10px;
+    width: 70%;
+    
+    
+    
+    color: transparent;
+}
+
+.carrusel-ofertas-1 img {
+    padding: 0px;
 }
 
 
@@ -163,6 +258,7 @@ width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    max-width: 1400px;
     width: 100%;
     height: 30px;
     background-color: white;
@@ -179,6 +275,7 @@ width: 100%;
 .productos-mas-vendidos-container {
     display: flex;
     flex-wrap: wrap;
+    max-width: 1400px;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -187,7 +284,7 @@ width: 100%;
 
 .productos-mas-vendidos{
     padding: 10px;
-    max-width: 50%;
+    max-width: 80%;
 }
 
 .productos-mas-vendidos img {
@@ -210,4 +307,41 @@ width: 100%;
     color:#02CFB7;
 }
 
+
+@media (min-width: 600px){
+    .productos-mas-vendidos{
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 768px){
+    .productos-mas-vendidos{
+        max-width: 33%;
+    }
+}
+
+
+@media (min-width: 1400px) {
+    .ofertas-index {
+        width: 100%;
+        max-height: 850px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carrusel-ofertas-1 {
+        display: none;
+    }
+
+    
+
+    .main-content {
+        padding-top: 30px;
+    }
+
+    .productos-mas-vendidos{
+        max-width: 25%;
+    }
+}
 
