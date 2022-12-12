@@ -23,9 +23,8 @@ body {
 }
 
 .main-imagen img{
-    max-height: 100%;
-    left: -174px;
-    position: relative; 
+    width: -webkit-fill-available;
+    position: relative;
 }
 
 .main-imagen  {
@@ -103,7 +102,7 @@ body {
 
 .main-detalle {
     padding: 15px;
-    padding-top: 50px;
+    padding-top: 35px;
     background-color: white;
 }
 
@@ -251,7 +250,7 @@ background-color: black;
 }
 
 .slide img{
-    height: 100%;
+    width: -webkit-fill-available;
 }
 
 .navigation-manual {
