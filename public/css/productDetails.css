@@ -19,12 +19,12 @@
 
 body {
     background-color: white;
-    padding-top: 80px;
+    padding-top: 29%;
 }
 
 .main-imagen img{
-    width: auto; 
-    max-height: 100%; 
+    width: -webkit-fill-available;
+    position: relative;
 }
 
 .main-imagen  {
@@ -101,13 +101,14 @@ body {
 }
 
 .main-detalle {
-    padding:15px;
+    padding: 15px;
+    padding-top: 35px;
     background-color: white;
 }
 
 .descripcion {
-    padding: 20px;
-    background-color: white;
+    padding: 28px;
+    background-color: whitesmoke;;
     color: black;
     line-height: 23px;
 }
@@ -130,11 +131,27 @@ body {
     padding-left: 1rem;
 }
 
-.box-foto1 {
+.detalles-extra {
+    padding: 28px;
     background-color: black;
-    color: white;
-    padding: 20px;
+    color: whitesmoke;
+    line-height: 23px;
 }
+
+.detalles-extra h3 {
+    font-size: 12px;
+    text-align: justify;
+    padding-bottom: 12px;
+}
+
+.detalles-extra li {
+    font-size: 10px;
+}
+
+.detalles-extra ul {
+    padding-left: 1rem;
+}
+
 
 .botones-de-compra {
 
@@ -174,4 +191,155 @@ background-color: #b8f9fa;
     padding-left: 10px;
     border: none;
 
+}
+
+.box-foto1 h3{
+    font-size: 12px;
+    text-align: center;
+}
+
+.box-foto1 li{
+    font-size: 12px;
+    padding-top: 20px;
+}
+
+.main.image {
+background-color: black;
+}
+
+
+.box-foto1 {
+}
+
+
+#fondo {
+
+    background-image: "/images/productDetails1/frente.webp";
+    background-repeat: no-repeat;
+}
+
+
+
+
+/* CSS FOR CARRUSEL */
+
+.slider {
+    width:100%;
+    margin: auto;
+    height: 300px;
+    background-color: white;
+    box-sizing: content-box;
+    overflow: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    background-color: white;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img{
+    width: -webkit-fill-available;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 1.5px solid #252221;
+    padding:5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 25px;
+}
+
+.manual-btn:hover {
+background: black
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+
+#radio5:checked ~ .first {
+    margin-left: -80%;
+}
+
+#radio6:checked ~ .first {
+    margin-left: -100%;
+}
+
+
+/* css for automatic navigation */
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 300px;
+}
+
+.navigation-auto div {
+    border: 1.5px solid #252221;
+    padding:5px;
+    border-radius: 10px;
+    transition: 1s;
+
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 25px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #780206
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #061161
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #780206
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #061161
+}
+
+#radio5:checked ~ .navigation-auto .auto-btn5{
+    background: #780206
+}
+
+#radio6:checked ~ .navigation-auto .auto-btn6{
+    background: #061161
 }

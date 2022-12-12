@@ -1,0 +1,137 @@
+:root {
+  --white: #FFFFF;
+  --light-blue: #02CFB7;
+  --blue: #061161;
+  --red: #780206;
+  --black: #000000;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  border: 1px solid black;
+}
+
+.products-to-buy {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: rgb(232, 229, 229);
+  background-size: contain;
+  overflow-y: scroll;
+}
+
+.titulo {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0px;
+  color: whitesmoke;
+}
+
+.product {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.img-product {
+  max-width: 89px;
+  display: flex;
+  flex-direction: row;
+  width: 25%;
+  padding-right: 5px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  align-items: left;
+}
+
+.product-info {
+  flex-grow: 70%;
+  text-align: justify;
+  font-size: 12px;
+}
+
+.url-product {
+  text-decoration: none;
+  color: #000000;
+}
+
+.url-product:hover {
+  font-weight: 400;
+  cursor: hand;
+}
+
+.product-name {
+  font-weight: 300;
+}
+
+.product-category {
+  font-size: 10px;
+}
+
+.price-qty-container {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 30%;
+}
+
+
+.quantity {
+  display: flex;
+}
+
+.qty-box {
+  width: 40%;
+  text-align: center;
+}
+
+.total-price {
+  display: flex;
+  background-color: rgb(232, 229, 229);
+  background-size: contain;
+  margin: 10px 0px;
+  padding: 10px;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.total,
+.envio {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 5px 0px;
+}
+
+.total-con-envio {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 400px;
+  padding: 5px 0px;
+}
+
+
+.line {
+  margin: 8px 0px 8px;
+}
+
+.boton-comprar {
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 8px;
+  background-color: var(--light-blue);
+  align-self: center;
+}
