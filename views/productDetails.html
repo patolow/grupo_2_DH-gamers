@@ -22,27 +22,29 @@
 </head>
 
 <body>
-    <!-- <header>
+    <header>
+        <div class="fixed-position">
         <nav>
             <div class="nav-container">
                 <div class="logo-nav">
                     <img src="/images/DH-gamers_Logo-final.png" alt="">!
                 </div>
+            </div>
                 <div class="search-nav">
                     <input type="text" placeholder="Buscar producto...">
                     <a href="" class="micro-icon"></a>
                     </form>
                 </div>
+
                 <div class="user-nav">
                     <img src="/images/index/user.png" class="imagen-ingreso-chica">
                     <img src="/images/index/icono-ingresar.png" class="imagen-ingreso-grande">
                 </div>
             </div>
         </nav>
-    </header> -->
+    </header>
 
     <main>
-        <div class="fixed-position">
 
             <section class="main-product-list">
                 <i class="fa-solid fa-list"></i>
@@ -56,11 +58,64 @@
                     <h2 class="categoria"> Water Cooling </h2>
                     <h1 class="titulo"> ROG STRIX LC LI 360 </h1>
                 </div>
-        </div>
 
-            <div class="main-imagen">
-                <img src="/images/productDetails1/h525.png">
+            <!-- image slider start -->
+            <div class="slider">
+                <div class= "slides" >
+                    <!-- radio buttons start -->
+                    <input type="radio" name="radio-btn" id="radio1" checked>
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <input type="radio" name="radio-btn" id="radio5">
+                    <input type="radio" name="radio-btn" id="radio6">
+                    <!-- radio buttons end -->
+                    <!-- slide images start -->
+                    <div class="slide first">
+                        <img src="images/productDetails1/h525.png">
+                    </div>
+                    <div class="slide">
+                        <img src="images/productDetails1/detalle2.webp">
+                    </div>
+                    <div class="slide">
+                        <img src="images/productDetails1/box.webp">
+                    </div>
+                    <div class="slide">
+                        <img src="images/productDetails1/ventilador.webp">
+                    </div>
+                    <div class="slide">
+                        <img src="images/productDetails1/contacto.webp">
+                    </div>
+                    <div class="slide">
+                        <img src="images/productDetails1/mapa.webp">
+                    </div>
+                    <!-- slide images end -->
+                    <!-- automatic navigation start -->
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                        <div class="auto-btn5"></div>
+                        <div class="auto-btn6"></div>
+
+                    </div>
+                     <!-- automatic navigation end -->
+
+                </div>
+                <!-- manual navigation start -->
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                    <label for="radio5" class="manual-btn"></label>
+                    <label for="radio6" class="manual-btn"></label>
+
+                </div>
+                <!-- manual navigation end -->
             </div>
+            <!-- image slider end -->
 
             <div class="main-info">
 
@@ -103,22 +158,24 @@
                         <li>La estética complementa a la perfección las placas base ROG desde el centro del escenario.</li>
                         <li>Los tubos reforzados con mangas ofrecen una mayor durabilidad.</li>
                     </ul>
+                
                 </div>
 
-                <div class="box-foto1">
-                    <h4>Descripcion del Producto</h4>
+                <div class="detalles-extra">
 
                     <h3> ROG Strix LC II 360 ofrece refrigeración líquida de CPU de alto rendimiento con una estética elegante y moderna. Con un diseño de circuito cerrado y ventiladores de radiador ROG, el enfriador libera todo el potencial de una CPU Intel® o AMD al tiempo que permite sutiles efectos de iluminación multicolor para acentuar su construcción.
                     </h3>
-
                     <ul>
-                        <li>Seventh Gen Asetek pump delivers exceptional cooling and minimal noise with an operating
-                            range starting at 840 rpm.</li>
-                        <li>Three ROG-designed radiator fans provide optimized airflow and static pressure.</li>
-                        <li>ARGB lighting on the NCVM-coated pump cover conveys a sleek, modern design.</li>
-                        <li>Aesthetic perfectly complements ROG motherboards from center stage.</li>
-                        <li>Reinforced, sleeved tubing offers increased durability.</li>
+                        <li>ROG Radiator Fans.</li>
+                        <li>Illuminated ROG Logo</li>
+                        <li>380 mm Sleeved Rubber Tubing</li>                        
                     </ul>
+                </div>
+
+                <div class="box-foto1">
+                    <div id="fondo" class="main-imagen"> 
+                        <img src="images/productDetails1/box-1.jpeg">
+                    </div>
                 </div>
 
 
@@ -154,7 +211,10 @@
             </div>
         </div>
 
+
         <!--FIN MENU version tablet y escritorio-->
+
+
 
         <div class="footer-container">
             <div class="footer-menu-izquierda">
@@ -176,6 +236,17 @@
         </div>
 
     </footer>
+
+    <script type="text/javascript">
+        var counter = 2;
+        setInterval(function() {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter>6) {
+                counter = 1
+            }
+        },5000);
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
