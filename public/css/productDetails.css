@@ -324,22 +324,22 @@ background: black
 }
 
 #radio1:checked ~ .navigation-auto .auto-btn1{
-    background: black;  
+    background: #780206
 }
 #radio2:checked ~ .navigation-auto .auto-btn2{
-    background: black;  
+    background: #061161
 }
 #radio3:checked ~ .navigation-auto .auto-btn3{
-    background: black;  
+    background: #780206
 }
 #radio4:checked ~ .navigation-auto .auto-btn4{
-    background: black;  
+    background: #061161
 }
 
 #radio5:checked ~ .navigation-auto .auto-btn5{
-    background: black;  
+    background: #780206
 }
 
 #radio6:checked ~ .navigation-auto .auto-btn6{
-    background: black;  
+    background: #061161
 }
