@@ -53,6 +53,7 @@ flex-direction: column;
     
     margin: auto;
     width: 60%;
+    max-width: 600px;
     height: 40px;
     border-radius: 10px;
     border: 1px solid #dfe1e5;
@@ -244,6 +245,13 @@ footer {
       color: black;
       
   }
+
+  .menu-barra-gris a:hover {
+    
+    color: #02CFB7;
+    
+    
+}
 
   .menu-barra-gris img {
       width: 15px;

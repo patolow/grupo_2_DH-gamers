@@ -24,7 +24,7 @@
 
 
 
-.slider {
+.slider-pequeño {
     max-width: 1400px;
     width: 100%;
     max-height: 400px;
@@ -35,7 +35,7 @@
     
 }
 
-.slider ul {
+.slider-pequeño ul {
     
     display: flex;
     max-height: 400px;
@@ -45,17 +45,56 @@
     animation-direction: alternate;
 }
 
-.slider li {
+.slider-pequeño li {
     list-style: none;
     width: 100%;
 }
 
-.slider img {
+.slider-pequeño img {
     object-fit: cover;
     display: block;
     width: 100%;
     height: 100%;
 }
+
+.slider-grande {
+    max-width: 1400px;
+    width: 100%;
+    max-height: 400px;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    
+    
+}
+
+.slider-grande ul {
+    
+    display: flex;
+    max-height: 100%;
+    padding: 0;
+    width: 400%;
+    animation: cambio 20s infinite;
+    animation-direction: alternate;
+}
+
+.slider-grande li {
+    list-style: none;
+    width: 100%;
+}
+
+.slider-grande img {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-grande {
+    display: none;
+}
+
+
 
 @keyframes cambio {
     0% { margin-left:0;}
@@ -74,7 +113,7 @@
 .ofertas-semanales {
     max-width: 1400px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -175,7 +214,13 @@
     padding: 10px !important;
    margin-top: 20px !important;
     width: 80% !important;
+    transition: all 500ms ;
+    
+}
+
+.hot-sale-img:hover {
     box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.5);
+    background-color: #780206;
 }
 
 
@@ -183,7 +228,7 @@
     
     padding: 10px;
     margin-top: 10px;
-    width: 70%;
+    
     
     
     
@@ -272,9 +317,7 @@ width: 100%;
         width: 100%;
         }
 
-.titular-mas-vendidos i {
-    color: orange;
-}
+
 
 .productos-mas-vendidos-container {
     display: flex;
@@ -295,8 +338,13 @@ width: 100%;
     cursor: pointer;
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0px 2px 10px 1px rgba(255, 255, 255, 0.5);
+    
     margin-bottom: 5px;
+}
+
+.productos-mas-vendidos img:hover {
+    box-shadow: 0px 2px 10px 1px rgba(255, 255, 255, 0.5);
+    opacity: 0.8;
 }
 
 .productos-mas-vendidos p {
@@ -326,6 +374,9 @@ width: 100%;
 }
 
 
+
+
+
 @media (min-width: 1400px) {
     .ofertas-index {
         width: 100%;
@@ -339,7 +390,13 @@ width: 100%;
         display: none;
     }
 
-    
+    .slider-grande {
+        display: block;
+    }
+
+    .slider-pequeño {
+        display: none;
+    }
 
     .main-content {
         padding-top: 30px;
