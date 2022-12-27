@@ -39,7 +39,7 @@
     margin: auto;
     border-radius: 5px;
     font-family: sans-serif;
-    justify content: center;
+    justify-content: center;
 }
 
 /*DATA ENTRY BOXES*/
@@ -54,16 +54,13 @@
     border-left: 10px solid #061161;
 }
 
-.boxes:hover, .boxes:focus{
+.boxes:hover, .boxes:focus {
     border-left: 10px solid #780206;
 }
 /*TEXTS*/
 .date {
     margin-bottom: 2em;
     color: gray;
-}
-.photo {
-    margin-bottom: 2em;
 }
 
 .password-text {
@@ -85,21 +82,21 @@
     width: 40%;
     border-radius: 5px;
     border: none;
-    padding-bottom: 3px;
-    padding-top: 3px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     background-color: var(--light-blue);
     font-weight: bold;
-    cursor:pointer;
+    cursor: pointer;
+    font-size: 15px;
 }
-
-&:active {
-    position:relative;
-    top:1px;
-}
-
 
 
 .button {
     text-align: center;
     margin: 0 3.5% 3.5% 3.5%;
+  }
+
+  .profile-photo {
+    margin: auto;
+    padding: 15px;
   }
