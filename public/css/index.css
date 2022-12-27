@@ -16,6 +16,42 @@
     
 }
 
+.chatbot {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    width: 80px;
+    opacity: 65%;
+    cursor: pointer;
+    z-index: 50;
+    
+}
+
+.inactive {
+    display: none;
+}
+
+.chatbot-window {
+    
+    position: fixed;
+    bottom: 140px;
+    right: 100px;
+    width: 20%;
+    min-width: 300px;
+    
+    cursor: pointer;
+    z-index: 50;
+    
+}
+
+.chatbot:hover {
+    opacity: 100%;
+    
+}
+
+
+
 .main-content h3 {
     text-align: center;
     font-size: 16px;
@@ -208,6 +244,7 @@
 
 
 .hot-sale-img {
+    position: relative;
     cursor: pointer;
     background-color: black;
     border: 1px solid rgb(255, 255, 255);
@@ -254,7 +291,22 @@
                 0 15px 50px;
 }
 
+#c-slider2 {
+    margin: auto;
+    width: 95%;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 0 4px #fff,
+                0 15px 50px;
+}
+
 #slider {
+    display: flex;
+    width: 400%;
+}
+
+#slider2 {
     display: flex;
     width: 400%;
 }
@@ -263,7 +315,17 @@
 width: 100%;
 }
 
+#slider2 section {
+    width: 100%;
+    }
+
 #slider img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#slider2 img {
     display: block;
     width: 100%;
     height: 100%;
@@ -286,7 +348,28 @@ width: 100%;
     color: black;
 }
 
+#btn-prev2, #btn-next2 {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: monospace;
+    color: black;
+}
+
 #btn-prev:hover, #btn-next:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+#btn-prev2:hover, #btn-next2:hover {
     background: rgba(255, 255, 255, 1);
 }
 
@@ -294,7 +377,15 @@ width: 100%;
     left: 10px;
 }
 
+#btn-prev2 {
+    left: 10px;
+}
+
 #btn-next {
+    right: 10px;
+}
+
+#btn-next2 {
     right: 10px;
 }
 
@@ -337,6 +428,8 @@ width: 100%;
 .productos-mas-vendidos img {
     cursor: pointer;
     width: 100%;
+    
+    
     border-radius: 10px;
     
     margin-bottom: 5px;
@@ -360,6 +453,21 @@ width: 100%;
     color:#02CFB7;
 }
 
+.marcas-trabajadas {
+    width: 100%;
+    
+}
+
+.marcas-trabajadas img {
+    width: 95%;
+    border: 1px solid black;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    box-shadow: 0px 2px 10px 1px rgba(255, 255, 255, 0.5);
+}
+
 
 @media (min-width: 600px){
     .productos-mas-vendidos{
@@ -370,6 +478,10 @@ width: 100%;
 @media (min-width: 768px){
     .productos-mas-vendidos{
         max-width: 33%;
+    }
+
+    .chatbot {
+        display: block;
     }
 }
 
@@ -404,6 +516,10 @@ width: 100%;
 
     .productos-mas-vendidos{
         max-width: 25%;
+    }
+
+    .marcas-trabajadas img {
+        width: 100%;
     }
 }
 

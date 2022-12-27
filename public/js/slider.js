@@ -13,7 +13,7 @@ function moverD(){
         marginLeft:'-'+200+'%'
     } , 700, function(){
         $('#slider section:first').insertAfter('#slider section:last');
-        slider.css('margin-left', '-'+100+'%');
+        slider1.css('margin-left', '-'+100+'%');
     });
 }
 
@@ -22,6 +22,51 @@ function moverI(){
         marginLeft:0
     } , 700, function(){
         $('#slider section:last').insertBefore('#slider section:first');
+        slider.css('margin-left', '-'+100+'%');
+    });
+}
+
+
+
+siguiente.on('click', function() {
+    moverD();
+});
+
+anterior.on('click', function() {
+    moverI();
+});
+
+
+
+
+//
+
+
+
+//almacenar slider en una variable
+var slider =$('#slider2');
+//almacenar botones
+var siguiente = $('#btn-next2');
+var anterior = $('#btn-prev2');
+//mover ultima imagen al primer lugar
+$('#slider2 section:last').insertBefore('#slider2 section:first')
+//mostrar la primera imagen con un margen de -100%
+slider.css('margin-left', '-'+100+'%');
+
+function moverD(){
+    slider.animate({
+        marginLeft:'-'+200+'%'
+    } , 700, function(){
+        $('#slider2 section:first').insertAfter('#slider2 section:last');
+        slider.css('margin-left', '-'+100+'%');
+    });
+}
+
+function moverI(){
+    slider.animate({
+        marginLeft:0
+    } , 700, function(){
+        $('#slider2 section:last').insertBefore('#slider2 section:first');
         slider.css('margin-left', '-'+100+'%');
     });
 }
