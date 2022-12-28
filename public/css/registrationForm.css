@@ -10,8 +10,8 @@
     flex-direction: column; 
     margin: 10%;
     position: relative;
-    margin-top: 250px;
-    margin-bottom: 120px;
+    margin-top: 150px;
+    margin-bottom: 50px;
 }
 
 /*--TITLE--*/
@@ -76,18 +76,25 @@
     font-size: 20px;
 }
 
+
+
 /* BUTTON */
 .button-create-account {
     box-shadow: 0px 0px 0px 2px #9fb4f2;
-    width: 40%;
     border-radius: 5px;
     border: none;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 10px;
     background-color: var(--light-blue);
     font-weight: bold;
     cursor: pointer;
     font-size: 15px;
+}
+
+.button-create-account:hover {
+    background-color: #061161;
+    color: white;
+    box-shadow: 0px 0px 10px rgb(141, 47, 47);
+    font-weight:lighter 
 }
 
 
@@ -98,8 +105,13 @@
 
   .profile-photo {
     margin: auto;
-    padding: 15px;
   }
 
-
+.file {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin-bottom: 20px;
+    
+}
   
