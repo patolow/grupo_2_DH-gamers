@@ -11,6 +11,7 @@ app.listen (port, () => console.log("server listening on port", port));
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "/views/index.html")));
 
 app.get("/product", (req, res) => res.sendFile(path.join(__dirname, '/views/productDetails.html')));
+app.get("/product2", (req, res) => res.sendFile(path.join(__dirname, '/views/productDetailsCopy.html')));
 
 
 app.get("/productCart", (req, res) => res.sendFile(path.join(__dirname, '/views/productCart.html')));

@@ -1,14 +1,10 @@
-
+.descripcion {
+     font-family: 'Roboto', sans-serif; 
+}
 
 .main-imagen img{
     width: 100%;
 }
-
-.main-imagen  {
-    width: 100%;
-    text-align: center;
-    background-color: white;
-   }
 
 .main-titulo {
     background: linear-gradient(to left, #061161, #780206);
@@ -100,6 +96,7 @@
     text-align: justify;
     padding-bottom: 12px;
 }
+
 .detalles-extra li {
     font-size: 10px;
 }
@@ -109,8 +106,12 @@
 .botones-de-compra {
     border-radius: 10px;
     padding: 18px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
 }
+
 .envio-stock {
     padding-top: 12px;
 }
@@ -149,11 +150,15 @@ background-color: #80f0f2;
 background-color: black;
 }
 
+.contenedor-laptop {
+    background-color: white;
+}
+
 
 
 /* CSS FOR CARRUSEL */
 .slider {
-    width:100%;
+    width:97%;
     margin: auto;
     background-color: white;
     box-sizing: content-box;
@@ -168,18 +173,19 @@ background-color: black;
 .slides input {
     display: none;
 }
-.slide {
+.slider .slide {
     width: 20%;
     transition: 2s;
 }
-.slide img{
+.slider .slide img{
     width: -webkit-fill-available;
 }
-.navigation-manual {
+.slider .navigation-manual {
     position: absolute;
-    width: 100%;
+    width: 97%;
     display: flex;
     justify-content: center;
+    margin-top: 64%;
 }
 .manual-btn {
     border: 1.5px solid #252221;
@@ -215,9 +221,9 @@ background: black
 .navigation-auto {
     position: absolute;
     display: flex;
-    width: 100%;
+    width: 97%;
     justify-content: center;
-    margin-top: 66.7%;
+    margin-top: 64%;
 }
 .navigation-auto div {
     border: 1.5px solid #252221;
@@ -258,4 +264,44 @@ background: black
 #radio7:checked ~ .navigation-auto .auto-btn7{
     background: black;  
     background: #061161
+}
+
+
+
+@media (min-width: 768px) {
+    
+    .main-detalle {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    };
+
+    .detalle-general {
+        width: 375px;
+    }
+ 
+}
+
+@media (min-width: 1024px) {
+
+    .slider {
+        max-width: 50%;
+        margin: 0;
+    }
+
+    .slider .navigation-manual, .navigation-auto {
+        margin-top: 31%;
+        width: 45%;
+    }
+    
+    .contenedor-laptop {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .main-detalle {
+        display: block;
+    }
+
+
 }
