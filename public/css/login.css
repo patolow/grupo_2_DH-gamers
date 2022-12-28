@@ -10,8 +10,8 @@
     flex-direction: column; 
     margin: 10%;
     position: relative;
-    margin-top: 250px;
-    margin-bottom: 120px;
+    margin-top: 150px;
+    margin-bottom: 50px;
 }
 
 
@@ -70,6 +70,13 @@
     font-weight: bold;
     cursor: pointer;
     font-size: 15px;
+}
+
+.button-create-account:hover {
+    background-color: #061161;
+    color: white;
+    box-shadow: 0px 0px 10px rgb(141, 47, 47);
+    font-weight:lighter 
 }
 
 .button {
