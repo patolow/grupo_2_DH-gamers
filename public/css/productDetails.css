@@ -1,14 +1,10 @@
-
+.descripcion {
+     font-family: 'Roboto', sans-serif; 
+}
 
 .main-imagen img{
     width: 100%;
 }
-
-.main-imagen  {
-    width: 100%;
-    text-align: center;
-    background-color: white;
-   }
 
 .main-titulo {
     background: linear-gradient(to left, #061161, #780206);
@@ -127,7 +123,7 @@
     margin-bottom: 8px;
 }
 .boton-agrega-carrito {
-background-color: #b8f9fa;
+background-color: #80f0f2;
 /* opacity: 0.4; */
 }
 .boton-comprar {
@@ -177,19 +173,19 @@ background-color: black;
 .slides input {
     display: none;
 }
-.slide {
+.slider .slide {
     width: 20%;
     transition: 2s;
 }
-.slide img{
+.slider .slide img{
     width: -webkit-fill-available;
 }
-.navigation-manual {
+.slider .navigation-manual {
     position: absolute;
     width: 97%;
     display: flex;
     justify-content: center;
-    margin-top: 65%;
+    margin-top: 64%;
 }
 .manual-btn {
     border: 1.5px solid #252221;
@@ -227,7 +223,7 @@ background: black
     display: flex;
     width: 97%;
     justify-content: center;
-    margin-top: 65%;
+    margin-top: 64%;
 }
 .navigation-auto div {
     border: 1.5px solid #252221;
@@ -293,8 +289,8 @@ background: black
         margin: 0;
     }
 
-    .navigation-manual, .navigation-auto {
-        margin-top: 32%;
+    .slider .navigation-manual, .navigation-auto {
+        margin-top: 31%;
         width: 45%;
     }
     

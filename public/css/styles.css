@@ -95,11 +95,34 @@ flex-direction: column;
     cursor: pointer;
 }
 
+.user-nav a {
+  text-decoration: none;
+  
+}
+
 
 
 .imagen-ingreso-grande {
+    width: 120px;
+    height: 30px;
+    background-color: #02CFB7;
+    border: 1px solid black;
+    border-radius: 10px;
     display: none;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
+
+.imagen-ingreso-grande:hover {
+  background-color: #061161;
+  color: white;
+  box-shadow: 0px 0px 10px rgb(141, 47, 47);
+}
+
+
+
 .imagen-ingreso-chica {
     width:40px;
 }
@@ -272,14 +295,14 @@ footer {
   }
 
   .user-nav {
-      justify-content: left;
+      justify-content: center;
       width: 15%;
      
   }
   .imagen-ingreso-grande {
       display: block;
-      width: 100%;
-      max-width: 125px;
+      
+      
       
   }
   .imagen-ingreso-chica {

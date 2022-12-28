@@ -35,3 +35,48 @@ siguiente.on('click', function() {
 anterior.on('click', function() {
     moverI();
 });
+
+
+
+
+//
+
+
+
+//almacenar slider en una variable
+var slider2 =$('#slider2');
+//almacenar botones
+var siguiente2 = $('#btn-next2');
+var anterior2 = $('#btn-prev2');
+//mover ultima imagen al primer lugar
+$('#slider2 section:last').insertBefore('#slider2 section:first')
+//mostrar la primera imagen con un margen de -100%
+slider2.css('margin-left', '-'+100+'%');
+
+function moverD2(){
+    slider2.animate({
+        marginLeft:'-'+200+'%'
+    } , 700, function(){
+        $('#slider2 section:first').insertAfter('#slider2 section:last');
+        slider2.css('margin-left', '-'+100+'%');
+    });
+}
+
+function moverI2(){
+    slider2.animate({
+        marginLeft:0
+    } , 700, function(){
+        $('#slider2 section:last').insertBefore('#slider2 section:first');
+        slider2.css('margin-left', '-'+100+'%');
+    });
+}
+
+
+
+siguiente2.on('click', function() {
+    moverD2();
+});
+
+anterior2.on('click', function() {
+    moverI2();
+});
