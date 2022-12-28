@@ -1,5 +1,4 @@
-
-  * {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -15,7 +14,7 @@
     margin-bottom: 50px;
 }
 
-/*--TITLE--*/
+
 .main-form h1 {
     margin-top: 30px;
     margin-bottom: 0;
@@ -30,7 +29,6 @@
     margin-bottom: 30px;
 }
 
-/*--FORM--*/
 .form{
     flex-direction: column;
     display: flex;
@@ -43,7 +41,7 @@
     justify-content: center;
 }
 
-/*DATA ENTRY BOXES*/
+
 .boxes{
     width: 100%;
     max-width: 500px;
@@ -87,7 +85,7 @@
   }
 
 
-/*Texts*/
+
 .keep-in-sign-text {
     margin-top: 1.5em;
     margin-bottom: 1.5em;

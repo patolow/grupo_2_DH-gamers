@@ -13,7 +13,7 @@ function moverD(){
         marginLeft:'-'+200+'%'
     } , 700, function(){
         $('#slider section:first').insertAfter('#slider section:last');
-        slider1.css('margin-left', '-'+100+'%');
+        slider.css('margin-left', '-'+100+'%');
     });
 }
 
@@ -44,39 +44,39 @@ anterior.on('click', function() {
 
 
 //almacenar slider en una variable
-var slider =$('#slider2');
+var slider2 =$('#slider2');
 //almacenar botones
-var siguiente = $('#btn-next2');
-var anterior = $('#btn-prev2');
+var siguiente2 = $('#btn-next2');
+var anterior2 = $('#btn-prev2');
 //mover ultima imagen al primer lugar
 $('#slider2 section:last').insertBefore('#slider2 section:first')
 //mostrar la primera imagen con un margen de -100%
-slider.css('margin-left', '-'+100+'%');
+slider2.css('margin-left', '-'+100+'%');
 
-function moverD(){
-    slider.animate({
+function moverD2(){
+    slider2.animate({
         marginLeft:'-'+200+'%'
     } , 700, function(){
         $('#slider2 section:first').insertAfter('#slider2 section:last');
-        slider.css('margin-left', '-'+100+'%');
+        slider2.css('margin-left', '-'+100+'%');
     });
 }
 
-function moverI(){
-    slider.animate({
+function moverI2(){
+    slider2.animate({
         marginLeft:0
     } , 700, function(){
         $('#slider2 section:last').insertBefore('#slider2 section:first');
-        slider.css('margin-left', '-'+100+'%');
+        slider2.css('margin-left', '-'+100+'%');
     });
 }
 
 
 
-siguiente.on('click', function() {
-    moverD();
+siguiente2.on('click', function() {
+    moverD2();
 });
 
-anterior.on('click', function() {
-    moverI();
+anterior2.on('click', function() {
+    moverI2();
 });
