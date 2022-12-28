@@ -100,6 +100,7 @@
     text-align: justify;
     padding-bottom: 12px;
 }
+
 .detalles-extra li {
     font-size: 10px;
 }
@@ -109,8 +110,12 @@
 .botones-de-compra {
     border-radius: 10px;
     padding: 18px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
 }
+
 .envio-stock {
     padding-top: 12px;
 }
@@ -149,11 +154,15 @@ background-color: #b8f9fa;
 background-color: black;
 }
 
+.contenedor-laptop {
+    background-color: white;
+}
+
 
 
 /* CSS FOR CARRUSEL */
 .slider {
-    width:100%;
+    width:97%;
     margin: auto;
     background-color: white;
     box-sizing: content-box;
@@ -177,9 +186,10 @@ background-color: black;
 }
 .navigation-manual {
     position: absolute;
-    width: 100%;
+    width: 97%;
     display: flex;
     justify-content: center;
+    margin-top: 65%;
 }
 .manual-btn {
     border: 1.5px solid #252221;
@@ -215,9 +225,9 @@ background: black
 .navigation-auto {
     position: absolute;
     display: flex;
-    width: 100%;
+    width: 97%;
     justify-content: center;
-    margin-top: 66.7%;
+    margin-top: 65%;
 }
 .navigation-auto div {
     border: 1.5px solid #252221;
@@ -258,4 +268,44 @@ background: black
 #radio7:checked ~ .navigation-auto .auto-btn7{
     background: black;  
     background: #061161
+}
+
+
+
+@media (min-width: 768px) {
+    
+    .main-detalle {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    };
+
+    .detalle-general {
+        width: 375px;
+    }
+ 
+}
+
+@media (min-width: 1024px) {
+
+    .slider {
+        max-width: 50%;
+        margin: 0;
+    }
+
+    .navigation-manual, .navigation-auto {
+        margin-top: 32%;
+        width: 45%;
+    }
+    
+    .contenedor-laptop {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .main-detalle {
+        display: block;
+    }
+
+
 }
