@@ -8,9 +8,10 @@
     background-color: white; 
     display: flex;
     flex-direction: column; 
-    margin: 150px 80px 80px 80px;
+    margin: 150px 30px 80px 30px;
     position: relative;
     padding-top: 0px;
+    margin-bottom: 15%;
 }
 
 
@@ -99,13 +100,13 @@
 
 @media (min-width: 760px) {
     .main-form {
-       margin: 150px 100px 150px 100px;
+       margin: 150px 100px 620px 100px;
     }
 }
 
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
     .main-form {
-       margin: 200px 200px 600px 200px;
+       margin: 200px 500px 600px 500px;
     }
 }
