@@ -38,7 +38,9 @@ span {
 .fa-star-half-stroke {
     color: goldenrod;
     padding: 3px 0px 0px 3px;
-
+}
+.rating {
+    background-color: white;
 }
 
 .main-imagen img {
