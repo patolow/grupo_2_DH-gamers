@@ -16,6 +16,23 @@
     
 }
 
+.contacto-whatsapp {
+    display: none;
+    position: fixed;
+    bottom: 130px;
+    right: 10px;
+    width: 100px;
+    opacity: 65%;
+    cursor: pointer;
+    z-index: 50;
+    
+}
+
+.contacto-whatsapp:hover {
+    opacity: 100%;
+    
+}
+
 .chatbot {
     display: none;
     position: fixed;
@@ -27,6 +44,8 @@
     z-index: 50;
     
 }
+
+
 
 .inactive {
     display: none;
@@ -481,6 +500,10 @@ width: 100%;
     }
 
     .chatbot {
+        display: block;
+    }
+
+    .contacto-whatsapp {
         display: block;
     }
 }
