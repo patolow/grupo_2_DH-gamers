@@ -70,9 +70,6 @@
   background: white;
 }
 
-.monitor{
-  padding: 5px 15px 15px 15px;
-}
 
 .img-product img {
   width: 100%;
@@ -238,6 +235,7 @@
 .boton-comprar {
   height: 25px;
   width: 250px;
+  font-size: 15px;
   border-radius: 5px;
   border: none;
   padding-bottom: 3px;
@@ -246,28 +244,100 @@
   cursor: pointer;
 }
 
-.button {
+.input-button {
   text-align: center;
   margin: 0 3.5% 3.5% 3.5%;
 }
 
 @media (min-width: 425px) {
-
-  .products-to-buy {
-    width: 80%;
-    margin-left: 10%;
+  .main-content-grey {
+    font-size: 18 px;
   }
 
-  .boton-comprar {
-    width: 300px;
+  .products-to-buy {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+  }
+
+  .container-step {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .img-product {
+    max-width: 95px;
+  }
+
+  .product-details i {
+    font-size: 12px;
   }
 }
 
 @media (min-width: 768px) {
 
+  .main-content-grey {
+    font-size: 18px;
+    margin: 2% 12.5%;
+    width: 75%;
+  }
+
   .products-to-buy {
     width: 80%;
     margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+  }
+
+  .container-step {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 2.5%;
+  }
+
+  .title-steps {
+    padding-top: 12px;
+    padding-left: 17px;
+    padding-bottom: 8px;
+  }
+
+  .shipment-method,
+  .payment-methods {
+    padding: 5px 20px 20px 5px;
+  }
+
+  .input-radio{
+    padding-bottom: 10px;
+  }
+
+  .label-radio{
+    padding-bottom: 15px;
+  }
+
+  .summary {
+    padding: 5px 20px 15px 16px;
+  }
+
+  .total-price {
+    padding: 5px 40px 30px 16px;
+  }
+
+  .titulo{
+    padding-top: 18px;
+    padding-bottom: 5px;
+  }
+
+  .img-product {
+    max-width: 170px;
+  }
+
+  .product-details i {
+    font-size: 15px;
+  }
+
+  .product-without-image {
+    gap: 20px;
+    padding-right: 30px;
   }
 
   .boton-comprar {
@@ -285,42 +355,5 @@
 
   main section .product:hover {
     opacity: 0.7;
-  }
-}
-
-@media (min-width: 1000px) {
-  .boton-comprar {
-    margin-left: 25%;
-    transition: all 450ms;
-    width: 50%;
-    margin-top: 20px;
-  }
-
-  main section .boton-comprar:hover {
-    background-color: #64afa6;
-  }
-
-  .product {
-    transition: all 450ms;
-  }
-
-  main section .product:hover {
-    opacity: 0.7;
-  }
-
-  .products-to-buy {
-    width: 70%;
-    margin-left: 5%;
-  }
-
-  .main-content {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .titulo {
-    width: 100%;
   }
 }
