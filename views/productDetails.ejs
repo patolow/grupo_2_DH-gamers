@@ -1,60 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DH Gamers</title>
-
-    <script src="https://kit.fontawesome.com/c37d1d262f.js" crossorigin="anonymous"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/productDetails.css">
-
-</head>
+<%- include("./partials/head") %> 
 
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <div class="logo-nav">
-                    <!--<img src="/images/DH-gamers_Logo-final.png" alt="">!-->
-                </div>
-                <div class="search-nav">
-                    <input type="text" placeholder="Buscar producto...">
-                    <a href="" class="micro-icon"></a>
-                    </form>
-                </div>
-                <div class="user-nav">
-                    <a href="/"><img src="/images/index/user.png" class="imagen-ingreso-chica"></a>
-                    <a href="/"><button class="imagen-ingreso-grande">LOGIN</button>
-
-                        <!--<img src="/images/index/icono-ingresar.png" class="imagen-ingreso-grande">-->
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <div class="main-product-list">
-                <i class="fa-solid fa-list"></i>
-                <ul class="menu-barra-gris">
-                    <li><a href="#">PRODUCTOS</a><img src="/images/index/flecha-menu.png" alt="Menú desplegable"></li>
-                    <li><a href="/product">PLACAS DE VIDEO</a></li>
-                    <li><a href="/product">MONITORES</a></li>
-                    <li><a href="/product">MICROPROCESADORES</a></li>
-                    <li><a href="/product">MOTHERBOARDS</a></li>
-                </ul>
-                <img src="/images/index/8145764.png" alt="Carrito de compras">
-            </div>
-        </section>
+    <%- include("./partials/header") %>
 
         <div class="titulo-producto">
             <h2 class="categoria"> Water Cooling </h2>
@@ -245,59 +195,7 @@
 
     </main>
 
-    <footer>
-
-        <!--MENU version tablet y escritorio-->
-
-        <div class="footer-tablet-container">
-            <div class="footer-tablet-izquierda">
-                <ul class="footer-tablet-list">
-                    <li><a href="#">ACERCA DE NOSOTROS</a></li>
-                    <li><a href="#">PPREGUNTAS FRECUENTES</a></li>
-                </ul>
-            </div>
-            <div class="footer-tablet-redes-sociales">
-                <p>REDES SOCIALES</p>
-
-                <a href="https://www.facebook.com"><img src="/images/index/facebook.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com"><img src="/images/index/instagram.png" alt="Instagram"></a>
-                <a href="https://www.twitter.com"><img src="/images/index/twitter.png" alt="Twitter"></a>
-            </div>
-            <div class="footer-tablet-derecha">
-                <ul class="contacto-tablet-derecha">
-                    <li>¿DÓNDE ESTAMOS?</li>
-                    <li>Avenida Gamers 3372 - Ciudad Hardware</li>
-                    <li>TEL: 0800-555-3284</li>
-                    <li>HORARIOS DE ATENCIÓN: Lunes a viernes de 9 a 18 hs</li>
-                </ul>
-            </div>
-        </div>
-
-
-        <!--FIN MENU version tablet y escritorio-->
-
-
-
-        <div class="footer-container">
-            <div class="footer-menu-izquierda">
-                <ul class="footer-list">
-                    <li><a href="#">ACERCA DE NOSOTROS</a></li>
-                    <li><a href="#">PPREGUNTAS FRECUENTES</a></li>
-                    <li><a href="#">CONTACTANOS</a></li>
-                </ul>
-            </div>
-            <div class="footer-redes-sociales">
-
-                <p>REDES SOCIALES</p>
-
-                <a href="https://www.facebook.com"><img src="/images/index/facebook.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com"><img src="/images/index/instagram.png" alt="Instagram"></a>
-                <a href="https://www.twitter.com"><img src="/images/index/twitter.png" alt="Twitter"></a>
-
-            </div>
-        </div>
-
-    </footer>
+    <%- include("./partials/footer") %>
 
     <script type="text/javascript">
         var counter = 2;

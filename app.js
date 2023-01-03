@@ -1,21 +1,16 @@
 const express = require("express");
 const app = express();
+const mainRoutes = require("./routes/mainRoutes");
 
 const port = 3000;
 const path = require("path");
 
 app.use(express.static("public"));
+app.set("view engine", "ejs");
+app.set("views", "./views")
 
 app.listen (port, () => console.log("server listening on port", port));
 
-app.get("/", (req, res) => res.sendFile(path.join(__dirname, "/views/index.html")));
-
-app.get("/product", (req, res) => res.sendFile(path.join(__dirname, '/views/productDetails.html')));
-app.get("/product2", (req, res) => res.sendFile(path.join(__dirname, '/views/productDetailsCopy.html')));
+app.use("/", mainRoutes)
 
 
-app.get("/productCart", (req, res) => res.sendFile(path.join(__dirname, '/views/productCart.html')));
-
-app.get("/registration", (req, res) => res.sendFile(path.join(__dirname, '/views/registrationForm.html')));
-
-app.get("/login", (req, res) => res.sendFile(path.join(__dirname, '/views/login.html')));

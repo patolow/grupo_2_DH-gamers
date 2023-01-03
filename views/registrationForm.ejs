@@ -1,0 +1,58 @@
+<!--versión actualizada 27/12-->
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head") %> 
+
+<body>
+    <%- include("./partials/header") %>
+
+        <!--Fin del Header-->
+
+        <!--Registration Form-->
+    <div class = "main-form">
+        <form action="resultado.html" method="POST" class = "form">
+            <!--TITLE-->
+            <h1 class="title">Bienvenido a DH-GAMERS</h1>
+            <h2 class = "subtitle">Creá tu cuenta personal</h2>
+            <!--DATA ENTRY BOXES-->
+            <input class="boxes" type = "text" name = "nombre-apellido" placeholder="Nombre y Apellido" required>
+            <input class="boxes" type = "text" name = "nombre-usuario" placeholder="Nombre de usuario/a">
+            <p><label class = "date"> Fecha de Nacimiento:</label></p><input class="boxes" type = "date" name = "fecha-nac" value = "1986-12-11" required>
+            <input class="boxes" type = "text" name = "domicilio" placeholder="Domicilio" required>
+            <input class = "boxes" type = "tel" name = "telefono" placeholder = "Teléfono" required> 
+            <input class="boxes" type= "email" name = "email" placeholder ="Email" required>
+
+            <input class="boxes" type="password" name = "password" placeholder="Contraseña" required>
+            <p class = "password-text">Use 8 o más caracteres con una combinación de letras mayúsculas y minúsculas, números y símbolos (!@#$%)
+            </p>
+            <input class="boxes" type="password" name = "confirm-password" placeholder="Confirmar Contraseña" required>
+        
+            <label>Subí tu Foto de Perfil: </label>
+            <div class = "profile-photo">
+                 <input class = "file" type= "file" name = "foto">    
+            </div>
+
+        <!--TERM and CONDITIONS-->
+        <p class="term"><input type="checkbox">   Estoy de acuerdo con <a class="term2" href="#">Terminos y Condiciones</a></p>
+    
+        <!--Already have an account?-->
+        <p class = "already-have-account-text"><strong> ¿Ya ténes cuenta? </strong> Iniciá sesión <a href= "/login"> acá </a> </p>
+
+        <!--BUTTON-->
+        <div class="button"> 
+            <button type = "submit" class = "button-create-account">CREAR CUENTA</button>
+        </div>
+    </div>
+        </form>
+
+</main>
+
+<%- include("./partials/footer") %>
+            
+    
+                <script src="js/slider.js"></script>
+                <script src="/js/main.js"></script>
+        </body>
+            
+        </html>      

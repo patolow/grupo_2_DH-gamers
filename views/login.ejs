@@ -1,0 +1,45 @@
+<!--versión actualizada 27/12-->
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head") %> 
+
+<body>
+    <%- include("./partials/header") %>
+
+        <!--Fin del Header-->
+
+        <!--Registration Form-->
+        <div class="main-form">
+            <form action="resultado.html" method="POST" class="form">
+                <!--TITLE-->
+                <h1 class="title">Bienvenido a DH-GAMERS</h1>
+                <h2 class="subtitle">Ingresá a tu cuenta personal</h2>
+
+                <!--DATA ENTRY BOXES-->
+
+                <input class="boxes" type="email" name="email" placeholder="Email" required>
+
+                <input class="boxes" type="password" name="password" placeholder="Contraseña" required>
+                <p class="keep-in-sign-text"><input type="checkbox"> <strong> Mantenerme Registrado </strong></p>
+                <div class="olv-contraseña">
+                    <a href="#" class=>¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <!--BUTTON-->
+
+                <div class="button">
+                    <button type="submit" class="button-create-account">INGRESAR</button>
+                </div>
+            </form>
+
+        </div>
+</main>
+<%- include("./partials/footer") %>
+                
+        
+                    <script src="js/slider.js"></script>
+                    <script src="/js/main.js"></script>
+            </body>
+                
+            </html>      
