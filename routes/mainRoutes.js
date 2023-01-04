@@ -14,5 +14,9 @@ router.get("/registration", mainControllers.registration);
 
 router.get("/login", mainControllers.login);
 
+router.get("/createProduct", mainControllers.createProduct);
+
+router.get("/editProduct", mainControllers.editProduct);
+
 
 module.exports = router

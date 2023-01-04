@@ -342,7 +342,6 @@
 
   .boton-comprar {
     transition: all 450ms;
-    width: 350px;
   }
 
   main section .boton-comprar:hover {

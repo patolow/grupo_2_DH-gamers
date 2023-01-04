@@ -1,0 +1,67 @@
+<!--versión actualizada 27/12-->
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head") %>
+
+  <body>
+    <%- include("./partials/header") %>
+
+      <!--Fin del Header-->
+
+      <!--Registration Form-->
+      <div class="main-form-createProduct">
+        <form action="resultado.html" method="POST" class="form">
+          <!--TITLE-->
+          <h1 class="title">DH-GAMERS</h1>
+          <h2 class="subtitle">Modifica tus productos <i id="pencil" class="fas fa-pencil"></i></h2>
+          <!--DATA ENTRY boxes-->
+
+
+          <input class="boxes-product" value="ROG STRIX LC LI 360" type="text" name="producto"
+            placeholder="Producto, marca y modelo" required maxlength="100">
+
+          <select class="boxes-product" name="categoria" id="categoria" required>
+            <option value="others">Otras</option>
+            <option value="placasDeVideo">Placas de Video</option>
+            <option value="monitores">Monitores</option>
+            <option value="microprocesadores">Microprocesadores</option>
+            <option value="motherboards">Motherboards</option>
+          </select>
+
+          <input class="boxes-product" value="U$S 219" type="text" name="precio" placeholder="Precio del Producto"
+            required>
+
+
+          <select class="boxes-product" name="payment-means" id="payment-means">
+            <option value="tresCoutas">Hasta 3 cuotas s/interés</option>
+            <option value="sinCouta">No acepta pago en cuotas</option>
+            <option value="seisCoutas">Hasta 6 cuotas s/interés</option>
+            <option value="doceCoutas">Hasta 12 cuotas s/interés</option>
+          </select>
+
+          <textarea class="boxes-product" name="descripcion" id="descripcion" cols="20" rows="5"
+            placeholder="Descripción del producto" minlength="50" maxlength="500" required>
+Refrigerador de CPU líquido todo en uno ROG Strix LC II 360 con Aura Sync, Intel® LGA 1700, 1200, 1150, 1151, 1152, 1155, 1156, 2011, 2011-3, 2066 y compatibilidad con AMD AM4/TR4 y tres ventiladores de radiador ROG de 120 mm</textarea>
+          <label>Imágen del producto:</label>
+          <div class="product-photo">
+            <input class="file" type="file" name="foto">
+          </div>
+
+          <!--BUTTON-->
+          <div class="input-button">
+            <button type="submit" class="button-create-product">Guardar cambios</button>
+          </div>
+      </div>
+      </form>
+
+      </main>
+
+      <%- include("./partials/footer") %>
+
+
+        <script src="js/slider.js"></script>
+        <script src="/js/main.js"></script>
+  </body>
+
+</html>

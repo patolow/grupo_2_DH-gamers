@@ -16,6 +16,10 @@ registration: (req, res)=> {res.render("registrationForm")},
 
 login: (req, res)=> {res.render("login")},
 
+createProduct: (req, res)=> {res.render("createProduct")},
+
+editProduct: (req, res)=> {res.render("editProduct")},
+
 }
 
 module.exports = controlador
