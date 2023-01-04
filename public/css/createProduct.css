@@ -60,8 +60,8 @@
   outline: none;
 }
 
-.boxes:hover,
-.boxes:focus {
+.boxes-product:hover,
+.boxes-product:focus {
   border-left: 10px solid #780206;
 }
 
