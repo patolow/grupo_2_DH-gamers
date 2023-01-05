@@ -463,6 +463,10 @@ width: 100%;
     font-size: 13px;
 }
 
+.productos-mas-vendidos h5 {
+    color: white;
+}
+
 .productos-mas-vendidos a {
     text-decoration: none;
     color: white;

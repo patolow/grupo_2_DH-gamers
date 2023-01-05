@@ -37,7 +37,7 @@ flex-direction: column;
 }
 
 .logo-nav {
-    
+    position: relative;
     background-image: url(/images/index/DH-gamers_Logo-final.png);
     background-repeat: no-repeat;
     background-size:contain;
@@ -46,6 +46,16 @@ flex-direction: column;
     height: 100%;
     
    
+}
+
+.logo-nav img{
+  position: absolute;
+  width: 80px;
+  top: 5px;
+  left: 3px;
+  opacity: 0%;
+  
+ 
 }
 
 .search-nav {
@@ -103,23 +113,30 @@ flex-direction: column;
 
 
 .imagen-ingreso-grande {
-    width: 120px;
-    height: 30px;
+    margin: 5px;
+    padding: 5px;
+    width: 150px;
+    height: 25px;
     background-color: #02CFB7;
     border: 1px solid black;
     border-radius: 10px;
     display: none;
+    font-size: 12px;
     font-weight: 500;
     color: black;
     cursor: pointer;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
+
+
 .imagen-ingreso-grande:hover {
-  background-color: #061161;
-  color: white;
-  box-shadow: 0px 0px 10px rgb(141, 47, 47);
+  background-color: #14f8dd;
+  color: black;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
+
+
 
 
 
@@ -295,16 +312,19 @@ footer {
   }
 
   .user-nav {
+    display: flex;
+    flex-direction: column;
       justify-content: center;
-      width: 15%;
+      width: 25%;
      
   }
   .imagen-ingreso-grande {
       display: block;
-      
-      
-      
+        
   }
+
+ 
+
   .imagen-ingreso-chica {
       display: none;
       
