@@ -25,6 +25,7 @@
   background-color: white;
   margin: 5%;
   border-radius: 3px;
+  font-size: 13px;
 }
 
 .titulo-productos {
@@ -32,52 +33,26 @@
   text-align: center;
   color: #272727;
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   font-weight: bold;
 }
 
+
 .item {
   display: flex;
-  justify-content: flex-start;
-  padding-top: 5px;
+  justify-content: space-between;
+  padding: 5px 10px 0px 10px;
 }
 
-.item-without-image {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 10px 5px 10px 10px;
+.unidades {
+  display: none;
+  
 }
 
 .price {
   font-size: 13px;
   font-weight: 600;
   display: none;
-}
-
-.img-product {
-  max-width: 89px;
-  display: flex;
-  flex-direction: row;
-  cursor: hand;
-  background: white;
-}
-
-.img-product img {
-  width: 100%;
-  height: fit-content;
-}
-
-.url-product {
-  text-decoration: none;
-  color: #000000;
-}
-
-.url-product:hover {
-  font-weight: 400;
-  cursor: hand;
 }
 
 .product-name {
@@ -120,7 +95,6 @@
 .create-buttons-container{
   display: flex;
   justify-content: flex-end;
-  padding: 10px 5px 10px 10px;
 }
 
 .create-button {
@@ -132,29 +106,28 @@
   background-color: rgb(194, 194, 199);
   border: #272727 solid 1px;
   cursor: pointer;
-  text-align: center; 
+  text-align: center;
+  margin-right: 12px; 
 }
 
-.input-button {
-  text-align: center;
-  margin: 0 3.5% 3.5% 3.5%;
-}
 
 @media (min-width: 425px) {
+
+  .item {
+    padding-left: 15px;
+  }
   
   .titulo-productos {
-    padding-top: 14px;
-    padding-bottom: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   .products-list {
-    width: 75%;
-    margin: 3% 12.5%;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-top: 3%;
   }
 
-  .img-product {
-    max-width: 130px;
-  }
   .edit-button {
     width: 25px;
     height: 25px;
@@ -171,16 +144,20 @@
   }
 
  .edit-buttons-container {
-    padding-right: 10px;
+    padding-right: 5px;
   }
 
   .create-buttons-container {
-    padding-right: 15px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 10px;
   }
 
-  .price{
+  .price {
     display: block;
   }
+
+
 }
 
 @media (min-width: 768px) {
@@ -192,29 +169,27 @@
   }
 
   .titulo-productos {
-    padding-top: 18px;
-    padding-bottom: 5px;
+    padding-top: 22px;
+    padding-bottom: 22px;
   }
 
-  .img-product {
-    max-width: 170px;
-  }
-
-  .item-without-image {
-    gap: 20px;
-    padding-right: 20px;
-  }
 
   .create-buttons-container{
-    padding-right: 30px;
+    padding-right: 23px;
     padding-bottom: 20px;
   }
 
   .item {
+    padding-left: 30px;
+    padding-right: 30px;
     transition: all 450ms;
   }
 
   main section .product:hover {
     opacity: 0.7;
+  }
+
+  .unidades {
+    display: block;
   }
 }
