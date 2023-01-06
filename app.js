@@ -12,5 +12,3 @@ app.set("views", "./views")
 app.listen (port, () => console.log("server listening on port", port));
 
 app.use("/", mainRoutes)
-
-
