@@ -1,0 +1,27 @@
+[
+    {
+     "id": 1,
+     "name": "Asus Rog Strix LC LI 360",
+     "price": 219,
+     "discount": 20,
+     "category": "Water Cooling",
+     "best-sellers": false,
+     "stock": 40,
+     "description": "La bomba Asetek de séptima generación ofrece una refrigeración excepcional y un ruido mínimo con un funcionamiento rango a partir de 840 rpm. Presenta tres ventiladores de radiador diseñados por ROG proporcionan un flujo de aire y una presión estática optimizados. La iluminación ARGB en la cubierta de la bomba recubierta de NCVM transmite un diseño elegante y moderno",
+     "image": "/images/waterCooling/Asus_Rog_Strix_LcLi_360/h525.png, /images/waterCooling/Asus_Rog_Strix_LcLi_360/detalle2.png"
+    },
+
+    {
+        "id": 2,
+     "name": "Asus Rog Ryujin 360",
+     "price": 230,
+     "discount": 15,
+     "category": "Water Cooling",
+     "best-sellers": false,
+     "stock": 50,
+     "description": "La bomba Asetek de séptima generación ofrece una refrigeración excepcional y un ruido mínimo con un funcionamiento rango a partir de 840 rpm. Presenta tres ventiladores de radiador diseñados por ROG proporcionan un flujo de aire y una presión estática optimizados. La iluminación ARGB en la cubierta de la bomba recubierta de NCVM transmite un diseño elegante y moderno",
+     "image": "/images/waterCooling/Asus_Rog_Strix_LcLi_360/frente.png"
+       }
+
+
+]
