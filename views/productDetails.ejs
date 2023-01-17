@@ -7,13 +7,18 @@
         <%- include("./partials/header") %>
 
             <div class="titulo-producto">
-                <h2 class="categoria"> Water Cooling </h2>
-                <h1 class="nombre-producto"> ROG STRIX LC LI 360 </h1>
+                <h2 class="categoria">
+                    <%= productDetail.category %>
+                </h2>
+                <h1 class="nombre-producto">
+                    <%= productDetail.name %>
+                </h1>
             </div>
 
             <div class="rating">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                    class="fa-solid fa-star-half-stroke"></i> <span>MAS VENDIDO (450 comentarios) </span>
+                    class="fa-solid fa-star-half-stroke"></i> <span>MAS VENDIDO (<%= productDetail.reviews %>
+                        comentarios) </span>
             </div>
 
             <div class="contenedor-version-laptop">
@@ -32,26 +37,29 @@
                         <!-- radio buttons end -->
                         <!-- slide images start -->
                         <div class="slide first">
-                            <img src="images/waterCooling/Asus_Rog_Strix_LcLi_360/h525.png">
+                            <img src=" <%= imagesSlider[0] %>">
+                        </div>
+
+                        <div class="slide">
+                            <img src=" <%= imagesSlider[1] %>">
                         </div>
                         <div class="slide">
-                            <img src="images/waterCooling/Asus_Rog_Strix_LcLi_360/frente.png">
+                            <img src=" <%= imagesSlider[2] %>">
                         </div>
                         <div class="slide">
-                            <img src="images/waterCooling/Asus_Rog_Strix_LcLi_360/detalle2.png">
+                            <img src=" <%= imagesSlider[3] %>">
                         </div>
                         <div class="slide">
-                            <img src="images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png">
+                            <img src=" <%= imagesSlider[4] %>">
                         </div>
                         <div class="slide">
-                            <img src="images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png">
+                            <img src=" <%= imagesSlider[5] %>">
                         </div>
                         <div class="slide">
-                            <img src="images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png">
+                            <img src=" <%= imagesSlider[6] %>">
                         </div>
-                        <div class="slide">
-                            <img src="images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png">
-                        </div>
+
+
                         <!-- slide images end -->
                         <!-- automatic navigation start -->
 
@@ -86,14 +94,15 @@
                     <div class="detalle-costo-envio">
 
                         <div class="costo-producto">
-                            <h3 class="descuento">-20% Descuento</h3>
-                            <h2 class="precio"> US$ 219</h2>
+                            <h3 class="descuento"> -<%= productDetail.discount %> % Descuento</h3>
+                            <h2 class="precio"> US$ <%= productDetail.price %>
+                            </h2>
                         </div>
 
                         <h4>Precio Recomendado: <strike> US$ 249 </strike></h4>
 
                         <div class="envio-stock">
-                            <h6>Entrega para el Miercoles 16 de Diciembre <i class="fa-solid fa-truck-fast"></i>
+                            <h6>Entrega para el <%= productDetail.deliveryDate %> <i class="fa-solid fa-truck-fast"></i>
                             </h6>
                             <h5>Devolucion Gratis <i class="fa-solid fa-circle-check"></i></h5>
                             <h4>Tenes 30 dias desde que lo recibis </h4>
@@ -101,7 +110,7 @@
                     </div>
 
                     <div class="botones-de-compra">
-                        </a> <input class="boton-cantidad" type="button" value="Cantidad: 1    (Disponibles 150)"
+                        </a> <input class="boton-cantidad" type="button" value="Disponibles <%= productDetail.stock %>"
                             onclick="msg()">
                         <a href="/productCart"> <input class="boton-comprar" type="button" value="Comprar ahora"
                                 onclick="msg()"> </a>
@@ -116,21 +125,33 @@
             <div class="descripcion-producto">
                 <h4>DESCRIPCION DEL PRODUCTO</h4>
 
-                <h3> Refrigerador de CPU líquido todo en uno ROG Strix LC II 360 con Aura Sync, Intel® LGA 1700, 1200,
-                    1150, 1151, 1152, 1155, 1156, 2011, 2011-3, 2066 y compatibilidad con AMD AM4/TR4 y tres
-                    ventiladores de radiador ROG de 120 mm
-                    <ul>
-                        <li>La bomba Asetek de séptima generación ofrece una refrigeración excepcional y un ruido mínimo
-                            con un funcionamiento rango a partir de 840 rpm.</li>
-                        <li>Tres ventiladores de radiador diseñados por ROG proporcionan un flujo de aire y una presión
-                            estática optimizados.</li>
-                        <li>La iluminación ARGB en la cubierta de la bomba recubierta de NCVM transmite un diseño
-                            elegante y moderno.</li>
-                        <li>La estética complementa a la perfección las placas base ROG desde el centro del escenario.
-                        </li>
-                        <li>Los tubos reforzados con mangas ofrecen una mayor durabilidad.</li>
-                    </ul>
+                <h3>
+                    <%= productDetail.description %>
                 </h3>
+                <!-- ME FALTA VER ESTA PARTE -->
+
+                <h3> Los ventiladores del radiador ROG están específicamente ajustados para ofrecer un rendimiento
+                    óptimo en los radiadores de la serie ROG Strix LC II. Los ventiladores generan 81 CFM/5,0 mmH2O
+                    para una eficiencia de refrigeración excepcional 
+                </h3>
+
+                <h3> La serie ROG Strix LC II está equipada con el último diseño de placa de refrigeración.
+                    Mecanizada a partir de cobre puro, la placa presenta una variedad de finos microcanales que
+                    reducen la resistencia térmica y aumentan el área de superficie, lo que resulta en temperaturas
+                    de CPU más bajas.
+                </h3>
+
+                <h3> El control PWM permite que tanto la bomba como los ventiladores del radiador giren a
+                    velocidades más lentas cuando la CPU está inactiva o con poca carga, lo que ayuda a mantener los
+                    niveles de ruido al mínimo.
+                </h3>
+
+                <h3> ROG Strix LC II 360 ofrece refrigeración líquida de CPU de alto rendimiento con una estética
+                    elegante y moderna. Con un diseño de circuito cerrado y ventiladores de radiador ROG, el enfriador
+                    libera todo el potencial de una CPU Intel® o AMD al tiempo que permite sutiles efectos de
+                    iluminación multicolor para acentuar su construcción.
+                </h3>
+
                 <br />
 
                 <h4>COMPATIBILIDAD INTEGRAL</h4>
@@ -142,54 +163,15 @@
                 </h3>
             </div>
 
+
             <div class="descripcion-fondo-negro">
 
-                <h3> ROG Strix LC II 360 ofrece refrigeración líquida de CPU de alto rendimiento con una estética
-                    elegante y moderna. Con un diseño de circuito cerrado y ventiladores de radiador ROG, el enfriador
-                    libera todo el potencial de una CPU Intel® o AMD al tiempo que permite sutiles efectos de
-                    iluminación multicolor para acentuar su construcción.
-                    <ul>
-                        <li>ROG Radiator Fans.</li>
-                        <li>Illuminated ROG Logo</li>
-                        <li>380 mm Sleeved Rubber Tubing</li>
-                    </ul>
-                </h3>
-
-
-                <div id="fondo" class="main-imagen">
-                    <img src="images//waterCooling/Asus_Rog_Strix_LcLi_360/box-1.png">
-                    <h3> Los ventiladores del radiador ROG están específicamente ajustados para ofrecer un rendimiento
-                        óptimo en los radiadores de la serie ROG Strix LC II. Los ventiladores generan 81 CFM/5,0 mmH2O
-                        para una eficiencia de refrigeración excepcional </h3>
-                </div>
-
-
-
-                <div id="fondo" class="main-imagen">
-                    <img src="images/waterCooling/Asus_Rog_Strix_LcLi_360/radiate.png">
-                    <h3> La serie ROG Strix LC II está equipada con el último diseño de placa de refrigeración.
-                        Mecanizada a partir de cobre puro, la placa presenta una variedad de finos microcanales que
-                        reducen la resistencia térmica y aumentan el área de superficie, lo que resulta en temperaturas
-                        de CPU más bajas.</h3>
-                </div>
-
-
-
-                <div id="fondo" class="main-imagen">
-                    <img src="images/waterCooling/Asus_Rog_Strix_LcLi_360/info.png">
-                    <h3> El control PWM permite que tanto la bomba como los ventiladores del radiador giren a
-                        velocidades más lentas cuando la CPU está inactiva o con poca carga, lo que ayuda a mantener los
-                        niveles de ruido al mínimo.</h3>
-                </div>
-
-                <div id="fondo" class="main-imagen">
-                    <img src="images/waterCooling/Asus_Rog_Strix_LcLi_360/chasis.png">
-                </div>
+                <% for( let i = 0; i < imagesFooter.length; i++ ) { %>
+                    <div id="fondo" class="main-imagen">
+                        <img src="<%= imagesFooter[i] %>">
+                    </div>
+                <% } %>
             </div>
-
-            <!-- </div>
-                        <h4>PRODUCTOS RELACIONADOS</h4>
-            </div>  -->
 
             </main>
 
