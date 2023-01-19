@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const productsFilePath = path.join(__dirname, '../data/productsDataBasecopy.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf8"));
 
 const controller = {
@@ -12,8 +12,7 @@ productDetail: (req, res)=> {
     let productDetail = products.find( product => product.id === idProduct)
     let imagesSlider = productDetail.sliderImage.split(",") 
     let imagesFooter= productDetail.footerImage.split(",")
-    res.send("productDetails");
-    //res.render("productDetails", {productDetail, imagesSlider, imagesFooter})
+    res.render("productDetails", {productDetail, imagesSlider, imagesFooter})
 },
 
 productCart: (req, res)=> {res.render("productCart")},

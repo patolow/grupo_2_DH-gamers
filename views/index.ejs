@@ -115,24 +115,21 @@
             <div class="titular-mas-vendidos">
                 <img src="/images/index/img-mas-vendidos.png" alt="Productos mas vendidos">
             </div>
+
             <div class="productos-mas-vendidos-container">
-                <% products.forEach(product => { %>
-                <div class="productos-mas-vendidos">
-                    <a href="/product/detail/<%=product.id%>"><img src="<%=product.image%>" alt="imagen del Producto"></a>
-                    <h5><%=product.name%></h5>
-                    <a href="/product/detail/<%=product.id%>">
-                        <p>Ver detalles</p>
-                    </a>
-                </div>
-                <% }); %>
-                
+                <% for( let i = 0; i < products.length; i++ ) { %>
+                    <div class="productos-mas-vendidos">
+                        <a href="/product/detail/<%=products[i].id%>"><img src="<%=imagenesindex[i]%>" alt="imagen del Producto"></a>
+                        <h5><%=products[i].name%></h5>
+                        <a href="/product/detail/<%=products[i].id%>">
+                            <p>Ver detalles</p>
+                        </a>
+                    </div>
+                <% } %> 
                 <div class="marcas-trabajadas">
                     <img src="/images/index/marcas-trabajadas.png" alt="Marcas con las que trabajamos"></a>
                 </div>
             </div>
-            
-
-
             
         </section>
         
