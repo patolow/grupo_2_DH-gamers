@@ -13,80 +13,40 @@
       <!--GENERAL-->
 
       <div class="main-form-createProduct">
-        <form action="resultado.html" method="POST" class="form">
+        <form action="/products/create/" method="POST" class="form" enctype="multipart/form-data">
           <!--TITLE-->
           <h1 class="title">DH-GAMERS</h1>
           <h2 class="subtitle">Crear producto</h2>
           <!--DATA ENTRY BOXES-->
-          <input class="boxes-product" type="text" name="producto" placeholder="Producto, marca y modelo" required
+          <input class="boxes-product" type="text" name="name" placeholder="Producto, marca y modelo" required
             maxlength="100">
 
           <select class="boxes-product" name="categoria" id="categoria" onchange="showCategories()" required>
-
             <option value="none" disabled selected>Catergoría</option>
             <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
             <option value="monitores" id="monitores">Monitores</option>
             <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
             <option value="motherboards" id="motherboards">Motherboards</option>
+            <option value="waterCooling" id="waterCooling">Water Cooling</option>
             <option value="others" id="others">Otras</option>
           </select>
 
-          <!--PLACA DE VIDEO-->
-          <input class="boxes-product" id="tipo" type="text" name="tipo" placeholder="Tipo de memoria gráfica">
-          <input class="boxes-product" id="fabricante" type="text" name="fabricante" placeholder="Fabricante">
-          <select class="boxes-product" id="memoria" type="text" name="memoria">
-            <option value="none" disabled selected>Memoria</option>
-            <option value="4gb">4 GB</option>
-            <option value="8gb">8 GB</option>
-            <option value="12gb">12 GB</option>
-          </select>
-          <input class="boxes-product" id="interfaz" type="text" name="interfaz"
-            placeholder="Interfaz con la placa madre">
+          <input class="boxes-product" type="text" name="price" placeholder="Precio del Producto" required>
 
-          <!--MONITORES-->
-          <input class="boxes-product" id="tamanio" type="text" name="tamanio" placeholder="Tamaño de pantalla">
-          <input class="boxes-product" id="resolucionMonitor" type="text" name="resolucionPantalla"
-            placeholder="Resolución de pantalla">
-          <select class="boxes-product" id="esGamer" type="text" name="esGamer">
-            <option value="none" disabled selected>Es gamer</option>
-            <option value="si">Sí</option>
-            <option value="no">No</option>
-          </select>
-          <select class="boxes-product" id="esCurvo" type="text" name="esCurvo">
-            <option value="none" disabled selected>Es Curvo</option>
-            <option value="si">Sí</option>
-            <option value="no">No</option>
+          <input class="boxes-product" type="text" name="discount" placeholder="Descuento (0-50%)" maxlength="2">
+
+          <select class="boxes-product" name="best-sellers" id="best-sellers" required>
+            <option value="none" disabled selected>Best Sellers</option>
+            <option value="si" id="si">Sí</option>
+            <option value="no" id="no">No</option>
           </select>
 
-          <!--MICROPROCESADOR-->
-          <input class="boxes-product" id="memoriaSoportada" type="text" name="memoriaSoportada"
-            placeholder="Tipo de memoria RAM soportada">
-          <input class="boxes-product" id="generacion" type="text" name="generacion" placeholder="Generación">
-          <input class="boxes-product" id="cantidadNucleos" type="text" name="cantidadNucleos"
-            placeholder="Cantidad de núcleos de CPU">
-          <input class="boxes-product" id="frecuencia" type="text" name="frecuencia"
-            placeholder="Frecuencia máxima de reloj">
+          <input class="boxes-product" type="text" name="stock" placeholder="Cantidad de productos disponibles"
+            maxlength="3">
 
-          <!--MOTHERBOARDS-->
-          <input class="boxes-product" id="plataforma" type="text" name="plataforma" placeholder="Plataforma">
-          <input class="boxes-product" id="chipsets" type="text" name="chipsets" placeholder="Chipsets">
-          <input class="boxes-product" id="ranuras" type="text" name="ranueras" placeholder="Ranuras de extensión">
-          <input class="boxes-product" id="capacidadMaxima" type="text" name="capacidadMaxima"
-            placeholder="Capacidad máxima soportada de la memoria">
+          <input class="boxes-product" type="text" name="reviews" placeholder="cantidad de reviews">
 
-          <!--GENERAL-->
-          <input class="boxes-product" type="text" name="precio" placeholder="Precio del Producto" required>
-
-          <input class="boxes-product" type="text" name="descuento" placeholder="Descuento (0-50%)" maxlength="2">
-
-          <select class="boxes-product" name="payment-means" id="payment-means">
-            <option value="none" disabled selected>Pago en cuotas</option>
-            <option value="sinCouta">No acepta pago en cuotas</option>
-            <option value="tresCoutas">Hasta 3 cuotas s/interés</option>
-            <option value="seisCoutas">Hasta 6 cuotas s/interés</option>
-            <option value="doceCoutas">Hasta 12 cuotas s/interés</option>
-          </select>
-          <textarea class="boxes-product" name="descripcion" id="descripcion" cols="20" rows="5"
+          <textarea class="boxes-product" name="description" id="description" cols="20" rows="5"
             placeholder="Descripción del producto" minlength="50" maxlength="500" required></textarea>
 
           <label>Imágen del producto:</label>

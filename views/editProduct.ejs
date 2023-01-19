@@ -11,40 +11,83 @@
 
       <!--Registration Form-->
       <div class="main-form-createProduct">
-        <form action="resultado.html" method="POST" class="form">
+        <form action="/product/edit/<%= productToEdit.id %>/?_method=PUT" method="POST" class="form" enctype="multipart/form-data">
           <!--TITLE-->
           <h1 class="title">DH-GAMERS</h1>
-          <h2 class="subtitle">Modificar producto<i id="pencil" class="fas fa-pencil"></i></h2>
+          <h2 class="subtitle">Modificar producto: <%= productToEdit.name %>
+          </h2>
           <!--DATA ENTRY boxes-->
+          <input class="boxes-product" type="text" name="name" value=<%=productToEdit.name %> required
+          maxlength="100">
 
-
-          <input class="boxes-product" value="ROG STRIX LC LI 360" type="text" name="producto"
-            placeholder="Producto, marca y modelo" required maxlength="100">
-
-          <select class="boxes-product" name="categoria" id="categoria" required>
-            <option value="others">Otras</option>
-            <option value="placasDeVideo">Placas de Video</option>
-            <option value="monitores">Monitores</option>
-            <option value="microprocesadores">Microprocesadores</option>
-            <option value="motherboards">Motherboards</option>
+          <select class="boxes-product" name="category" id="category" required>
+            <% if (productToEdit.category=="Placas de Video" ) { %>
+              <option value="placasDeVideo" id="placasDeVideo" selected>Placas de Video</option>
+              <option value="monitores" id="monitores">Monitores</option>
+              <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
+              <option value="motherboards" id="motherboards">Motherboards</option>
+              <option value="waterCooling" id="waterCooling">Water Cooling</option>
+              <option value="others" id="others">Otras</option>
+              <% } else if (productToEdit.category=="Monitores" ) { %>
+                <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
+                <option value="monitores" id="monitores" selected>Monitores</option>
+                <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
+                <option value="motherboards" id="motherboards">Motherboards</option>
+                <option value="waterCooling" id="waterCooling">Water Cooling</option>
+                <option value="others" id="others">Otras</option>
+                <% } else if (productToEdit.category=="Microprocesadores" ) { %>
+                  <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
+                  <option value="monitores" id="monitores">Monitores</option>
+                  <option value="microprocesadores" id="microprocesadores" selected>Microprocesadores</option>
+                  <option value="motherboards" id="motherboards">Motherboards</option>
+                  <option value="waterCooling" id="waterCooling">Water Cooling</option>
+                  <option value="others" id="others">Otras</option>
+                  <% } else if (productToEdit.category=="Motherboards" ) { %>
+                    <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
+                    <option value="monitores" id="monitores">Monitores</option>
+                    <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
+                    <option value="motherboards" id="motherboards" selected>Motherboards</option>
+                    <option value="waterCooling" id="waterCooling">Water Cooling</option>
+                    <option value="others" id="others">Otras</option>
+                    <% } else if (productToEdit.category=="Water Cooling" ) { %>
+                      <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
+                      <option value="monitores" id="monitores">Monitores</option>
+                      <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
+                      <option value="motherboards" id="motherboards">Motherboards</option>
+                      <option value="waterCooling" id="waterCooling" selected>Water Cooling</option>
+                      <option value="others" id="others">Otras</option>
+                      <% } else { %>
+                        <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
+                        <option value="monitores" id="monitores">Monitores</option>
+                        <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
+                        <option value="motherboards" id="motherboards">Motherboards</option>
+                        <option value="waterCooling" id="waterCooling">Water Cooling</option>
+                        <option value="others" id="others" selected>Otras</option>
+                        <% } %>
           </select>
 
-          <input class="boxes-product" value="U$S 219" type="text" name="precio" placeholder="Precio del Producto"
-            required>
+          <input class="boxes-product" type="text" name="price" value=<%=productToEdit.price %>>
+          <input class="boxes-product" type="text" name="discount" value=<%=productToEdit.discount %>
+          maxlength="2">
 
-
-          <select class="boxes-product" name="payment-means" id="payment-means">
-            <option value="tresCoutas">Hasta 3 cuotas s/interés</option>
-            <option value="sinCouta">No acepta pago en cuotas</option>
-            <option value="seisCoutas">Hasta 6 cuotas s/interés</option>
-            <option value="doceCoutas">Hasta 12 cuotas s/interés</option>
+          <select class="boxes-product" name="bestSellers" id="bestSellers" required>
+            <% if (productToEdit.bestSellers== true) { %>
+            <option value="si" id="si" selected>Sí</option>
+            <option value="no" id="no">No</option>
+            <% } else { %>
+              <option value="si" id="si" >Sí</option>
+            <option value="no" id="no" selected>No</option>
+             <% } %> 
           </select>
 
-          <input class="boxes-product" value="20%" type="text" name="descuento" placeholder="Descuento (0-50%)" maxlength="2">
+          <input class="boxes-product" type="text" name="stock" value=<%=productToEdit.stock %>
+          maxlength="3">
 
-          <textarea class="boxes-product" name="descripcion" id="descripcion" cols="20" rows="5"
-            placeholder="Descripción del producto" minlength="50" maxlength="500" required>
-Refrigerador de CPU líquido todo en uno ROG Strix LC II 360 con Aura Sync, Intel® LGA 1700, 1200, 1150, 1151, 1152, 1155, 1156, 2011, 2011-3, 2066 y compatibilidad con AMD AM4/TR4 y tres ventiladores de radiador ROG de 120 mm</textarea>
+          <input class="boxes-product" type="text" name="reviews" value=<%=productToEdit.reviews %>>
+
+          <textarea class="boxes-product" name="description" id="description" cols="20" rows="5" minlength="50"
+            maxlength="2500" required><%= productToEdit.description %></textarea>
+
           <label>Imágen del producto:</label>
           <div class="product-photo">
             <input class="file" type="file" name="foto">
