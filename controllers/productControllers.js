@@ -9,10 +9,11 @@ const controller = {
 
 productDetail: (req, res)=> {
     let idProduct = parseInt(req.params.id); //1
-    let productDetail = products.find( products => products.id === idProduct)
+    let productDetail = products.find( product => product.id === idProduct)
     let imagesSlider = productDetail.sliderImage.split(",") 
     let imagesFooter= productDetail.footerImage.split(",")
-    res.render("productDetails", {productDetail, imagesSlider, imagesFooter})
+    res.send("productDetails");
+    //res.render("productDetails", {productDetail, imagesSlider, imagesFooter})
 },
 
 productCart: (req, res)=> {res.render("productCart")},
@@ -23,6 +24,7 @@ editProduct: (req, res)=> {res.render("editProduct")},
 
 productsList: (req, res)=> {res.render("productsList")},
 
-}
+destroy : (req, res) => {}
 
+}
 module.exports = controller
