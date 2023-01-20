@@ -17,49 +17,42 @@
 
 
           <hr class="line">
-
-          <div class="item">
-            <div>DH-1</div>
-            <div class="product-info">
-              <a class="url-product" href="/product">
-                <p class="product-name">ROG STRIX LC LI 360</p>
-              </a>
-              <p class="product-category">Water Cooling</p>
+            <%for (let i = 0; i < products.length; i++) { %>
+              
+            <div class="item">
+              <div>DH- <%= products[i].id %> </div>
+              <div class="product-info">
+                <a class="url-product" href="/product/detail/<%=products[i].id%>">
+                  <p class="product-name">
+                    <%= products[i].name %>
+                  </p>
+                </a>
+                <p class="product-category">
+                  <%= products[i].category %>
+                </p>
+              </div>
+              <div class="price">U$S <%= products[i].price %>
+              </div>
+              <div class="imagen-list"> <img src="<%=  imagenesindex[i] %>" height=40px alt="imagen del Producto">
+              </div>
+              <div class="unidades">
+                <%= products[i].stock %> u.
+              </div>
+              <div class="edit-buttons-container">
+                <a href="/product/edit/<%=products[i].id%>"> <button class="edit-button"><i
+                      class="fas fa-pencil"></i></button></a>
+                <a href="/product/edit/<%=products[i].id%>"> <button class="edit-button"><i
+                      class="fas fa-trash-alt"></i></button>
+              </div>
             </div>
-            <div class="price">U$S 219</div>
-            <div class="unidades">5 u.</div>
-            <div class="edit-buttons-container">
-              <a href="/edit/:id"><button class="edit-button"><i class="fas fa-pencil"></i></button></a>
-              <button class="edit-button"><i class="fas fa-trash-alt"></i></button>
+            <% } %>
 
-            </div>
-            </div>
+              <hr class="line">
 
-          <hr class="line">
 
-          
-          <div class="item">
-            <div>DH-2</div>
-            <div class="product-info">
-              <a class="url-product" href="/product">
-                <p class="product-name">Samsung F390 series</p>
-              </a>
-              <p class="product-category">Monitores</p>
-            </div>
-            <div class="price">U$S 349</div>
-            <div class="unidades">3 u.</div>
-            <div class="edit-buttons-container">
-              <a href="/editProduct"><button class="edit-button"><i class="fas fa-pencil"></i></button></a>
-              <button class="edit-button"><i class="fas fa-trash-alt"></i></button>
-
-            </div>
-            </div>
-
-          <hr class="line">
-
-          <div class="create-buttons-container">
-            <a href="/createProduct"><button class="create-button">+</button></a>
-          </div>
+              <div class="create-buttons-container">
+                <a href="/createProduct"><button class="create-button">+</button></a>
+              </div>
 
         </article>
 

@@ -14,12 +14,8 @@ index: (req, res)=> {
         let firstImage = products[i].sliderImage.split(",")[0]
         imagenesindex.push(firstImage);
     }
-
-    console.log(imagenesindex)
     res.render("index", {products, imagenesindex })
 },
-
-productCart: (req, res)=> {res.render("productCart")},
 
 registration: (req, res)=> {res.render("registrationForm")},
 
