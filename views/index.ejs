@@ -117,11 +117,11 @@
             </div>
 
             <div class="productos-mas-vendidos-container">
-                <% for( let i = 0; i < product.length; i++ ) { %>
+                <% for( let i = 0; i < bestSeller.length; i++ ) { %>
                     <div class="productos-mas-vendidos">
-                        <a href="/product/detail/<%=product[i].id%>"><img src="<%=imagenesindex[i]%>" alt="imagen del Producto"></a>
-                        <h5><%=product[i].name%></h5>
-                        <a href="/product/detail/<%=product[i].id%>">
+                        <a href="/product/detail/<%=bestSeller[i].id%>"><img src="<%=imagenesindex[i]%>" alt="imagen del Producto"></a>
+                        <h5><%=bestSeller[i].name%></h5>
+                        <a href="/product/detail/<%=bestSeller[i].id%>">
                             <p>Ver detalles</p>
                         </a>
                     </div>

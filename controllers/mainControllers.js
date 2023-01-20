@@ -14,8 +14,8 @@ index: (req, res)=> {
         let firstImage = products[i].sliderImage.split(",")[0]
         imagenesindex.push(firstImage);
     }
-    let product = products.filter(product => product.bestSellers == true)
-    res.render("index", {product, imagenesindex })
+    let bestSeller = products.filter(product => product.bestSellers == true)
+    res.render("index", {bestSeller, imagenesindex })
 },
 
 registration: (req, res)=> {res.render("registrationForm")},
