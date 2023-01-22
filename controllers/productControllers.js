@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const { Console } = require("console");
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBasecopy.json');
+const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf8"));
 
 const getImagesIndex = (category) => {
@@ -21,8 +21,8 @@ const controller = {
     let idProduct = parseInt(req.params.id);
     let productDetail = products.find(product => product.id === idProduct)
     let imagesSlider = productDetail.sliderImage.split(",")
-    let imagesFooter = productDetail.footerImage.split(",")
-    res.render("productDetails", { productDetail, imagesSlider, imagesFooter })
+    
+    res.render("productDetails", { productDetail, imagesSlider })
   }, //done
 
   getCreateProduct: (req, res) => {
