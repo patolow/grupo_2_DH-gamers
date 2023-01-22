@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head") %> 
+
+<body>
+
+    <%- include("./partials/header") %>
+<!--pegar codigo-->
+
+<% for( let i = 0; i < products.length; i++ ) { %>
+    <div class="productos-mas-vendidos">
+        <a href="/product/detail/<%=products[i].id%>"><img src="<%=imagenesindex[i]%>" alt="imagen del Producto"></a>
+        <h5><%=products[i].name%></h5>
+        <a href="/product/detail/<%=products[i].id%>">
+            <p>Ver detalles</p>
+        </a>
+    </div>
+<% } %>
+<!--pegar codigo-->
+    </section>
+
+    </main>
+
+  
+    
+    <%- include("./partials/footer") %>
+    
+</body>
+
+
+</html>

@@ -33,6 +33,8 @@ router.get("/cart/", productControllers.productCart);
 
 router.delete('/delete/:id/', productControllers.destroy);
 
+router.get("/all/", productControllers.productsAll);
+
 
 
 module.exports = router

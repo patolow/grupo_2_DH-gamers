@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+const { Console } = require("console");
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBasecopy.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf8"));
@@ -91,9 +92,20 @@ const controller = {
 
   //Final filtering methods
 
-  productCart: (req, res) => { res.render("productCart") },
-  destroy: (req, res) => { },
+productCart: (req, res)=> {res.render("productCart")},
+destroy : (req, res) => {},
+
+productsAll: (req, res) =>{
+  let imagenesindex = [];
+  for (let i=0; i<= products.length-1; i++) {
+      let firstImage = products[i].sliderImage.split(",")[0]
+      imagenesindex.push(firstImage);
+  }
+
+  res.render("productsAll",{products, imagenesindex})
+},
 
 }
+
 
 module.exports = controller
