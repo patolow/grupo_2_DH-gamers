@@ -33,7 +33,7 @@
               </div>
               <div class="price">U$S <%= products[i].price %>
               </div>
-              <div class="imagen-list"> <img src="<%=  imagenesindex[i] %>" height=40px alt="imagen del Producto">
+              <div class="imagen-list"> <img src="<%= imagenesindex[i] %>" height=40px alt="imagen del Producto">
               </div>
               <div class="unidades">
                 <%= products[i].stock %> u.
@@ -45,13 +45,12 @@
                       class="fas fa-trash-alt"></i></button>
               </div>
             </div>
+            <hr class="line">
             <% } %>
-
-              <hr class="line">
 
 
               <div class="create-buttons-container">
-                <a href="/createProduct"><button class="create-button">+</button></a>
+                <a href="/product/create/"><button class="create-button">+</button></a>
               </div>
 
         </article>
