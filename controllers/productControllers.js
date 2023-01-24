@@ -32,7 +32,7 @@ const controller = {
 
   createProduct: (req, res) => {
     console.log(req.body)
-		let newProduct = {id: products[products.length -1].id + 1,...req.body, image: img}
+		let newProduct = {id: products[products.length -1].id + 1,...req.body,}
     products.push(newProduct)
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 		res.redirect('/products');
@@ -43,7 +43,7 @@ const controller = {
   getEditProduct: (req, res) => {
     let idProduct = parseInt(req.params.id);
     let productToEdit = products.find(product => product.id === idProduct)
-
+    
     res.render("editProduct", { productToEdit })
   }, //done
 
