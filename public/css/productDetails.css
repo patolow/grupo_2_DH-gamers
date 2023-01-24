@@ -400,6 +400,8 @@ span {
 
     .descripcion-producto h3 {
         font-size: 14px;
+        font-weight: normal;
+        line-height: 30px;
     }
 
     .descripcion-fondo-negro h3 {

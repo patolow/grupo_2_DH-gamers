@@ -36,39 +36,39 @@
                         <input type="radio" name="radio-btn" id="radio7">
                         <!-- radio buttons end -->
                         <!-- slide images start -->
-                        
-                        <% for(let i = 0; i < imagesSlider.length; i++) { %>
+
+                        <% for(let i=0; i < imagesSlider.length; i++) { %>
                             <div class="slide <%= i === 0 ? 'first' : '' %>">
                                 <img src="<%= imagesSlider[i] %>" alt="Slider Image">
                             </div>
-                        <% } %>
-                        
+                            <% } %>
 
 
-                        <!-- slide images end -->
-                        <!-- automatic navigation start -->
 
-                        <div class="navigation-auto">
-                            <div class="auto-btn1"></div>
-                            <div class="auto-btn2"></div>
-                            <div class="auto-btn3"></div>
-                            <div class="auto-btn4"></div>
-                            <div class="auto-btn5"></div>
-                            <div class="auto-btn6"></div>
-                            <div class="auto-btn7"></div>
-                        </div>
-                        <!-- automatic navigation end -->
+                                <!-- slide images end -->
+                                <!-- automatic navigation start -->
 
-                        <!-- manual navigation start -->
-                        <div class="navigation-manual">
-                            <label for="radio1" class="manual-btn"></label>
-                            <label for="radio2" class="manual-btn"></label>
-                            <label for="radio3" class="manual-btn"></label>
-                            <label for="radio4" class="manual-btn"></label>
-                            <label for="radio5" class="manual-btn"></label>
-                            <label for="radio6" class="manual-btn"></label>
-                            <label for="radio7" class="manual-btn"></label>
-                        </div>
+                                <div class="navigation-auto">
+                                    <div class="auto-btn1"></div>
+                                    <div class="auto-btn2"></div>
+                                    <div class="auto-btn3"></div>
+                                    <div class="auto-btn4"></div>
+                                    <div class="auto-btn5"></div>
+                                    <div class="auto-btn6"></div>
+                                    <div class="auto-btn7"></div>
+                                </div>
+                                <!-- automatic navigation end -->
+
+                                <!-- manual navigation start -->
+                                <div class="navigation-manual">
+                                    <label for="radio1" class="manual-btn"></label>
+                                    <label for="radio2" class="manual-btn"></label>
+                                    <label for="radio3" class="manual-btn"></label>
+                                    <label for="radio4" class="manual-btn"></label>
+                                    <label for="radio5" class="manual-btn"></label>
+                                    <label for="radio6" class="manual-btn"></label>
+                                    <label for="radio7" class="manual-btn"></label>
+                                </div>
 
                     </div>
                     <!-- manual navigation end -->
@@ -80,11 +80,11 @@
 
                         <div class="costo-producto">
                             <h3 class="descuento"> -<%= productDetail.discount %> % Descuento</h3>
-                            <h2 class="precio"> US$ <%= productDetail.price %>
+                            <h2 class="precio"> ARS <%= productDetail.price %>
                             </h2>
                         </div>
 
-                        <h4>Precio Recomendado: <strike> US$ 249 </strike></h4>
+                        <h4>Precio Recomendado: <strike> ARS <%= productDetail.price - (productDetail.price)*productDetail.discount/100 %> </strike></h4>
 
                         <div class="envio-stock">
                             <h6>Entrega para el <%= productDetail.deliveryDate %> <i class="fa-solid fa-truck-fast"></i>
@@ -111,39 +111,13 @@
                 <h4>DESCRIPCION DEL PRODUCTO</h4>
 
                 <h3>
-                    <%= productDetail.description %>
+                    <% for (let i=0; i < productDetail.description.length; i++) { %>
+                        <br>
+                        <%= productDetail.description[i] %>
+                            <br>
+                            <% } %>
                 </h3>
-                <!-- ME FALTA VER ESTA PARTE -->
-
-                <h3> Los ventiladores del radiador ROG están específicamente ajustados para ofrecer un rendimiento
-                    óptimo en los radiadores de la serie ROG Strix LC II. Los ventiladores generan 81 CFM/5,0 mmH2O
-                    para una eficiencia de refrigeración excepcional 
-                </h3>
-
-                <h3> La serie ROG Strix LC II está equipada con el último diseño de placa de refrigeración.
-                    Mecanizada a partir de cobre puro, la placa presenta una variedad de finos microcanales que
-                    reducen la resistencia térmica y aumentan el área de superficie, lo que resulta en temperaturas
-                    de CPU más bajas.
-                </h3>
-
-                <h3> El control PWM permite que tanto la bomba como los ventiladores del radiador giren a
-                    velocidades más lentas cuando la CPU está inactiva o con poca carga, lo que ayuda a mantener los
-                    niveles de ruido al mínimo.
-                </h3>
-
-                <h3> ROG Strix LC II 360 ofrece refrigeración líquida de CPU de alto rendimiento con una estética
-                    elegante y moderna. Con un diseño de circuito cerrado y ventiladores de radiador ROG, el enfriador
-                    libera todo el potencial de una CPU Intel® o AMD al tiempo que permite sutiles efectos de
-                    iluminación multicolor para acentuar su construcción.
-                </h3>
-
-                <br />
-
-                
             </div>
-
-
-            
 
             </main>
 
