@@ -76,37 +76,37 @@ const controller = {
   placasdevideo: (req, res) => {
     let placasdevideo = products.filter(product => product.category === "Placas de video")
     let imagenesindex = getImagesIndex(placasdevideo)
-    res.render("productsList", { products: placasdevideo, imagenesindex })
+    res.render("productsAll", { products: placasdevideo, imagenesindex })
   },
 
   monitores: (req, res) => {
     let monitores = products.filter(product => product.category === "Monitores")
     let imagenesindex = getImagesIndex(monitores)
-    res.render("productsList", { products: monitores, imagenesindex })
+    res.render("productsAll", { products: monitores, imagenesindex })
   },
 
   microprocesadores: (req, res) => {
     let microprocesadores = products.filter(product => product.category === "Microprocesadores")
     let imagenesindex = getImagesIndex(microprocesadores)
-    res.render("productsList", { products: microprocesadores, imagenesindex })
+    res.render("productsAll", { products: microprocesadores, imagenesindex })
   },
 
   motherboards: (req, res) => {
     let motherboards = products.filter(product => product.category === "Motherboards")
     let imagenesindex = getImagesIndex(motherboards)
-    res.render("productsList", { products: motherboards, imagenesindex })
+    res.render("productsAll", { products: motherboards, imagenesindex })
   },
 
   watercooling: (req, res) => {
     let watercooling = products.filter(product => product.category === "Water Cooling")
     let imagenesindex = getImagesIndex(watercooling)
-    res.render("productsList", { products: watercooling, imagenesindex })
+    res.render("productsAll", { products: watercooling, imagenesindex })
   },
 
   others: (req, res) => {
     let others = products.filter(product => product.category === "Otros")
     let imagenesindex = getImagesIndex(others)
-    res.render("productsList", { products: others, imagenesindex })
+    res.render("productsAll", { products: others, imagenesindex })
   },
 
 destroy : (req, res) => {
