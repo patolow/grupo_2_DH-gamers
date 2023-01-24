@@ -1,101 +1,151 @@
 [
- {
-  "id": 4,
-  "name": "Motherboard z490",
-  "price": 52400,
-  "discount": 15,
-  "category": "Motheboards",
-  "bestSellers": true,
-  "stock": 50,
-  "description": "Si las placas base se dividieran en clases económicas, la Z490 de Asus sería un luchador de clase media alta. Esta placa ATX aspiracional es excelente para juegos y overclocking, incluso si no puede igualar las placas de lujo avanzadas como las placas base de la serie Maximus XII de Asus en términos de características. Sin embargo, tiene un precio notablemente más bajo, y eso lo convierte en la mejor opción para cualquiera que quiera el impacto de una placa de gama alta pero que no quiera pagar mucho por ella",
-  "sliderImage": "/images/index/mother-asus-b560.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/frente.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/detalle2.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
- },
- {
-  "id": 5,
-  "name": "Motherboard Asus B560M",
-  "price": 54900,
-  "discount": 20,
-  "category": "Motheboards",
-  "bestSellers": true,
-  "stock": 50,
-  "description": "Si necesita una placa base asequible de gama media con características increíbles y soporte para la nueva 11.ª generación de Intel, la  ASUS Prime B560M  es sin duda la opción correcta y más económica",
-  "sliderImage": "/images/index/mother-asus-b560.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/frente.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/detalle2.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
- },
- {
-  "id": 6,
-  "name": "Joystick Microsoft",
-  "price": 79900,
-  "discount": 10,
-  "category": "Joysticks",
-  "bestSellers": true,
-  "stock": 50,
-  "description": "Este mando combina funciones revolucionarias mientras conserva precisión, comodidad y exactitud en cada movimiento. Gracias a su ergonomía especialmente pensada para la posición de tu mano, podés pasar horas jugando con total confort. Te permite jugar sin necesidad de que haya cables de por medio. Está pensado no solamente para controlar mejor tus videojuegos, sino también para aumentar su realismo y experiencia.",
-  "sliderImage": "/images/index/joystick-microsoft.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/detalle2.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
- },
- {
-  "id": 7,
-  "name": "GPU Nvidia 3070 Gygabite",
-  "price": 250000,
-  "discount": 15,
-  "category": "GPU",
-  "bestSellers": true,
-  "stock": 50,
-  "description": "La Gigabyte RTX 3070 Gaming OC es una gráfica que cuenta con un sistema de disipación sumamente eficaz, un sistema de doble BIOS para ajustarse a nuestras preferencias de refrigeración y un rendimiento que cumple de sobremanera con las exigencias de la gran mayoría de usuarios, pudiendo jugar a 4K 144Hz sin ningún problema a cualquier título",
-  "sliderImage": "/images/index/nvidia-3070.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
- },
- {
-  "id": 8,
-  "name": "Microprocesador Ryzen 7 5700x",
-  "price": 107000,
-  "discount": 10,
-  "category": "Microprocesadores",
-  "bestSellers": true,
-  "stock": 50,
-  "description": "Es ideal para jugadores y creadores de contenido que requieran un instrumento de gran rendimiento. Cuenta con 16 hilos que favorecen la ejecución de múltiples programas a la vez. Soporta memoria RAM DDR4 y cuenta con una memoria caché de 32 MB, rápida y volátil.",
-  "sliderImage": "/images/index/ryzen7-5700x.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
- },
- {
-  "id": 9,
-  "name": "GPU Nvidia 3090 MSI",
-  "price": 445000,
-  "discount": 20,
-  "category": "GPU",
-  "bestSellers": true,
-  "stock": 50,
-  "description": "Las GeForce RTX™ 3090 son implacables GPUs con rendimiento de clase TITAN. Impulsadas con tecnología Ampere, la arquitectura RTX de segunda generación de NVIDIA, duplican el ray tracing y el rendimiento de la IA con núcleos de trazado de rayos mejorados, núcleos Tensor y nuevos multiprocesadores de transmisión. Además, cuentan con 24 GB de asombrosa memoria G6X para ofrecer la experiencia de juego definitiva a jugadores y creadores.",
-  "sliderImage": "/images/index/nvidia-3090.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
- },
- {
-  "id": 10,
-  "name": "Microprocesador Intel Core I7 10ma G.",
-  "price": 124000,
-  "discount": 20,
-  "category": "Microprocesadores",
-  "bestSellers": true,
-  "stock": 50,
-  "description": "Estos procesadores ofrecen un nuevo nivel de integración que permite potenciar las experiencias de uso de computadoras en la actualidad y en el futuro. Producto de alto rendimiento y línea exclusiva para profesionales: cuenta con Hyper-Threading que favorece la ejecución de programas en simultáneo, al dividir el procesador físico en dos procesadores lógicos",
-  "sliderImage": "/images/index/core-i7.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
- },
- {
-  "id": 11,
-  "name": "Monitor gamer curvo Samsung 32",
-  "price": 130000,
-  "discount": 20,
-  "category": "Monitores",
-  "bestSellers": false,
-  "stock": 50,
-  "description": "Este monitor de 32 te va a resultar cómodo para estudiar, trabajar o ver una película en tus tiempos de ocio. Asimismo, su resolución de 1920 x 1080 te permite disfrutar de momentos únicos gracias a una imagen de alta fidelidad. Una de sus virtudes es que posee pantalla antirreflejo, de esta manera no verás reflejado lo que está detrás de vos y vas a evitar forzar tu vista para enfocar el contenido. Su tiempo de respuesta de 4 ms lo hace ideal para gamers y cinéfilos porque es capaz de mostrar imágenes en movimiento sin halos o bordes borrosos.",
-  "sliderImage": "/images/samsungMonitor/samsung-32.jpg,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
- },
- {
-  "id": 12,
-  "name": "Joystick Gamepad F710",
-  "price": 34000,
-  "discount": 20,
-  "category": "Joysticks",
-  "bestSellers": false,
-  "stock": 50,
-  "description": "Para jugar a los grandes éxitos y a los clásicos. Juega a versiones de consola con un controlador al estilo del original o adopta una posición más relajada mientras disfrutas de los juegos para PC. F710 se configura y se usa fácilmente con los juegos favoritos gracias a XInput/DirectInput, los dos estándares de entrada más habituales",
-  "sliderImage": "/images/Joysticks/Joystick-f710.jpg,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
- }
+  {
+    "id": 1,
+    "name": "Asus Rog Strix LC LI 360",
+    "price": 375000,
+    "discount": 20,
+    "category": "Water Cooling",
+    "bestSellers": false,
+    "stock": 40,
+    "reviews": 450,
+    "deliveryDate": "Miercoles 16 Diciembre",
+    "description": [
+      "Refrigerador de CPU líquido todo en uno ROG Strix LC II 360 con Aura Sync, Intel® LGA 1700, 1200, 1150, 1151, 1152, 1155, 1156, 2011, 2011-3, 2066 y compatibilidad con AMD AM4/TR4 y tres ventiladores de radiador ROG de 120 mm. La bomba Asetek de séptima generación ofrece una refrigeración excepcional y un ruido mínimo con un funcionamiento rango a partir de 840 rpm. Presenta tres ventiladores de radiador diseñados por ROG proporcionan un flujo de aire y una presión estática optimizados. La iluminación ARGB en la cubierta de la bomba recubierta de NCVM transmite un diseño elegante y moderno. La estética complementa a la perfección las placas base ROG desde el centro del escenario. Los tubos reforzados con mangas ofrecen una mayor durabilidad.",
+      " "
+    ],
+    "sliderImage": "/images/waterCooling/Asus_Rog_Strix_LcLi_360/Asus-Rog-Strix-LC-LI-360.jpg,/images/waterCooling/Asus_Rog_Strix_LcLi_360/frente.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/detalle2.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+  {
+    "id": 2,
+    "name": "Asus Rog Ryujin 360",
+    "price": 564000,
+    "discount": 15,
+    "category": "Water Cooling",
+    "bestSellers": false,
+    "stock": 50,
+    "description": "el rog ryujin ii 360 ofrece un rendimiento de refrigeracion optimo en un enfriador de cpu aio de 360 mm. con una bomba asetek de septima generacion, ventiladores de radiador ppc de noctua industrial y un ventilador integrado para el area del zocalo de la cpu, aprovecha tanto el agua como el aire para proporcionar increibles capacidades de enfriamiento",
+    "sliderImage": "/images/waterCooling/Asus_Rog_Ryujin_360/Asus_Rog_Ryujin_360.jpg,/images/waterCooling/Asus_Rog_Strix_LcLi_360/frente.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/detalle2.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+  {
+    "id": 3,
+    "name": "Monitor Samsung 27",
+    "price": 189900,
+    "discount": 10,
+    "category": "Monitores",
+    "bestSellers": true,
+    "stock": 50,
+    "description": "Este monitor de 27 te va a resultar cómodo para estudiar, trabajar o ver una película en tus tiempos de ocio. Asimismo, su resolución de 1920 x 1080 te permite disfrutar de momentos únicos gracias a una imagen de alta fidelidad. Su tiempo de respuesta de 4 ms lo hace ideal para gamers y cinéfilos porque es capaz de mostrar imágenes en movimiento sin halos o bordes borrosos",
+    "sliderImage": "/images/index/monitor-curvo-27-samsung.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/frente.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/detalle2.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+  {
+    "id": 4,
+    "name": "Motherboard z490",
+    "price": 52400,
+    "discount": 15,
+    "category": "Motheboards",
+    "bestSellers": true,
+    "stock": 50,
+    "description": "Si las placas base se dividieran en clases económicas, la Z490 de Asus sería un luchador de clase media alta. Esta placa ATX aspiracional es excelente para juegos y overclocking, incluso si no puede igualar las placas de lujo avanzadas como las placas base de la serie Maximus XII de Asus en términos de características. Sin embargo, tiene un precio notablemente más bajo, y eso lo convierte en la mejor opción para cualquiera que quiera el impacto de una placa de gama alta pero que no quiera pagar mucho por ella",
+    "sliderImage": "/images/index/mother-z490.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/frente.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/detalle2.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+  {
+    "id": 5,
+    "name": "Motherboard Asus B560M",
+    "price": 54900,
+    "discount": 20,
+    "category": "Motheboards",
+    "bestSellers": true,
+    "stock": 50,
+    "description": "Si necesita una placa base asequible de gama media con características increíbles y soporte para la nueva 11.ª generación de Intel, la  ASUS Prime B560M  es sin duda la opción correcta y más económica",
+    "sliderImage": "/images/index/mother-asus-b560.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/frente.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/detalle2.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+  {
+    "id": 6,
+    "name": "Joystick Microsoft",
+    "price": 79900,
+    "discount": 10,
+    "category": "Joysticks",
+    "bestSellers": true,
+    "stock": 50,
+    "description": "Este mando combina funciones revolucionarias mientras conserva precisión, comodidad y exactitud en cada movimiento. Gracias a su ergonomía especialmente pensada para la posición de tu mano, podés pasar horas jugando con total confort. Te permite jugar sin necesidad de que haya cables de por medio. Está pensado no solamente para controlar mejor tus videojuegos, sino también para aumentar su realismo y experiencia.",
+    "sliderImage": "/images/index/joystick-microsoft.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/detalle2.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+  {
+    "id": 7,
+    "name": "GPU Nvidia 3070 Gygabite",
+    "price": 250000,
+    "discount": 15,
+    "category": "GPU",
+    "bestSellers": true,
+    "stock": 50,
+    "description": "La Gigabyte RTX 3070 Gaming OC es una gráfica que cuenta con un sistema de disipación sumamente eficaz, un sistema de doble BIOS para ajustarse a nuestras preferencias de refrigeración y un rendimiento que cumple de sobremanera con las exigencias de la gran mayoría de usuarios, pudiendo jugar a 4K 144Hz sin ningún problema a cualquier título",
+    "sliderImage": "/images/index/nvidia-3070.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/ventilador.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+  {
+    "id": 8,
+    "name": "Microprocesador Ryzen 7 5700x",
+    "price": 107000,
+    "discount": 10,
+    "category": "Microprocesadores",
+    "bestSellers": true,
+    "stock": 50,
+    "description": "Es ideal para jugadores y creadores de contenido que requieran un instrumento de gran rendimiento. Cuenta con 16 hilos que favorecen la ejecución de múltiples programas a la vez. Soporta memoria RAM DDR4 y cuenta con una memoria caché de 32 MB, rápida y volátil.",
+    "sliderImage": "/images/index/ryzen7-5700x.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/box.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+  {
+    "id": 9,
+    "name": "GPU Nvidia 3090 MSI",
+    "price": 445000,
+    "discount": 20,
+    "category": "GPU",
+    "bestSellers": true,
+    "stock": 50,
+    "description": "Las GeForce RTX™ 3090 son implacables GPUs con rendimiento de clase TITAN. Impulsadas con tecnología Ampere, la arquitectura RTX de segunda generación de NVIDIA, duplican el ray tracing y el rendimiento de la IA con núcleos de trazado de rayos mejorados, núcleos Tensor y nuevos multiprocesadores de transmisión. Además, cuentan con 24 GB de asombrosa memoria G6X para ofrecer la experiencia de juego definitiva a jugadores y creadores.",
+    "sliderImage": "/images/index/nvidia-3090.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+  {
+    "id": 10,
+    "name": "Microprocesador Intel Core I7 10ma G.",
+    "price": 124000,
+    "discount": 20,
+    "category": "Microprocesadores",
+    "bestSellers": true,
+    "stock": 50,
+    "description": "Estos procesadores ofrecen un nuevo nivel de integración que permite potenciar las experiencias de uso de computadoras en la actualidad y en el futuro. Producto de alto rendimiento y línea exclusiva para profesionales: cuenta con Hyper-Threading que favorece la ejecución de programas en simultáneo, al dividir el procesador físico en dos procesadores lógicos",
+    "sliderImage": "/images/index/core-i7.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+  {
+    "id": 11,
+    "name": "Monitor gamer curvo Samsung 32",
+    "price": 130000,
+    "discount": 20,
+    "category": "Monitores",
+    "bestSellers": false,
+    "stock": 50,
+    "description": "Este monitor de 32 te va a resultar cómodo para estudiar, trabajar o ver una película en tus tiempos de ocio. Asimismo, su resolución de 1920 x 1080 te permite disfrutar de momentos únicos gracias a una imagen de alta fidelidad. Una de sus virtudes es que posee pantalla antirreflejo, de esta manera no verás reflejado lo que está detrás de vos y vas a evitar forzar tu vista para enfocar el contenido. Su tiempo de respuesta de 4 ms lo hace ideal para gamers y cinéfilos porque es capaz de mostrar imágenes en movimiento sin halos o bordes borrosos.",
+    "sliderImage": "/images/samsungMonitor/samsung-32.jpg,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+  {
+    "id": 12,
+    "name": "Joystick Gamepad F710",
+    "price": 34000,
+    "discount": 20,
+    "category": "Joysticks",
+    "bestSellers": false,
+    "stock": 50,
+    "description": "Para jugar a los grandes éxitos y a los clásicos. Juega a versiones de consola con un controlador al estilo del original o adopta una posición más relajada mientras disfrutas de los juegos para PC. F710 se configura y se usa fácilmente con los juegos favoritos gracias a XInput/DirectInput, los dos estándares de entrada más habituales",
+    "sliderImage": "/images/Joysticks/Joystick-f710.jpg,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  },
+
+  {
+    "id": 13,
+    "name": "Joystick Gamepad F710",
+    "price": 34000,
+    "discount": 20,
+    "category": "Joysticks",
+    "bestSellers": false,
+    "stock": 50,
+    "description": "Para jugar a los grandes éxitos y a los clásicos. Juega a versiones de consola con un controlador al estilo del original o adopta una posición más relajada mientras disfrutas de los juegos para PC. F710 se configura y se usa fácilmente con los juegos favoritos gracias a XInput/DirectInput, los dos estándares de entrada más habituales",
+    "sliderImage": "/images/Joysticks/Joystick-f710.jpg,/images/waterCooling/Asus_Rog_Strix_LcLi_360/contacto.png,/images/waterCooling/Asus_Rog_Strix_LcLi_360/mapa.png"
+  }
 ]

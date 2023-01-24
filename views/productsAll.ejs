@@ -7,8 +7,12 @@
 
         <%- include("./partials/header") %>
             <!--pegar codigo-->
+            <%- include("./partials/chat-whatsapp") %>
 
+            <div class="titulo-productAll"><h1 class="productAll-listaProductos">LISTA DE PRODUCTOS</h1></div>
+            
             <section class="productAll-section">
+                
                 <div class="productos-mas-vendidos-container">
                     <% for( let i=0; i < products.length; i++ ) { %>
                         <div class="productos-mas-vendidos">

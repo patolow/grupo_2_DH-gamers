@@ -1,7 +1,24 @@
 .productAll-section {
-    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .productAll-Pname {
     color: white;
+}
+
+.productAll-listaProductos {
+    font-size: 25px;
+    color: white;
+
+}
+
+.titulo-productAll {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 50px;
 }

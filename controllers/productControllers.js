@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const { Console } = require("console");
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBasecopy.json');
+const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf8"));
 
 const getImagesIndex = (category) => {
