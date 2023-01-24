@@ -22,12 +22,12 @@ router.post("/create/", productControllers.createProduct); //to do
 
 router.get("/list/", productControllers.getProductsList); //done
 
-router.get("/list/placasdevideo/", productControllers.placasdevideo);
-router.get("/list/monitores/", productControllers.monitores);
-router.get("/list/microprocesadores/", productControllers.microprocesadores);
-router.get("/list/motherboards/", productControllers.motherboards);
-router.get("/list/watercooling/", productControllers.watercooling);
-router.get("/list/others/", productControllers.others);
+router.get("/all/placasdevideo/", productControllers.placasdevideo);
+router.get("/all/monitores/", productControllers.monitores);
+router.get("/all/microprocesadores/", productControllers.microprocesadores);
+router.get("/all/motherboards/", productControllers.motherboards);
+router.get("/all/watercooling/", productControllers.watercooling);
+router.get("/all/others/", productControllers.others);
 
 router.get("/cart/", productControllers.productCart);
 
