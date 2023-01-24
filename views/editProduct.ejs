@@ -11,7 +11,8 @@
 
       <!--Registration Form-->
       <div class="main-form-createProduct">
-        <form action="/product/edit/<%= productToEdit.id %>/?_method=PUT" method="POST" class="form" enctype="multipart/form-data">
+        <form action="/product/edit/<%= productToEdit.id%>/?_method=PUT" method="POST" class="form"
+          enctype="multipart/form-data">
           <!--TITLE-->
           <h1 class="title">DH-GAMERS</h1>
           <h2 class="subtitle">Modificar producto: <%= productToEdit.name %>
@@ -71,13 +72,13 @@
           maxlength="2">
 
           <select class="boxes-product" name="bestSellers" id="bestSellers" required>
-            <% if (productToEdit.bestSellers== true) { %>
-            <option value="si" id="si" selected>Sí</option>
-            <option value="no" id="no">No</option>
-            <% } else { %>
-              <option value="si" id="si" >Sí</option>
-            <option value="no" id="no" selected>No</option>
-             <% } %> 
+            <% if (productToEdit.bestSellers==true) { %>
+              <option value="si" id="si" selected>Sí</option>
+              <option value="no" id="no">No</option>
+              <% } else { %>
+                <option value="si" id="si">Sí</option>
+                <option value="no" id="no" selected>No</option>
+                <% } %>
           </select>
 
           <input class="boxes-product" type="text" name="stock" value=<%=productToEdit.stock %>

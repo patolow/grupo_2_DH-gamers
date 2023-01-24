@@ -36,28 +36,13 @@
                         <input type="radio" name="radio-btn" id="radio7">
                         <!-- radio buttons end -->
                         <!-- slide images start -->
-                        <div class="slide first">
-                            <img src=" <%= imagesSlider[0] %>">
-                        </div>
-
-                        <div class="slide">
-                            <img src=" <%= imagesSlider[1] %>">
-                        </div>
-                        <div class="slide">
-                            <img src=" <%= imagesSlider[2] %>">
-                        </div>
-                        <div class="slide">
-                            <img src=" <%= imagesSlider[3] %>">
-                        </div>
-                        <div class="slide">
-                            <img src=" <%= imagesSlider[4] %>">
-                        </div>
-                        <div class="slide">
-                            <img src=" <%= imagesSlider[5] %>">
-                        </div>
-                        <div class="slide">
-                            <img src=" <%= imagesSlider[6] %>">
-                        </div>
+                        
+                        <% for(let i = 0; i < imagesSlider.length; i++) { %>
+                            <div class="slide <%= i === 0 ? 'first' : '' %>">
+                                <img src="<%= imagesSlider[i] %>" alt="Slider Image">
+                            </div>
+                        <% } %>
+                        
 
 
                         <!-- slide images end -->

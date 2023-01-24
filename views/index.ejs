@@ -117,15 +117,17 @@
             </div>
 
             <div class="productos-mas-vendidos-container">
-                <% for( let i = 0; i < bestSeller.length; i++ ) { %>
-                    <div class="productos-mas-vendidos">
-                        <a href="/product/detail/<%=bestSeller[i].id%>"><img src="<%=imagenesindex[i]%>" alt="imagen del Producto"></a>
-                        <h5><%=bestSeller[i].name%></h5>
-                        <a href="/product/detail/<%=bestSeller[i].id%>">
-                            <p>Ver detalles</p>
-                        </a>
-                    </div>
-                <% } %> 
+                <div class="productos-mas-vendidos-container">
+                    <% bestSeller.forEach((bestSeller)=> { %>
+                        <div class="productos-mas-vendidos">
+                            <a href="/product/detail/<%=bestSeller.id%>"> <img src="<%=bestSeller.sliderImage%>" alt="imagen del Producto"></a>
+                            <h5><%=bestSeller.name%></h5>
+                            <a href="/product/detail/<%=bestSeller.id%>">
+                                <p>Ver detalles</p>
+                            </a>
+                        </div>
+                    <% }); %> 
+        
                 <div class="marcas-trabajadas">
                     <img src="/images/index/marcas-trabajadas.png" alt="Marcas con las que trabajamos"></a>
                 </div>

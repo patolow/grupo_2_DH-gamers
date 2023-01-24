@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const fs = require('fs');
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const productsFilePath = path.join(__dirname, '../data/productsDataBasecopy.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf8"));
 
 
@@ -13,10 +13,9 @@ index: (req, res)=> {
     let imagenesindex = [];
     for (let i=0; i<= bestSeller.length-1; i++) {
         let firstImage = bestSeller[i].sliderImage.split(",")[0]
-        imagenesindex.push(firstImage);
+        bestSeller[i].sliderImage = firstImage
     }
-    
-    res.render("index", {bestSeller, imagenesindex })
+    res.render("index", {bestSeller})
 },
 
 registration: (req, res)=> {res.render("registrationForm")},

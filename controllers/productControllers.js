@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const { Console } = require("console");
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const productsFilePath = path.join(__dirname, '../data/productsDataBasecopy.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf8"));
 
 const getImagesIndex = (category) => {
@@ -25,12 +25,20 @@ const controller = {
     res.render("productDetails", { productDetail, imagesSlider })
   }, //done
 
+
   getCreateProduct: (req, res) => {
     res.render("createProduct")
-  }, //to do
+  }, 
 
   createProduct: (req, res) => {
+    console.log(req.body)
+		let newProduct = {id: products[products.length -1].id + 1,...req.body, image: img}
+    products.push(newProduct)
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		res.redirect('/products');
   }, //to do
+
+
 
   getEditProduct: (req, res) => {
     let idProduct = parseInt(req.params.id);
@@ -40,16 +48,27 @@ const controller = {
   }, //done
 
   editProduct: (req, res) => {
-
-  }, //to do
+    console.log(req.body)
+    let idProduct = parseInt(req.params.id);
+    let productToEdit = products.find(product => product.id === idProduct);	//producto a editar en la base
+    productToEdit = {id: idProduct, ...req.body};
+		let newList = products.map(product => {
+			if(product.id == productToEdit.id) {
+				return product = {...productToEdit}
+			}
+			return product
+		}) 
+		fs.writeFileSync(productsFilePath, JSON.stringify(newList));
+		res.redirect('/products/detail/' + productToEdit.id) 
+  }, //done
 
   getProductsList: (req, res) => {
     let imagenesindex = [];
-    for (let i = 0; i <= products.length - 1; i++) {
-      let firstImage = products[i].sliderImage.split(",")[0]
-      imagenesindex.push(firstImage);
-    }
-    res.render("productsList", { products, imagenesindex })
+    for (let i=0; i<= products.length-1; i++) {
+    let firstImage = products[i].sliderImage.split(",")[0]
+    products[i].sliderImage = firstImage
+}
+    res.render("productsList", { products })
   }, //done
 
   //Methods for filtering products from productsList
@@ -90,20 +109,25 @@ const controller = {
     res.render("productsList", { products: others, imagenesindex })
   },
 
-  //Final filtering methods
-
-productCart: (req, res)=> {res.render("productCart")},
-destroy : (req, res) => {},
+destroy : (req, res) => {
+  let idProduct = parseInt(req.params.id);
+  let newProducts = products.filter(product => product.id !== idProduct); 
+  fs.writeFileSync(productsFilePath, JSON.stringify(newProducts,null, ''));
+  res.redirect("/product/list/")
+},
 
 productsAll: (req, res) =>{
-  let imagenesindex = [];
-  for (let i=0; i<= products.length-1; i++) {
+let imagenesindex = [];
+      for (let i=0; i<= products.length-1; i++) {
       let firstImage = products[i].sliderImage.split(",")[0]
-      imagenesindex.push(firstImage);
+      products[i].sliderImage = firstImage
   }
-
-  res.render("productsAll",{products, imagenesindex})
+  res.render("productsAll",{products})
 },
+
+  //Final filtering methods
+
+  productCart: (req, res)=> {res.render("productCart")},
 
 }
 

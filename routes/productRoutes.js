@@ -31,9 +31,9 @@ router.get("/list/others/", productControllers.others);
 
 router.get("/cart/", productControllers.productCart);
 
-router.delete('/delete/:id/', productControllers.destroy);
+router.delete('/delete/:id/', productControllers.destroy); //done
 
-router.get("/all/", productControllers.productsAll);
+router.get("/all/", productControllers.productsAll); //done
 
 
 

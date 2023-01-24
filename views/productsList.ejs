@@ -17,36 +17,38 @@
 
 
           <hr class="line">
-            <%for (let i = 0; i < products.length; i++) { %>
-              
+          <% products.forEach(function(product) { %>
             <div class="item">
-              <div>DH- <%= products[i].id %> </div>
+              <div>DH- <%= product.id %>
+              </div>
               <div class="product-info">
-                <a class="url-product" href="/product/detail/<%=products[i].id%>">
+                <a class="url-product" href="/product/detail/<%=product.id%>">
                   <p class="product-name">
-                    <%= products[i].name %>
+                    <%= product.name %>
                   </p>
                 </a>
                 <p class="product-category">
-                  <%= products[i].category %>
+                  <%= product.category %>
                 </p>
               </div>
-              <div class="price">U$S <%= products[i].price %>
+              <div class="price">U$S <%= product.price %>
               </div>
-              <div class="imagen-list"> <img src="<%= imagenesindex[i] %>" height=40px alt="imagen del Producto">
-              </div>
+              <div class="imagen-list"> <img src="<%= product.sliderImage %>" height=40px alt="imagen del Producto">
+        </div>
               <div class="unidades">
-                <%= products[i].stock %> u.
+                <%= product.stock %> u.
               </div>
               <div class="edit-buttons-container">
-                <a href="/product/edit/<%=products[i].id%>"> <button class="edit-button"><i
+                <a href="/product/edit/<%=product.id%>"> <button class="edit-button"><i
                       class="fas fa-pencil"></i></button></a>
-                <a href="/product/edit/<%=products[i].id%>"> <button class="edit-button"><i
-                      class="fas fa-trash-alt"></i></button>
+
+                <form action="/product/delete/<%=product.id%>/?_method=DELETE" method="POST">
+                  <button type="submit" class="fas fa-trash-alt"></button>
+                </form>
               </div>
             </div>
             <hr class="line">
-            <% } %>
+            <% }); %>
 
 
               <div class="create-buttons-container">
