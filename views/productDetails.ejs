@@ -5,7 +5,7 @@
 
     <body>
         <%- include("./partials/header") %>
-
+        <%- include("./partials/chat-whatsapp") %>
             <div class="titulo-producto">
                 <h2 class="categoria">
                     <%= productDetail.category %>
@@ -80,14 +80,14 @@
 
                         <div class="costo-producto">
                             <h3 class="descuento"> -<%= productDetail.discount %> % Descuento</h3>
-                            <h2 class="precio"> ARS <%= productDetail.price %>
+                            <h2 class="precio"> $<%=productDetail.price %>
                             </h2>
                         </div>
 
-                        <h4>Precio Recomendado: <strike> ARS <%= productDetail.price - (productDetail.price)*productDetail.discount/100 %> </strike></h4>
+                        <h4>Precio Recomendado: <strike> $ <%=productDetail.price - (productDetail.price)*productDetail.discount/100 %> </strike></h4>
 
                         <div class="envio-stock">
-                            <h6>Entrega para el <%= productDetail.deliveryDate %> <i class="fa-solid fa-truck-fast"></i>
+                            <h6>Entrega para el <%=productDetail.deliveryDate %> <i class="fa-solid fa-truck-fast"></i>
                             </h6>
                             <h5>Devolucion Gratis <i class="fa-solid fa-circle-check"></i></h5>
                             <h4>Tenes 30 dias desde que lo recibis </h4>
@@ -95,7 +95,7 @@
                     </div>
 
                     <div class="botones-de-compra">
-                        </a> <input class="boton-cantidad" type="button" value="Disponibles <%= productDetail.stock %>"
+                        </a> <input class="boton-cantidad" type="button" value="Cantidad disponible: <%= productDetail.stock %>"
                             onclick="msg()">
                         <a href="/productCart"> <input class="boton-comprar" type="button" value="Comprar ahora"
                                 onclick="msg()"> </a>
