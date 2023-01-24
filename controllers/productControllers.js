@@ -21,21 +21,21 @@ const controller = {
     let idProduct = parseInt(req.params.id);
     let productDetail = products.find(product => product.id === idProduct)
     let imagesSlider = productDetail.sliderImage.split(",")
-    
+
     res.render("productDetails", { productDetail, imagesSlider })
   }, //done
 
 
   getCreateProduct: (req, res) => {
     res.render("createProduct")
-  }, 
+  },
 
   createProduct: (req, res) => {
     console.log(req.body)
-		let newProduct = {id: products[products.length -1].id + 1,...req.body,}
+    let newProduct = { id: products[products.length - 1].id + 1, ...req.body, }
     products.push(newProduct)
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-		res.redirect('/products');
+    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+    res.redirect('/product/all/');
   }, //to do
 
 
@@ -43,7 +43,7 @@ const controller = {
   getEditProduct: (req, res) => {
     let idProduct = parseInt(req.params.id);
     let productToEdit = products.find(product => product.id === idProduct)
-    
+
     res.render("editProduct", { productToEdit })
   }, //done
 
@@ -51,23 +51,23 @@ const controller = {
     console.log(req.body)
     let idProduct = parseInt(req.params.id);
     let productToEdit = products.find(product => product.id === idProduct);	//producto a editar en la base
-    productToEdit = {id: idProduct, ...req.body};
-		let newList = products.map(product => {
-			if(product.id == productToEdit.id) {
-				return product = {...productToEdit}
-			}
-			return product
-		}) 
-		fs.writeFileSync(productsFilePath, JSON.stringify(newList));
-		res.redirect('/products/detail/' + productToEdit.id) 
+    productToEdit = { id: idProduct, ...req.body };
+    let newList = products.map(product => {
+      if (product.id == productToEdit.id) {
+        return product = { ...productToEdit }
+      }
+      return product
+    })
+    fs.writeFileSync(productsFilePath, JSON.stringify(newList));
+    res.redirect('/product/detail/' + productToEdit.id)
   }, //done
 
   getProductsList: (req, res) => {
     let imagenesindex = [];
-    for (let i=0; i<= products.length-1; i++) {
-    let firstImage = products[i].sliderImage.split(",")[0]
-    products[i].sliderImage = firstImage
-}
+    for (let i = 0; i <= products.length - 1; i++) {
+      let firstImage = products[i].sliderImage.split(",")[0]
+      products[i].sliderImage = firstImage
+    }
     res.render("productsList", { products })
   }, //done
 
@@ -109,25 +109,25 @@ const controller = {
     res.render("productsAll", { products: others, imagenesindex })
   },
 
-destroy : (req, res) => {
-  let idProduct = parseInt(req.params.id);
-  let newProducts = products.filter(product => product.id !== idProduct); 
-  fs.writeFileSync(productsFilePath, JSON.stringify(newProducts,null, ''));
-  res.redirect("/product/list/")
-},
+  destroy: (req, res) => {
+    let idProduct = parseInt(req.params.id);
+    let newProducts = products.filter(product => product.id !== idProduct);
+    fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ''));
+    res.redirect("/product/list/")
+  },
 
-productsAll: (req, res) =>{
-let imagenesindex = [];
-      for (let i=0; i<= products.length-1; i++) {
+  productsAll: (req, res) => {
+    let imagenesindex = [];
+    for (let i = 0; i <= products.length - 1; i++) {
       let firstImage = products[i].sliderImage.split(",")[0]
       products[i].sliderImage = firstImage
-  }
-  res.render("productsAll",{products})
-},
+    }
+    res.render("productsAll", { products })
+  },
 
   //Final filtering methods
 
-  productCart: (req, res)=> {res.render("productCart")},
+  productCart: (req, res) => { res.render("productCart") },
 
 }
 
