@@ -74,7 +74,7 @@ const controller = {
   //Methods for filtering products from productsList
 
   placasdevideo: (req, res) => {
-    let placasdevideo = products.filter(product => product.category === "Placas de video")
+    let placasdevideo = products.filter(product => product.category === "GPU")
     let imagenesindex = getImagesIndex(placasdevideo)
     res.render("productsAll", { products: placasdevideo, imagenesindex })
   },
