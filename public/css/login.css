@@ -4,25 +4,27 @@
     padding: 0;
     font-family: sans-serif; 
 }
-.main-form {
+.main-form-login {
     background-color: white; 
     display: flex;
     flex-direction: column; 
-    margin: 150px 30px 80px 30px;
+    margin: 180px 30px 80px 30px;
     position: relative;
-    padding-top: 0px;
-    margin-bottom: 15%;
+    padding-top: 20px;
+    margin-bottom: 5%;
+    width: 70%;
+    margin-left: 15%;
 }
 
 
-.main-form h1 {
+.title-login {
     margin-bottom: 0;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
 }
 
-.main-form h2 {
+.subtitle-login {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     margin: auto;
@@ -60,20 +62,19 @@
 
 
 /* BUTTON */
-.button-create-account {
-    box-shadow: 0px 0px 0px 2px #9fb4f2;
-    width: 40%;
+.button-login-account {
+    width: 200px;
     border-radius: 5px;
     border: none;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     padding-top: 10px;
     background-color: var(--light-blue);
     font-weight: bold;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 12px;
 }
 
-.button-create-account:hover {
+.button-login-account:hover {
     background-color: #061161;
     color: white;
     box-shadow: 0px 0px 10px rgb(141, 47, 47);
@@ -98,15 +99,8 @@
 }
 
 
-@media (min-width: 760px) {
-    .main-form {
-       margin: 150px 100px 620px 100px;
-    }
-}
-
-
 @media (min-width: 1200px) {
-    .main-form {
-       margin: 200px 500px 600px 500px;
+    .main-form-login {
+       min-height: 800;
     }
 }

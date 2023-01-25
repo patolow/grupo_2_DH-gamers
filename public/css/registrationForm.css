@@ -4,7 +4,7 @@
     padding: 0;
     font-family: sans-serif; 
 }
-.main-form {
+.main-form-register {
     background-color: white; 
     display: flex;
     flex-direction: column; 
@@ -15,7 +15,7 @@
 }
 
 /*--TITLE--*/
-.main-form h1 {
+.title-register {
     margin-top: 30px;
     margin-bottom: 0;
     text-align: center;
@@ -23,7 +23,7 @@
     font-size: 22px;
 }
 
-.main-form h2 {
+.subtitle-register {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     margin: auto;
@@ -69,31 +69,36 @@
 .password-text {
     text-align: justify;
     text-align: left;
-    font-size: 15px;
+    font-size: 12px;
     margin-bottom: 1.5em; 
 }
 
 .already-have-account-text {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    font-size: 16px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.term {
+  font-size: 12px;
 }
 
 
 
 /* BUTTON */
-.button-create-account {
-    box-shadow: 0px 0px 0px 2px #9fb4f2;
+.button-register-account {
     border-radius: 5px;
     border: none;
-    padding: 10px;
+    padding: 8px;
     background-color: var(--light-blue);
     font-weight: bold;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 12px;
+    width: 200px;
 }
 
-.button-create-account:hover {
+.button-register-account:hover {
     background-color: #061161;
     color: white;
     box-shadow: 0px 0px 10px rgb(141, 47, 47);
