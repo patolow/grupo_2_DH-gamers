@@ -34,7 +34,7 @@
               <div class="price">U$S <%= product.price %>
               </div>
               <div class="imagen-list"> <img src="<%= product.sliderImage %>" height=40px alt="imagen del Producto">
-        </div>
+              </div>
               <div class="unidades">
                 <%= product.stock %> u.
               </div>
@@ -43,7 +43,8 @@
                       class="fas fa-pencil"></i></button></a>
 
                 <form action="/product/delete/<%=product.id%>/?_method=DELETE" method="POST">
-                  <button type="submit" class="fas fa-trash-alt"></button>
+                  <button class="edit-button" type="submit" ><i
+                    class="fas fa-trash-alt"></i></button>
                 </form>
               </div>
             </div>
