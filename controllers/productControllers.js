@@ -21,6 +21,7 @@ const controller = {
     let idProduct = parseInt(req.params.id);
     let productDetail = products.find(product => product.id === idProduct)
     let imagesSlider = productDetail.sliderImage.split(",")
+    console.log(imagesSlider)
 
     res.render("productDetails", { productDetail, imagesSlider })
   }, //done
@@ -31,13 +32,19 @@ const controller = {
   },
 
   createProduct: (req, res) => {
-    console.log(req.body)
-    let newProduct = { id: products[products.length - 1].id + 1, ...req.body, }
+    let sliderImage = ''
+    for (let i = 0; i < req.files.length; i++) {
+      let nombreImagen = req.files[i].filename + ',';
+      sliderImage += nombreImagen ;
+    }
+    console.log(sliderImage);
+
+    let newProduct = { id: products[products.length - 1].id + 1, ...req.body, sliderImage: sliderImage  }
+
     products.push(newProduct)
     fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
     res.redirect('/product/all/');
-  }, //to do
-
+  }, 
 
 
   getEditProduct: (req, res) => {

@@ -13,7 +13,7 @@
       <!--GENERAL-->
 
       <div class="main-form-createProduct">
-        <form action="/product/create" method="POST" class="form">
+        <form action="/product/create" method="POST" class="form" enctype="multipart/form-data">
           <!--TITLE-->
           <h1 class="title">DH-GAMERS</h1>
           <h2 class="subtitle">Crear producto</h2>
@@ -51,7 +51,7 @@
 
           <label>Imágen del producto:</label>
           <div class="product-photo">
-            <input class="file" type="file" name="sliderImage">
+            <input class="file" type="file" name="sliderImage" multiple>
           </div>
 
           <!--BUTTON-->
