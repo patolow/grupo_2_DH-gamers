@@ -36,7 +36,20 @@ const controller = {
   }
 },
 
-  login: (req, res) => { res.render("login") },
+getLogin: (req, res) => { res.render("login") },
+
+login: (req, res) => {  
+  
+  let errors = validationResult(req);
+
+  if (errors.isEmpty()) {
+      res.send('Estas logueado sin errores exito');
+      } 
+  else {
+      res.render('login', { errors: errors.array(), old: req.body});
+      }
+  }
+  
 }
 
 

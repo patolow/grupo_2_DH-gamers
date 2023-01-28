@@ -98,6 +98,10 @@
     padding: 15px;
 }
 
+.feedback {
+    color: red;
+}
+
 
 @media (min-width: 1200px) {
     .main-form-login {

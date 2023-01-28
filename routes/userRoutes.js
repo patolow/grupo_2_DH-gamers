@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
 });
 const { body } = require('express-validator')
 const uploadFile = multer({ storage })
-const validations = [
+const registerValidations = [
   body('fullName').notEmpty().withMessage('Debes escribir un nombre'),
   body('userName').notEmpty().withMessage('Debes escribir un nombre de usuario'),
   body('birthday').notEmpty().withMessage('Debes seleccionar tu fecha de nacimiento'),
@@ -37,14 +37,22 @@ const validations = [
   )
 ]
 
+const loginValidations = [
+  body('email').notEmpty().withMessage('Debes escribir tu correo electrónico').bail()
+  .isEmail().withMessage('Debes escribir un formato de correo electrónico válido'),
+  body('password').notEmpty().withMessage('Debes escribir una contraseña').isLength({min: 8}).withMessage('Minimo 8 catacteres'),
+]
+
 
 router.get("/users", userControllers.users)
 
 router.get("/register", userControllers.register);
-router.post("/register", uploadFile.single('profilePhoto'), validations, userControllers.processRegister);
+router.post("/register", uploadFile.single('profilePhoto'), registerValidations, userControllers.processRegister);
 
 
-router.get("/login", userControllers.login);
+router.get("/login", userControllers.getLogin);
+router.post("/login", loginValidations,  userControllers.login)
+
 
 module.exports = router
 

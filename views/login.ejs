@@ -9,14 +9,23 @@
 
         <!--Fin del Header-->
 
+
         <!--Registration Form-->
         <div class="main-form-login">
-            <form action="resultado.html" method="POST" class="form">
+
+            <form action="/users/login" method="POST" class="form">
                 <!--TITLE-->
                 <h1 class="title-login">Bienvenido a DH-GAMERS</h1>
                 <h2 class="subtitle-login">Ingresá a tu cuenta personal</h2>
 
                 <!--DATA ENTRY BOXES-->
+
+                <% if (locals.errors) {
+
+                    locals.errors.forEach(error => { %>
+                    <p class="feedback" color:red ><%= error.msg %></p>
+                    <% }); 
+                } %> 
 
                 <input class="boxes" type="email" name="email" placeholder="Email" required>
 
@@ -24,7 +33,7 @@
                 <p class="keep-in-sign-text"><input type="checkbox"> <strong> Mantenerme Registrado </strong></p>
                 <br>
                 <div class="olv-contraseña">
-                    <a href="#" class=>¿Olvidaste tu contraseña?</a>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
                 </div>
 
                 <!--BUTTON-->
@@ -35,6 +44,7 @@
             </form>
 
         </div>
+
 </main>
 <%- include("./partials/footer") %>
                 
