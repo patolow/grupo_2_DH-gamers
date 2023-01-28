@@ -1,18 +1,48 @@
 const express = require("express");
+const path = require("path");
+const fs = require("fs");
 const router = express.Router();
 const userControllers = require("../controllers/userControllers")
 const multer = require('multer');
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, path.join(__dirname, '../../public/images/users')),
+  destination: (req, file, cb) => cb(null, path.join(__dirname, '../public/images/users')),
 
   filename: (req, file, cb) => cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)),
 });
+const { body } = require('express-validator')
+const uploadFile = multer({ storage })
+const validations = [
+  body('fullName').notEmpty().withMessage('Debes escribir un nombre'),
+  body('userName').notEmpty().withMessage('Debes escribir un nombre de usuario'),
+  body('birthday').notEmpty().withMessage('Debes seleccionar tu fecha de nacimiento'),
+  body('email')
+    .notEmpty().withMessage('Debes escribir tu correo electrónico').bail()
+    .isEmail().withMessage('Debes escribir un formato de correo electrónico válido'),
+  body('password').notEmpty().withMessage('Debes escribir una contraseña'),
+  body('confirmPassword').notEmpty().withMessage('Debes repetir tu contraseña'),
+  body('profilePhoto').custom((value, { req }) => {
+    let file = req.file
+    let acceptedExtension = ['.jpg', '.png', '.gif']
 
-const upload = multer({ storage })
+    if (file) {
+
+      let fileExtension = path.extname(file.originalname)
+
+      if (!acceptedExtension.includes(fileExtension)) {
+        throw new Error('Las extensiones de archivo permitidas son:' + acceptedExtension.join(', '))
+      }
+    }
+    return true
+  }
+  )
+]
+
 
 router.get("/users", userControllers.users)
 
 router.get("/register", userControllers.register);
+router.post("/register", uploadFile.single('profilePhoto'), validations, userControllers.processRegister);
+
 
 router.get("/login", userControllers.login);
 
