@@ -10,8 +10,11 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
-
 router.get("/users", userControllers.users)
+
+router.get("/register", userControllers.register);
+
+router.get("/login", userControllers.login);
 
 module.exports = router
 

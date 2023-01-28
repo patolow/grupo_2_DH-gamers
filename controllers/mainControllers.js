@@ -16,11 +16,7 @@ index: (req, res)=> {
         bestSeller[i].sliderImage = firstImage
     }
     res.render("index", {bestSeller})
-},
-
-registration: (req, res)=> {res.render("registrationForm")},
-
-login: (req, res)=> {res.render("login")},
+}
 
 }
 
