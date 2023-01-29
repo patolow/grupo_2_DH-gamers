@@ -6,7 +6,7 @@ const userControllers = require("../controllers/userControllers")
 const multer = require('multer');
 const { body } = require('express-validator')
 const guestMiddleware = require('../middlewares/guestMiddleware')
-
+const authMiddleware = require('../middlewares/authMiddleware')
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, path.join(__dirname, '../public/images/users')),
@@ -58,9 +58,12 @@ const loginValidations = [
 
 router.get("/users", userControllers.users)
 
-router.get("/profile", userControllers.profile)
+router.get("/profile", authMiddleware, userControllers.profile)
 
-router.get("/register", userControllers.register);
+router.get("/logout", userControllers.logout)
+
+
+router.get("/register", guestMiddleware, userControllers.register);
 router.post("/register", uploadFile.single('profilePhoto'), registerValidations, userControllers.processRegister);
 
 

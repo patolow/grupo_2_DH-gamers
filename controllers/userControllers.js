@@ -39,6 +39,8 @@ const controller = {
     }
   },
 
+
+  
   getLogin: (req, res) => { res.render("login") },
 
   login: (req, res) => {
@@ -46,23 +48,25 @@ const controller = {
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-        let usuarioALoguearse
+        let userToLogin
 
         for (let i = 0; i < users.length; i++) {
-          if (users[i].email == req.body.email) {
-            if (users[i].password == req.body.password) { //aca iria bcrypt
-              usuarioALoguearse = users[i];
+          if (users[i].email == req.body.email) {  // para buscar tmb se usa --> users.findByField('email', req.body.email)
+            if (users[i].password == req.body.password) { //iria bcryptjs.compareSync(req.body.password, users[i].password )
+              userToLogin = users[i];
               break
             }
           }
         }
 
-        if (!usuarioALoguearse) {
+        if (!userToLogin) {
           res.render('login', { errors: [ {msg : 'Credenciales inválidas. Por favor, vuelve a intentarlo.'} ], old: req.body} );
         }
         
-        req.session.usuarioLogueado = usuarioALoguearse;
-        res.render("profile", {usuario: req.session.usuarioLogueado})
+        delete userToLogin.password;
+        delete userToLogin.confirmPassword;
+        req.session.usuarioLogueado = userToLogin;
+        res.redirect("./profile")
 
     }
 
@@ -72,10 +76,14 @@ const controller = {
 
   },
 
-  profile: (req, res) => { console.log(req.session.usuarioLogueado)
-    res.render("profile", {usuario: req.session.usuarioLogueado}) }
+  profile: (req, res) => { 
+    console.log(req.session)
+    res.render("profile", { usuario: req.session.usuarioLogueado }) 
+  },
 
+  logout: (req, res) => {
+    req.session.destroy();
+    res.redirect("/")}
 }
-
 
 module.exports = controller

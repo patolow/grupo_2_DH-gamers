@@ -8,7 +8,7 @@
     <%- include("./partials/header") %> 
 
     <header>
-        <h1>Bienvenido, estas logueado en tu perfil DH GAMERS!  </h1>
+        <h1>Bienvenido <%= usuario.fullName %>, estas logueado en tu perfil DH GAMERS!  </h1>
     </header>
 
     <section>
@@ -22,7 +22,7 @@
         <p><b>Email:</b> <%= usuario.email %></p>
         <p><b>password:</b> <%= usuario.password %> </p>
 
-        <img src="<%= usuario.image %>">
+        <img src="<%= usuario.image%>">
     </section>
 
 </main>

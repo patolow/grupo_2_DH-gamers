@@ -4,19 +4,33 @@
       <div class="logo-nav">
         <a href="/"><img src="/images/index/DH-gamers_Logo-final.png" alt="Página de inicio"></a>
       </div>
+      <a href="/product/list"><button class="imagen-ingreso-grande">LISTA DE PRODUCTOS</button></a>
       <div class="search-nav">
         <input type="text" placeholder="Buscar producto...">
         <a href="" class="micro-icon"></a>
         </form>
       </div>
+
+
       <div class="user-nav">
+
+        <% if (locals.isLogged) { %>
+          <a href="/users/profile"><img src="/images/index/user.png" class="imagen-ingreso-chica"></a>
+          <a href="/users/logout"><button class="imagen-ingreso-grande">LOGOUT</button></a>
+
+        <% } else { %>
         <div>
-          <a href="/users/register"><button class="imagen-ingreso-grande">REGISTRO / LOGIN</button></a>
-          <a href="/product/list"><button class="imagen-ingreso-grande">LISTA DE PRODUCTOS</button></a>
+          <a href="/users/register"><button class="imagen-ingreso-grande">REGISTRO</button></a>
+          <a href="/users/login"><button class="imagen-ingreso-grande">LOGIN</button></a>
         </div>
-        <a href="/users/register"><img src="/images/index/user.png" class="imagen-ingreso-chica"></a>
+        <% }  %>
+        
 
       </div>
+
+
+
+
     </div>
   </nav>
 </header>

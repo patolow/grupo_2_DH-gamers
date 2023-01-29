@@ -6,6 +6,9 @@ const userRoutes = require("./routes/userRoutes");
 const methodOverride = require('method-override');
 const session = require("express-session");
 
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware"); //middleware global
+
+
 const port = 3000;
 const path = require("path");
 
@@ -19,6 +22,8 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));; //Para usar la propiedad secret, "express-session"
+
+app.use(userLoggedMiddleware) //va siempre luego de la session
 
 app.listen(port, () => console.log("server listening on port", port));
 
