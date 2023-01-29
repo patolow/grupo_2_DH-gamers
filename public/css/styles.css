@@ -313,8 +313,8 @@ footer {
 
   .user-nav {
     display: flex;
-    flex-direction: column;
-      justify-content: center;
+    flex-direction: row;
+      justify-content: space-evenly;
       width: 25%;
      
   }
@@ -323,12 +323,6 @@ footer {
         
   }
 
- 
-
-  .imagen-ingreso-chica {
-      display: none;
-      
-  }
 
 
   .footer-container {

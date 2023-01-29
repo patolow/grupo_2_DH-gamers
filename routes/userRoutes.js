@@ -4,13 +4,18 @@ const fs = require("fs");
 const router = express.Router();
 const userControllers = require("../controllers/userControllers")
 const multer = require('multer');
+const { body } = require('express-validator')
+const guestMiddleware = require('../middlewares/guestMiddleware')
+
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, path.join(__dirname, '../public/images/users')),
 
   filename: (req, file, cb) => cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)),
 });
-const { body } = require('express-validator')
 const uploadFile = multer({ storage })
+
+
 const registerValidations = [
   body('fullName').notEmpty().withMessage('Debes escribir un nombre'),
   body('userName').notEmpty().withMessage('Debes escribir un nombre de usuario'),
@@ -57,7 +62,7 @@ router.get("/register", userControllers.register);
 router.post("/register", uploadFile.single('profilePhoto'), registerValidations, userControllers.processRegister);
 
 
-router.get("/login", userControllers.getLogin);
+router.get("/login", guestMiddleware, userControllers.getLogin);
 router.post("/login", loginValidations,  userControllers.login)
 
 
