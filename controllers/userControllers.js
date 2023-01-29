@@ -24,9 +24,9 @@ const controller = {
       //Check if a file was choosen
       let profilePhoto = ''
       if (req.file) {
-        profilePhoto = req.file.originalname
+        profilePhoto = '/image/users/'+ req.file.originalname
       } else {
-        profilePhoto = './images/users/profile-photo-default.jpg'
+        profilePhoto = '/images/users/profile-photo-default.jpg'
       }
       //ADD NEW USER
       let newUser = { id: users[users.length - 1].id + 1, ...req.body, image: profilePhoto }
