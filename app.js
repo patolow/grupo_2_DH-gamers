@@ -15,7 +15,7 @@ app.use(express.json());  // Necesario para enviar data formulario con POST
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.set("view engine", "ejs");
 app.use(session({
-    secret: {secret: "SegretoDH_Gamers"},
+    secret: "SegretoDH_Gamers",
     resave: true,
     saveUninitialized: true
 }));; //Para usar la propiedad secret, "express-session"

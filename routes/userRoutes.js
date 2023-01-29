@@ -58,6 +58,8 @@ const loginValidations = [
 
 router.get("/users", userControllers.users)
 
+router.get("/profile", userControllers.profile)
+
 router.get("/register", userControllers.register);
 router.post("/register", uploadFile.single('profilePhoto'), registerValidations, userControllers.processRegister);
 

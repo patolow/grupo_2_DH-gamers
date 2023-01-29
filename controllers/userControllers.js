@@ -43,13 +43,6 @@ const controller = {
 
   login: (req, res) => {
 
-    let bestSeller = products.filter(product => product.bestSellers == true)
-    let imagenesindex = [];
-    for (let i=0; i<= bestSeller.length-1; i++) {
-        let firstImage = bestSeller[i].sliderImage.split(",")[0]
-        bestSeller[i].sliderImage = firstImage
-    }
-
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
@@ -68,12 +61,8 @@ const controller = {
           res.render('login', { errors: [ {msg : 'Credenciales inválidas. Por favor, vuelve a intentarlo.'} ], old: req.body} );
         }
         
-        
-        // console.log(usuarioALoguearse);
-
         req.session.usuarioLogueado = usuarioALoguearse;
-
-        res.render("index", {bestSeller, usuario: req.session.usuarioLogueado})
+        res.render("profile", {usuario: req.session.usuarioLogueado})
 
     }
 
@@ -81,7 +70,11 @@ const controller = {
       res.render('login', { errors: errors.array(), old: req.body });
     }
 
-  }
+  },
+
+  profile: (req, res) => { console.log(req.session.usuarioLogueado)
+    res.render("profile", {usuario: req.session.usuarioLogueado}) }
+
 }
 
 

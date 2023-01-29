@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include("./partials/head") %> 
+
+<body>
+    <%- include("./partials/header") %> 
+
+    <header>
+        <h1>Bienvenido, estas logueado en tu perfil DH GAMERS!  </h1>
+    </header>
+
+    <section>
+        <h2>Tu Información personal</h2>
+        <br>
+        <p><b>Nombre:</b> <%= usuario.fullName %></p>
+        <p><b>User:</b> <%= usuario.userName %></p>
+        <p><b>Fecha de Nacimiento:</b> <%= usuario.birthday %></p>
+        <p><b>Domicilio:</b> <%= usuario.domicilio %></p>
+        <p><b>Telefono:</b> <%= usuario.telefono %></p>
+        <p><b>Email:</b> <%= usuario.email %></p>
+        <p><b>password:</b> <%= usuario.password %> </p>
+
+        <img src="<%= usuario.image %>">
+    </section>
+
+</main>
+
+<%- include("./partials/footer") %> 
+
+</body>
+
+</html>
