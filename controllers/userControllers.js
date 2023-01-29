@@ -20,6 +20,7 @@ const controller = {
     //VALIDATION
     if (resultValidation.errors.length > 0) {
       res.render("registrationForm", { errors: resultValidation.mapped(), oldData: req.body, oldFile: req.file })
+    //res.send(req.body)
     } else {
       //Check if a file was choosen
       let profilePhoto = ''

@@ -20,6 +20,13 @@ const registerValidations = [
     .isEmail().withMessage('Debes escribir un formato de correo electrónico válido'),
   body('password').notEmpty().withMessage('Debes escribir una contraseña'),
   body('confirmPassword').notEmpty().withMessage('Debes repetir tu contraseña'),
+  body('termsAndConditions').custom((value, {req}) => {
+    let terms = req.body.termsAndConditions
+    if( !terms) {
+      throw new Error('Debes aceptar los términos y condiciones')
+    }
+    return true
+  }),
   body('profilePhoto').custom((value, { req }) => {
     let file = req.file
     let acceptedExtension = ['.jpg', '.png', '.gif']

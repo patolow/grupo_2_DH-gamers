@@ -66,7 +66,7 @@
                                 </p>
                                 <% } %>
                                   <label class="upload-photo">Subí tu Foto de Perfil: </label>
-                                  <input class="file-register" type="file" name="profilePhoto" >
+                                  <input class="file-register" type="file" name="profilePhoto">
                                   <% if (locals.errors && errors.profilePhoto) { %>
                                     <p class="errors">
                                       <%= errors.profilePhoto.msg %>
@@ -74,13 +74,19 @@
                                     <% } %>
 
                                       <!--TERM and CONDITIONS-->
-                                      <p class="term"><input type="checkbox"> Estoy de acuerdo con <a class="term2"
-                                          href="#">Terminos y
-                                          Condiciones</a></p>
+                                      <p class="term"><input type="checkbox" name='termsAndConditions'> Estoy de acuerdo
+                                        con <a class="term2" href="#">Terminos y
+                                          Condiciones</a>
+                                        <% if (locals.errors && errors.termsAndConditions) { %>
+                                          <p class="errors">
+                                            <%= errors.termsAndConditions.msg %>
+                                          </p>
+                                          <% } %>
+                                      </p>
 
                                       <!--Already have an account?-->
                                       <p class="already-have-account-text"><strong> ¿Ya ténes cuenta? </strong> Iniciá
-                                        sesión <a href="/users/login">
+                                        sesión <a href="/login">
                                           acá </a> </p>
 
                                       <!--BUTTON-->
