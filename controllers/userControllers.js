@@ -43,7 +43,8 @@ login: (req, res) => {
   let errors = validationResult(req);
 
   if (errors.isEmpty()) {
-      res.send('Estas logueado sin errores exito');
+     //res.send('Estas logueado sin errores exito');
+     res.redirect("/")//para que me redirrecione a la home como pide el sprint 5 
       } 
   else {
       res.render('login', { errors: errors.array(), old: req.body});
