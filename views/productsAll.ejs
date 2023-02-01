@@ -17,7 +17,7 @@
                     <% for( let i=0; i < products.length; i++ ) { %>
                         <div class="productos-mas-vendidos">
                             <a href="/product/detail/<%=products[i].id%>"><img class="productAll-img"
-                                    src="<%=products[i].sliderImage%>" alt="imagen del Producto"></a>
+                                    src="<%=products[i].sliderImage[0] %>" alt="imagen del Producto"></a>
                             <h5 class="productAll-Pname">
                                 <%=products[i].name%>
                             </h5>

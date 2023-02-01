@@ -7,7 +7,7 @@
   "stock": "efe",
   "reviews": "csd222",
   "description": "jajajcjajcajcasjajscjascjacjasjcasjcasjcajcjascjasjcjajcajscjasjcadjcjdcsdcsdcsds",
-  "sliderImage": "sliderImage-1674690771466.jpeg,sliderImage-1674690771468.jpg,sliderImage-1674690771473.jpeg,"
+  "sliderImage": "sliderImage-1674690771466.jpeg"
  },
  {
   "id": 23,
@@ -17,7 +17,7 @@
   "stock": "efe",
   "reviews": "csd222",
   "description": "jajajcjajcajcasjajscjascjacjasjcasjcasjcajcjascjasjcjajcajscjasjcadjcjdcsdcsdcsds",
-  "sliderImage": "sliderImage-1674690919921.jpeg,sliderImage-1674690919924.jpg,sliderImage-1674690919930.jpeg,"
+  "sliderImage": "sliderImage-1674690919921.jpeg"
  },
  {
   "id": 24,
@@ -28,7 +28,7 @@
   "stock": "asc",
   "reviews": "dcacac",
   "description": "acdacacnsbavsbv svbdav sdhv dsvghav sahjd bsadhjb shjavsd ",
-  "sliderImage": "sliderImage-1674691595456.jpeg,sliderImage-1674691595459.jpeg,sliderImage-1674691595470.jpg,"
+  "sliderImage": "sliderImage-1674691595456.jpeg"
  },
  {
   "id": 25,
@@ -38,6 +38,17 @@
   "stock": "efe",
   "reviews": "csd222",
   "description": "jajajcjajcajcasjajscjascjacjasjcasjcasjcajcjascjasjcjajcajscjasjcadjcjdcsdcsdcsds",
-  "sliderImage": "sliderImage-1674692200003.jpeg,sliderImage-1674692200007.jpg,sliderImage-1674692200032.jpeg,"
+  "sliderImage": "sliderImage-1674692200003.jpeg"
+ },
+ {
+  "id": 26,
+  "name": "Jeremias",
+  "categoria": "monitores",
+  "price": " 123",
+  "discount": "1",
+  "stock": "1",
+  "reviews": "1",
+  "description": "asdasdasdasdasdadasdasdasadasdasaaasdasdasasdasdaasadasdsadasdasd",
+  "sliderImage": "sliderImage-1674775927205.png,sliderImage-1674775927205.jpg,"
  }
 ]
