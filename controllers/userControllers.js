@@ -59,23 +59,19 @@ const controller = {
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-        let userToLogin
 
-        for (let i = 0; i < users.length; i++) {
-          if (users[i].email == req.body.email) {  // para buscar tmb se usa --> users.findByField('email', req.body.email)
-            if (users[i].password == req.body.password) { //iria bcryptjs.compareSync(req.body.password, users[i].password )
-              userToLogin = users[i];
-              break
-            }
-          }
-        }
+        let userToLogin = users.find(user => user.email === req.body.email); //vacio o con usuario
 
         if (!userToLogin) {
-          res.render('login', { errors: [ {msg : 'Credenciales inválidas. Por favor, vuelve a intentarlo.'} ], old: req.body} );
+          res.render('login', { errors: [ {msg : 'Usuario no encontrado'} ]});
+        }
+
+        let isPasswordValid = bcrypt.compareSync(req.body.password, userToLogin.password);
+
+        if (!isPasswordValid) {
+          res.render('login', { errors: [ {msg : 'Credenciales invalidas. Vuelva a intentarlo'} ], old: req.body} );
         }
         
-        delete userToLogin.password;
-        delete userToLogin.confirmPassword;
         req.session.usuarioLogueado = userToLogin;
         res.redirect("./profile")
 
