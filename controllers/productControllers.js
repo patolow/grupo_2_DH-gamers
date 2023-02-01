@@ -124,11 +124,11 @@ const controller = {
   },
 
   productsAll: (req, res) => {
-   let imagenes =  []
-   for (let index = 0; index < products.length; index++) {
-    let algo = array[index];
-    imagenes = algo
-   }
+    let imagenesindex = [];
+    for (let i = 0; i <= products.length - 1; i++) {
+      let firstImage = products[i].sliderImage.split(",")[0]
+      products[i].sliderImage = firstImage
+    }
     res.render("productsAll", { products })
   },
 
