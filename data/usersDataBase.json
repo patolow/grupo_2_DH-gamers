@@ -145,6 +145,19 @@
  },
  {
   "id": 13,
+  "completeName": "Cristian",
+  "userName": "ATBursatil",
+  "dateOfBirdth": "1985-11-07",
+  "adress": "",
+  "phone": "",
+  "mail": "cristianrdiaz@hotmail.com.ar",
+  "password": "$2a$10$qhj1ovNTY1KfLv94T6ZSTOFEJatbMcdJAT6ttIHbRn8NADhP6kyOC",
+  "confirmPassword": "$2a$10$bw3d1jlDz0Ax7uYZCSKs9O3AfyiW7otb4Rco8anErzuImFYWbBYQ6",
+  "image": "/images/users/profile-photo-default.jpg"
+ }
+
+ {
+  "id": 14,
   "fullName": "Fabio Capriotti",
   "userName": "userTest",
   "birthday": "1993-08-20",

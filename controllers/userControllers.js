@@ -3,6 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const { validationResult } = require('express-validator')
 const { Console } = require("console");
+const bcrypt = require("bcryptjs")
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf8"));
@@ -27,12 +28,22 @@ const controller = {
       //Check if a file was choosen
       let profilePhoto = ''
       if (req.file) {
-        profilePhoto = req.file.originalname
+        profilePhoto = '/image/users/'+ req.file.filename
       } else {
         profilePhoto = './images/users/profile-photo-default.jpg'
       }
       //ADD NEW USER
-      let newUser = { id: users[users.length - 1].id + 1, ...req.body, image: profilePhoto }
+      let newUser = { 
+        id: users[users.length - 1].id + 1, 
+        completeName: req.body.fullName, 
+        userName: req.body.userName,
+        dateOfBirdth: req.body.birthday,
+        adress: req.body.domicilio,
+        phone: req.body.telefono,
+        mail: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10),
+        image: profilePhoto }
       users.push(newUser)
       fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
       res.redirect('/');
