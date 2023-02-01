@@ -28,7 +28,7 @@ const controller = {
       //Check if a file was choosen
       let profilePhoto = ''
       if (req.file) {
-        profilePhoto = '/image/users/'+ req.file.filename
+        profilePhoto = '/images/users/'+ req.file.filename
       } else {
         profilePhoto = './images/users/profile-photo-default.jpg'
       }

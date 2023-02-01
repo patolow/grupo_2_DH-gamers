@@ -166,5 +166,17 @@
   "password": "$2a$10$MjhsQ0djHPdhE7dM2kxRTuAq9szgaAA9gZGbT7xbAWJobbGUHt61i",
   "confirmPassword": "$2a$10$EBqujDOqpHo32hzJuoeudu.0JoFm.5QPKZew3sR0ErWg5na/sXKiO",
   "image": "/images/users/profile-photo-default.jpg"
+ },
+ {
+  "id": 15,
+  "completeName": "Cristian Diaz",
+  "userName": "ATBursatil",
+  "birthday": "2023-02-16",
+  "adress": "Rodriguez 737",
+  "phone": "0349215324821",
+  "email": "atbursatil2017@gmail.com",
+  "password": "$2a$10$1xyTXr5Mbf1CvpHbwVa3heVc2OY68TbdoWslhGzMfURY1y5ksSc9S",
+  "confirmPassword": "$2a$10$Bpn4gdZ/QmIvp/GGgDhB6OWm1EmKJyKAB2EYuOpxrXZvGt38417/a",
+  "image": "/images/users/profilePhoto-1675278527585.jpg"
  }
 ]
