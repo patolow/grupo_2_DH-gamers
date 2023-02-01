@@ -37,10 +37,10 @@ const controller = {
         id: users[users.length - 1].id + 1, 
         completeName: req.body.fullName, 
         userName: req.body.userName,
-        dateOfBirdth: req.body.birthday,
+        birthday: req.body.birthday,
         adress: req.body.domicilio,
         phone: req.body.telefono,
-        mail: req.body.email,
+        email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10),
         image: profilePhoto }
@@ -84,7 +84,6 @@ const controller = {
   },
 
   profile: (req, res) => { 
-    console.log(req.session)
     res.render("profile", { usuario: req.session.usuarioLogueado }) 
   },
 
