@@ -32,7 +32,7 @@ const registerValidations = [
     .notEmpty().withMessage('Debes escribir tu correo electrónico').bail()
     .isEmail().withMessage('Debes escribir un formato de correo electrónico válido'),
     
-  body('password').notEmpty().withMessage('Debes escribir una contraseña'),
+  body('password').notEmpty().isLength({min: 8}).withMessage('Debes escribir una contraseña de al menos 8 caracteres'),
   body('confirmPassword').notEmpty().withMessage('Debes repetir tu contraseña'),
   body('termsAndConditions').custom((value, {req}) => {
     let terms = req.body.termsAndConditions
