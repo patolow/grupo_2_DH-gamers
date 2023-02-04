@@ -190,5 +190,17 @@
   "password": "$2a$10$h6pYzEOhDf0Ld/4Q32bYwu3BZHKV.TaOe.TTKXnrx51VU3BZ3Z7ka",
   "confirmPassword": "$2a$10$LA0rOmt.GJyL1pOzkrCiHOVhJB5KRsQwQyfIgSzFt3sUVbp50OJnC",
   "image": "/images/users/profilePhoto-1675340619384.png"
+ },
+ {
+  "id": 17,
+  "completeName": "Patolowe",
+  "userName": "Patolow",
+  "birthday": "1986-08-02",
+  "adress": "Aca",
+  "phone": "1111",
+  "email": "patolow@hotmail.com",
+  "password": "$2a$10$tirDNQwUCLnN5HfYrHhoHu3.6wWI5SA4A7DGCiFgUCIZOdS/ErpWe",
+  "confirmPassword": "$2a$10$HM0.2IVRIuJvYl1ljBEXOu.XzQwjw2cNNuSJ5nFnqxWRUdt6iYMBK",
+  "image": "/images/users/profile-photo-default.jpg"
  }
 ]

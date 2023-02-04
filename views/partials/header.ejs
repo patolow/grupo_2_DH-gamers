@@ -15,9 +15,13 @@
       <div class="user-nav">
 
         <% if (locals.isLogged) { %>
-          <a href="/users/profile"><img src="/images/index/user.png" class="imagen-ingreso-chica"></a>
-          <a href="/users/logout"><button class="imagen-ingreso-grande">LOGOUT</button></a>
-
+          <div class="saludo">
+            Hola <%= locals.usuarioLogueado.userName %> 
+          </div>
+          <a href="/users/profile" class="profile-photo"><img src= "<%= locals.usuarioLogueado.image %> " class="imagen-ingreso-chica"></a>
+         <!--    <a href="/users/logout"><button class="imagen-ingreso-grande">LOGOUT</button></a>-->
+         <a href="/users/logout" class="logout-icon"><i class="fas fa-sign-out-alt"></i></a> 
+         
         <% } else { %>
         <div>
           <a href="/users/register"><button class="imagen-ingreso-grande">REGISTRO</button></a>
