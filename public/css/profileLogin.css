@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; 
+}
+
+div.datosUsuarios{
+    background-color: white;
+
+    max-width: 700px;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 100px;
+    border-radius: 0%;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    left: 310px;
+    height: 350px;
+}
+div.cajaDatos{
+    background-color:white;
+    inline-size: max-content;
+    letter-spacing:0.05ch ;
+    height: 95%;
+    margin: 5px;
+    padding: 5px;
+    line-height: 3ch;
+    border-radius: 0%;
+}
+
+
+div.cajaImagenUsuario{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 0%;
+    text-align: center;
+}
+
+@media (min-width: 1200px) {
+    .datosUsuarios {
+       min-height: 800;
+    }
+}

@@ -10,8 +10,9 @@
     <header>
         <h1>Bienvenido <%= usuario.completeName %>, estas logueado en tu perfil DH GAMERS!  </h1>
     </header>
-
+<div class="datosUsuarios">
     <section>
+        <div class="cajaDatos">
         <h2>Tu Información personal</h2>
         <br>
         <p><b>Nombre:</b> <%= usuario.completeName %></p>
@@ -20,10 +21,15 @@
         <p><b>Domicilio:</b> <%= usuario.adress %></p>
         <p><b>Telefono:</b> <%= usuario.phone %></p>
         <p><b>Email:</b> <%= usuario.email %></p>
+        </div>
 
-        <img src="<%= usuario.image%>">
     </section>
+    
+    <div class="cajaImagenUsuario">
+        <img src="<%= usuario.image%>" width="50%">
+        </div>
 
+</div>
 </main>
 
 <%- include("./partials/footer") %> 

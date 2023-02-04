@@ -178,5 +178,17 @@
   "password": "$2a$10$1xyTXr5Mbf1CvpHbwVa3heVc2OY68TbdoWslhGzMfURY1y5ksSc9S",
   "confirmPassword": "$2a$10$Bpn4gdZ/QmIvp/GGgDhB6OWm1EmKJyKAB2EYuOpxrXZvGt38417/a",
   "image": "/images/users/profilePhoto-1675279893899.jpg"
+ },
+ {
+  "id": 16,
+  "completeName": "leandro dichiara",
+  "userName": "lean04_23@hotmail.com",
+  "birthday": "1991-04-04",
+  "adress": "falso 123",
+  "phone": "02392538059",
+  "email": "lean04_23@hotmail.com",
+  "password": "$2a$10$h6pYzEOhDf0Ld/4Q32bYwu3BZHKV.TaOe.TTKXnrx51VU3BZ3Z7ka",
+  "confirmPassword": "$2a$10$LA0rOmt.GJyL1pOzkrCiHOVhJB5KRsQwQyfIgSzFt3sUVbp50OJnC",
+  "image": "/images/users/profilePhoto-1675340619384.png"
  }
 ]
