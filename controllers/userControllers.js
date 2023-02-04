@@ -30,7 +30,7 @@ const controller = {
       if (req.file) {
         profilePhoto = '/images/users/'+ req.file.filename
       } else {
-        profilePhoto = './images/users/profile-photo-default.jpg'
+        profilePhoto = '/images/users/profile-photo-default.jpg'
       }
       //ADD NEW USER
       let newUser = { 

@@ -2,38 +2,50 @@
 <html lang="en">
 
 
-<%- include("./partials/head") %> 
+<%- include("./partials/head") %>
 
-<body>
-    <%- include("./partials/header") %> 
+  <body>
+    <%- include("./partials/header") %>
 
-    <header>
-        <h1>Bienvenido <%= usuario.completeName %>, estas logueado en tu perfil DH GAMERS!  </h1>
-    </header>
-<div class="datosUsuarios">
-    <section>
-        <div class="cajaDatos">
-        <h2>Tu Información personal</h2>
-        <br>
-        <p><b>Nombre:</b> <%= usuario.completeName %></p>
-        <p><b>User:</b> <%= usuario.userName %></p>
-        <p><b>Fecha de Nacimiento:</b> <%= usuario.birthday %></p>
-        <p><b>Domicilio:</b> <%= usuario.adress %></p>
-        <p><b>Telefono:</b> <%= usuario.phone %></p>
-        <p><b>Email:</b> <%= usuario.email %></p>
+      <div>
+        <h1>Bienvenido <%= locals.usuarioLogueado.completeName %>, estas logueado en tu perfil DH GAMERS! </h1>
+      </div>
+      <div class="datosUsuarios">
+        <section>
+          <div class="cajaDatos">
+            <h2>Tu Información personal</h2>
+            <br>
+            <p><b>Nombre:</b>
+              <%= locals.usuarioLogueado.completeName %>
+            </p>
+            <p><b>User:</b>
+              <%= locals.usuarioLogueado.userName %>
+            </p>
+            <p><b>Fecha de Nacimiento:</b>
+              <%= locals.usuarioLogueado.birthday %>
+            </p>
+            <p><b>Domicilio:</b>
+              <%= locals.usuarioLogueado.adress %>
+            </p>
+            <p><b>Telefono:</b>
+              <%= locals.usuarioLogueado.phone %>
+            </p>
+            <p><b>Email:</b>
+              <%= locals.usuarioLogueado.email %>
+            </p>
+          </div>
+
+        </section>
+
+        <div class="cajaImagenUsuario">
+          <img src="<%= locals.usuarioLogueado.image%>" width="50%">
         </div>
 
-    </section>
-    
-    <div class="cajaImagenUsuario">
-        <img src="<%= usuario.image%>" width="50%">
-        </div>
+      </div>
+      </main>
 
-</div>
-</main>
+      <%- include("./partials/footer") %>
 
-<%- include("./partials/footer") %> 
-
-</body>
+  </body>
 
 </html>
