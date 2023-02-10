@@ -28,14 +28,14 @@ const controller = {
       //Check if a file was choosen
       let profilePhoto = ''
       if (req.file) {
-        profilePhoto = '/images/users/'+ req.file.filename
+        profilePhoto = '/images/users/' + req.file.filename
       } else {
-        profilePhoto = '/images/users/profile-photo-default.jpg'
+        profilePhoto = './images/users/profile-photo-default.jpg'
       }
       //ADD NEW USER
-      let newUser = { 
-        id: users[users.length - 1].id + 1, 
-        completeName: req.body.fullName, 
+      let newUser = {
+        id: users[users.length - 1].id + 1,
+        completeName: req.body.fullName,
         userName: req.body.userName,
         birthday: req.body.birthday,
         adress: req.body.domicilio,
@@ -43,7 +43,8 @@ const controller = {
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10),
-        image: profilePhoto }
+        image: profilePhoto
+      }
       users.push(newUser)
       fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
       res.redirect('/');
@@ -51,7 +52,7 @@ const controller = {
   },
 
 
-  
+
   getLogin: (req, res) => { res.render("login") },
 
   login: (req, res) => {
@@ -60,20 +61,24 @@ const controller = {
 
     if (errors.isEmpty()) {
 
-        let userToLogin = users.find(user => user.email === req.body.email); //vacio o con usuario
+      let userToLogin = users.find(user => user.email === req.body.email); //vacio o con usuario
 
-        if (!userToLogin) {
-          res.render('login', { errors: [ {msg : 'Usuario no encontrado'} ]});
-        }
+      if (!userToLogin) {
+        res.render('login', { errors: [{ msg: 'Usuario no encontrado' }] });
+      }
 
-        let isPasswordValid = bcrypt.compareSync(req.body.password, userToLogin.password);
+      let isPasswordValid = bcrypt.compareSync(req.body.password, userToLogin.password);
 
-        if (!isPasswordValid) {
-          res.render('login', { errors: [ {msg : 'Credenciales invalidas. Vuelva a intentarlo'} ], old: req.body} );
-        }
-        
-        req.session.usuarioLogueado = userToLogin;
-        res.redirect("./profile")
+      if (!isPasswordValid) {
+        res.render('login', { errors: [{ msg: 'Credenciales invalidas. Vuelva a intentarlo' }], old: req.body });
+      }
+
+      req.session.usuarioLogueado = userToLogin;
+      //rememer password
+      if (req.body.rememberPassword != undefined) {
+        res.cookie('email', userToLogin.email, { maxAge: 900000 })
+      }
+      res.redirect("./profile")
 
     }
 
@@ -82,12 +87,13 @@ const controller = {
     }
 
   },
-
-  profile: (req, res) => { 
-    res.render("profile", { usuario: req.session.usuarioLogueado }) 
+ 
+  profile: (req, res) => {
+    res.render("profile", { usuario: req.session.usuarioLogueado })
   },
 
   logout: (req, res) => {
+    res.clearCookie('email')
     req.session.destroy();
     res.redirect("/")}
 }
