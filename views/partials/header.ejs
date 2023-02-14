@@ -4,9 +4,11 @@
       <div class="logo-nav">
         <a href="/"><img src="/images/index/DH-gamers_Logo-final.png" alt="Página de inicio"></a>
       </div>
-      
+      <% if (locals.isLogged && locals.usuarioLogueado.isAdmin) { %>
+
       <a href="/product/list" class="product-list-button"><button class="imagen-ingreso-grande">LISTA DE PRODUCTOS</button></a>
-      
+      <% }  %>
+
       <div class="search-nav">
         <input type="text" placeholder="Buscar producto...">
         <a href="" class="micro-icon"></a>

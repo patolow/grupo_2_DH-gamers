@@ -165,7 +165,8 @@
   "email": "fabio.capriotti20@gmail.com",
   "password": "$2a$10$MjhsQ0djHPdhE7dM2kxRTuAq9szgaAA9gZGbT7xbAWJobbGUHt61i",
   "confirmPassword": "$2a$10$EBqujDOqpHo32hzJuoeudu.0JoFm.5QPKZew3sR0ErWg5na/sXKiO",
-  "image": "/images/users/profile-photo-default.jpg"
+  "image": "/images/users/profile-photo-default.jpg",
+  "isAdmin": true
  },
  {
   "id": 15,
@@ -177,7 +178,8 @@
   "email": "atbursatil2017@gmail.com",
   "password": "$2a$10$1xyTXr5Mbf1CvpHbwVa3heVc2OY68TbdoWslhGzMfURY1y5ksSc9S",
   "confirmPassword": "$2a$10$Bpn4gdZ/QmIvp/GGgDhB6OWm1EmKJyKAB2EYuOpxrXZvGt38417/a",
-  "image": "/images/users/profilePhoto-1675279893899.jpg"
+  "image": "/images/users/profilePhoto-1675279893899.jpg",
+  "isAdmin": true
  },
  {
   "id": 16,
@@ -189,7 +191,8 @@
   "email": "lean04_23@hotmail.com",
   "password": "$2a$10$h6pYzEOhDf0Ld/4Q32bYwu3BZHKV.TaOe.TTKXnrx51VU3BZ3Z7ka",
   "confirmPassword": "$2a$10$LA0rOmt.GJyL1pOzkrCiHOVhJB5KRsQwQyfIgSzFt3sUVbp50OJnC",
-  "image": "/images/users/profilePhoto-1675340619384.png"
+  "image": "/images/users/profilePhoto-1675340619384.png",
+  "isAdmin": true
  },
  {
   "id": 17,
@@ -201,6 +204,19 @@
   "email": "patolow@hotmail.com",
   "password": "$2a$10$tirDNQwUCLnN5HfYrHhoHu3.6wWI5SA4A7DGCiFgUCIZOdS/ErpWe",
   "confirmPassword": "$2a$10$HM0.2IVRIuJvYl1ljBEXOu.XzQwjw2cNNuSJ5nFnqxWRUdt6iYMBK",
+  "image": "/images/users/profile-photo-default.jpg",
+  "isAdmin": true
+ },
+ {
+  "id": 18,
+  "completeName": "Patricia",
+  "userName": "patolowe",
+  "birthday": "1986-08-02",
+  "adress": "",
+  "phone": "",
+  "email": "patolowe@hotmail.com",
+  "password": "$2a$10$XjOEojmKTyTG/3NER2/.Bu8vert.T.rflMc6o64ejkc5U9FT5pNcC",
+  "confirmPassword": "$2a$10$.yw1OXpr5b7tNdJH9Q9AC.HfdCahSdFSzTnx/hXuMbs/34mY1Iw8u",
   "image": "/images/users/profile-photo-default.jpg"
  }
 ]

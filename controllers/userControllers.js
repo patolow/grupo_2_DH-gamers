@@ -30,7 +30,7 @@ const controller = {
       if (req.file) {
         profilePhoto = '/images/users/' + req.file.filename
       } else {
-        profilePhoto = './images/users/profile-photo-default.jpg'
+        profilePhoto = '/images/users/profile-photo-default.jpg'
       }
       //ADD NEW USER
       let newUser = {
@@ -87,7 +87,7 @@ const controller = {
     }
 
   },
- 
+
   profile: (req, res) => {
     res.render("profile", { usuario: req.session.usuarioLogueado })
   },
@@ -95,7 +95,8 @@ const controller = {
   logout: (req, res) => {
     res.clearCookie('email')
     req.session.destroy();
-    res.redirect("/")}
+    res.redirect("/")
+  }
 }
 
 module.exports = controller
