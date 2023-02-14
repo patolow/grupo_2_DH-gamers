@@ -5,13 +5,27 @@
     font-family: sans-serif; 
 }
 
+.h1-bienvenida {
+    color: white;
+    font-size: 20px;
+}
+
+.titulo-bienvenida-profile {
+    margin-top: 140px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 div.datosUsuarios{
     background-color: white;
 
     max-width: 700px;
     padding: 10px;
-    margin: 10px;
-    margin-top: 100px;
+    margin: auto;
+    margin-top: 50px;
     border-radius: 0%;
     display: flex;
     justify-content: left;
@@ -20,6 +34,10 @@ div.datosUsuarios{
     height: 350px;
 }
 div.cajaDatos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
     background-color:white;
     inline-size: max-content;
     letter-spacing:0.05ch ;
@@ -32,10 +50,17 @@ div.cajaDatos{
 
 
 div.cajaImagenUsuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 5px;
     padding: 5px;
     border-radius: 0%;
     text-align: center;
+}
+
+.cajaImagenUsuario img {
+    width: 100%
 }
 
 @media (min-width: 1200px) {

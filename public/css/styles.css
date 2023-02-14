@@ -150,6 +150,11 @@ body {
   border-radius: 50px;
 }
 
+.imagen-default-chica {
+  width: 40px;
+  border-radius: 50px;
+}
+
 .product-list-button {
   padding-top: 15px;
   text-decoration: none;
@@ -340,9 +345,11 @@ footer {
 
   }
 
-  .saludo {
-    display: block;
+  .imagen-default-chica {
+    display: none;
   }
+
+  
 
   .footer-container {
     display: none;
@@ -435,4 +442,9 @@ footer {
   .logo-nav {
     width: 10%;
   }
+
+  .saludo {
+    display: block;
+  }
+
 }
