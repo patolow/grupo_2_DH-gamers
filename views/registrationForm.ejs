@@ -37,8 +37,8 @@
                       <%= errors.birthday.msg %>
                     </p>
                     <% } %>
-                      <input class="register-boxes" type="text" name="domicilio" placeholder="Domicilio">
-                      <input class="register-boxes" type="tel" name="telefono" placeholder="Teléfono">
+                      <input class="register-boxes" type="text" name="domicilio" placeholder="Domicilio" value=<%=locals.oldData ? oldData.domicilio : null %>>
+                      <input class="register-boxes" type="tel" name="telefono" placeholder="Teléfono" value=<%=locals.oldData ? oldData.telefono : null %>>
                       <input class="register-boxes" type="text" name="email" placeholder="Email" value=<%=locals.oldData
                         ? oldData.email : null %>>
                       <% if (locals.errors && errors.email) { %>
