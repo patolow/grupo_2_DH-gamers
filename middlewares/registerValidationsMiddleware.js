@@ -20,8 +20,8 @@ const registerValidationsMiddleware = [
     .notEmpty().withMessage('Debes escribir tu correo electrónico').bail()
     .isEmail().withMessage('Debes escribir un formato de correo electrónico válido'),
 
-  body('password').notEmpty().isLength({ min: 8 }).withMessage('Debes escribir una contraseña de al menos 8 caracteres'),
-  body('confirmPassword').notEmpty().isLength({ min: 8 }).withMessage('Debes repetir tu contraseña'),
+  body('password').notEmpty().withMessage('Debes escribir una contraseña de al menos 8 caracteres').isLength({ min: 8 }).withMessage('Debes escribir una contraseña de al menos 8 caracteres'),
+  body('confirmPassword').notEmpty().withMessage('Debes escribir una contraseña de al menos 8 caracteres').isLength({ min: 8 }).withMessage('Debes repetir tu contraseña'),
   body('termsAndConditions').custom((value, { req }) => {
     let terms = req.body.termsAndConditions
     if (!terms) {
