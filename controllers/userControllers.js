@@ -4,6 +4,7 @@ const fs = require("fs");
 const { validationResult } = require('express-validator')
 const { Console } = require("console");
 const bcrypt = require("bcryptjs")
+const db = require("../database/models")
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf8"));
@@ -33,8 +34,7 @@ const controller = {
         profilePhoto = '/images/users/profile-photo-default.jpg'
       }
       //ADD NEW USER
-      let newUser = {
-        id: users[users.length - 1].id + 1,
+      let newUser = db.Users.create({
         completeName: req.body.fullName,
         userName: req.body.userName,
         birthday: req.body.birthday,
@@ -44,9 +44,7 @@ const controller = {
         password: bcrypt.hashSync(req.body.password, 10),
         confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10),
         image: profilePhoto
-      }
-      users.push(newUser)
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+      })
       res.redirect('./login');
     }
   },

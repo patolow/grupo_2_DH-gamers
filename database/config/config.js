@@ -1,9 +1,9 @@
-{
+module.exports= {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
+    "username": "dhgamersadmin",
+    "password": " $dbpass123456",
+    "database": "dh-gamers",
+    "host": "dh-gamers.mysql.database.azure.com",
     "dialect": "mysql"
   },
   "test": {

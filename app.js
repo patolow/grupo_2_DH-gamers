@@ -6,7 +6,7 @@ const userRoutes = require("./routes/userRoutes");
 const methodOverride = require('method-override');
 const session = require("express-session");
 const cookies = require("cookie-parser")
-
+const db = require('./database/models')
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware"); //middleware global
 
 
@@ -31,6 +31,17 @@ app.listen(port, () => console.log("server listening on port", port));
 app.use("/", mainRoutes)
 app.use("/product", productRoutes)
 app.use("/users", userRoutes)
+
+let newUser = db.User.create({
+  completeName: 'test',
+  userName: 'test',
+  birthday: 'test',
+  adress: 'test',
+  phone: '1111',
+  email: 'test',
+  password: 'test',
+  image: 'test'
+})
 
 
 module.exports = app;
