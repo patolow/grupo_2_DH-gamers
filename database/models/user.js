@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
     birthday: {
       type: DataTypes.DATE,
     },
-    adress: {
+    address: {
       type: DataTypes.STRING,
     },
     phone: {

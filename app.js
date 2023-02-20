@@ -35,12 +35,14 @@ app.use("/users", userRoutes)
 let newUser = db.User.create({
   completeName: 'test',
   userName: 'test',
-  birthday: 'test',
-  adress: 'test',
+  birthday: '2023/01/01',
+  address: 'test',
   phone: '1111',
   email: 'test',
   password: 'test',
-  image: 'test'
+  confirmPassword: "test",
+  image: 'test', 
+  isAdmin: "0"
 })
 
 
