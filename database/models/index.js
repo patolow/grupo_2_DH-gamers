@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config()
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -8,24 +8,19 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
-/*
-const sequelize = new Sequelize('postgres://dhgamersadmin:$dbpass123456@dh-gamers.mysql.database.azure.com:3306/dh-gamers',{
-  dialectModule: 'mysql'
-});
-*/
-//const sequelize = new Sequelize('dh-gamers.mysql.database.azure.com', 'dhgamersadmin', '$dbpass123456', { dialect: 'mysql', sync: {force: true}, syncOnAssociation: true, pool: { maxConnections: 5, maxIdleTime: 30} })
+
 var sequelize = new Sequelize(
-  'dh-gamers',
-  'dhgamersadmin',
-  '$dbpass123456',
+  config.database,
+  config.username,
+  config.password,
   {
-      port: 3306,
-      dialect: 'mysql',
-      host: 'dh-gamers.mysql.database.azure.com',
-      logging: console.log,
-      define: {
-          timestamps: false
-      }
+    port: config.port,
+    dialect: 'mysql',
+    host: config.host,
+    logging: console.log,
+    define: {
+      timestamps: false
+    }
   }
 );
 

@@ -6,11 +6,6 @@ const { Console } = require("console");
 const bcrypt = require("bcryptjs")
 const db = require("../database/models")
 
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf8"));
-
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf8"));
 
 const controller = {
   users: (req, res) => {
@@ -34,18 +29,25 @@ const controller = {
         profilePhoto = '/images/users/profile-photo-default.jpg'
       }
       //ADD NEW USER
-      let newUser = db.Users.create({
-        completeName: req.body.fullName,
+      let newUser = {
+        completeName: req.body.completeName,
         userName: req.body.userName,
         birthday: req.body.birthday,
-        adress: req.body.domicilio,
-        phone: req.body.telefono,
+        address: req.body.address,
+        phone: req.body.phone,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10),
         image: profilePhoto
+      }
+
+      db.User
+      .create(newUser)
+      .then((newUser) => {
+          return  res.redirect('./login');
       })
-      res.redirect('./login');
+      .catch(error => console.log(error));
+      
     }
   },
 

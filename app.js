@@ -9,7 +9,6 @@ const cookies = require("cookie-parser")
 const db = require('./database/models')
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware"); //middleware global
 
-
 const port = 3000;
 const path = require("path");
 
@@ -38,9 +37,9 @@ let newUser = db.User.create({
   birthday: '2023/01/01',
   address: 'test',
   phone: '1111',
-  email: 'test',
+  email: 'tes',
   password: 'test',
-  confirmPassword: "test",
+  confirmPassword: 'test',
   image: 'test', 
   isAdmin: "0"
 })
