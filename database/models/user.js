@@ -41,19 +41,18 @@ module.exports = function (sequelize, DataTypes) {
     }
   }
   let config = {
-    tableName: "Users",
+    tableName: "users",
     timestamps: false
   }
 
   let User = sequelize.define(alias, cols, config)
 
-
-  sequelize.sync({alter:true}). //para crear la tabla, sino entendí mal debería sacarse el {alter:true}
-    then(() => {
-      console.log('users table (re)created successfully');
-    }).catch((error) => {
-      console.error('Unable to create table : ', error);
-    })
+  // sequelize.sync({alter:true}). //para crear la tabla, sino entendí mal debería sacarse el {alter:true}
+  //   then(() => {
+  //     console.log('users table (re)created successfully');
+  //   }).catch((error) => {
+  //     console.error('Unable to create table : ', error);
+  //   })
 
   return User
 }

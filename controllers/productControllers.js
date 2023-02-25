@@ -3,6 +3,8 @@ const path = require("path");
 const fs = require("fs");
 const { Console } = require("console");
 
+//LABURAR CON ESTE FILE
+
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf8"));
 

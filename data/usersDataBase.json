@@ -9,7 +9,8 @@
   "email": "jperez@gmail.com",
   "password": "Jperez123",
   "confirmPassword": "Jperez123",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 2,
@@ -21,7 +22,8 @@
   "email": "jgarcia@gmail.com",
   "password": "Ja1dD3",
   "confirmPassword": "Ja1dD3",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 3,
@@ -33,7 +35,8 @@
   "email": "apaz@hotmail.com",
   "password": "Apaz123",
   "confirmPassword": "Apaz123",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 4,
@@ -45,7 +48,8 @@
   "email": "flopez@gmail.com",
   "password": "a12SDssdf5",
   "confirmPassword": "a12SDssdf5",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 5,
@@ -57,7 +61,8 @@
   "email": "cfernandez@hotmail.com",
   "password": "a12SDssdf5",
   "confirmPassword": "a12SDssdf5",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 6,
@@ -69,7 +74,8 @@
   "email": "aquito@hotmail.com",
   "password": "aquitito58",
   "confirmPassword": "aquitito58",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 7,
@@ -81,7 +87,8 @@
   "email": "afeliciano@gmail.com",
   "password": "Holamundo",
   "confirmPassword": "Holamundo",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 8,
@@ -93,7 +100,8 @@
   "email": "jvillar@gmail.com",
   "password": "Villar555",
   "confirmPassword": "Villar555",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 9,
@@ -105,7 +113,8 @@
   "email": "sluna@hotmail.com",
   "password": "nomevoyaacordar",
   "confirmPassword": "nomevoyaacordar",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 10,
@@ -117,7 +126,8 @@
   "email": "jsalvatierra@hotmail.com",
   "password": "Juli9999",
   "confirmPassword": "Juli9999",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 11,
@@ -129,7 +139,8 @@
   "email": "fcuello@yahoo.com.ar",
   "password": "deSD32R",
   "confirmPassword": "deSD32R",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 12,
@@ -141,11 +152,12 @@
   "email": "ahernandez@yahoo.com.ar",
   "password": "Arman321",
   "confirmPassword": "Arman321",
-  "image": "/images/index/user.png"
+  "image": "/images/index/user.png",
+  "isAdmin": false
  },
  {
   "id": 13,
-  "completeName": "Cristian",
+  "completeName": "Cristian Diaz",
   "userName": "ATBursatil",
   "birthday": "1985-11-07",
   "address": "",
@@ -153,7 +165,8 @@
   "email": "cristianrdiaz@hotmail.com.ar",
   "password": "$2a$10$qhj1ovNTY1KfLv94T6ZSTOFEJatbMcdJAT6ttIHbRn8NADhP6kyOC",
   "confirmPassword": "$2a$10$bw3d1jlDz0Ax7uYZCSKs9O3AfyiW7otb4Rco8anErzuImFYWbBYQ6",
-  "image": "/images/users/profile-photo-default.jpg"
+  "image": "/images/users/profile-photo-default.jpg",
+  "isAdmin": true
  },
  {
   "id": 14,
@@ -169,21 +182,8 @@
   "isAdmin": true
  },
  {
-  "id": 15,
-  "completeName": "Cristian Diaz",
-  "userName": "ATBursatil",
-  "birthday": "2023-02-16",
-  "address": "Rodriguez 737",
-  "phone": "0349215324821",
-  "email": "atbursatil2017@gmail.com",
-  "password": "$2a$10$1xyTXr5Mbf1CvpHbwVa3heVc2OY68TbdoWslhGzMfURY1y5ksSc9S",
-  "confirmPassword": "$2a$10$Bpn4gdZ/QmIvp/GGgDhB6OWm1EmKJyKAB2EYuOpxrXZvGt38417/a",
-  "image": "/images/users/profilePhoto-1675279893899.jpg",
-  "isAdmin": true
- },
- {
   "id": 16,
-  "completeName": "leandro dichiara",
+  "completeName": "Leandro Dichiara",
   "userName": "lean04_23@hotmail.com",
   "birthday": "1991-04-04",
   "address": "falso 123",
@@ -206,17 +206,5 @@
   "confirmPassword": "$2a$10$HM0.2IVRIuJvYl1ljBEXOu.XzQwjw2cNNuSJ5nFnqxWRUdt6iYMBK",
   "image": "/images/users/profile-photo-default.jpg",
   "isAdmin": true
- },
- {
-  "id": 18,
-  "completeName": "Patricia",
-  "userName": "patolowe",
-  "birthday": "1986-08-02",
-  "address": "",
-  "phone": "",
-  "email": "patolowe@hotmail.com",
-  "password": "$2a$10$XjOEojmKTyTG/3NER2/.Bu8vert.T.rflMc6o64ejkc5U9FT5pNcC",
-  "confirmPassword": "$2a$10$.yw1OXpr5b7tNdJH9Q9AC.HfdCahSdFSzTnx/hXuMbs/34mY1Iw8u",
-  "image": "/images/users/profile-photo-default.jpg"
  }
 ]
