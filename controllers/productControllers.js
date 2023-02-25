@@ -1,12 +1,5 @@
 const express = require("express");
-const path = require("path");
-const fs = require("fs");
-const { Console } = require("console");
-
-//LABURAR CON ESTE FILE
-
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf8"));
+const db = require("../database/models")
 
 const getImagesIndex = (category) => {
   let imagenesindex = [];
@@ -20,116 +13,193 @@ const getImagesIndex = (category) => {
 const controller = {
 
   getProductDetail: (req, res) => {
-    let idProduct = parseInt(req.params.id);
-    let productDetail = products.find(product => product.id === idProduct)
-    let imagesSlider = productDetail.sliderImage.split(",")
-
-    res.render("productDetails", { productDetail, imagesSlider })
-  }, //done
-
+    db.Product.findByPk(req.params.id)
+      .then((product) => {
+        let imagesSlider = product.sliderImage.split(",")
+        res.render("productDetails", { productDetail: product, imagesSlider })
+      })
+      .catch(err => console.error(err));
+  },
 
   getCreateProduct: (req, res) => {
     res.render("createProduct")
   },
 
   createProduct: (req, res) => {
-    console.log(req.body)
-    let newProduct = { id: products[products.length - 1].id + 1, ...req.body, }
-    products.push(newProduct)
-    fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-    res.redirect('/product/all/');
-  }, //to do
+    const defaultImage = '??????DEFAULT IMAGE';
+    const sliderImage = req.body.sliderImage ? req.body.sliderImage : defaultImage;
+    db.Product.create({
+      "name": req.body.name,
+      "price": req.body.price,
+      "discount": req.body.discount,
+      "category": req.body.category,
+      "bestSellers": req.body.bestSellers,
+      "stock": req.body.stock,
+      "description": req.body.description,
+      "sliderImage": sliderImage,
+    })
+      .then(product => {
+        const productUrl = `/product/detail/${product.id}`;
+        res.redirect(productUrl);
+      })
+      .catch(error => {
+        console.error("Error al crear el producto: ", error);
+        res.status(500).send('Error al crear el producto.');
+      });
+  },
 
-
+  //to do
 
   getEditProduct: (req, res) => {
-    let idProduct = parseInt(req.params.id);
-    let productToEdit = products.find(product => product.id === idProduct)
-
-    res.render("editProduct", { productToEdit })
+    db.Product.findByPk(req.params.id)
+      .then((product) => {
+        let imagesSlider = product.sliderImage.split(",")
+        res.render("editProduct", { productToEdit: product, imagesSlider })
+      })
   }, //done
 
   editProduct: (req, res) => {
-    console.log(req.body)
-    let idProduct = parseInt(req.params.id);
-    let productToEdit = products.find(product => product.id === idProduct);	//producto a editar en la base
-    productToEdit = { id: idProduct, ...req.body };
-    let newList = products.map(product => {
-      if (product.id == productToEdit.id) {
-        return product = { ...productToEdit }
+    const defaultImage = '??????DEFAULT IMAGE';
+    const sliderImage = req.body.sliderImage ? req.body.sliderImage : defaultImage;
+    db.Product.update({
+      "name": req.body.name,
+      "price": req.body.price,
+      "discount": req.body.discount,
+      "category": req.body.category,
+      "bestSellers": req.body.bestSellers,
+      "stock": req.body.stock,
+      "description": req.body.description,
+      "sliderImage": sliderImage,
+    },
+      {
+        where: { id: req.params.id }
       }
-      return product
+    )
+    .then(product => {
+      const productUrl = `/product/detail/${req.params.id}`;
+      res.redirect(productUrl);
     })
-    fs.writeFileSync(productsFilePath, JSON.stringify(newList));
-    res.redirect('/product/detail/' + productToEdit.id)
+    .catch(error => {
+      console.error("Error al editar el producto: ", error);
+      res.status(500).send('Error al editar el producto.');
+    });
   }, //done
 
   getProductsList: (req, res) => {
     let imagenesindex = [];
-    for (let i = 0; i <= products.length - 1; i++) {
-      let firstImage = products[i].sliderImage.split(",")[0]
-      products[i].sliderImage = firstImage
-    }
-    res.render("productsList", { products })
+    db.Product.findAll()
+      .then(products => {
+        for (let i = 0; i <= products.length - 1; i++) {
+          let firstImage = products[i].sliderImage.split(",")[0]
+          products[i].sliderImage = firstImage
+        }
+        res.render("productsList", { products })
+      }).catch(err => console.error(err));
   }, //done
 
-  //Methods for filtering products from productsList
+  // //Methods for filtering products from productsList
 
   placasdevideo: (req, res) => {
-    let placasdevideo = products.filter(product => product.category === "GPU")
-    let imagenesindex = getImagesIndex(placasdevideo)
-    res.render("productsAll", { products: placasdevideo, imagenesindex })
+    db.Product.findOne({
+      where: { category: "GPU" }
+    })
+      .then(placasdevideo => {
+        let imagenesindex = getImagesIndex(placasdevideo)
+        res.render("productsAll", { products: placasdevideo, imagenesindex })
+      })
+      .catch(err => {
+        console.error("Error al buscar productos con categoría 'GPU': ", err);
+        res.status(500).send('Error al buscar productos con categoría "GPU".');
+      });
   },
 
   monitores: (req, res) => {
-    let monitores = products.filter(product => product.category === "Monitores")
-    let imagenesindex = getImagesIndex(monitores)
-    res.render("productsAll", { products: monitores, imagenesindex })
+    db.Product.findOne({
+      where: { category: "Monitores" }
+    })
+      .then(monitores => {
+        let imagenesindex = getImagesIndex(monitores)
+        res.render("productsAll", { products: monitores, imagenesindex })
+      })
+      .catch(err => {
+        console.error("Error al buscar productos con categoría 'Monitores': ", err);
+        res.status(500).send('Error al buscar productos con categoría "Monitores".');
+      });
   },
 
   microprocesadores: (req, res) => {
-    let microprocesadores = products.filter(product => product.category === "Microprocesadores")
-    let imagenesindex = getImagesIndex(microprocesadores)
-    res.render("productsAll", { products: microprocesadores, imagenesindex })
+    db.Product.findOne({
+      where: { category: "Microprocesadores" }
+    })
+      .then(microprocesadores => {
+        let imagenesindex = getImagesIndex(microprocesadores)
+        res.render("productsAll", { products: microprocesadores, imagenesindex })
+      })
+      .catch(err => {
+        console.error("Error al buscar productos con categoría 'Microprocesadores': ", err);
+        res.status(500).send('Error al buscar productos con categoría "Microprocesadores".');
+      });
   },
 
   motherboards: (req, res) => {
-    let motherboards = products.filter(product => product.category === "Motherboards")
-    let imagenesindex = getImagesIndex(motherboards)
-    res.render("productsAll", { products: motherboards, imagenesindex })
+    db.Product.findOne({
+      where: { category: "Motherboards" }
+    })
+      .then(motherboards => {
+        let imagenesindex = getImagesIndex(motherboards)
+        res.render("productsAll", { products: motherboards, imagenesindex })
+      })
+      .catch(err => {
+        console.error("Error al buscar productos con categoría 'Motherboards': ", err);
+        res.status(500).send('Error al buscar productos con categoría "Motherboards".');
+      });
   },
 
   watercooling: (req, res) => {
-    let watercooling = products.filter(product => product.category === "Water Cooling")
-    let imagenesindex = getImagesIndex(watercooling)
-    res.render("productsAll", { products: watercooling, imagenesindex })
+    db.Product.findOne({
+      where: { category: "Water Cooling" }
+    })
+      .then(watercooling => {
+        let imagenesindex = getImagesIndex(watercooling)
+        res.render("productsAll", { products: watercooling, imagenesindex })
+      })
+      .catch(err => {
+        console.error("Error al buscar productos con categoría 'Water Cooling': ", err);
+        res.status(500).send('Error al buscar productos con categoría "Water Cooling".');
+      });
   },
 
   others: (req, res) => {
-    let others = products.filter(product => product.category === "Otros")
-    let imagenesindex = getImagesIndex(others)
-    res.render("productsAll", { products: others, imagenesindex })
+    db.Product.findOne({
+      where: { category: "Otros" }
+    })
+      .then(otros => {
+        let imagenesindex = getImagesIndex(otros)
+        res.render("productsAll", { products: otros, imagenesindex })
+      })
+      .catch(err => {
+        console.error("Error al buscar productos con categoría 'Otros': ", err);
+        res.status(500).send('Error al buscar productos con categoría "Otros".');
+      });
   },
 
   destroy: (req, res) => {
-    let idProduct = parseInt(req.params.id);
-    let newProducts = products.filter(product => product.id !== idProduct);
-    fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ''));
-    res.redirect("/product/list/")
+    db.Product.destroy({ where: { id: req.params.id } })
+      .then(res.redirect("/product/list/"))
   },
 
   productsAll: (req, res) => {
-    let imagenesindex = [];
-    for (let i = 0; i <= products.length - 1; i++) {
-      let firstImage = products[i].sliderImage.split(",")[0]
-      products[i].sliderImage = firstImage
-    }
-    res.render("productsAll", { products })
-  },
-
-  //Final filtering methods
-
-  productCart: (req, res) => { res.render("productCart") },
+    db.Product.findAll()
+      .then(products => {
+        for (let i = 0; i <= products.length - 1; i++) {
+          let firstImage = products[i].sliderImage.split(",")[0]
+          products[i].sliderImage = firstImage
+        }
+        // res.json(products);
+        res.render('productsAll.ejs', { products })
+      })
+      .catch(err => console.error(err));
+  }
 
 }
 
