@@ -31,18 +31,4 @@ app.use("/", mainRoutes)
 app.use("/product", productRoutes)
 app.use("/users", userRoutes)
 
-let newUser = db.User.create({
-  completeName: 'test',
-  userName: 'test',
-  birthday: '2023/01/01',
-  address: 'test',
-  phone: '1111',
-  email: 'tes',
-  password: 'test',
-  confirmPassword: 'test',
-  image: 'test', 
-  isAdmin: "0"
-})
-
-
 module.exports = app;

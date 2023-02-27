@@ -29,7 +29,7 @@ router.get("/logout", userControllers.logout)
 
 
 router.get("/register", guestMiddleware, userControllers.register);
-router.post("/register", uploadFile.single('profilePhoto'), userControllers.processRegister); //registerValidationsMiddleware, 
+router.post("/register", uploadFile.single('profilePhoto'), registerValidationsMiddleware, userControllers.processRegister); //registerValidationsMiddleware, 
 
 
 router.get("/login", guestMiddleware, userControllers.getLogin);
