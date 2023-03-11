@@ -5,7 +5,7 @@ const getImagesIndex = (category) => {
   let imagenesindex = [];
   for (let i = 0; i <= category.length - 1; i++) {
     let firstImage = category[i].sliderImage.split(",")[0]
-    imagenesindex.push(firstImage);
+    category[i].sliderImage = firstImage
   }
   return imagenesindex
 }
@@ -100,7 +100,7 @@ const controller = {
   // //Methods for filtering products from productsList
 
   placasdevideo: (req, res) => {
-    db.Product.findOne({
+    db.Product.findAll({
       where: { category: "GPU" }
     })
       .then(placasdevideo => {
@@ -114,7 +114,7 @@ const controller = {
   },
 
   monitores: (req, res) => {
-    db.Product.findOne({
+    db.Product.findAll({
       where: { category: "Monitores" }
     })
       .then(monitores => {
@@ -128,7 +128,7 @@ const controller = {
   },
 
   microprocesadores: (req, res) => {
-    db.Product.findOne({
+    db.Product.findAll({
       where: { category: "Microprocesadores" }
     })
       .then(microprocesadores => {
@@ -142,7 +142,7 @@ const controller = {
   },
 
   motherboards: (req, res) => {
-    db.Product.findOne({
+    db.Product.findAll({
       where: { category: "Motherboards" }
     })
       .then(motherboards => {
@@ -156,7 +156,7 @@ const controller = {
   },
 
   watercooling: (req, res) => {
-    db.Product.findOne({
+    db.Product.findAll({
       where: { category: "Water Cooling" }
     })
       .then(watercooling => {
@@ -170,7 +170,7 @@ const controller = {
   },
 
   others: (req, res) => {
-    db.Product.findOne({
+    db.Product.findAll({
       where: { category: "Otros" }
     })
       .then(otros => {

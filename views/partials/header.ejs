@@ -4,7 +4,7 @@
       <div class="logo-nav">
         <a href="/"><img src="/images/index/DH-gamers_Logo-final.png" alt="Página de inicio"></a>
       </div>
-      <% if (locals.isLogged && locals.usuarioLogueado.isAdmin) { %>
+      <% if (locals.isLogged && locals.usuarioLogueado.isAdmin==1) { %>
 
       <a href="/product/list" class="product-list-button"><button class="imagen-ingreso-grande">LISTA DE PRODUCTOS</button></a>
       <% }  %>

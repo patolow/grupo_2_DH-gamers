@@ -42,16 +42,14 @@ const controller = {
       }
 
       db.User
-      .create(newUser)
-      .then((newUser) => {
-          return  res.redirect('./login');
-      })
-      .catch(error => console.log(error));
-      
+        .create(newUser)
+        .then((newUser) => {
+          return res.redirect('./login');
+        })
+        .catch(error => console.log(error));
+
     }
   },
-
-
 
   getLogin: (req, res) => { res.render("login") },
 
@@ -61,25 +59,32 @@ const controller = {
 
     if (errors.isEmpty()) {
 
-      let userToLogin = users.find(user => user.email === req.body.email); //vacio o con usuario
+      let userToLogin = db.User.findOne(
+        {
+          where: { email: req.body.email }
+        })
+        .then(userToLogin => {
+          if (!userToLogin) {
+            res.render('login', { errors: [{ msg: 'Usuario no encontrado' }] });
+          }
 
-      if (!userToLogin) {
-        res.render('login', { errors: [{ msg: 'Usuario no encontrado' }] });
-      }
+          let isPasswordValid = bcrypt.compareSync(req.body.password, userToLogin.password);
 
-      let isPasswordValid = bcrypt.compareSync(req.body.password, userToLogin.password);
+          if (!isPasswordValid) {
+            res.render('login', { errors: [{ msg: 'Credenciales invalidas. Vuelva a intentarlo' }], old: req.body });
+          }
 
-      if (!isPasswordValid) {
-        res.render('login', { errors: [{ msg: 'Credenciales invalidas. Vuelva a intentarlo' }], old: req.body });
-      }
-
-      req.session.usuarioLogueado = userToLogin;
-      //rememer password
-      if (req.body.rememberPassword != undefined) {
-        res.cookie('email', userToLogin.email, { maxAge: 900000 })
-      }
-      res.redirect("./profile")
-
+          req.session.usuarioLogueado = userToLogin;
+          //rememer password
+          if (req.body.rememberPassword != undefined) {
+            res.cookie('email', userToLogin.email, { maxAge: 900000 })
+          }
+          res.redirect("./profile")
+        })
+        .catch(error => {
+          console.error("Error al intentar loguearse: ", error);
+          res.status(500).send('Error al intentar loguearse.');
+        })
     }
 
     else {
