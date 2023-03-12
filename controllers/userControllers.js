@@ -53,17 +53,23 @@ const controller = {
 
   getLogin: (req, res) => { res.render("login") },
 
+  getLogin: (req, res) => { res.render("login") },
+
   login: (req, res) => {
 
     let errors = validationResult(req);
 
+    if(req.session?.usuarioLogueado){
+      return res.redirect("./profile")
+    }
+
     if (errors.isEmpty()) {
 
-      let userToLogin = db.User.findOne(
-        {
+      let userToLogin = db.User.findOne({
           where: { email: req.body.email }
         })
         .then(userToLogin => {
+          userToLogin = userToLogin.dataValues
           if (!userToLogin) {
             res.render('login', { errors: [{ msg: 'Usuario no encontrado' }] });
           }
@@ -76,7 +82,7 @@ const controller = {
 
           req.session.usuarioLogueado = userToLogin;
           //rememer password
-          if (req.body.rememberPassword != undefined) {
+          if (req.body.rememberPassword) {
             res.cookie('email', userToLogin.email, { maxAge: 900000 })
           }
           res.redirect("./profile")
@@ -92,6 +98,7 @@ const controller = {
     }
 
   },
+
 
   profile: (req, res) => {
     res.render("profile", { usuario: req.session.usuarioLogueado })

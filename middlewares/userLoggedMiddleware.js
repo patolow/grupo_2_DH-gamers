@@ -1,22 +1,31 @@
-const path = require("path");
-const fs = require("fs");
+const express = require("express");
+const db = require("../database/models")
 
 function userLoggedMiddleware(req, res, next) {
-  res.locals.isLogged = false;
-
-  let emailInCookie = req.cookies.email
-  let userFromCookie = users.find(user => user.email === req.cookies.email);
-
-  if (userFromCookie) {
-    req.session.usuarioLogueado = userFromCookie
-  }
-
-  if (req.session && req.session.usuarioLogueado) {
-    res.locals.isLogged = true;
+  res.locals.isLogged = false
+  if (req.session?.usuarioLogueado) {
+    res.locals.isLogged = true
     res.locals.usuarioLogueado = req.session.usuarioLogueado
+    return next()
   }
 
-  next();
+  const emailInCookie = req.cookies.email
+  if(!emailInCookie) {
+    return next()
+  }
+
+  let userFromCookie = db.User.findOne({
+    where: {email: emailInCookie }
+  }).then(userFromCookie => {
+    if (userFromCookie) {
+      userFromCookie = userFromCookie.dataValues
+      req.session.usuarioLogueado = userFromCookie
+    }
+  }).catch(error => {
+    console.log(error)
+    next(res.status(500).send('Error al intentar loguearse.'))
+  })
+  next()
 }
 
 module.exports = userLoggedMiddleware
