@@ -108,7 +108,49 @@ const controller = {
     res.clearCookie('email')
     req.session.destroy();
     res.redirect("/")
-  }
+  },
+
+  getEditUser: (req, res) => {
+    db.User.findByPk(req.params.id)
+        .then(function(usuario){
+            res.render("userEdit", {usuario:usuario});
+        })
+  },
+
+  
+  editUser: (req, res) => {
+    let profilePhoto = ''
+      if (req.file) {
+        profilePhoto = '/images/users/' + req.file.filename
+      } else {
+        profilePhoto = '/images/users/profile-photo-default.jpg'
+      }
+    db.User.update({
+      completeName: req.body.completeName,
+      userName: req.body.userName, 
+      birthday: req.body.birthday,
+      address: req.body.address,
+      phone: req.body.phone,
+      email: req.body.email,
+      password: bcrypt.hashSync(req.body.password, 10),
+      confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10),
+      image: profilePhoto
+
+  }, {
+      where: {id: req.params.id}
+  })
+  .then(user => {
+    console.log(user)
+    const userUrl = "/users/profile";
+    return res.redirect(userUrl);
+  })
+  .catch(error => {
+    console.error("Error al editar el usuario: ", error);
+    res.status(500).send('Error al editar el usuario.');
+  });
 }
+
+  }
+
 
 module.exports = controller

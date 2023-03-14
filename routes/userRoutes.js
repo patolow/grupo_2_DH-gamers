@@ -35,6 +35,9 @@ router.post("/register", uploadFile.single('profilePhoto'), registerValidationsM
 router.get("/login", guestMiddleware, userControllers.getLogin);
 router.post("/login", loginValidationsMiddleware,  userControllers.login)
 
+router.get("/edit/:id", userControllers.getEditUser);
+router.put("/edit/:id", userControllers.editUser)
+
 
 module.exports = router
 

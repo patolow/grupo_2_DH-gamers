@@ -25,7 +25,7 @@
               <%= locals.usuarioLogueado.birthday %>
             </p>
             <p><b>Domicilio:</b>
-              <%= locals.usuarioLogueado.adress %>
+              <%= locals.usuarioLogueado.address %>
             </p>
             <p><b>Telefono:</b>
               <%= locals.usuarioLogueado.phone %>
@@ -33,6 +33,7 @@
             <p><b>Email:</b>
               <%= locals.usuarioLogueado.email %>
             </p>
+            <p><b>Editar Usuario:</b><a href="/users/edit/<%=locals.usuarioLogueado.id%>"> Click acá</a></p>
           </div>
 
         </section>
@@ -40,7 +41,7 @@
         <div class="cajaImagenUsuario">
           <img src="<%= locals.usuarioLogueado.image%>">
         </div>
-
+        
       </div>
       </main>
 

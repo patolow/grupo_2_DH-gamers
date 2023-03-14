@@ -59,6 +59,10 @@ div.cajaImagenUsuario{
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+}
+
 .cajaImagenUsuario img {
     width: 100%
 }
