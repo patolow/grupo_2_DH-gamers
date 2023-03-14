@@ -24,7 +24,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     email: {
       type: DataTypes.STRING,
-     // unique: false,
+      // unique: false,
     },
     password: {
       type: DataTypes.STRING,
@@ -46,6 +46,14 @@ module.exports = function (sequelize, DataTypes) {
   }
 
   let User = sequelize.define(alias, cols, config)
+
+  User.associate = function (models) {
+    User.hasMany(models.Purchases, {
+      as: "purchases",
+      foreignKey: "id_user"
+    })
+  }
+
 
   // sequelize.sync({alter:true}). //para crear la tabla, sino entendí mal debería sacarse el {alter:true}
   //   then(() => {
