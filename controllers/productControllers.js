@@ -27,16 +27,19 @@ const controller = {
 
   createProduct: (req, res) => {
     const defaultImage = '??????DEFAULT IMAGE';
-    const sliderImage = req.body.sliderImage ? req.body.sliderImage : defaultImage;
+    const sliderImage = req.body.sliderImage ? req.body.sliderImage : "defaultImage";
     db.Product.create({
       "name": req.body.name,
       "price": req.body.price,
       "discount": req.body.discount,
-      "category": req.body.category,
       "bestSellers": req.body.bestSellers,
       "stock": req.body.stock,
+      "reviews": req.body.reviews,
+      "deliveryDate": req.body.deliveryDate,
       "description": req.body.description,
       "sliderImage": sliderImage,
+      "id_category": req.body.id_category, 
+
     })
       .then(product => {
         const productUrl = `/product/detail/${product.id}`;
@@ -48,7 +51,7 @@ const controller = {
       });
   },
 
-  //to do
+  //done
 
   getEditProduct: (req, res) => {
     db.Product.findByPk(req.params.id)
@@ -87,21 +90,26 @@ const controller = {
 
   getProductsList: (req, res) => {
     let imagenesindex = [];
-    db.Product.findAll()
-      .then(products => {
-        for (let i = 0; i <= products.length - 1; i++) {
-          let firstImage = products[i].sliderImage.split(",")[0]
-          products[i].sliderImage = firstImage
-        }
-        res.render("productsList", { products })
-      }).catch(err => console.error(err));
-  }, //done
+    db.Product.findAll({
+      include: [{ association : "category"}]
+    })
+    .then(products => {
+      for (let i = 0; i <= products.length - 1; i++) {
+        let firstImage = products[i].sliderImage.split(",")[0]
+        products[i].sliderImage = firstImage
+      }
+      res.render("productsList", { products })
+    })
+    .catch(err => console.error(err));
+  },
+  
+  //done
 
   // //Methods for filtering products from productsList
 
   placasdevideo: (req, res) => {
     db.Product.findAll({
-      where: { category: "GPU" }
+      where: { id_category: "1" }
     })
       .then(placasdevideo => {
         let imagenesindex = getImagesIndex(placasdevideo)
@@ -115,7 +123,7 @@ const controller = {
 
   monitores: (req, res) => {
     db.Product.findAll({
-      where: { category: "Monitores" }
+      where: { id_category: "2" }
     })
       .then(monitores => {
         let imagenesindex = getImagesIndex(monitores)
@@ -129,7 +137,7 @@ const controller = {
 
   microprocesadores: (req, res) => {
     db.Product.findAll({
-      where: { category: "Microprocesadores" }
+      where: { id_category: "3" }
     })
       .then(microprocesadores => {
         let imagenesindex = getImagesIndex(microprocesadores)
@@ -143,7 +151,7 @@ const controller = {
 
   motherboards: (req, res) => {
     db.Product.findAll({
-      where: { category: "Motherboards" }
+      where: { id_category: "4" }
     })
       .then(motherboards => {
         let imagenesindex = getImagesIndex(motherboards)
@@ -157,7 +165,7 @@ const controller = {
 
   watercooling: (req, res) => {
     db.Product.findAll({
-      where: { category: "Water Cooling" }
+      where: { id_category: "5" }
     })
       .then(watercooling => {
         let imagenesindex = getImagesIndex(watercooling)
@@ -169,9 +177,23 @@ const controller = {
       });
   },
 
+  joystick: (req, res) => {
+    db.Product.findAll({
+      where: { id_category: "6" }
+    })
+      .then(joystick => {
+        let imagenesindex = getImagesIndex(joystick)
+        res.render("productsAll", { products: joystick, imagenesindex })
+      })
+      .catch(err => {
+        console.error("Error al buscar productos con categoría 'Joysticks': ", err);
+        res.status(500).send('Error al buscar productos con categoría "Joysticks".');
+      });
+  },
+
   others: (req, res) => {
     db.Product.findAll({
-      where: { category: "Otros" }
+      where: { id_category: "7" }
     })
       .then(otros => {
         let imagenesindex = getImagesIndex(otros)

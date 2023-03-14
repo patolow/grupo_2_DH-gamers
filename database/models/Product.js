@@ -15,9 +15,6 @@ module.exports = function (sequelize, DataTypes) {
         discount: {
             type: DataTypes.INTEGER
         },
-        category: {
-            type: DataTypes.STRING
-        },
         bestSellers: {
             type: DataTypes.STRING
         },
@@ -36,6 +33,9 @@ module.exports = function (sequelize, DataTypes) {
         sliderImage: {
             type: DataTypes.STRING
         },
+        id_category: {
+            type: DataTypes.INTEGER
+        },
     }
     let config = {
         tableName: "products", //name of the table in DB
@@ -44,6 +44,14 @@ module.exports = function (sequelize, DataTypes) {
 
     let Product = sequelize.define(alias, cols, config)
 
+
+    Product.associate = function (models) {   // un producto tiene un solo genero
+        Product.belongsTo(models.Category, {
+            as: "category",
+            foreignKey: "id_category"
+        })
+    }
+    
 
 return Product
 

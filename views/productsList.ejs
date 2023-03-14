@@ -15,12 +15,14 @@
             <h2 class="titulo-productos">MIS PRODUCTOS</h2>
           </div>
 
-
           <hr class="line">
           <% products.forEach(function(product) { %>
             <div class="item">
-              <div>DH- <%= product.id %>
+
+              <div>
+                DH- <%= product.id %>
               </div>
+
               <div class="product-info">
                 <a class="url-product" href="/product/detail/<%=product.id%>">
                   <p class="product-name">
@@ -28,11 +30,29 @@
                   </p>
                 </a>
                 <p class="product-category">
-                  <%= product.category %>
+                  <%= product.category.name%> (<%= product.id_category %>) 
                 </p>
               </div>
+
               <div class="price">U$S <%= product.price %>
               </div>
+              
+              <div class="discount"> <%= product.discount %>
+              </div>
+
+              <div class="bestSellers"> <%= product.bestSellers %>
+              </div>
+
+              <div class="stock"> <%= product.stock %>
+              </div>
+
+              <div class="reviews"> <%= product.reviews %>
+              </div>
+
+              <div class="deliveryDate"> <%= product.deliveryDate %>
+              </div>
+
+
               <div class="imagen-list"> <img src="<%= product.sliderImage %>" height=40px alt="imagen del Producto">
               </div>
               <div class="unidades">

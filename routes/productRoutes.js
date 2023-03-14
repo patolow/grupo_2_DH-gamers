@@ -27,6 +27,7 @@ router.get("/all/monitores/", productControllers.monitores);
 router.get("/all/microprocesadores/", productControllers.microprocesadores);
 router.get("/all/motherboards/", productControllers.motherboards);
 router.get("/all/watercooling/", productControllers.watercooling);
+router.get("/all/joystick/", productControllers.joystick);
 router.get("/all/others/", productControllers.others);
 
 // router.get("/cart/", productControllers.productCart);

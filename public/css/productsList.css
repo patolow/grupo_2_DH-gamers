@@ -172,9 +172,11 @@
 @media (min-width: 768px) {
 
   .products-list {
-    width: 70%;
+
+    width: 90%;
     margin: 2.5% 15%;
-    max-width: 700px;
+    max-width: 1240px;
+
   }
 
   .titulo-productos {

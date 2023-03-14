@@ -46,6 +46,19 @@
 
           <input class="boxes-product" type="text" name="reviews" placeholder="cantidad de reviews">
 
+          <input class="boxes-product" type="date" name="deliveryDate" placeholder="fecha de entrega">
+
+          <select class="boxes-product" name="id_category" id="id_category" required>
+            <option value="none" disabled selected>Categoria del Producto</option>
+            <option value="1" id="GPU">GPU</option>
+            <option value="2" id="monitores">Monitores</option>
+            <option value="3" id="microprocesadores">Microprocesadores</option>
+            <option value="4" id="motherboards">Motherboards</option>
+            <option value="5" id="watercooling">WaterCooling</option>
+            <option value="6" id="joysticks">Joysticks</option>
+            <option value="7" id="others">Others</option>
+          </select>
+
           <textarea class="boxes-product" name="description" id="description" cols="20" rows="5"
             placeholder="Descripción del producto" minlength="50" maxlength="500" required></textarea>
 
