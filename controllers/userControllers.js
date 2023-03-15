@@ -77,7 +77,7 @@ const controller = {
           let isPasswordValid = bcrypt.compareSync(req.body.password, userToLogin.password);
 
           if (!isPasswordValid) {
-            res.render('login', { errors: [{ msg: 'Credenciales invalidas. Vuelva a intentarlo' }], old: req.body });
+           return res.render('login', { errors: [{ msg: 'Credenciales invalidas. Vuelva a intentarlo' }], old: req.body });
           }
 
           req.session.usuarioLogueado = userToLogin;
