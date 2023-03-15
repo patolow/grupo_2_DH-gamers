@@ -125,19 +125,27 @@ const controller = {
       } else {
         profilePhoto = '/images/users/profile-photo-default.jpg'
       }
-    db.User.update({
-      completeName: req.body.completeName,
-      userName: req.body.userName, 
-      birthday: req.body.birthday,
-      address: req.body.address,
-      phone: req.body.phone,
-      email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 10),
-      confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10),
-      image: profilePhoto
 
-  }, {
-      where: {id: req.params.id}
+    const updateData = {
+    completeName: req.body.completeName,
+    userName: req.body.userName, 
+    birthday: req.body.birthday,
+    address: req.body.address,
+    phone: req.body.phone,
+    email: req.body.email,
+    image: profilePhoto
+  };
+  
+  if (req.body.password) {
+    updateData.password = bcrypt.hashSync(req.body.password, 10);
+  }
+  
+  if (req.body.confirmPassword) {
+    updateData.confirmPassword = bcrypt.hashSync(req.body.confirmPassword, 10);
+  }
+  
+  db.User.update(updateData, {
+    where: { id: req.params.id }
   })
   .then(user => {
     console.log(user)
