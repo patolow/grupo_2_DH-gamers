@@ -50,6 +50,13 @@ module.exports = function (sequelize, DataTypes) {
             as: "category",
             foreignKey: "id_category"
         })
+        Product.belongsToMany(models.Purchase, {
+            as: 'compras',
+            through: 'products_purchase',
+            foreignKey : 'id_product',
+            otherKey : 'id_purchase',
+            timestamps: false
+          })
     }
     
 
