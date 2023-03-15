@@ -41,14 +41,14 @@ module.exports = function (sequelize, DataTypes) {
     }
   }
   let config = {
-    tableName: "user",
+    tableName: "users",
     timestamps: false
   }
 
-  let User = sequelize.define(alias, cols, config)
+  let Users = sequelize.define(alias, cols, config)
 
-  User.associate = function (models) {
-    User.hasMany(models.Purchase, {
+  Users.associate = function (models) {
+    Users.hasMany(models.Purchase, {
       as: "purchases",
       foreignKey: "id_user"
     })
@@ -60,5 +60,5 @@ module.exports = function (sequelize, DataTypes) {
   //     console.error('Unable to create table : ', error);
   //   })
 
-  return User
+  return Users
 }
