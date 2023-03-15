@@ -41,14 +41,14 @@ module.exports = function (sequelize, DataTypes) {
     }
   }
   let config = {
-    tableName: "users",
+    tableName: "user",
     timestamps: false
   }
 
   let User = sequelize.define(alias, cols, config)
 
   User.associate = function (models) {
-    User.hasMany(models.Purchases, {
+    User.hasMany(models.Purchase, {
       as: "purchases",
       foreignKey: "id_user"
     })
