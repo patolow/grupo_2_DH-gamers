@@ -17,10 +17,12 @@
           <h2 class="subtitle">Modificar producto: <%= productToEdit.name %>
           </h2>
           <!--DATA ENTRY boxes-->
-          <input class="boxes-product" type="text" name="name" value=<%=productToEdit.name %> required
+          <input class="boxes-product" type="text" name="name" placeholder="Producto, marca y modelo" value=<%=productToEdit.name %> required
           maxlength="100">
+          
 
-          <select class="boxes-product" name="category" id="category" required>
+          <select class="boxes-product" name="category" id="category" required >
+            <option value="none" disabled selected>Categoria del Producto</option>
             <% if (productToEdit.category=="Placas de Video" ) { %>
               <option value="placasDeVideo" id="placasDeVideo" selected>Placas de Video</option>
               <option value="monitores" id="monitores">Monitores</option>
@@ -66,11 +68,12 @@
                         <% } %>
           </select>
 
-          <input class="boxes-product" type="text" name="price" value=<%=productToEdit.price %>>
-          <input class="boxes-product" type="text" name="discount" value=<%=productToEdit.discount %>
+          <input class="boxes-product" type="text" name="price" placeholder="Precio del Producto" value=<%=productToEdit.price %>>
+          <input class="boxes-product" type="text" name="discount" placeholder="Descuento (0-50%)" value=<%=productToEdit.discount %>
           maxlength="2">
 
           <select class="boxes-product" name="bestSellers" id="bestSellers" required>
+            <option value="none" disabled selected>Best Sellers</option>
             <% if (productToEdit.bestSellers==true) { %>
               <option value="si" id="si" selected>Sí</option>
               <option value="no" id="no">No</option>
@@ -80,12 +83,14 @@
                 <% } %>
           </select>
 
-          <input class="boxes-product" type="text" name="stock" value=<%=productToEdit.stock %>
+          <input class="boxes-product" type="text" name="stock" placeholder="Cantidad de productos disponibles" value=<%=productToEdit.stock %>
           maxlength="3">
 
-          <input class="boxes-product" type="text" name="reviews" value=<%=productToEdit.reviews %>>
+          <input class="boxes-product" type="text" name="reviews" placeholder="Cantidad de reviews" value=<%=productToEdit.reviews %>>
 
-          <textarea class="boxes-product" name="description" id="description" cols="20" rows="5" minlength="50"
+          <input class="boxes-product" type="date" name="deliveryDate" placeholder="Fecha de entrega" value=<%=productToEdit.deliveryDate %>>
+
+          <textarea class="boxes-product" name="description" placeholder="Descripción del producto" id="description" cols="20" rows="5" minlength="50"
             maxlength="2500" required><%= productToEdit.description %></textarea>
 
           <label>Imágen del producto:</label>

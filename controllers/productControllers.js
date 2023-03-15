@@ -68,18 +68,20 @@ const controller = {
       "name": req.body.name,
       "price": req.body.price,
       "discount": req.body.discount,
-      "category": req.body.category,
       "bestSellers": req.body.bestSellers,
       "stock": req.body.stock,
+      "reviews": req.body.reviews,
+      "deliveryDate": req.body.deliveryDate,
       "description": req.body.description,
       "sliderImage": sliderImage,
+      "id_category": req.body.id_category, 
     },
       {
         where: { id: req.params.id }
       }
     )
     .then(product => {
-      const productUrl = `/product/detail/${req.params.id}`;
+      const productUrl = `/product/detail/${req.params.id}`; //te manda a producto que editaste 
       res.redirect(productUrl);
     })
     .catch(error => {

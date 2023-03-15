@@ -21,7 +21,7 @@
           <input class="boxes-product" type="text" name="name" placeholder="Producto, marca y modelo" required
             maxlength="100">
 
-          <select class="boxes-product" name="category" id="category" onchange="showCategories()" required>
+          <!-- <select class="boxes-product" name="category" id="category" onchange="showCategories()" required>
             <option value="none" disabled selected>Categoría</option>
             <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
             <option value="monitores" id="monitores">Monitores</option>
@@ -29,6 +29,17 @@
             <option value="motherboards" id="motherboards">Motherboards</option>
             <option value="waterCooling" id="waterCooling">Water Cooling</option>
             <option value="others" id="others">Otras</option>
+          </select> -->
+
+          <select class="boxes-product" name="id_category" id="id_category" required onchange="showCategories()">
+            <option value="none" disabled selected>Categoria del Producto</option>
+            <option value="1" id="GPU">GPU</option>
+            <option value="2" id="monitores">Monitores</option>
+            <option value="3" id="microprocesadores">Microprocesadores</option>
+            <option value="4" id="motherboards">Motherboards</option>
+            <option value="5" id="watercooling">WaterCooling</option>
+            <option value="6" id="joysticks">Joysticks</option>
+            <option value="7" id="others">Otras</option>
           </select>
 
           <input class="boxes-product" type="text" name="price" placeholder="Precio del Producto" required>
@@ -44,20 +55,9 @@
           <input class="boxes-product" type="text" name="stock" placeholder="Cantidad de productos disponibles"
             maxlength="3">
 
-          <input class="boxes-product" type="text" name="reviews" placeholder="cantidad de reviews">
+          <input class="boxes-product" type="text" name="reviews" placeholder="Cantidad de reviews">
 
-          <input class="boxes-product" type="date" name="deliveryDate" placeholder="fecha de entrega">
-
-          <select class="boxes-product" name="id_category" id="id_category" required>
-            <option value="none" disabled selected>Categoria del Producto</option>
-            <option value="1" id="GPU">GPU</option>
-            <option value="2" id="monitores">Monitores</option>
-            <option value="3" id="microprocesadores">Microprocesadores</option>
-            <option value="4" id="motherboards">Motherboards</option>
-            <option value="5" id="watercooling">WaterCooling</option>
-            <option value="6" id="joysticks">Joysticks</option>
-            <option value="7" id="others">Others</option>
-          </select>
+          <input class="boxes-product" type="date" name="deliveryDate" placeholder="Fecha de entrega">
 
           <textarea class="boxes-product" name="description" id="description" cols="20" rows="5"
             placeholder="Descripción del producto" minlength="50" maxlength="500" required></textarea>
