@@ -18,14 +18,14 @@
     justify-content: center;
 }
 
-
 div.datosUsuarios{
     background-color: white;
 
     max-width: 700px;
     padding: 10px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
     border-radius: 0%;
     display: flex;
     justify-content: left;
@@ -64,7 +64,7 @@ a {
 }
 
 .cajaImagenUsuario img {
-    width: 100%
+    width: 80%
 }
 
 @media (min-width: 1200px) {
