@@ -45,14 +45,14 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false
   }
 
-  let User = sequelize.define(alias, cols, config)
+  let Users = sequelize.define(alias, cols, config)
 
-  // User.associate = function (models) {
-  //   User.hasMany(models.Purchases, {
-  //     as: "purchases",
-  //     foreignKey: "id_user"
-  //   })
-  // }
+  Users.associate = function (models) {
+    Users.hasMany(models.Purchase, {
+      as: "purchases",
+      foreignKey: "id_user"
+    })
+  }
   // sequelize.sync({alter:true}). //para crear la tabla, sino entendí mal debería sacarse el {alter:true}
   //   then(() => {
   //     console.log('users table (re)created successfully');
@@ -60,5 +60,5 @@ module.exports = function (sequelize, DataTypes) {
   //     console.error('Unable to create table : ', error);
   //   })
 
-  return User
+  return Users
 }
