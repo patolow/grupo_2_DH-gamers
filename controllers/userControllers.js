@@ -101,8 +101,15 @@ const controller = {
 
 
   profile: (req, res) => {
-    res.render("profile", { usuario: req.session.usuarioLogueado })
-  },
+    let usuarioLogueado = req.session.usuarioLogueado
+    console.log(usuarioLogueado);
+    db.User.findOne({
+      where: {email: usuarioLogueado.email}})
+        .then(function(usuario){
+          res.render("profile", {usuario: usuarioLogueado, usuarioBase: usuario});    
+        })
+        
+      },
 
   logout: (req, res) => {
     res.clearCookie('email')
@@ -119,6 +126,7 @@ const controller = {
 
   
   editUser: (req, res) => {
+  
     let profilePhoto = ''
       if (req.file) {
         profilePhoto = '/images/users/' + req.file.filename
@@ -126,31 +134,32 @@ const controller = {
         profilePhoto = '/images/users/profile-photo-default.jpg'
       }
 
+    let password =   req.body.password
+    let confirmPassword = req.body.confirmPassword
+    if( password == confirmPassword){
+      password = bcrypt.hashSync(password, 10)
+    }
     const updateData = {
+    
     completeName: req.body.completeName,
     userName: req.body.userName, 
     birthday: req.body.birthday,
     address: req.body.address,
     phone: req.body.phone,
     email: req.body.email,
-    image: profilePhoto
+    image: profilePhoto,
+    password: password,
+    confirmPassword: "asdoasd11203asas"
   };
   
-  if (req.body.password) {
-    updateData.password = bcrypt.hashSync(req.body.password, 10);
-  }
-  
-  if (req.body.confirmPassword) {
-    updateData.confirmPassword = bcrypt.hashSync(req.body.confirmPassword, 10);
-  }
-  
+  console.log(updateData)
   db.User.update(updateData, {
     where: { id: req.params.id }
   })
   .then(user => {
-    console.log(user)
-    const userUrl = "/users/profile";
-    return res.redirect(userUrl);
+    
+    
+    return res.redirect("/users/profile");
   })
   .catch(error => {
     console.error("Error al editar el usuario: ", error);

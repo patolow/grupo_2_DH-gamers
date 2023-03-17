@@ -44,8 +44,7 @@
                           <%= errors.email.msg %>
                         </p>
                         <% } %>
-                          <input class="register-boxes" type="password" name="password" placeholder="Contraseña"
-                            value=<%=usuario.password%>>
+                          <input class="register-boxes" type="password" name="password" placeholder="Contraseña">
                           <% if (locals.errors && errors.password) { %>
                             <p class="errors">
                               <%= errors.password.msg %>
@@ -56,7 +55,7 @@
                                 números y símbolos (!@#$%)
                               </p>
                               <input class="register-boxes" type="password" name="confirmPassword"
-                                placeholder="Confirmar Contraseña" value=<%=usuario.confirmPassword%>>
+                                placeholder="Confirmar Contraseña">
                               <% if (locals.errors && errors.confirmPassword) { %>
                                 <p class="errors">
                                   <%= errors.confirmPassword.msg %>

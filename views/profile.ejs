@@ -8,7 +8,7 @@
     <%- include("./partials/header") %>
 
       <div class="titulo-bienvenida-profile">
-        <h1 class="h1-bienvenida">Bienvenido <%= locals.usuarioLogueado.completeName %>, estas logueado en tu perfil DH GAMERS! </h1>
+        <h1 class="h1-bienvenida">Bienvenido <%= usuarioBase.completeName %>, estas logueado en tu perfil DH GAMERS! </h1>
       </div>
       <div class="datosUsuarios">
         <section>
@@ -16,22 +16,22 @@
             <h2>Tu Información personal</h2>
             <br>
             <p><b>Nombre:</b>
-              <%= locals.usuarioLogueado.completeName %>
+              <%= usuarioBase.completeName %>
             </p>
             <p><b>User:</b>
-              <%= locals.usuarioLogueado.userName %>
+              <%= usuarioBase.userName %>
             </p>
             <p><b>Fecha de Nacimiento:</b>
-              <%= locals.usuarioLogueado.birthday %>
+              <%= usuarioBase.birthday %>
             </p>
             <p><b>Domicilio:</b>
-              <%= locals.usuarioLogueado.address %>
+              <%= usuarioBase.address %>
             </p>
             <p><b>Telefono:</b>
-              <%= locals.usuarioLogueado.phone %>
+              <%= usuarioBase.phone %>
             </p>
             <p><b>Email:</b>
-              <%= locals.usuarioLogueado.email %>
+              <%= usuarioBase.email %>
             </p>
             <p><b>Editar Usuario:</b><a href="/users/edit/<%=locals.usuarioLogueado.id%>"> Click acá</a></p>
           </div>
@@ -39,7 +39,7 @@
         </section>
 
         <div class="cajaImagenUsuario">
-          <img src="<%= locals.usuarioLogueado.image%>">
+          <img src="<%= usuarioBase.image%>">
         </div>
         
       </div>
