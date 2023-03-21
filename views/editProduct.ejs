@@ -23,47 +23,62 @@
 
           <select class="boxes-product" name="category" id="category" required >
             <option value="none" disabled selected>Categoria del Producto</option>
-            <% if (productToEdit.category=="Placas de Video" ) { %>
+            <% if (productToEdit.id_category=="1" ) { %>
               <option value="placasDeVideo" id="placasDeVideo" selected>Placas de Video</option>
               <option value="monitores" id="monitores">Monitores</option>
               <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
               <option value="motherboards" id="motherboards">Motherboards</option>
               <option value="waterCooling" id="waterCooling">Water Cooling</option>
+              <option value="joysticks" id="joysticks">Joysticks</option>
               <option value="others" id="others">Otras</option>
-              <% } else if (productToEdit.category=="Monitores" ) { %>
+              <% } else if (productToEdit.id_category=="2") { %>
                 <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
                 <option value="monitores" id="monitores" selected>Monitores</option>
                 <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
                 <option value="motherboards" id="motherboards">Motherboards</option>
+                <option value="joysticks" id="joysticks">Joysticks</option>
                 <option value="waterCooling" id="waterCooling">Water Cooling</option>
                 <option value="others" id="others">Otras</option>
-                <% } else if (productToEdit.category=="Microprocesadores" ) { %>
+                <% } else if (productToEdit.id_category=="3" ) { %>
                   <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
                   <option value="monitores" id="monitores">Monitores</option>
                   <option value="microprocesadores" id="microprocesadores" selected>Microprocesadores</option>
                   <option value="motherboards" id="motherboards">Motherboards</option>
                   <option value="waterCooling" id="waterCooling">Water Cooling</option>
+                  <option value="joysticks" id="joysticks">Joysticks</option>
                   <option value="others" id="others">Otras</option>
-                  <% } else if (productToEdit.category=="Motherboards" ) { %>
+                  <% } else if (productToEdit.id_category=="4" ) { %>
                     <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
                     <option value="monitores" id="monitores">Monitores</option>
                     <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
                     <option value="motherboards" id="motherboards" selected>Motherboards</option>
                     <option value="waterCooling" id="waterCooling">Water Cooling</option>
+                    <option value="joysticks" id="joysticks">Joysticks</option>
                     <option value="others" id="others">Otras</option>
-                    <% } else if (productToEdit.category=="Water Cooling" ) { %>
+                    <% } else if (productToEdit.id_category=="5" ) { %>
                       <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
                       <option value="monitores" id="monitores">Monitores</option>
                       <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
                       <option value="motherboards" id="motherboards">Motherboards</option>
                       <option value="waterCooling" id="waterCooling" selected>Water Cooling</option>
+                      <option value="joysticks" id="joysticks">Joysticks</option>
                       <option value="others" id="others">Otras</option>
+                      <option value="others" id="others">Otras</option>
+                      <% } else if (productToEdit.id_category=="6" ) { %>
+                        <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
+                        <option value="monitores" id="monitores">Monitores</option>
+                        <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
+                        <option value="motherboards" id="motherboards">Motherboards</option>
+                        <option value="waterCooling" id="waterCooling">Water Cooling</option>
+                        <option value="joysticks" id="joysticks" selected>Joysticks</option>
+                        <option value="others" id="others">Otras</option>
                       <% } else { %>
                         <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
                         <option value="monitores" id="monitores">Monitores</option>
                         <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
                         <option value="motherboards" id="motherboards">Motherboards</option>
                         <option value="waterCooling" id="waterCooling">Water Cooling</option>
+                        <option value="joysticks" id="joysticks">Joysticks</option>
                         <option value="others" id="others" selected>Otras</option>
                         <% } %>
           </select>
