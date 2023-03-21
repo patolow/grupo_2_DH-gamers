@@ -140,9 +140,12 @@ const controller = {
 
     let password =   req.body.password
     let confirmPassword = req.body.confirmPassword
-    if( password == confirmPassword){
+    if(password && password == confirmPassword){
       password = bcrypt.hashSync(password, 10)
+    } else {
+      password = db.User.password
     }
+
     const updateData = {
     
     completeName: req.body.completeName,
