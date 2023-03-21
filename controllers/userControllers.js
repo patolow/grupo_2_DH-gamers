@@ -28,6 +28,11 @@ const controller = {
       } else {
         profilePhoto = '/images/users/profile-photo-default.jpg'
       }
+      let password =   req.body.password
+      let confirmPassword = req.body.confirmPassword
+      if( password == confirmPassword){
+        password = bcrypt.hashSync(password, 10)
+      }
       //ADD NEW USER
       let newUser = {
         completeName: req.body.completeName,
@@ -36,8 +41,7 @@ const controller = {
         address: req.body.address,
         phone: req.body.phone,
         email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 10),
-        confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10),
+        password: password,
         image: profilePhoto
       }
 
@@ -149,7 +153,6 @@ const controller = {
     email: req.body.email,
     image: profilePhoto,
     password: password,
-    confirmPassword: "asdoasd11203asas"
   };
   
   console.log(updateData)

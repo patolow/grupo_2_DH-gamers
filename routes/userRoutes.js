@@ -36,7 +36,7 @@ router.get("/login", guestMiddleware, userControllers.getLogin);
 router.post("/login", userControllers.login)
 
 router.get("/edit/:id", userControllers.getEditUser);
-router.put("/edit/:id", uploadFile.single('profilePhoto'), userControllers.editUser)
+router.put("/edit/:id", uploadFile.single('profilePhoto'), registerValidationsMiddleware, userControllers.editUser)
 
 
 module.exports = router
