@@ -40,8 +40,12 @@
               <div class="discount"> <%= product.discount %>
               </div>
 
-              <div class="bestSellers"> <%= product.bestSellers %>
-              </div>
+              
+              <% if (product.bestSellers == 'true') { %>
+                <div class="bestSellers">Sí</div>
+                <% } else { %>
+                  <div class="bestSellers">No</div>
+                  <% } %>
 
               <div class="stock"> <%= product.stock %>
               </div>
