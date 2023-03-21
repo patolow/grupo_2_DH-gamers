@@ -62,18 +62,16 @@ const controller = {
   }, //done
 
   editProduct: (req, res) => {
-    const defaultImage = '??????DEFAULT IMAGE';
-    const sliderImage = req.body.sliderImage ? req.body.sliderImage : defaultImage;
     db.Product.update({
       "name": req.body.name,
       "price": req.body.price,
       "discount": req.body.discount,
-      "bestSellers": req.body.bestSellers,
+      "bestSellers": req.body.bestSellers == "si" ? "true" : "false",
       "stock": req.body.stock,
       "reviews": req.body.reviews,
       "deliveryDate": req.body.deliveryDate,
       "description": req.body.description,
-      "sliderImage": sliderImage,
+      "sliderImage": req.body.sliderImage ? req.body.sliderImage : db.Product.sliderImage,
       "id_category": req.body.id_category, 
     },
       {
