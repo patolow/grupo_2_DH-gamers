@@ -221,7 +221,9 @@ const controller = {
         res.render('productsAll.ejs', { products })
       })
       .catch(err => console.error(err));
-  }
+  },
+
+  productCart: (req, res) => { res.render("productCart") },
 
 }
 
