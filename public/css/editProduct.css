@@ -77,7 +77,9 @@ textarea {
   font-size: 20px;
   margin-left: 4px;
 }
-
+.fieldName {
+padding: 5px;
+}
 
 /* BUTTON */
 .button-create-product {
