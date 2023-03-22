@@ -16,11 +16,13 @@
           <h1 class="title">DH-GAMERS</h1>
           <h2 class="subtitle">Modificar producto: <%= productToEdit.name %>
           </h2>
+    
           <!--DATA ENTRY boxes-->
-          <input class="boxes-product" type="text" name="name" placeholder="Producto, marca y modelo" value=<%=productToEdit.name %> required
+          <label class = "fieldName">Producto: </label>
+          <input class="boxes-product" type="text" name="name" placeholder="Producto, marca y modelo" value = <%=productToEdit.name %> required
           maxlength="100">
           
-
+          <label class = "fieldName">Categoria del Producto: </label>
           <select class="boxes-product" name="category" id="category" required >
             <option value="none" disabled selected>Categoria del Producto</option>
             <% if (productToEdit.id_category=="1" ) { %>
@@ -82,11 +84,12 @@
                         <option value="others" id="others" selected>Otras</option>
                         <% } %>
           </select>
-
+          <label class = "fieldName">Precio: </label>
           <input class="boxes-product" type="text" name="price" placeholder="Precio del Producto" value=<%=productToEdit.price %>>
+          <label class = "fieldName">Descuento (%): </label>
           <input class="boxes-product" type="text" name="discount" placeholder="Descuento (0-50%)" value=<%=productToEdit.discount %>
           maxlength="2">
-
+          <label class = "fieldName">Best Sellers: </label>
           <select class="boxes-product" name="bestSellers" id="bestSellers" required>
             <option value="none" disabled selected>Best Sellers</option>
             <% if (productToEdit.bestSellers=="true") { %>
@@ -98,13 +101,17 @@
                 <% } %>
           </select>
 
+          <label class = "fieldName">Stock: </label>
           <input class="boxes-product" type="text" name="stock" placeholder="Cantidad de productos disponibles" value=<%=productToEdit.stock %>
           maxlength="3">
-
+          <label class = "fieldName">Cantidad de reviews: </label>
           <input class="boxes-product" type="text" name="reviews" placeholder="Cantidad de reviews" value=<%=productToEdit.reviews %>>
 
+          <label class = "fieldName">Fecha de Entrega: </label>
           <input class="boxes-product" type="date" name="deliveryDate" placeholder="Fecha de entrega" value=<%=productToEdit.deliveryDate %>>
 
+
+          <label class = "fieldName">Descripción: </label>
           <textarea class="boxes-product" name="description" placeholder="Descripción del producto" id="description" cols="20" rows="5" minlength="50"
             maxlength="2500" required><%= productToEdit.description %></textarea>
 
