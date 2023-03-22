@@ -30,7 +30,7 @@ router.get("/all/watercooling/", productControllers.watercooling);
 router.get("/all/joystick/", productControllers.joystick);
 router.get("/all/others/", productControllers.others);
 
-// router.get("/cart/", productControllers.productCart);
+router.get("/cart/", productControllers.productCart);
 
 router.delete('/delete/:id/', productControllers.destroy); //done
 
