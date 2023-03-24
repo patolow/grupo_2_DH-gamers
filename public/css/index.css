@@ -156,6 +156,33 @@ font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 
+.detalleProductoEscondido {
+    display: none;
+  }
+  
+  .productos-mas-vendidos:hover .detalleProductoEscondido {
+    display: block;
+  }
+  
+  .detalleProductoEscondido {
+    background-color: whitesmoke;;
+    border-radius: 5px;
+    width: 90%;
+    margin: auto;
+    height: 28px;
+  }
+  .productos-mas-vendidos p {
+    font-size: 13px;
+    height: 25px;
+    text-align: center;
+    align-items: center;
+}
+  .detalleProductoEscondido p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 @keyframes cambio {
     0% { margin-left:0;}
@@ -467,15 +494,18 @@ width: 100%;
 
 .productos-mas-vendidos p {
     font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .productos-mas-vendidos h5 {
-    color: white;
+    color: lightgrey
 }
 
 .productos-mas-vendidos a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .productos-mas-vendidos a:hover {
