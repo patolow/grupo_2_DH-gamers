@@ -19,35 +19,6 @@
           <hr class="line">
           <div class="product">
 
-            <a href="/product" class="img-product"><img src="\images\waterCooling\Asus_Rog_Strix_LcLi_360\h525.png"
-                alt="product"></a>
-
-            <div class="product-without-image">
-              <div class="product-details">
-                <div class="product-info">
-                  <a class="url-product" href="/product">
-                    <p class="product-name">ROG STRIX LC LI 360</p>
-                  </a>
-                  <p class="product-category">Water Cooling</p>
-                </div>
-                <i class="fas fa-trash-alt"></i>
-              </div>
-              <div class="price-qty-container">
-                <form class="qty-picker-container">
-                  <input type='button' value='-' class='qty-picker qty-minus' field='quantity' />
-                  <input type='text' name='quantity' value='0' class='qty-picker' />
-                  <input type='button' value='+' class='qty-picker qty-plus' field='quantity' />
-                </form>
-                <div class="price">U$S 219</div>
-              </div>
-
-
-            </div>
-          </div>
-
-          <hr class="line">
-          <div class="product">
-
             <a href="/product" class="img-product monitor"><img src="\images\samsungMonitor\lado2.png"
                 alt="product"></a>
 
@@ -64,9 +35,9 @@
               <div class="price-qty-container">
                 <form class="qty-picker-container">
                   <input type='button' value='-' class='qty-picker qty-minus' field='quantity' />
-                  <input type='text' name='quantity' value='0' class='qty-picker' />
+                  <input type='text' class='quantity' name='quantity' value='0' class='qty-picker' />
                   <input type='button' value='+' class='qty-picker qty-plus' field='quantity' />
-                </form>
+              </form>
                 <div class="price">U$S 349</div>
               </div>
 
@@ -142,7 +113,7 @@
 
 
   <%- include("./partials/footer") %> 
-
+  <script src="/js/quantityButton.js"></script>
 </body>
 
 </html>

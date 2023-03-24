@@ -97,6 +97,12 @@
                     <div class="botones-de-compra">
                         </a> <input class="boton-cantidad" type="button" value="Cantidad disponible: <%= productDetail.stock %>"
                             onclick="msg()">
+                            <form class="qty-picker-container">
+                                <input type='button' value='-' class='qty-picker qty-minus' field='quantity' />
+                                <input type='text' class='quantity' name='quantity' value='0' class='qty-picker' max=<%=productDetail.stock%> />
+                                <input type='button' value='+' class='qty-picker qty-plus' field='quantity' />
+                            </form>
+                            <br>
                         <a href="/productCart"> <input class="boton-comprar" type="button" value="Comprar ahora"
                                 onclick="msg()"> </a>
                         </a><input class="boton-agrega-carrito" type="button" value="Agregar al carrito"
@@ -133,6 +139,7 @@
                     }, 5000);
                 </script>
 
+    <script src="/js/quantityButton.js"></script>
     </body>
 
 </html>
