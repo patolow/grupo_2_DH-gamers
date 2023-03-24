@@ -10,7 +10,7 @@ window.addEventListener('load', function (){
         let cantidadActual = parseInt(cantidad.value);
   
         // Disminuir la cantidad en 1 si el valor actual es mayor que 0
-        if (cantidadActual > 0) {
+        if (cantidadActual > 1) {
             cantidadActual--;
         }
 

@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const productControllers = require("../controllers/productControllers")
+const productCart = require("../controllers/productCart")
+const cartMiddleware = require('../middlewares/cartMiddleware')
+
+
 const multer = require('multer');
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, path.join(__dirname, '../../public/images/products')),
@@ -30,7 +34,7 @@ router.get("/all/watercooling/", productControllers.watercooling);
 router.get("/all/joystick/", productControllers.joystick);
 router.get("/all/others/", productControllers.others);
 
-router.get("/cart/", productControllers.productCart);
+router.get("/cart/", productCart.getProductCart);
 
 router.delete('/delete/:id/', productControllers.destroy); //done
 
