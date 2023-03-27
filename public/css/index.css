@@ -164,9 +164,13 @@ font-family: 'Roboto Condensed', sans-serif !important;
     display: none;
     border-radius: 5px;
     width: 90%;
-    margin: auto;
+    margin: 8px auto;
     height: 28px;
+    }
 
+    .agregarCarrito:hover {
+        background-color: whitesmoke; 
+        box-shadow: 0px 2px 10px 1px rgba(255, 255, 255, 0.5);
     }
 
     .agregarCarrito:hover {
@@ -187,7 +191,8 @@ font-family: 'Roboto Condensed', sans-serif !important;
     width: 100%;
     text-align: center;
     align-items: center;
-    background-color: whitesmoke
+    background-color: transparent
+    
 }
 
 
@@ -511,13 +516,14 @@ width: 100%;
     color: lightgrey
 }
 
-.productos-mas-vendidos a {
+.productos-mas-vendidos p {
     text-decoration: none;
-    color: black;
+    color: lightgrey;
 }
 
-.productos-mas-vendidos a:hover {
+.productos-mas-vendidos p:hover {
     color:#02CFB7;
+    text-decoration: underline;
 }
 
 .marcas-trabajadas {

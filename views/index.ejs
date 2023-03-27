@@ -130,9 +130,12 @@
                                     <p>Ver detalles</p>
                                 </div>
                             </a>
-                            <div class="agregarCarrito">
-                                <input text="submit"  value='AGREGAR AL CARRITO'>
-                            </div>
+                            <form id='agregarCarrito-<%=bestSeller.id%>' class="agregarCarrito" method="post" action="#">
+                                <input type="hidden" name="productId" value="<%=bestSeller.id%>">
+                                <input type="hidden" name="productName" value="<%=bestSeller.name%>">
+                                <input type="hidden" name="productPrice" value="<%=bestSeller.price%>">
+                                <input id="submit" type="submit" value='AGREGAR AL CARRITO'>
+                            </form>
                         </div>
 
                         <% }); %>
@@ -153,6 +156,8 @@
 
 
                 <script src="js/slider.js"></script>
+                <script src="/js/cart.js"></script>
+
 
     </body>
 
