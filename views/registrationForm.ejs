@@ -11,25 +11,39 @@
 
       <!--Registration Form-->
       <div class="main-form-register">
-        <form action="/users/register" method="POST" class="form" enctype="multipart/form-data">
+        <form action="/users/register" method="POST" class="formulario" enctype="multipart/form-data" id="formulario">
           <!--TITLE-->
           <h1 class="title-register">Bienvenido a DH-GAMERS</h1>
           <h2 class="subtitle-register">Creá tu cuenta personal</h2>
           <!--DATA ENTRY BOXES-->
-          <input class="register-boxes" type="text" name="completeName" placeholder="Nombre y Apellido"
+          <div class="formulario__grupo" id="grupo__nombre">
+
+            <div class="formulario__grupo-input">
+          <input class="formulario__input" id="nombre" type="text" name="completeName" placeholder="Nombre y Apellido"
             value=<%=locals.oldData ? oldData.completeName : null %> >
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
           <% if (locals.errors && errors.completeName) { %>
             <p class="errors">
               <%= errors.completeName.msg %>
             </p>
             <% } %>
-              <input class="register-boxes" type="text" name="userName" placeholder="Nombre de usuario/a"
+            </div>
+            <p class="formulario__input-error">Escribe un nombre y apellido válido</p>
+            </div>
+            <div class="formulario__grupo" id="grupo__usuario">
+            <div class="formulario__grupo-input">
+              <input class="formulario__input" id="usuario" type="text" name="userName" placeholder="Nombre de usuario/a"
                 value=<%=locals.oldData ? oldData.userName : null %>>
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
               <% if (locals.errors && errors.userName) { %>
                 <p class="errors">
                   <%= errors.userName.msg %>
                 </p>
                 <% } %>
+              
+            </div>
+                <p class="formulario__input-error">Escribe un usuario válido</p>
+              </div>
                   <p class="date-register"><label> Fecha de Nacimiento:</label></p><input class="register-boxes"
                     id="date" type="date" name="birthday" value=<%=locals.oldData ? oldData.birthday : null %>>
                   <% if (locals.errors && errors.birthday) { %>
@@ -37,44 +51,80 @@
                       <%= errors.birthday.msg %>
                     </p>
                     <% } %>
-                      <input class="register-boxes" type="text" name="address" placeholder="Domicilio" value=<%=locals.oldData ? oldData.address : null %>>
-                      <input class="register-boxes" type="tel" name="phone" placeholder="Teléfono" value=<%=locals.oldData ? oldData.phone : null %>>
-                      <input class="register-boxes" type="text" name="email" placeholder="Email" value=<%=locals.oldData
+                    <div class="formulario__grupo" id="grupo__direccion">
+                      <div class="formulario__grupo-input">
+                      <input class="formulario__input" type="text" id="direccion" name="address" placeholder="Domicilio" value=<%=locals.oldData ? oldData.address : null %>>
+                      <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                      </div>
+                      <p class="formulario__input-error">Escribe una dirección válida</p>
+                    </div>
+                      <div class="formulario__grupo" id="grupo__telefono">
+                        <div class="formulario__grupo-input">
+                      <input class="formulario__input" id="telefono" type="tel" name="phone" placeholder="Teléfono" value=<%=locals.oldData ? oldData.phone : null %>>
+                      <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Escribe un telefono válido (sólo números)</p>
+                  </div>
+                  <div class="formulario__grupo" id="grupo__email">
+                    <div class="formulario__grupo-input">
+                      <input class="formulario__input" type="email" id="email" name="email" placeholder="Email" value=<%=locals.oldData
                         ? oldData.email : null %>>
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
                       <% if (locals.errors && errors.email) { %>
                         <p class="errors">
                           <%= errors.email.msg %>
                         </p>
                         <% } %>
-                          <input class="register-boxes" type="password" name="password" placeholder="Contraseña"
+                    </div>
+                    <p class="formulario__input-error">Escribe un e-mail válido</p>
+                  </div>
+                  <div class="formulario__grupo" id="grupo__password">
+                    <div class="formulario__grupo-input">
+                          <input class="formulario__input" type="password"id="password" name="password" placeholder="Contraseña"
                             value=<%=locals.oldData ? oldData.password : null %>>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
                           <% if (locals.errors && errors.password) { %>
                             <p class="errors">
                               <%= errors.password.msg %>
                             </p>
                             <% } %>
-                              <p class="password-text">Use 8 o más caracteres con una combinación de letras mayúsculas y
+                              <!-- <p class="password-text">Use 8 o más caracteres con una combinación de letras mayúsculas y
                                 minúsculas,
                                 números y símbolos (!@#$%)
-                              </p>
-                              <input class="register-boxes" type="password" name="confirmPassword"
+                              </p> -->
+                    </div>
+                    <p class="formulario__input-error">Escribe una contraseña válida (8 a 16 caracteres)</p>
+                  </div>
+                  <div class="formulario__grupo" id="grupo__password2">
+                    <div class="formulario__grupo-input">
+                              <input class="formulario__input" type="password" id="password2" name="confirmPassword"
                                 placeholder="Confirmar Contraseña" value=<%=locals.oldData ? oldData.confirmPassword :
                                 null %>>
+                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
                               <% if (locals.errors && errors.confirmPassword) { %>
                                 <p class="errors">
                                   <%= errors.confirmPassword.msg %>
                                 </p>
                                 <% } %>
+                    </div>
+                    <p class="formulario__input-error">Debe coincidir con la contraseña</p>
+                  </div>          
+                  <div class="formulario__grupo" id="grupo__fotoPerfil">
                                   <label class="upload-photo">Subí tu Foto de Perfil: </label>
-                                  <input class="file-register" type="file" name="profilePhoto">
+                                  <input class="file-register" id="file" type="file" name="profilePhoto" onchange="return fileValidation()">
+                                  <!-- Image preview -->
+                                  <!-- <div id="imagePreview" class="preview-image"></div> -->
+                                  <p class="formulario__input-error">Formatos disponibles: JPG, JPEG, GIF, PNG</p>
                                   <% if (locals.errors && errors.profilePhoto) { %>
                                     <p class="errors">
                                       <%= errors.profilePhoto.msg %>
                                     </p>
                                     <% } %>
-
+                                      
                                       <!--TERM and CONDITIONS-->
-                                      <p class="term"><input type="checkbox" name='termsAndConditions'> Estoy de acuerdo
+                                      <div class="formulario__grupo" id="grupo__terminos">
+                                      <p class="term">
+                                        <input type="checkbox" class="formulario__checkbox" name='termsAndConditions' id="terminos"> Estoy de acuerdo
                                         con <a class="term2" href="#">Terminos y
                                           Condiciones</a>
                                         <% if (locals.errors && errors.termsAndConditions) { %>
@@ -83,7 +133,7 @@
                                           </p>
                                           <% } %>
                                       </p>
-
+                                    </div>
                                       <!--Already have an account?-->
                                       <p class="already-have-account-text"><strong> ¿Ya ténes cuenta? </strong> Iniciá
                                         sesión <a href="./login">
@@ -103,6 +153,9 @@
 
         <script src="js/slider.js"></script>
         <script src="/js/main.js"></script>
+        <script src="/js/formulario.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 
 </html>
