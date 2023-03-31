@@ -1,6 +1,7 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
+
 const expresiones = {
 	nombre: /^[a-zA-Z0-9\_\-]{4,16}$/, 
 	usuario: /^[a-zA-ZÀ-ÿ0-9\s]{4,40}$/, 
@@ -136,3 +137,7 @@ formulario.addEventListener('submit', (e) => {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
 	}
 });
+
+
+
+
