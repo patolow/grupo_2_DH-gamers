@@ -16,59 +16,58 @@
           <h2 class="subtitle-register">Editá tu cuenta personal</h2>
           <!--DATA ENTRY BOXES-->
 
-          <label class="upload-photo">Nombre y Apellido: </label>
-          <input class="register-boxes" type="text" name="completeName" placeholder="Nombre y Apellido"
+          <label class="nombre-campo">Nombre y Apellido: </label>
+          <input class="edit-boxes" type="text" name="completeName" placeholder="Nombre y Apellido"
             value=<%=usuario.completeName%> >
           <% if (locals.errors && errors.completeName) { %>
             <p class="errors">
               <%= errors.completeName.msg %>
             </p>
             <% } %>
-              <label class="upload-photo">Nombre de Usuario/a: </label>
-              <input class="register-boxes" type="text" name="userName" placeholder="Nombre de usuario/a"
+              <label class="nombre-campo">Nombre de Usuario/a: </label>
+              <input class="edit-boxes" type="text" name="userName" placeholder="Nombre de usuario/a"
                 value=<%=usuario.userName%>>
               <% if (locals.errors && errors.userName) { %>
                 <p class="errors">
                   <%= errors.userName.msg %>
                 </p>
                 <% } %>
-                  <p class="date-register"></p>
-                  <label>Fecha de Nacimiento:</label>
-                  <input class="register-boxes" id="date" type="date" name="birthday" value=<%=usuario.birthday%>>
+                  <label class="nombre-campo">Fecha de Nacimiento:</label>
+                  <input class="edit-boxes" id="date" type="date" name="birthday" value=<%=usuario.birthday%>>
                   <% if (locals.errors && errors.birthday) { %>
                     <p class="errors">
                       <%= errors.birthday.msg %>
                     </p>
                     <% } %>
-                      <label class="upload-photo">Domicilio:</label>
-                      <input class="register-boxes" type="text" name="address" placeholder="Domicilio"
+                      <label class="nombre-campo">Domicilio:</label>
+                      <input class="edit-boxes" type="text" name="address" placeholder="Domicilio"
                         value=<%=usuario.address%>>
-                      <label class="upload-photo">Teléfono: </label>
-                      <input class="register-boxes" type="tel" name="phone" placeholder="Teléfono"
+                      <label class="nombre-campo">Teléfono: </label>
+                      <input class="edit-boxes" type="tel" name="phone" placeholder="Teléfono"
                         value=<%=usuario.phone%>>
-                      <label class="upload-photo">Email: </label>
-                      <input class="register-boxes" type="text" name="email" placeholder="Email"
+                      <label class="nombre-campo">Email: </label>
+                      <input class="edit-boxes" type="text" name="email" placeholder="Email"
                         value=<%=usuario.email%>>
                       <% if (locals.errors && errors.email) { %>
                         <p class="errors">
                           <%= errors.email.msg %>
                         </p>
                         <% } %>
-                          <label class="upload-photo">Contraseña: </label>
-                          <input class="register-boxes" type="password" name="password" placeholder="Contraseña">
+                          <label class="nombre-campo">Contraseña: </label>
+                          <input class="edit-boxes" type="password" name="password" placeholder="Contraseña">
 
                           <p class="password-text">Use 8 o más caracteres con una combinación de letras mayúsculas y
                             minúsculas, números y símbolos (!@#$%)
                           </p>
-                          <label class="upload-photo">Confirmar Contraseña: </label>
-                          <input class="register-boxes" type="password" name="confirmPassword"
+                          <label class="nombre-campo">Confirmar Contraseña: </label>
+                          <input class="edit-boxes" type="password" name="confirmPassword"
                             placeholder="Confirmar Contraseña">
                           <% if (locals.errors && errors.confirmPassword) { %>
                             <p class="errors">
                               <%= errors.confirmPassword.msg %>
                             </p>
                             <% } %>
-                              <label class="upload-photo">Subí tu Foto de Perfil: </label>
+                              <label class="nombre-campo">Subí tu Foto de Perfil: </label>
                               <input class="file-register" type="file" name="profilePhoto">
                               <% if (locals.errors && errors.profilePhoto) { %>
                                 <p class="errors">
