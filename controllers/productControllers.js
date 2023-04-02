@@ -223,7 +223,6 @@ const controller = {
       .catch(err => console.error(err));
   },
 
-  productCart: (req, res) => { res.render("productCart") },
 
 }
 

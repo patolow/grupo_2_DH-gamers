@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const productControllers = require("../controllers/productControllers")
-const productCart = require("../controllers/productCart")
+const productCartControllers = require("../controllers/productCartControllers")
 const cartMiddleware = require('../middlewares/cartMiddleware')
 
 
@@ -13,6 +13,10 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage })
+
+router.get('/cart', productCartControllers.getProductCart);
+router.post('/cart', productCartControllers.addItem);
+
 
 
 router.get("/detail/:id/", productControllers.getProductDetail); //done
@@ -33,8 +37,6 @@ router.get("/all/motherboards/", productControllers.motherboards);
 router.get("/all/watercooling/", productControllers.watercooling);
 router.get("/all/joystick/", productControllers.joystick);
 router.get("/all/others/", productControllers.others);
-
-router.get("/cart/", productCart.getProductCart);
 
 router.delete('/delete/:id/', productControllers.destroy); //done
 
