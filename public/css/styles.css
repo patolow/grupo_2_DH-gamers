@@ -304,6 +304,9 @@ footer {
 }
 
 @media (min-width: 606px) {
+
+  
+
   .main-product-list i {
     display: none;
   }
@@ -349,6 +352,8 @@ footer {
 
 
 @media (min-width: 768px) {
+
+  
   .logo-nav {
     width: 12%;
   }
@@ -462,6 +467,9 @@ footer {
 
 
 @media (min-width: 1000px) {
+
+  
+
   .logo-nav {
     width: 10%;
   }

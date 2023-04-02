@@ -22,6 +22,50 @@ font-family: 'Roboto Condensed', sans-serif !important;
     
 }
 
+.menu-hamburguesa {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 38px;
+    background-color: -webkit-linear-gradient(to left, #061161, #780206);
+    
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    
+
+}
+
+.sub-menu-hamburguesa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    border: solid 1px black;
+    height: 60px;
+    cursor: pointer;
+}
+
+.sub-menu-hamburguesa a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    transition: all 500ms ;
+    font-weight: bold;
+}
+
+.sub-menu-hamburguesa:hover {
+    border: 1px solid rgb(98, 17, 17);
+    background-color: black;
+    
+}
+
+.sub-menu-hamburguesa:hover a{
+    color: white;
+    
+}
+
 .contacto-whatsapp {
     display: none;
     position: fixed;
@@ -543,6 +587,11 @@ width: 100%;
 
 
 @media (min-width: 600px){
+
+    .menu-hamburguesa {
+        display: none;
+    }
+
     .productos-mas-vendidos{
         max-width: 50%;
     }
