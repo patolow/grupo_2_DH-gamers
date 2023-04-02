@@ -56,7 +56,7 @@
                       <div class="price-qty-container">
                         <form class="qty-picker-container">
                           <input type='button' value='-' class='qty-picker qty-minus' field='quantity' />
-                          <input type='text' class='quantity' name='quantity' value='0' class='qty-picker' />
+                          <input type='text' class='quantity' name='quantity' value=<%= item.quantity %> class='qty-picker' />
                           <input type='button' value='+' class='qty-picker qty-plus' field='quantity' />
                         </form>
                         <div class="price"> $ <%= item.productPrice %>
