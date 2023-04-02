@@ -7,11 +7,16 @@ const controller = {
 
     console.log(req.body)
     
-    // guardar los datos del producto en la base de datos
+    // guardar los datos del ultimo producto en la base de datos
     db.Cart.create({
       "productId": req.body[req.body.length -1].id,
       "productName": req.body[req.body.length -1].name,
       "productPrice": req.body[req.body.length -1].price,
+      "productCategory": req.body[req.body.length -1].category,
+      "productStock": req.body[req.body.length -1].stock,
+      "productImage": req.body[req.body.length -1].image,
+      // "userId": 'no se como registrar el id de la persona que agregar el producto'
+
     })
     
       .then(() => {
@@ -24,9 +29,33 @@ const controller = {
   },
 
   getProductCart: (req, res) => { 
-    res.render("productCart") 
-  },
 
+    db.Cart.findAll()
+    
+      .then(items => {
+
+        let carrito = []
+        items.forEach( item => {
+          const producto = {
+            "productId" : item.dataValues.productId,
+            "productName" : item.dataValues.productName,
+            "productPrice" : item.dataValues.productPrice,
+            "productCategory" : item.dataValues.productCategory,
+            "productStock" : item.dataValues.productStock,
+            "productImage" : item.dataValues.productImage,
+
+            // "quantity": 'no se como calcular duplicados aun'
+          };
+          carrito.push(producto); 
+        })
+        console.log(carrito)
+        res.render("productCart.ejs", {carrito})
+        
+        })
+        
+        
+        
+  }
 
 }
 

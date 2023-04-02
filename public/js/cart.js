@@ -8,8 +8,18 @@ agregarItem.forEach(form => {
     const productId = form.querySelector('[name="productId"]').value;
     const productName = form.querySelector('[name="productName"]').value;
     const productPrice = form.querySelector('[name="productPrice"]').value;
+    const productCategory = form.querySelector('[name="productCategory"]').value;
+    const productStock = form.querySelector('[name="productStock"]').value;
+    const productImage = form.querySelector('[name="productImage"]').value;
 
-    const product = { id: productId, name: productName, price: productPrice };
+    const product = { 
+      id: productId, 
+      name: productName, 
+      price: productPrice,
+      category: productCategory, 
+      stock: productStock, 
+      image: productImage 
+    };
     
     carrito.push(product);
     console.log(carrito);

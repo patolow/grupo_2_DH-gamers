@@ -18,6 +18,18 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.FLOAT,
       allowNull: false
     },
+    productCategory: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    productStock: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    productImage: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -42,7 +54,7 @@ module.exports = function (sequelize, DataTypes) {
     });
   };
 
-  // sequelize.sync() //para crear la tabla, sino entendí mal debería sacarse el {alter:true}
+  // sequelize.sync({alter:true}) //para crear la tabla, sino entendí mal debería sacarse el {alter:true}
   //   .then(() => {
   //     console.log('users table (re)created successfully');
   //   }).catch((error) => {
