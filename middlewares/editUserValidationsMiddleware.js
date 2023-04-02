@@ -13,14 +13,15 @@ const editUserValidationsMiddleware = [
   body('email')
     .notEmpty().withMessage('Debes escribir tu correo electrónico').bail()
     .isEmail().withMessage('Debes escribir un formato de correo electrónico válido')
-    .custom(async (value, { req })=> {
+    .custom(async (value, { req }) => {
       try {
         let registeredUser = await db.User.findOne({
           where: {
             'email': value
           }
         })
-        if (registeredUser && value !== req.body.email) {
+        let userId = await db.User.findByPk(req.params.id)
+        if (registeredUser && value !== userId.email) {
           return Promise.reject()
         }
       } catch (error) {

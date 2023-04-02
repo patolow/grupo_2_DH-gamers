@@ -22,6 +22,10 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 1
+    },
+    userId: {
+      type: DataTypes.STRING,
+      foreignKey: true
     }
   }
   let config = {
@@ -33,6 +37,7 @@ module.exports = function (sequelize, DataTypes) {
 
   Cart.associate = function (models) {
     Cart.belongsTo(models.User, {
+      as: "cart",
       foreignKey: 'userId'
     });
   };
