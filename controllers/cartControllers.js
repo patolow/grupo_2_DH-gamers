@@ -13,12 +13,13 @@ const controller = {
       "productName": req.body[req.body.length -1].name,
       "productPrice": req.body[req.body.length -1].price,
     })
+    
       .then(() => {
-        res.status(200).send('Producto agregado al carrito'); // enviar una respuesta satisfactoria al cliente
+        return res.status(200).send('Producto agregado al carrito'); // enviar una respuesta satisfactoria al cliente y detener la ejecución
       })
       .catch((error) => {
         console.error(error);
-        res.status(500).send('Error al agregar el producto al carrito'); // enviar una respuesta de error al cliente
+        return res.status(500).send('Error al agregar el producto al carrito'); // enviar una respuesta de error al cliente y detener la ejecución
       });
   },
 

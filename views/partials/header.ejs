@@ -56,11 +56,16 @@
         <li><a href="/product/all/joystick/">JOYSTICKS</a></li>
       </ul>
 
-      
-      <div id="cart-icon-container">
-        <span id="cart-item-count">0</span>
-        <a href="/product/cart/"><img src="/images/index/8145764.png" alt="Carrito de compras"></a>
-      </div>
+      <% if (locals.isLogged) { %>
+
+        <div id="cart-icon-container">
+          <span id="cart-item-count">0</span>
+          <a href="/cart/"><img src="/images/index/8145764.png" alt="Carrito de compras"></a>
+        </div>
+
+      <% } %>
+
+
     </div>
 
     <!-- chatbot/whatsapp -->
