@@ -158,41 +158,11 @@ font-family: 'Roboto Condensed', sans-serif !important;
   .productos-mas-vendidos:hover .agregarCarrito {
     display: block;
   }
-  
-  .agregarCarrito {
-    background-color: whitesmoke;
-    /* display: none; REMUEVO EL COMMENT LUEGO*/
-    border-radius: 5px;
-    width: 90%;
-    margin: 8px auto;
-    height: 28px;
-    }
-
-    .agregarCarrito:hover {
-        background-color: whitesmoke; 
-        box-shadow: 0px 2px 10px 1px rgba(255, 255, 255, 0.5);
-    }
-
-    .agregarCarrito:hover {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        }
       
   .productos-mas-vendidos p {
     font-size: 13px;
     height: 25px;
     text-align: center;
-}
-
-.agregarCarrito input{
-    border: none;
-    font-size: 13px;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    background-color: transparent
-    
 }
 
 

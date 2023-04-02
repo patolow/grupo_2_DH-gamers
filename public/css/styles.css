@@ -210,6 +210,35 @@ main {
   display: none;
 }
 
+.agregarCarrito input[type=submit] {
+  cursor: pointer;
+}
+
+.agregarCarrito {
+  background-color: whitesmoke;
+  display: block;
+  border-radius: 5px;
+  width: 80%;
+  margin: 8px auto;
+  height: 28px;
+}
+
+.agregarCarrito:hover {
+  background-color: whitesmoke;
+  box-shadow: 0px 2px 10px 1px rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agregarCarrito input {
+  border: none;
+  font-size: 13px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  background-color: transparent
+}
 
 
 /* FOOTER */
@@ -329,10 +358,7 @@ footer {
   }
 
   .menu-barra-gris a:hover {
-
     color: #02CFB7;
-
-
   }
 
   .menu-barra-gris img {
@@ -372,7 +398,7 @@ footer {
     display: none;
   }
 
-  
+
 
   .footer-container {
     display: none;
@@ -456,7 +482,7 @@ footer {
     font-size: 12px;
     line-height: 20px;
   }
-  
+
 
 }
 

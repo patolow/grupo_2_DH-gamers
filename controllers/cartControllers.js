@@ -48,7 +48,7 @@ const controller = {
           };
           carrito.push(producto); 
         })
-        console.log(carrito)
+        // console.log(carrito)
         res.render("productCart.ejs", {carrito})
         
         })

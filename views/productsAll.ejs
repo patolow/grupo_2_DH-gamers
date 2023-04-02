@@ -27,9 +27,15 @@
                                     <p>Ver detalles</p>
                                 </div>
                             </a>
-                            <div class="agregarCarrito">
-                                <input text="submit"  value='AGREGAR AL CARRITO'>
-                            </div>
+                            <form id='agregarCarrito-<%=products.id%>' class="agregarCarrito" method="post" action="#">
+                                <input type="hidden" name="productId" value="<%=products.id%>">
+                                <input type="hidden" name="productName" value="<%=products.name%>">
+                                <input type="hidden" name="productPrice" value="<%=products.price%>">
+                                <input type="hidden" name="productCategory" value="<%=products.category%>">
+                                <input type="hidden" name="productStock" value="<%=products.stock%>">
+                                <input type="hidden" name="productImage" value="<%=products.sliderImage%>">
+                                <input id="submit" type="submit" value='AGREGAR AL CARRITO'>
+                            </form>
                         </div>
 
                         <% }); %>
@@ -49,7 +55,6 @@
 
 
             <%- include("./partials/footer") %>
-            <script src="js/slider.js"></script>
             <script src="/js/cart.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
             <!-- para usar Axios y enviar data al servidor -->
