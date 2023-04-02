@@ -28,9 +28,9 @@ const controller = {
       } else {
         profilePhoto = '/images/users/profile-photo-default.jpg'
       }
-      let password =   req.body.password
+      let password = req.body.password
       let confirmPassword = req.body.confirmPassword
-      if( password == confirmPassword){
+      if (password == confirmPassword) {
         password = bcrypt.hashSync(password, 10)
       }
       //ADD NEW USER
@@ -63,15 +63,15 @@ const controller = {
 
     let errors = validationResult(req);
 
-    if(req.session?.usuarioLogueado){
+    if (req.session?.usuarioLogueado) {
       return res.redirect("./profile")
     }
 
     if (errors.isEmpty()) {
 
       let userToLogin = db.User.findOne({
-          where: { email: req.body.email }
-        })
+        where: { email: req.body.email }
+      })
         .then(userToLogin => {
           userToLogin = userToLogin.dataValues
           if (!userToLogin) {
@@ -81,7 +81,7 @@ const controller = {
           let isPasswordValid = bcrypt.compareSync(req.body.password, userToLogin.password);
 
           if (!isPasswordValid) {
-           return res.render('login', { errors: [{ msg: 'Credenciales invalidas. Vuelva a intentarlo' }], old: req.body });
+            return res.render('login', { errors: [{ msg: 'Credenciales invalidas. Vuelva a intentarlo' }], old: req.body });
           }
 
           req.session.usuarioLogueado = userToLogin;
@@ -98,7 +98,7 @@ const controller = {
     }
 
     else {
-      res.render('login', { errors: errors.array(), old: req.body });
+      res.render('login', { errors: errors.mapped(), old: req.body });
     }
 
   },
@@ -107,13 +107,11 @@ const controller = {
   profile: (req, res) => {
     let usuarioLogueado = req.session.usuarioLogueado
     console.log(usuarioLogueado);
-    db.User.findOne({
-      where: {email: usuarioLogueado.email}})
-        .then(function(usuario){
-          res.render("profile", {usuario: usuarioLogueado, usuarioBase: usuario});    
-        })
-        
-      },
+    db.User.findByPk(usuarioLogueado.id)
+      .then(function (usuario) {
+        res.render("profile", { usuario: usuarioLogueado, usuarioBase: usuario })
+      })
+  },
 
   logout: (req, res) => {
     res.clearCookie('email')
@@ -123,57 +121,63 @@ const controller = {
 
   getEditUser: (req, res) => {
     db.User.findByPk(req.params.id)
-        .then(function(usuario){
-            res.render("userEdit", {usuario:usuario});
-        })
+      .then(function (usuario) {
+        res.render("userEdit", { usuario: usuario });
+      })
   },
 
-  
+
   editUser: (req, res) => {
-  
-    let profilePhoto = ''
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+
+      let profilePhoto = ''
       if (req.file) {
         profilePhoto = '/images/users/' + req.file.filename
       } else {
         profilePhoto = '/images/users/profile-photo-default.jpg'
       }
 
-    let password =   req.body.password
-    let confirmPassword = req.body.confirmPassword
-    if(password && password == confirmPassword){
-      password = bcrypt.hashSync(password, 10)
+      let password = req.body.password
+      let confirmPassword = req.body.confirmPassword
+      if (password && password == confirmPassword) {
+        password = bcrypt.hashSync(password, 10)
+      } else {
+        password = db.User.password
+      }
+
+      const updateData = {
+        completeName: req.body.completeName,
+        userName: req.body.userName,
+        birthday: req.body.birthday,
+        address: req.body.address,
+        phone: req.body.phone,
+        email: req.body.email,
+        image: profilePhoto,
+        password: password,
+      };
+
+      console.log(updateData)
+      db.User.update(updateData, {
+        where: { id: req.params.id }
+      })
+        .then(user => {
+
+          return res.redirect("/users/profile");
+        })
+        .catch(error => {
+          console.error("Error al editar el usuario: ", error);
+          res.status(500).send('Error al editar el usuario.');
+        });
     } else {
-      password = db.User.password
+
+
+      res.render('userEdit', { errors: errors.mapped(), usuario: { ...req.body, id: req.params.id } });
     }
 
-    const updateData = {
-    
-    completeName: req.body.completeName,
-    userName: req.body.userName, 
-    birthday: req.body.birthday,
-    address: req.body.address,
-    phone: req.body.phone,
-    email: req.body.email,
-    image: profilePhoto,
-    password: password,
-  };
-  
-  console.log(updateData)
-  db.User.update(updateData, {
-    where: { id: req.params.id }
-  })
-  .then(user => {
-    
-    
-    return res.redirect("/users/profile");
-  })
-  .catch(error => {
-    console.error("Error al editar el usuario: ", error);
-    res.status(500).send('Error al editar el usuario.');
-  });
-}
-
   }
+
+}
 
 
 module.exports = controller
