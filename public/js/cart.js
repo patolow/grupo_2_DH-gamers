@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 const agregarItem = document.querySelectorAll('.agregarCarrito');
 let carrito = [];
 

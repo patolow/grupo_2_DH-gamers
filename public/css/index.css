@@ -161,7 +161,7 @@ font-family: 'Roboto Condensed', sans-serif !important;
   
   .agregarCarrito {
     background-color: whitesmoke;
-    display: none;
+    /* display: none; REMUEVO EL COMMENT LUEGO*/
     border-radius: 5px;
     width: 90%;
     margin: 8px auto;
