@@ -1,71 +1,63 @@
 <!--versión actualizada 27/12-->
 <!DOCTYPE html>
 <html lang="en">
-
 <%- include("./partials/head") %>
+    <body>
+        <%- include("./partials/header") %>
+            <!--Fin del Header-->
+            <!--Registration Form-->
+            <div class="main-form-login">
 
-  <body>
-    <%- include("./partials/header") %>
+                
+                <form action="/users/login" method="POST" class="formulario" id="formulario">
+                    <!--TITLE-->
+                    <h1 class="title-login">Bienvenido a DH-GAMERS</h1>
+                    <h2 class="subtitle-login">Ingresá a tu cuenta personal</h2>
+                    <!--DATA ENTRY BOXES-->
+                    <% if (locals.errors) { locals.errors.forEach(error=> { %>
+                        <p class="feedback" color:red>
+                            <%= error.msg %>
+                        </p>
+                        <% }); } %>
+                        <div class="formulario__grupo" id="grupo__email">
+                            <div class="formulario__grupo-input">
+                            <input class="formulario__input" type="email" name="email" placeholder="Email" id="email">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Escribe un Email válido</p>
+                    </div>
 
-      <!--Fin del Header-->
+                    <div class="formulario__grupo" id="grupo__password">
+                        <div class="formulario__grupo-input">
+                            <input class="formulario__input" type="password" name="password" placeholder="Contraseña" id="password">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                                <p class="formulario__input-error">Escribe una contraseña válida
 
+                                </p>
+                            </div>
 
-      <!--Registration Form-->
-      <div class="main-form-login">
+                            
+                            <p class="keep-in-sign-text"><input type="checkbox" name="rememberPassword"> <strong> Mantenerme Registrado
+                                </strong></p>
+                            <br>
+                            <div class="olv-contraseña">
+                                <a href="#">¿Olvidaste tu contraseña?</a>
+                            </div>
+                            <!--BUTTON-->
+                            <div class="button">
+                                <button type="submit" class="button-login-account">INGRESAR</button>
+                            </div>
+                </form>
+            </div>
+            </main>
+            <%- include("./partials/footer") %>
 
-        <form action="/users/login" method="POST" class="form">
-          <!--TITLE-->
-          <h1 class="title-login">Bienvenido a DH-GAMERS</h1>
-          <h2 class="subtitle-login">Ingresá a tu cuenta personal</h2>
-
-          <!--DATA ENTRY BOXES-->
-
-
-          <input class="boxes" type="text" name="email" placeholder="Email">
-          <% if (locals.errors && errors.email) { %>
-            <p class="errors">
-              <%= errors.email.msg %>
-            </p>
-            <% } %>
-
-              <input class="boxes" type="password" name="password" placeholder="Contraseña">
-              <% if (locals.errors && errors.password) { %>
-                <p class="errors">
-                  <%= errors.password.msg %>
-                </p>
-                <% } %>
-                  <p class="keep-in-sign-text"><input type="checkbox" name="rememberPassword"> <strong> Mantenerme
-                      Registrado
-                    </strong></p>
-                  <br>
-                  <div class="olv-contraseña">
-                    <a href="#">¿Olvidaste tu contraseña?</a>
-                  </div>
-
-                  <!--BUTTON-->
-
-                  <div class="button">
-                    <button type="submit" class="button-login-account">INGRESAR</button>
-                  </div>
-        </form>
-
-      </div>
-
-      </main>
-      <%- include("./partials/footer") %>
-
-
-<<<<<<< HEAD
                 <script src="js/slider.js"></script>
                 <script src="/js/main.js"></script>
                 <script src="/js/login.js"></script>
                 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
-=======
-        <script src="js/slider.js"></script>
-        <script src="/js/main.js"></script>
-  </body>
->>>>>>> 986f78c (validaciones backend edit user)
 
 </html>
