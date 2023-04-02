@@ -9,6 +9,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware')
 const registerValidationsMiddleware = require('../middlewares/registerValidationsMiddleware')
 const loginValidationsMiddleware = require('../middlewares/loginValidationsMiddleware')
+const editUserValidationsMiddleware = require('../middlewares/editUserValidationsMiddleware')
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf8"));
 
@@ -33,10 +34,10 @@ router.post("/register", uploadFile.single('profilePhoto'), registerValidationsM
 
 
 router.get("/login", guestMiddleware, userControllers.getLogin);
-router.post("/login", userControllers.login)
+router.post("/login", loginValidationsMiddleware, userControllers.login)
 
 router.get("/edit/:id", userControllers.getEditUser);
-router.put("/edit/:id", uploadFile.single('profilePhoto'), registerValidationsMiddleware, userControllers.editUser)
+router.put("/edit/:id", uploadFile.single('profilePhoto'), editUserValidationsMiddleware, userControllers.editUser)
 
 
 module.exports = router
