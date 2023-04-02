@@ -16,7 +16,8 @@ const controller = {
     db.Product.findByPk(req.params.id)
       .then((product) => {
         let imagesSlider = product.sliderImage.split(",")
-        res.render("productDetails", { productDetail: product, imagesSlider })
+        let firstImage = product.sliderImage.split(",")[0]
+        res.render("productDetails", { productDetail: product, imagesSlider, firstImage })
       })
       .catch(err => console.error(err));
   },

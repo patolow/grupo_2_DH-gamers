@@ -10,8 +10,11 @@ const cartControllers = require("../controllers/cartControllers")
 router.get("/", mainControllers.index);
 
 
-router.get('/cart', cartControllers.getProductCart);
-router.post('/cart', cartControllers.addItem);
+router.get('/cart', cartControllers.getCart);
+router.post('/cart', cartControllers.addItemtoCart);
+
+router.delete('/cart/delete/:id/', cartControllers.deleteItem); //done
+
 
 // FALTA AGREGAR MIDDLEWARE PARA LOGUEAR ANTES DE USAR EL CARRITO
 

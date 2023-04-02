@@ -46,7 +46,11 @@
                             <%= item.productCategory %>
                           </p>
                         </div>
-                        <i class="fas fa-trash-alt"></i>
+
+                <form action="/cart/delete/<%=item.productId%>/?_method=DELETE" method="POST">
+                  <button class="edit-button" type="submit" ><i class="fas fa-trash-alt"></i></button>
+                </form>
+
                       </div>
 
                       <div class="price-qty-container">
@@ -61,8 +65,11 @@
 
                     </div>
                   </div>
+                  <hr class="line">
 
                   <% }); %>
+
+                    <br>
 
                     <div class="steps">
 
@@ -117,7 +124,7 @@
                         <p class="summary">Resumen de compra <i id="cart" class="fas fa-shopping-cart"></i></p>
                         <div class="total-price">
                           <p>Total</p>
-                          <p class="final-price">U$S 568</p>
+                          <p class="final-price">$ <%= precioTotal %></p>
                         </div>
 
                       </article>
