@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const productControllers = require("../controllers/productControllers")
-const productCartControllers = require("../controllers/productCartControllers")
 const cartMiddleware = require('../middlewares/cartMiddleware')
 
 
@@ -13,10 +12,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage })
-
-router.get('/cart', productCartControllers.getProductCart);
-router.post('/cart', productCartControllers.addItem);
-
 
 
 router.get("/detail/:id/", productControllers.getProductDetail); //done
