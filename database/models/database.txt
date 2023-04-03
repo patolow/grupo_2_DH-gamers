@@ -1,0 +1,112 @@
+CREATE DATABASE IF NOT EXISTS `dh-gamers` /*!40100 DEFAULT CHARACTER SET latin1 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `dh-gamers`;
+
+-- Volcando estructura para tabla dh-gamers.category
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+-- Volcando datos para la tabla dh-gamers.category: ~7 rows (aproximadamente)
+INSERT INTO `category` (`id`, `name`) VALUES
+	(1, 'GPU'),
+	(2, 'Monitores'),
+	(3, 'Microprocesadores'),
+	(4, 'Motherboards'),
+	(5, 'WaterCooling'),
+	(6, 'Joysticks'),
+	(7, 'Others');
+
+-- Volcando estructura para tabla dh-gamers.products
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '0',
+  `price` decimal(10,0) NOT NULL DEFAULT '0',
+  `discount` int NOT NULL DEFAULT '0',
+  `bestSellers` text NOT NULL,
+  `stock` int NOT NULL DEFAULT '0',
+  `reviews` int NOT NULL DEFAULT '0',
+  `deliveryDate` date DEFAULT NULL,
+  `description` text NOT NULL,
+  `sliderImage` varchar(255) NOT NULL DEFAULT '0',
+  `id_category` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `id_category` (`id_category`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+-- Volcando datos para la tabla dh-gamers.products: ~11 rows (aproximadamente)
+INSERT INTO `products` (`id`, `name`, `price`, `discount`, `bestSellers`, `stock`, `reviews`, `deliveryDate`, `description`, `sliderImage`, `id_category`) VALUES
+	(1, 'Asus Rog Strix LC LI 360', 475000, 20, 'true', 40, 450, '2023-05-31', 'Refrigerador de CPU líquido todo en uno ROG Strix LC II 360 con Aura Sync, Intel® LGA 1700, 1200, 1150, 1151, 1152, 1155, 1156, 2011, 2011-3, 2066 y compatibilidad con AMD AM4/TR4 y tres ventiladores de radiador ROG de 120 mm. La bomba Asetek de séptima generación ofrece una refrigeración excepcional y un ruido mínimo con un funcionamiento rango a partir de 840 rpm. Presenta tres ventiladores de radiador diseñados por ROG proporcionan un flujo de aire y una presión estática optimizados. La iluminación ARGB en la cubierta de la bomba recubierta de NCVM transmite un diseño elegante y moderno. La estética complementa a la perfección las placas base ROG desde el centro del escenario. Los tubos reforzados con mangas ofrecen una mayor durabilidad.,Los ventiladores del radiador ROG están específicamente ajustados para ofrecer un rendimiento óptimo en los radiadores de la serie ROG Strix LC II. Los ventiladores generan 81 CFM/5,0 mmH2O para una eficiencia de refrigeración excepcional.,La serie Rog Strix LC LI 360 está equipada con el último diseño de placa de refrigeración. Mecanizada a partir de cobre puro, la placa presenta una variedad de finos microcanales que reducen la resistencia térmica y aumentan el área de superficie, lo que resulta en temperaturas de CPU más bajas.,El control PWM permite que tanto la bomba como los ventiladores del radiador giren a velocidades más lentas cuando la CPU está inactiva o con poca carga, lo que ayuda a mantener los niveles de ruido al mínimo.,Rog Strix LC LI 360 ofrece refrigeración líquida de CPU de alto rendimiento con una estética elegante y moderna. Con un diseño de circuito cerrado y ventiladores de radiador ROG, el enfriador libera todo el potencial de una CPU Intel® o AMD al tiempo que permite sutiles efectos de iluminación multicolor para acentuar su construcción.', '/images/waterCooling/Asus_Rog_Strix_LcLi_360/Asus-Rog-Strix-LC-LI-360.jpg,/images/default/contacto.png,/images/default/mapa.png', 5),
+	(2, 'Asus Rog Ryujin 360', 543000, 15, 'false', 50, 450, '2023-05-31', 'El Rog Ryujin 360 ofrece un rendimiento de refrigeracion optimo en un enfriador de cpu aio de 360 mm. con una bomba asetek de septima generacion, ventiladores de radiador ppc de noctua industrial y un ventilador integrado para el area del zocalo de la cpu, aprovecha tanto el agua como el aire para proporcionar increibles capacidades de enfriamiento', '/images/waterCooling/Asus_Rog_Ryujin_360/Asus_Rog_Ryujin_360.jpg,/images/default/contacto.png,/images/default/mapa.png', 5),
+	(3, 'Monitor Samsung 27', 189900, 10, 'false', 50, 450, '2023-05-31', 'Este monitor de 27 te va a resultar cómodo para estudiar, trabajar o ver una película en tus tiempos de ocio. Asimismo, su resolución de 1920 x 1080 te permite disfrutar de momentos únicos gracias a una imagen de alta fidelidad. Su tiempo de respuesta de 4 ms lo hace ideal para gamers y cinéfilos porque es capaz de mostrar imágenes en movimiento sin halos o bordes borrosos', '/images/index/monitor-curvo-27-samsung.png,/images/default/contacto.png,/images/default/mapa.png', 3),
+	(4, 'Motherboard Z490', 52400, 15, 'true', 50, 450, '2023-05-31', 'Si las placas base se dividieran en clases económicas, la Z490 de Asus sería un luchador de clase media alta. Esta placa ATX aspiracional es excelente para juegos y overclocking, incluso si no puede igualar las placas de lujo avanzadas como las placas base de la serie Maximus XII de Asus en términos de características. Sin embargo, tiene un precio notablemente más bajo, y eso lo convierte en la mejor opción para cualquiera que quiera el impacto de una placa de gama alta pero que no quiera pagar mucho por ella', '/images/index/mother-z490.png,/images/default/contacto.png,/images/default/mapa.png', 4),
+	(5, 'Motherboard Asus B560M', 54900, 20, 'true', 50, 450, '2023-05-31', 'Si necesita una placa base asequible de gama media con características increíbles y soporte para la nueva 11.ª generación de Intel, la  ASUS Prime B560M  es sin duda la opción correcta y más económica', '/images/index/mother-asus-b560.png,/images/default/contacto.png,/images/default/mapa.png', 4),
+	(6, 'Joystick Microsoft', 79800, 10, 'false', 50, 450, '2023-05-31', 'Este mando combina funciones revolucionarias mientras conserva precisión, comodidad y exactitud en cada movimiento. Gracias a su ergonomía especialmente pensada para la posición de tu mano, podés pasar horas jugando con total confort. Te permite jugar sin necesidad de que haya cables de por medio. Está pensado no solamente para controlar mejor tus videojuegos, sino también para aumentar su realismo y experiencia.', '/images/index/joystick-microsoft.png,/images/default/contacto.png,/images/default/mapa.png', 6),
+	(7, 'GPU Nvidia 3070 Gygabite', 250000, 15, 'false', 50, 450, '2023-05-31', 'La Gigabyte RTX 3070 Gaming OC es una gráfica que cuenta con un sistema de disipación sumamente eficaz, un sistema de doble BIOS para ajustarse a nuestras preferencias de refrigeración y un rendimiento que cumple de sobremanera con las exigencias de la gran mayoría de usuarios, pudiendo jugar a 4K 144Hz sin ningún problema a cualquier título', '/images/index/nvidia-3070.png,/images/default/contacto.png,/images/default/mapa.png', 1),
+	(8, 'Microprocesador Ryzen 7 5700x', 107000, 10, 'true', 50, 450, '2023-05-31', 'Es ideal para jugadores y creadores de contenido que requieran un instrumento de gran rendimiento. Cuenta con 16 hilos que favorecen la ejecución de múltiples programas a la vez. Soporta memoria RAM DDR4 y cuenta con una memoria caché de 32 MB, rápida y volátil.', '/images/index/ryzen7-5700x.png,/images/default/contacto.png,/images/default/mapa.png', 3),
+	(9, 'GPU Nvidia 3090 MSI', 445000, 20, 'true', 50, 450, '2023-05-31', 'Las GeForce RTX™ 3090 son implacables GPUs con rendimiento de clase TITAN. Impulsadas con tecnología Ampere, la arquitectura RTX de segunda generación de NVIDIA, duplican el ray tracing y el rendimiento de la IA con núcleos de trazado de rayos mejorados, núcleos Tensor y nuevos multiprocesadores de transmisión. Además, cuentan con 24 GB de asombrosa memoria G6X para ofrecer la experiencia de juego definitiva a jugadores y creadores.', '/images/index/nvidia-3090.png,/images/default/contacto.png,/images/default/mapa.png', 1),
+	(10, 'Microprocesador Intel Core I7 10ma G.', 124000, 20, 'true', 50, 450, '2023-05-31', 'Estos procesadores ofrecen un nuevo nivel de integración que permite potenciar las experiencias de uso de computadoras en la actualidad y en el futuro. Producto de alto rendimiento y línea exclusiva para profesionales: cuenta con Hyper-Threading que favorece la ejecución de programas en simultáneo, al dividir el procesador físico en dos procesadores lógicos', '/images/index/core-i7.png,/images/default/contacto.png,/images/default/mapa.png', 3),
+	(11, 'Monitor gamer curvo Samsung 32', 130000, 20, 'false', 50, 450, '2023-05-31', 'Este monitor de 32 te va a resultar cómodo para estudiar, trabajar o ver una película en tus tiempos de ocio. Asimismo, su resolución de 1920 x 1080 te permite disfrutar de momentos únicos gracias a una imagen de alta fidelidad. Una de sus virtudes es que posee pantalla antirreflejo, de esta manera no verás reflejado lo que está detrás de vos y vas a evitar forzar tu vista para enfocar el contenido. Su tiempo de respuesta de 4 ms lo hace ideal para gamers y cinéfilos porque es capaz de mostrar imágenes en movimiento sin halos o bordes borrosos.', '/images/samsungMonitor/samsung-32.jpg,/images/default/contacto.png,/images/default/mapa.png', 2);
+
+-- Volcando estructura para tabla dh-gamers.products_purchase
+CREATE TABLE IF NOT EXISTS `products_purchase` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_purchase` int NOT NULL DEFAULT '0',
+  `id_product` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `id_purchase` (`id_purchase`),
+  KEY `id_product` (`id_product`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Volcando datos para la tabla dh-gamers.products_purchase: ~0 rows (aproximadamente)
+
+-- Volcando estructura para tabla dh-gamers.purchase
+CREATE TABLE IF NOT EXISTS `purchase` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `purchaseDate` date NOT NULL,
+  `total` decimal(20,6) NOT NULL DEFAULT '0.000000',
+  `id_user` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `id_user` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Volcando datos para la tabla dh-gamers.purchase: ~0 rows (aproximadamente)
+
+-- Volcando estructura para tabla dh-gamers.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `completeName` varchar(255) NOT NULL DEFAULT '0',
+  `userName` varchar(255) NOT NULL DEFAULT '0',
+  `birthday` date NOT NULL,
+  `address` varchar(255) NOT NULL DEFAULT '0',
+  `phone` varchar(255) NOT NULL DEFAULT '0',
+  `email` varchar(255) NOT NULL DEFAULT '0',
+  `password` varchar(255) NOT NULL DEFAULT '0',
+  `image` varchar(255) NOT NULL DEFAULT '0',
+  `isAdmin` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+-- Volcando datos para la tabla dh-gamers.users: ~18 rows (aproximadamente)
+INSERT INTO `users` (`id`, `completeName`, `userName`, `birthday`, `address`, `phone`, `email`, `password`, `image`, `isAdmin`) VALUES
+	(1, 'Juan Perez', 'jperez', '1973-01-31', 'Av. de los Incas 1234, CABA', '054 9 115 332 1123', 'jperez@gmail.com', 'Jperez123', '/images/index/user.png', 0),
+	(2, 'Julián García', 'jgarcia', '2000-01-07', 'Av. Cabildo 12, CABA', '05491155551123', 'jgarcia@gmail.com', 'Ja1dD3', '/images/index/user.png', 0),
+	(3, 'Ana Paz', 'apaz', '1988-11-25', 'Av. Cabildo 235, CABA', '054 9 115 555 5858', 'apaz@hotmail.com', 'Apaz123', '/images/index/user.png', 0),
+	(4, 'Fernanda Carolina López', 'flopez', '1973-02-22', 'Viamonete 555, CABA', '054 9 115 258 5855', 'flopez@gmail.com', 'a12SDssdf5', '/images/index/user.png', 0),
+	(5, 'Carolina Fernandez', 'cfernandez', '1985-05-03', 'Urquiza 952, GBA', '054 9 115 555 5757', 'cfernandez@hotmail.com', 'a12SDssdf5', '/images/index/user.png', 0),
+	(6, 'Alberto Quito', 'aquito', '1955-04-17', 'Juramento 111, CABA', '054 9 115 585 8585', 'aquito@hotmail.com', 'aquitito58', '/images/index/user.png', 0),
+	(7, 'Amador Feliciano', 'afeliciano', '1963-03-09', 'Cordoba 555, CABA', '054 9 115 566 8985', 'afeliciano@gmail.com', 'Holamundo', '/images/index/user.png', 0),
+	(8, 'Juan Carlos Villar', 'jvillar', '2001-08-07', 'Congreso 1222, CABA', '054 9 115 655 8985', 'jvillar@gmail.com', 'Villar555', '/images/index/user.png', 0),
+	(9, 'Silvina Luna', 'sluna', '1976-09-15', 'Tucumán 555, CABA', '054 9 115 444 8785', 'sluna@hotmail.com', 'nomevoyaacordar', '/images/index/user.png', 0),
+	(10, 'Julieta Salvatierra', 'jsalvatierra', '1998-11-03', 'J. B. Justo 1888, CABA', '054 9 115 444 2222', 'jsalvatierra@hotmail.com', 'Juli9999', '/images/index/user.png', 0),
+	(11, 'Fernando Cuello', 'fcuello', '1999-10-17', 'Alberdi 852, GBA', '054 9 115 456 2288', 'fcuello@yahoo.com.ar', 'deSD32R', '/images/index/user.png', 0),
+	(12, 'Armando Hernandez', 'ahernandez', '1989-08-21', 'Pedro Lozano 444, GBA', '054 9 115 488 3388', 'ahernandez@yahoo.com.ar', 'Arman321', '/images/index/user.png', 0),
+	(16, 'Leandro Dichiara', 'lean04_23@hotmail.com', '1991-04-04', 'falso 123', '02392538059', 'lean04_23@hotmail.com', '$2a$10$h6pYzEOhDf0Ld/4Q32bYwu3BZHKV.TaOe.TTKXnrx51VU3BZ3Z7ka', '/images/users/profilePhoto-1675340619384.png', 1),
+	(18, 'aaasdasdasdasdadaasda', 'CristianPruebaasdasdasdasasdsddasdasd', '1985-11-07', 'Rodrigueza asdasdasdasdasdasasdad', '0349215324821asdasdasdasdasd', 'atbursatil2017@gmasdasdail.comasdaasdasd', '$2a$10$D2DQFZhuqItIcX988WkuEO13rb.yRzpBHwdFbW8vCFoR86mTAm9WW', '/images/users/profilePhoto-1679089465529.jpg', 0),
+	(19, 'Fabio Capriotti', 'tano', '1993-08-20', 'Humboldt 1921', '01155733365', 'fabio.capriotti20@gmail.com', '$2a$10$SVpsrQPXV5mA2FAeKxrXQ.boZj34qhzIvvjyuqA/KiFcEdRyOtS0u', '/images/users/profile-photo-default.jpg', 0),
+	(21, 'CristianPrueba123', 'CristianPrueba123', '2023-02-28', 'Rodriguez', '0349215324821', 'atbursatil2017@gmail.com', '$2a$10$Tpq1K9avXJGVbSeVOKRLLuKRK/EzCvsRN1ooLwPmSFeq.ld8kRkTu', '/images/users/profilePhoto-1679089675102.jpeg', 1),
+	(22, 'Flor', 'Flora', '1986-07-03', 'Sta Catalina 1234', '1123281787', 'flori003@hotmail.com', '$2a$10$CF9TGFSimhwrkihSBbVCT.LdyBhiqVshgltssai2IoiCqYKU/EIBS', '/images/users/profile-photo-default.jpg', 1),
+	(23, 'pato', '', '2022-01-31', 'adsada', '2222', 'patolowen@hotmail.com', '$2a$10$GqcK/MUefN86NreNFr9kA.C/5A.WsXEUveTfVEENG6w6teFeOOJg2', '/images/users/profile-photo-default.jpg', 1),
+	(24, '', 'patolow', '1986-08-02', 'pato', '111', 'patolow@hotmail.com', '$2a$10$xyq5mp262D072rz1n2zfae0psKA8H2qRk0KPh0ALIrNUhs3qa5U2e', '/images/users/profile-photo-default.jpg', 1),
+	(25, 'pato', 'patolow', '1986-08-02', 'asda', '111', 'patolowe@hotmail.com', '$2a$10$hE34u5NUQsv8TMJ7BVpV1OQaw7Tj8a1CqjqimQ2xtKZYzya8xnexW', '/images/users/profilePhoto-1679356344943.jpg', 0);

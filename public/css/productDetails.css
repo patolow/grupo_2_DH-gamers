@@ -182,7 +182,7 @@ span {
 
 .botones-de-compra {
     border-radius: 10px;
-    padding-top: 60px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -270,7 +270,7 @@ span {
     width: 97%;
     display: flex;
     justify-content: center;
-    margin-top: 64%;
+    margin-top: 62%;
 }
 
 .manual-btn {
@@ -323,7 +323,7 @@ span {
     display: flex;
     width: 97%;
     justify-content: center;
-    margin-top: 64%;
+    margin-top: 62%;
 }
 
 .navigation-auto div {
@@ -372,7 +372,10 @@ span {
     background: #061161
 }
 
-
+.quantity {
+    text-align: center;
+    width: 30px;
+} 
 
 @media (min-width: 768px) {
 
@@ -445,7 +448,7 @@ span {
 
     .carrusell-producto .navigation-manual,
     .navigation-auto {
-        margin-top: 31%;
+        margin-top: 32%;
         width: 45%;
     }
 

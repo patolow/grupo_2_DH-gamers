@@ -7,37 +7,42 @@
 
         <%- include("./partials/header") %>
             <!--pegar codigo-->
-            
 
-            <div class="titulo-productAll"><h1 class="productAll-listaProductos">LISTA DE PRODUCTOS</h1></div>
-            
+
+            <div class="titulo-productAll">
+                <h1 class="productAll-listaProductos">LISTA DE PRODUCTOS</h1>
+            </div>
+
             <section class="productAll-section">
-                
+
                 <div class="productos-mas-vendidos-container">
-                    <% for( let i=0; i < products.length; i++ ) { %>
-                        
+                    <% products.forEach((products)=> { %>
                         <div class="productos-mas-vendidos">
-                            <a href="/product/detail/<%=products[i].id%>"><img class="productAll-img"
-                                    src="<%=products[i].sliderImage%>" alt="imagen del Producto"></a>
-                            <h5 class="productAll-Pname">
-                                <%=products[i].name%>
-                            </h5>
-                            <a href="/product/detail/<%=products[i].id%>">
-                                <p>Ver detalles</p>
-                                <p>Precio: $<%=products[i].price%>
-                                </p>
+                            <a href="/product/detail/<%=products.id%>">
+                                <div>
+                                    <img src="<%=products.sliderImage%>" alt="imagen del Producto">
+                                    <h5>
+                                        <%=products.name%>
+                                    </h5>
+                                    <p>Ver detalles</p>
+                                </div>
                             </a>
+                            <div class="agregarCarrito">
+                                <input text="submit"  value='AGREGAR AL CARRITO'>
+                            </div>
                         </div>
-                        <% } %>
+
+                        <% }); %>
+
                 </div>
             </section>
 
             </section>
-<!--pegar codigo-->
+            <!--pegar codigo-->
 
 
-<!--pegar codigo-->
-    </section>
+            <!--pegar codigo-->
+            </section>
 
             </main>
 

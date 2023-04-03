@@ -276,8 +276,31 @@ footer {
   width: 20px;
   color: black;
 
+}
 
 
+#cart-icon-container {
+  position: relative;
+}
+
+#cart-icon-container img {
+  display: block;
+  margin: 0 auto;
+}
+
+#cart-item-count {
+  position: absolute;
+  top: -3px;
+  right: -7px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  text-align: center;
+  width: 16px;
+  height: 16px;
 }
 
 @media (min-width: 606px) {
@@ -433,7 +456,7 @@ footer {
     font-size: 12px;
     line-height: 20px;
   }
-
+  
 
 }
 

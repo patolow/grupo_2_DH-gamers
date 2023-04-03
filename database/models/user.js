@@ -42,7 +42,7 @@ module.exports = function (sequelize, DataTypes) {
     timestamps: false
   }
 
-  let Users = sequelize.define(alias, cols, config)
+  let User = sequelize.define(alias, cols, config)
 
   Users.associate = function (models) {
     Users.hasMany(models.Purchase, {
@@ -57,5 +57,5 @@ module.exports = function (sequelize, DataTypes) {
   //     console.error('Unable to create table : ', error);
   //   })
 
-  return Users
+  return User
 }
