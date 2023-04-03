@@ -59,10 +59,68 @@
   border-left: 10px solid #061161;
   outline: none;
 }
-
 .boxes-product:hover,
 .boxes-product:focus {
+  border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
   border-left: 10px solid #780206;
+
+}
+
+.input1{
+	position: relative; 
+}
+.form__grupo1{
+  position: relative;
+}
+.form__validacion-estado1 .input1 {
+  position: absolute;
+  top: 50%;
+  font-size:16px;
+  right: 10px;
+  z-index: 100;
+  opacity:0
+}
+
+.form__input1-error1 {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none
+}
+.form__input1-error1-activo {
+	display: block;
+}
+
+/* parte nueva de la validacion ,creacion y modificacion productos*/
+
+.from__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.from__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.form__grupo1-correcto .form__validacion-estado1 {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.form__grupo1-incorrecto .form__validacion-estado1 {
+	color: #bb2929;
+}
+
+.form__grupo1-incorrecto .form__validacion-estado1 {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.form__grupo1-incorrecto .form__input1 {
+	border: 3px solid #bb2929;
 }
 
 /*TEXTS*/
@@ -132,5 +190,7 @@ textarea {
   max-width: 500px;
   padding: 15px 0px;
   margin-bottom: 20px;
+  cursor: pointer;
 
 }
+
