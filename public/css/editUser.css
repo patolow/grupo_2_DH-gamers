@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.main-form-register {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 10%;
+  position: relative;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+/*--TITLE--*/
+.title-register {
+  margin-top: 30px;
+  margin-bottom: 0;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+.subtitle-register {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/*--FORM--*/
+.formulario {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  margin: auto;
+  border-radius: 5px;
+  font-family: sans-serif;
+  justify-content: center;
+  padding-top: 0px;
+}
+
+
+/*CSS de validaciones*/
+
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input {
+	width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: all .5s ease;
+  border-color: 5px solid #061161;
+  border-left: 10px solid #061161;
+	transition: .3s ease all;
+}
+
+
+.preview-image img{
+  width: 150px;
+}
+
+.formulario__input-error {
+	font-size: 12px;
+  margin-top: 10px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+  color: red;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 18px;
+	
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+.formulario__grupo-terminos, 
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario__mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}
+
+
+
+/*DATA ENTRY BOXES*/
+.errors {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  display: block;
+  margin-left: 5px;
+  font-size: 12px;
+  color: #780206
+}
+
+.edit-boxes {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin-top: 5px;
+  border-radius: 10px;
+  transition: all .5s ease;
+  border-color: 5px solid #061161;
+  border-left: 10px solid #061161;
+}
+
+.nombre-campo {
+  font-size: 15px;
+  margin-top: 20px;
+  margin-left: 10px
+}
+
+#date {
+  margin-top: 2px;
+}
+
+.edit-boxes:hover,
+.edit-boxes:focus {
+  border-left: 10px solid #780206;
+  outline: none;
+}
+
+/*TEXTS*/
+.date-register {
+  margin-bottom: 2px;
+  margin-top: 15px;
+  color: gray;
+}
+
+.password-text {
+  text-align: justify;
+  text-align: left;
+  font-size: 12px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  padding-left: 5px;
+}
+
+.already-have-account-text {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 14px;
+  text-align: center;
+}
+
+.term {
+  font-size: 12px;
+  padding-top: 20px;
+}
+
+.upload-photo {
+  margin-top: 20px;
+}
+
+#grupo__fotoPerfil {
+  margin-top: 20px;
+}
+
+
+/* BUTTON */
+.button-register-account {
+  border-radius: 5px;
+  border: none;
+  padding: 8px;
+  background-color: var(--light-blue);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 12px;
+  width: 200px;
+}
+
+.button-register-account:hover {
+  background-color: #061161;
+  color: white;
+  box-shadow: 0px 0px 10px rgb(141, 47, 47);
+  font-weight: lighter
+}
+
+
+.button {
+  text-align: center;
+  margin: 0 3.5% 3.5% 3.5%;
+}
+
+.profilePhoto {
+  margin: auto;
+}
+
+.file-register {
+  width: 100%;
+  max-width: 500px;
+  padding-top: 10px;
+  margin-bottom: 2px;
+  font-size: 13px;
+  color: gray;
+
+}

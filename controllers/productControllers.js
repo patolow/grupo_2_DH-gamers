@@ -1,5 +1,8 @@
 const express = require("express");
 const db = require("../database/models")
+const { validationResult } = require('express-validator')
+const path = require("path");
+
 
 const getImagesIndex = (category) => {
   let imagenesindex = [];
@@ -16,7 +19,8 @@ const controller = {
     db.Product.findByPk(req.params.id)
       .then((product) => {
         let imagesSlider = product.sliderImage.split(",")
-        res.render("productDetails", { productDetail: product, imagesSlider })
+        let firstImage = product.sliderImage.split(",")[0]
+        res.render("productDetails", { productDetail: product, imagesSlider, firstImage })
       })
       .catch(err => console.error(err));
   },
@@ -26,29 +30,50 @@ const controller = {
   },
 
   createProduct: (req, res) => {
-    const defaultImage = '??????DEFAULT IMAGE';
-    const sliderImage = req.body.sliderImage ? req.body.sliderImage : "defaultImage";
-    db.Product.create({
-      "name": req.body.name,
-      "price": req.body.price,
-      "discount": req.body.discount,
-      "bestSellers": req.body.bestSellers,
-      "stock": req.body.stock,
-      "reviews": req.body.reviews,
-      "deliveryDate": req.body.deliveryDate,
-      "description": req.body.description,
-      "sliderImage": sliderImage,
-      "id_category": req.body.id_category, 
+    //  const defaultImage = '??????DEFAULT IMAGE';
+    // const sliderImage = req.body.sliderImage ? req.body.sliderImage : "defaultImage";
 
-    })
-      .then(product => {
-        const productUrl = `/product/detail/${product.id}`;
-        res.redirect(productUrl);
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+
+      // const sliderImage = req.file ? '/images/products/' + req.file.filename : '/images/users/profile-photo-default.jpg'
+
+      let sliderImage = ''
+
+      if (req.files) {
+        for (let i = 0; i < req.files.length; i++) {
+          let nombreImagen = '/images/products/' + req.files[i].filename + ',';
+          sliderImage += nombreImagen;
+        }
+      } else {
+        sliderImage = '/images/users/profile-photo-default.jpg'
+      } 
+
+      db.Product.create({
+        "name": req.body.name,
+        "price": req.body.price,
+        "discount": req.body.discount,
+        "bestSellers": req.body.bestSellers,
+        "stock": req.body.stock,
+        "reviews": req.body.reviews,
+        "deliveryDate": req.body.deliveryDate,
+        "description": req.body.description,
+        "sliderImage": sliderImage,
+        "id_category": req.body.id_category,
+
       })
-      .catch(error => {
-        console.error("Error al crear el producto: ", error);
-        res.status(500).send('Error al crear el producto.');
-      });
+        .then(product => {
+          const productUrl = `/product/detail/${product.id}`;
+          res.redirect(productUrl);
+        })
+        .catch(error => {
+          console.error("Error al crear el producto: ", error);
+          res.status(500).send('Error al crear el producto.');
+        });
+    } else {
+      res.render('createProduct', { errors: errors.mapped(), oldData: req.body, oldFile: req.file });
+    }
+
   },
 
   //done
@@ -72,37 +97,37 @@ const controller = {
       "deliveryDate": req.body.deliveryDate,
       "description": req.body.description,
       "sliderImage": req.body.sliderImage ? req.body.sliderImage : db.Product.sliderImage,
-      "id_category": req.body.id_category, 
+      "id_category": req.body.id_category,
     },
       {
         where: { id: req.params.id }
       }
     )
-    .then(product => {
-      const productUrl = `/product/detail/${req.params.id}`; //te manda a producto que editaste 
-      res.redirect(productUrl);
-    })
-    .catch(error => {
-      console.error("Error al editar el producto: ", error);
-      res.status(500).send('Error al editar el producto.');
-    });
+      .then(product => {
+        const productUrl = `/product/detail/${req.params.id}`; //te manda a producto que editaste 
+        res.redirect(productUrl);
+      })
+      .catch(error => {
+        console.error("Error al editar el producto: ", error);
+        res.status(500).send('Error al editar el producto.');
+      });
   }, //done
 
   getProductsList: (req, res) => {
     let imagenesindex = [];
     db.Product.findAll({
-      include: [{ association : "category"}]
+      include: [{ association: "category" }]
     })
-    .then(products => {
-      for (let i = 0; i <= products.length - 1; i++) {
-        let firstImage = products[i].sliderImage.split(",")[0]
-        products[i].sliderImage = firstImage
-      }
-      res.render("productsList", { products })
-    })
-    .catch(err => console.error(err));
+      .then(products => {
+        for (let i = 0; i <= products.length - 1; i++) {
+          let firstImage = products[i].sliderImage.split(",")[0]
+          products[i].sliderImage = firstImage
+        }
+        res.render("productsList", { products })
+      })
+      .catch(err => console.error(err));
   },
-  
+
   //done
 
   // //Methods for filtering products from productsList
@@ -223,7 +248,6 @@ const controller = {
       .catch(err => console.error(err));
   },
 
-  productCart: (req, res) => { res.render("productCart") },
 
 }
 

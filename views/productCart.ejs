@@ -3,118 +3,159 @@
 
 <%- include("./partials/head") %>
 
-<body>
-  <%- include("./partials/header") %>
+  <body>
+    <%- include("./partials/header") %>
 
-    <section class="main-content">
+      <section class="main-content">
 
-      <div class="main-content-grey">
-
-        <article class="products-to-buy">
-
-          <div class="encabezado">
-            <h2 class="titulo">MI COMPRA</h2>
+        <% if (carrito.length===0) { %>
+          <div class="carrito-vacio">
+            <p> Aun No tenes productos en el carrito!</p>
+            <a href="/product/all">Ir a la lista de productos</a>
           </div>
+          <% } else { %>
+            <div class="main-content-grey">
 
-          <hr class="line">
-          <div class="product">
 
-            <a href="/product" class="img-product monitor"><img src="\images\samsungMonitor\lado2.png"
-                alt="product"></a>
 
-            <div class="product-without-image">
-              <div class="product-details">
-                <div class="product-info">
-                  <a class="url-product" href="/product">
-                    <p class="product-name">Samsung F390 series</p>
-                  </a>
-                  <p class="product-category">Monitores</p>
+              <article class="products-to-buy">
+
+                <div class="encabezado">
+                  <h2 class="titulo">MI COMPRA</h2>
                 </div>
-                <i class="fas fa-trash-alt"></i>
-              </div>
-              <div class="price-qty-container">
-                <form class="qty-picker-container">
-                  <input type='button' value='-' class='qty-picker qty-minus' field='quantity' />
-                  <input type='text' class='quantity' name='quantity' value='0' class='qty-picker' />
-                  <input type='button' value='+' class='qty-picker qty-plus' field='quantity' />
-              </form>
-                <div class="price">U$S 349</div>
-              </div>
+
+                <hr class="line">
+
+                <% carrito.forEach(function(item) { %>
+
+                  <div class="product">
+
+                    <a class="img-product monitor"><img src=<%=item.productImage %>
+                      alt="product"></a>
+
+                    <div class="product-without-image">
+
+                      <div class="product-details">
+                        <div class="product-info">
+                          <a class="url-product" href="/product">
+                            <p class="product-name">
+                              <%= item.productName %>
+                            </p>
+                          </a>
+                          <p class="product-category">
+                            <%= item.productCategory %>
+                          </p>
+                        </div>
+
+                <form action="/cart/delete/<%=item.productId%>/?_method=DELETE" method="POST">
+                  <button class="edit-button" type="submit" ><i class="fas fa-trash-alt"></i></button>
+                </form>
+
+                      </div>
+
+                      <div class="price-qty-container">
+                        <form class="qty-picker-container">
+                          <input type='button' value='-' class='qty-picker qty-minus' field='quantity' />
+                          <input type='text' class='quantity' name='quantity' value=<%= item.quantity %> class='qty-picker' />
+                          <input type='button' value='+' class='qty-picker qty-plus' field='quantity' />
+                        </form>
+                        <div class="price"> $ <%= item.productPrice %>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <hr class="line">
+
+                  <% }); %>
+
+                    <br>
+
+                    <div class="steps">
+
+                      <article class="container-step">
+                        <h1 class="title-steps">PASO 1</h1>
+
+                        <form class="shipment-method" action="post">
+                          <div class="label-radio">
+                            <label for="shipment-method">Seleccione el método de envío <i id="truck"
+                                class="fas fa-truck"></i></label>
+                          </div>
+                          <div class="input-radio">
+                            <input type="radio" name="shipment-method" value="envio"><label for="" id="shipment"> Envío
+                              a
+                              domicilio</label>
+                          </div>
+                          <div class="input-radio">
+                            <input type="radio" name="shipment-method" value="envioExpress"><label for="" id="shipment">
+                              Envío a
+                              domicilio EXPRESS</label>
+                          </div>
+                          <div class="input-radio">
+                            <input type="radio" name="shipment-method" value="retiro"><label for="" id="shipment">
+                              Retiro en
+                              tienda</label>
+                          </div>
+                        </form>
+                      </article>
+
+                      <article class="container-step">
+                        <h1 class="title-steps">PASO 2</h1>
+                        <form class="payment-methods" action="post">
+                          <div class="label-radio">
+                            <label for="payment-methods">Seleccione el método de pago <i id="credit-card"
+                                class="fas fa-credit-card"></i></label>
+                          </div>
+                          <div class="input-radio">
+                            <input type="radio" name="payment-methods" value="tarjeta"><label for="" id="payment">
+                              Tarjeta Crédito/
+                              Débito</label>
+                          </div>
+                          <div class="input-radio">
+                            <input type="radio" name="payment-methods" value="efectivo"><label for="" id="payment">
+                              Efectivo</label>
+                          </div>
+                        </form>
+
+                      </article>
+
+                      <article class="container-step">
+                        <h1 class="title-steps">PASO 3</h1>
+                        <p class="summary">Resumen de compra <i id="cart" class="fas fa-shopping-cart"></i></p>
+                        <div class="total-price">
+                          <p>Total</p>
+                          <p class="final-price">$ <%= precioTotal %></p>
+                        </div>
+
+                      </article>
+
+                    </div>
 
 
+
+
+                    <hr class="line">
+              </article>
+
+
+
+              <div class="input-button">
+                <input class="boton-comprar" type="button" value="Comprar" onclick="msg()">
+              </div>
+
+              <% } %>
             </div>
-          </div>
 
-          <hr class="line">
-        </article>
-
-        <div class="steps">
-
-          <article class="container-step">
-            <h1 class="title-steps">PASO 1</h1>
-
-            <form class="shipment-method" action="post">
-              <div class="label-radio">
-                <label for="shipment-method">Seleccione el método de envío <i id="truck"
-                    class="fas fa-truck"></i></label>
-              </div>
-              <div class="input-radio">
-                <input type="radio" name="shipment-method" value="envio"><label for="" id="shipment"> Envío a
-                  domicilio</label>
-              </div>
-              <div class="input-radio">
-                <input type="radio" name="shipment-method" value="envioExpress"><label for="" id="shipment"> Envío a
-                  domicilio EXPRESS</label>
-              </div>
-              <div class="input-radio">
-                <input type="radio" name="shipment-method" value="retiro"><label for="" id="shipment"> Retiro en
-                  tienda</label>
-              </div>
-            </form>
-          </article>
-
-          <article class="container-step">
-            <h1 class="title-steps">PASO 2</h1>
-            <form class="payment-methods" action="post">
-              <div class="label-radio">
-                <label for="payment-methods">Seleccione el método de pago <i id="credit-card"
-                    class="fas fa-credit-card"></i></label>
-              </div>
-              <div class="input-radio">
-                <input type="radio" name="payment-methods" value="tarjeta"><label for="" id="payment"> Tarjeta Crédito/
-                  Débito</label>
-              </div>
-              <div class="input-radio">
-                <input type="radio" name="payment-methods" value="efectivo"><label for="" id="payment"> Efectivo</label>
-              </div>
-            </form>
-
-          </article>
-
-          <article class="container-step">
-            <h1 class="title-steps">PASO 3</h1>
-            <p class="summary">Resumen de compra <i id="cart" class="fas fa-shopping-cart"></i></p>
-            <div class="total-price">
-              <p>Total</p>
-              <p class="final-price">U$S 568</p>
-            </div>
-
-          </article>
-
-        </div>
-
-        <div class="input-button">
-          <input class="boton-comprar" type="button" value="Comprar" onclick="msg()">
-        </div>
-      </div>
-    </section>
-
-  </main>
+      </section>
 
 
-  <%- include("./partials/footer") %> 
-  <script src="/js/quantityButton.js"></script>
-  <script src="/js/cart.js"></script>
-</body>
+
+      </main>
+
+
+      <%- include("./partials/footer") %>
+        <script src="/js/quantityButton.js"></script>
+        <script src="/js/cart.js"></script>
+  </body>
 
 </html>

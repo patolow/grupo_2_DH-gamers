@@ -15,6 +15,7 @@ index: (req, res)=> {
         let firstImage = bestSeller[i].sliderImage.split(",")[0]
         bestSeller[i].sliderImage = firstImage
     }
+    // console.log(bestSeller)
     res.render("index", {bestSeller})
 }
 

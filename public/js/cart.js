@@ -1,21 +1,36 @@
-const agregarItem = document.querySelectorAll('.agregarCarrito'); //atrapo todos los botones submit
-let carrito = []
+const agregarItem = document.querySelectorAll('.agregarCarrito');
+let carrito = [];
 
-agregarItem.forEach(form => {
+agregarItem.forEach(form => { 
   form.addEventListener('submit', e => {
     e.preventDefault();
-    // Evita que el formulario se envíe al hacer click
-   // Atrapo los datos del producto desde el formulario
-   const productId = form.querySelector('[name="productId"]').value;
-   const productName = form.querySelector('[name="productName"]').value;
-   const productPrice = form.querySelector('[name="productPrice"]').value;
 
-    // Crea un objeto con los datos del producto
-    // const product = { id: productId, name: productName, price: productPrice };
-    console.log(product);
+    const productId = form.querySelector('[name="productId"]').value;
+    const productName = form.querySelector('[name="productName"]').value;
+    const productPrice = form.querySelector('[name="productPrice"]').value;
+    const productCategory = form.querySelector('[name="productCategory"]').value;
+    const productStock = form.querySelector('[name="productStock"]').value;
+    const productImage = form.querySelector('[name="productImage"]').value;
 
-  });
-
-});
-
+    const product = { 
+      id: productId, 
+      name: productName, 
+      price: productPrice,
+      category: productCategory, 
+      stock: productStock, 
+      image: productImage 
+    };
     
+    carrito.push(product);
+    console.log(carrito);
+
+    // Enviar los productos al servidor usando axios
+    axios.post('/cart', carrito)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  });
+});

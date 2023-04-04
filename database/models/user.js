@@ -48,7 +48,12 @@ module.exports = function (sequelize, DataTypes) {
     User.hasMany(models.Purchase, {
       as: "purchases",
       foreignKey: "id_user"
+    }),
+    Users.hasMany(models.Cart, {
+      as: "cart",
+      foreignKey: "userId"
     })
+    
   }
   // sequelize.sync({alter:true}). //para crear la tabla, sino entendí mal debería sacarse el {alter:true}
   //   then(() => {

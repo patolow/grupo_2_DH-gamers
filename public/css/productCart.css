@@ -290,8 +290,8 @@
   }
 
   .container-step {
-    width: 80%;
-    margin-left: 10%;
+    width: 94%;
+    margin-left: 10px;
     margin-bottom: 2.5%;
   }
 
@@ -342,6 +342,20 @@
 
   .boton-comprar {
     transition: all 450ms;
+  }
+
+  .carrito-vacio {
+    margin-top: 30px;
+      color: white; 
+      text-align: center; 
+      font-size: 20px;
+  }
+  .carrito-vacio a {
+    color: white;
+    font-size: 16px;
+  }
+  .carrito-vacio:hover a {
+    color: #64afa6;
   }
 
   main section .boton-comprar:hover {

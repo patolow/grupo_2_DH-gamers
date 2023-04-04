@@ -14,10 +14,11 @@
         <form action="/product/edit/<%= productToEdit.id%>?_method=PUT" method="POST" class="form" id="form">
           <!--TITLE-->
           <h1 class="title">DH-GAMERS</h1>
-          <h2 class="subtitle">Modificar producto: <%= productToEdit.name %>
+          <h2 class="subtitle-edit-product">Modificar producto: <%= productToEdit.name %>
           </h2>
     
           <!--DATA ENTRY boxes-->
+<<<<<<< HEAD
           <!--nuevas class modificacion product1 Prueba-->
           <div class="form__grupo1" id="grupo1__producto1">
             <div class="form__grupo1 input1">
@@ -29,6 +30,11 @@
           <p class="form__input1-error1">El producto tiene que ser de 5 dígitos minimo y solo puede contener numeros, letras y guion bajo.</p>
       </div>
 
+=======
+          <label class = "fieldName">Producto: </label>
+          <input class="boxes-product" type="text" name="name" placeholder="Producto, marca y modelo" value ="<%=  productToEdit.name %>" >
+          
+>>>>>>> 5ff66170a924d3ffb7a58f6c355b46a578c2b0bc
           <label class = "fieldName">Categoria del Producto: </label>
           <select class="boxes-product" name="category" id="category" required >
             <option value="none" disabled selected>Categoria del Producto</option>
