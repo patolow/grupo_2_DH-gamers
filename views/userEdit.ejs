@@ -43,11 +43,9 @@
                       <input class="edit-boxes" type="text" name="address" placeholder="Domicilio"
                         value=<%=usuario.address%>>
                       <label class="nombre-campo">Teléfono: </label>
-                      <input class="edit-boxes" type="tel" name="phone" placeholder="Teléfono"
-                        value=<%=usuario.phone%>>
+                      <input class="edit-boxes" type="tel" name="phone" placeholder="Teléfono" value=<%=usuario.phone%>>
                       <label class="nombre-campo">Email: </label>
-                      <input class="edit-boxes" type="text" name="email" placeholder="Email"
-                        value=<%=usuario.email%>>
+                      <input class="edit-boxes" type="text" name="email" placeholder="Email" value=<%=usuario.email%>>
                       <% if (locals.errors && errors.email) { %>
                         <p class="errors">
                           <%= errors.email.msg %>

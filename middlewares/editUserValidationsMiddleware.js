@@ -31,7 +31,7 @@ const editUserValidationsMiddleware = [
     .withMessage('Ese nombre de usuario ya existe.'),
   body('profilePhoto').custom((value, { req }) => {
     let file = req.file
-    let acceptedExtension = ['.jpg', '.png', '.gif']
+    let acceptedExtension = ['.jpg', 'jepg' '.png', '.gif']
 
     if (file) {
 

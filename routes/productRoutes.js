@@ -2,11 +2,13 @@ const express = require("express");
 const router = express.Router();
 const productControllers = require("../controllers/productControllers")
 const cartMiddleware = require('../middlewares/cartMiddleware')
-
+const createProductValidationsMiddleware = require('../middlewares/createProductValidationsMiddleware')
+const path = require("path");
+const fs = require("fs");
 
 const multer = require('multer');
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, path.join(__dirname, '../../public/images/products')),
+  destination: (req, file, cb) => cb(null, path.join(__dirname, '../public/images/products')),
 
   filename: (req, file, cb) => cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)),
 });
@@ -21,7 +23,7 @@ router.put("/edit/:id/", productControllers.editProduct); //to do
 
 
 router.get("/create/", productControllers.getCreateProduct); //done
-router.post("/create/", productControllers.createProduct); //to do
+router.post("/create/", upload.any(), createProductValidationsMiddleware, productControllers.createProduct); //to do
 
 router.get("/list/", productControllers.getProductsList); //done
 

@@ -13,15 +13,20 @@
       <!--GENERAL-->
 
       <div class="main-form-createProduct">
-        <form action="/product/create" method="POST" class="form">
+        <form action="/product/create" method="POST" class="formulario" enctype="multipart/form-data" class="form">
           <!--TITLE-->
           <h1 class="title">DH-GAMERS</h1>
-          <h2 class="subtitle">Crear producto</h2>
+          <h2 class="subtitle-create-product">Crear producto</h2>
           <!--DATA ENTRY BOXES-->
-          <input class="boxes-product" type="text" name="name" placeholder="Producto, marca y modelo" required
-            maxlength="100">
+          <input class="boxes-product-create" type="text" name="name" placeholder="Producto, marca y modelo"
+            value=<%=locals.oldData ? oldData.name : null %>>
+          <% if (locals.errors && errors.name) { %>
+            <p class="errors">
+              <%= errors.name.msg %>
+            </p>
+            <% } %>
 
-          <!-- <select class="boxes-product" name="category" id="category" onchange="showCategories()" required>
+              <!-- <select class="boxes-product-create" name="category" id="category" onchange="showCategories()" required>
             <option value="none" disabled selected>Categoría</option>
             <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
             <option value="monitores" id="monitores">Monitores</option>
@@ -31,46 +36,72 @@
             <option value="others" id="others">Otras</option>
           </select> -->
 
-          <select class="boxes-product" name="id_category" id="id_category" required onchange="showCategories()">
-            <option value="none" disabled selected>Categoria del Producto</option>
-            <option value="1" id="GPU">GPU</option>
-            <option value="2" id="monitores">Monitores</option>
-            <option value="3" id="microprocesadores">Microprocesadores</option>
-            <option value="4" id="motherboards">Motherboards</option>
-            <option value="5" id="watercooling">WaterCooling</option>
-            <option value="6" id="joysticks">Joysticks</option>
-            <option value="7" id="others">Otras</option>
-          </select>
+              <select class="boxes-product-create" name="id_category" id="id_category" onchange="showCategories()" value=<%=locals.oldData ? oldData.id_category : null %>>
+                <option value="none" disabled selected>Categoria del Producto</option>
+                <option value="1" id="GPU">GPU</option>
+                <option value="2" id="monitores">Monitores</option>
+                <option value="3" id="microprocesadores">Microprocesadores</option>
+                <option value="4" id="motherboards">Motherboards</option>
+                <option value="5" id="watercooling">WaterCooling</option>
+                <option value="6" id="joysticks">Joysticks</option>
+                <option value="7" id="others">Otras</option>
+              </select>
+              <% if (locals.errors && errors.id_category) { %>
+                <p class="errors">
+                  <%= errors.id_category.msg %>
+                </p>
+                <% } %>
 
-          <input class="boxes-product" type="text" name="price" placeholder="Precio del Producto" required>
+              <input class="boxes-product-create" type="text" name="price" placeholder="Precio del Producto" value=<%=locals.oldData ? oldData.price : null %>>
+              <% if (locals.errors && errors.price) { %>
+                <p class="errors">
+                  <%= errors.price.msg %>
+                </p>
+                <% } %>
+              <input class="boxes-product-create" type="text" name="discount" placeholder="Descuento (0-50%)">
 
-          <input class="boxes-product" type="text" name="discount" placeholder="Descuento (0-50%)" maxlength="2">
+              <select class="boxes-product-create" name="bestSellers" id="bestSellers" value=<%=locals.oldData ? oldData.bestSellers : null %>>
+                <option value="none" disabled selected>Best Sellers</option>
+                <option value="si" id="si">Sí</option>
+                <option value="no" id="no">No</option>
+              </select>
+              <% if (locals.errors && errors.bestSellers) { %>
+                <p class="errors">
+                  <%= errors.bestSellers.msg %>
+                </p>
+                <% } %>
 
-          <select class="boxes-product" name="bestSellers" id="bestSellers" required>
-            <option value="none" disabled selected>Best Sellers</option>
-            <option value="si" id="si">Sí</option>
-            <option value="no" id="no">No</option>
-          </select>
+              <input class="boxes-product-create" type="text" name="stock" placeholder="Cantidad de productos disponibles" value=<%=locals.oldData ? oldData.stock : null %>>
+              <% if (locals.errors && errors.stock) { %>
+                <p class="errors">
+                  <%= errors.stock.msg %>
+                </p>
+                <% } %>
+              <input class="boxes-product-create" type="text" name="reviews" placeholder="Cantidad de reviews">
 
-          <input class="boxes-product" type="text" name="stock" placeholder="Cantidad de productos disponibles"
-            maxlength="3">
+              <input class="boxes-product-create" type="date" name="deliveryDate" placeholder="Fecha de entrega">
 
-          <input class="boxes-product" type="text" name="reviews" placeholder="Cantidad de reviews">
+              <textarea class="boxes-product-create" name="description" id="description" cols="20" rows="5"
+                placeholder="Descripción del producto" value=<%=locals.oldData ? oldData.description : null %>></textarea>
+                <% if (locals.errors && errors.description) { %>
+                  <p class="errors">
+                    <%= errors.description.msg %>
+                  </p>
+                  <% } %>
+              <label class="label-img">Imágen del producto:</label>
+              <div class="product-photo">
+                <input class="file" type="file" name="sliderImage" value=<%=locals.oldFile ? oldFile.sliderImage : null %>>
+                <% if (locals.errors && errors.sliderImage) { %>
+                  <p class="errors">
+                    <%= errors.sliderImage.msg %>
+                  </p>
+                  <% } %>
+              </div>
 
-          <input class="boxes-product" type="date" name="deliveryDate" placeholder="Fecha de entrega">
-
-          <textarea class="boxes-product" name="description" id="description" cols="20" rows="5"
-            placeholder="Descripción del producto" minlength="50" maxlength="500" required></textarea>
-
-          <label>Imágen del producto:</label>
-          <div class="product-photo">
-            <input class="file" type="file" name="sliderImage">
-          </div>
-
-          <!--BUTTON-->
-          <div class="input-button">
-            <button type="submit" class="button-create-product">Crear producto</button>
-          </div>
+              <!--BUTTON-->
+              <div class="input-button">
+                <button type="submit" class="button-create-product">Crear producto</button>
+              </div>
       </div>
       </form>
 
