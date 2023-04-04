@@ -6,16 +6,15 @@ const expresiones = {
 	producto1: /^[a-zA-Z0-9\_\-]{4,20}$/, // Letras, numeros, guion y guion_bajo
 	category: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	price:/^\d{7,14}$/, // numeros
-    discount:/^\d{7,14}$/,// numeros
-    bestSellers: true,
-    stock:/^\d{7,14}$/,// numeros
-    reviews:/^\d{7,14}$/,// numeros
-    deliveryDate: /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/, // fechas 
-    description:/^[a-zA-Z0-9\_\-]{5,200}$/,
-    sliderImage:"",
-
-}
-
+	discount:/^\d{7,14}$/,// numeros
+	bestSellers: true,
+	stock:/^\d{7,14}$/,// numeros
+	reviews:/^\d{7,14}$/,// numeros
+	deliveryDate: /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/, // fechas 
+	description:/^[a-zA-Z0-9\_\-]{5,200}$/,
+	sliderImage:"",
+  };
+  
 const campos = {
     producto1:false,
 	price:false,
@@ -48,8 +47,8 @@ const validarFormulario = (e) => {
 	}
 }
 
-const validarCampo = (expresion, input, campo) => {
-	if(expresion.test(input.value)){
+const validarCampo = (expresion, input1, campo) => {
+	if(expresion.test(input1.value)){
 		document.getElementById(`grupo1__${campo}`).classList.remove('form__grupo1-incorrecto');
 		document.getElementById(`grupo1__${campo}`).classList.add('form__grupo1-correcto');
 		document.querySelector(`#grupo1__${campo} i`).classList.add('fa-check-circle');
@@ -67,9 +66,9 @@ const validarCampo = (expresion, input, campo) => {
 }
 
 
-inputs.forEach((input) => {
-	input.addEventListener('keyup', validarFormulario);
-	input.addEventListener('blur', validarFormulario);
+inputs.forEach((input1) => {
+	input1.addEventListener('keyup', validarFormulario);
+	input1.addEventListener('blur', validarFormulario);
 });
 /*
 form.addEventListener('submit', (e) => {

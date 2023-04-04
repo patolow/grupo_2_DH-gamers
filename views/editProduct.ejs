@@ -20,15 +20,15 @@
           <!--DATA ENTRY boxes-->
           <!--nuevas class modificacion product1 Prueba-->
           <div class="form__grupo1" id="grupo1__producto1">
+            <div class="form__grupo1 input1">
          <label for="producto1" class = "fieldName">Producto:</label>
-          <div class="form__grupo1 input1">
             <input type="text" class="boxes-product input1" name="producto1" id="producto1" placeholder="Producto, marca y modelo" value = <%=productToEdit.name %> required
             maxlength="100">
             <i class="form__validacion-estado1 fas fa-times-circle"></i>
-				<p class="form__input1-error1">El producto tiene que ser de 5 dígitos minimo y solo puede contener numeros, letras y guion bajo.</p>
-    
-			</div>
-   
+         </div>
+          <p class="form__input1-error1">El producto tiene que ser de 5 dígitos minimo y solo puede contener numeros, letras y guion bajo.</p>
+      </div>
+
           <label class = "fieldName">Categoria del Producto: </label>
           <select class="boxes-product" name="category" id="category" required >
             <option value="none" disabled selected>Categoria del Producto</option>
@@ -91,16 +91,21 @@
                         <option value="others" id="others" selected>Otras</option>
                         <% } %>
           </select>
-          <div class="form__grupo1" id="grupo1__precio1">
+          <div class="form__grupo1" id="grupo1__producto1">
+            <div class="form__grupo1 input1">
           <label for="precio1" class = "fieldName">Precio: </label>
           <input class="boxes-product input1" type="text" name="pricio1" id="precio1" placeholder="Precio del Producto" value=<%=productToEdit.price %>>
           <i class="form__validacion-estado1 fas fa-times-circle"></i>
           <p class="form__input1-error1">El producto tiene que tener precio, sin $.</p>
-          
+          </div></div>
+          <div class="form__grupo1" id="grupo1__producto1">
+            <div class="form__grupo1 input1">
           <label for="descuento1" class = "fieldName">Descuento (%): </label>
           <input class="boxes-product" type="text" name="descuento1" id="descuento1" placeholder="Descuento (0-50%)" value=<%=productToEdit.discount %>
           maxlength="2">
           <i class="form__validacion-estado1 fas fa-times-circle"></i>
+          <div class="form__grupo1" id="grupo1__producto1">
+            <div class="form__grupo1 input1">
           <label class = "fieldName">Best Sellers: </label>
           <select class="boxes-product" name="bestSellers" id="bestSellers" required>
             <option value="none" disabled selected>Best Sellers</option>
@@ -112,29 +117,43 @@
                 <option value="no" id="no" selected>No</option>
                 <% } %>
           </select>
-          <div class="form__grupo1" id="grupo1__stock1">
+
+          <div class="form__grupo1" id="grupo1__producto1">
+            <div class="form__grupo1 input1">
           <label for="stock1" class = "fieldName">Stock: </label>
           <input class="boxes-product input1" type="text" name="stock1" id="stock1" placeholder="Cantidad de productos disponibles" value=<%=productToEdit.stock %>
           maxlength="3">
           <i class="form__validacion-estado1 fas fa-times-circle"></i>
-          <div class="form__grupo1" id="grupo1__cantidad1">
+          </div></div>
+
+          <div class="form__grupo1" id="grupo1__producto1">
+            <div class="form__grupo1 input1">
           <label for="cantidad1" class = "fieldName">Cantidad de reviews: </label>
           <input class="boxes-product input1" type="text" name="cantidad1" id="cantidad1" placeholder="Cantidad de reviews" value=<%=productToEdit.reviews %>>
           <i class="form__validacion-estado1 fas fa-times-circle"></i>
-          <div class="form__grupo1" id="grupo1__fecha1">
+          </div></div>
+
+          <div class="form__grupo1" id="grupo1__producto1">
+            <div class="form__grupo1 input1">
           <label for="fecha1" class = "fieldName">Fecha de Entrega: </label>
           <input class="boxes-product" type="date" name="fecha1" id="fecha1" placeholder="Fecha de entrega" value=<%=productToEdit.deliveryDate %>>
           <i class="form__validacion-estado1 fas fa-times-circle"></i>
-          <div class="form__grupo1" id="grupo1__descripcion1">
+          </div></div>
+
+          <div class="form__grupo1" id="grupo1__producto1">
+            <div class="form__grupo1 input1">
           <label for="descripcion1" class = "fieldName">Descripción: </label>
           <textarea class="boxes-product" name="description1" placeholder="Descripción del producto" id="description1" cols="20" rows="5" minlength="50"
             maxlength="2500" required><%= productToEdit.description %></textarea>
           <i class="form__validacion-estado1 fas fa-times-circle"></i>
-          <div class="form__grupo1" id="grupo1__imagen1">
+          </div></div>
+
+          <div class="form__grupo1" id="grupo1__producto1">
+            <div class="form__grupo1 input1">
           <label for="imagen1" class="fieldName">Imágen del producto:</label>
           <div class="product-photo">
             <input class="file input1" type="file" name="imagen1" id="imagen1">
-         
+         </div></div>
           </div>
 
           <!--BUTTON-->

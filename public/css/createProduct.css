@@ -68,28 +68,27 @@
 
 }
 
-.input1{
-	position: relative; 
-}
+
 .form__grupo1{
   position: relative;
 }
 .form__validacion-estado1 .input1 {
   position: absolute;
-  top: 50%;
-  font-size:16px;
   right: 10px;
-  z-index: 100;
-  opacity:0
+  font-size:16px;
+  bottom: 18px;
+  opacity:0;
 }
 
 .form__input1-error1 {
 	font-size: 12px;
+  margin-top: 10px;
 	margin-bottom: 0;
-	display: none
+	display: none;
 }
 .form__input1-error1-activo {
 	display: block;
+  color: red;
 }
 
 /* parte nueva de la validacion ,creacion y modificacion productos*/
