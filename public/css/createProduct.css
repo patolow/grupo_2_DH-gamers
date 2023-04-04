@@ -63,21 +63,11 @@
   border-left: 10px solid #061161;
   outline: none;
 }
-<<<<<<< HEAD
 .boxes-product:hover,
 .boxes-product:focus {
   border: 3px solid #0075FF;
 	outline: none;
 	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
-=======
-
-.label-img {
-  margin-top: 20px;
-}
-
-.boxes-product-create:hover,
-.boxes-product-create:focus {
->>>>>>> 5ff66170a924d3ffb7a58f6c355b46a578c2b0bc
   border-left: 10px solid #780206;
 
 }
