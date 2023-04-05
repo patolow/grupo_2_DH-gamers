@@ -74,12 +74,13 @@
                 </p>
               <% } %>
             </div>
-                <p class="cp_formulario__input-error">Escribe un precio (valores enteros)</p>
+                <p class="cp_formulario__input-error">Escribe solo números separados por coma para expresar los decimales</p>
           </div>
 
             <!--Input: Descuento-->
             <input class="boxes-product-create" type="text" name="discount" placeholder="Descuento (0-50%)">
-               
+            <i class="cp_formulario__validacion-estado fas fa-times-circle"></i>
+
             <!--Input: BestSellers-->
             <div class="cp_formulario__grupo" id="cp_grupo__bestsellers">
                 <div class="cp_formulario__grupo-input">
@@ -116,10 +117,10 @@
 
             <!--Input: Reviews-->
               <input class="boxes-product-create" type="text" name="reviews" placeholder="Cantidad de reviews">
-              
+              <i class="cp_formulario__validacion-estado fas fa-times-circle"></i>
             <!--Input: Fecha de Entrega-->
                 <input class="boxes-product-create" type="date" name="deliveryDate" placeholder="Fecha de entrega">
-                
+                <i class="cp_formulario__validacion-estado fas fa-times-circle"></i>
             <!--Input: Descripción-->
                 <div class="cp_formulario__grupo" id="cp_grupo__descripcion">
                   <div class="cp_formulario__grupo-input">
@@ -140,7 +141,7 @@
                   <label class="label-img">Imágen del producto:</label>
                     <div class="product-photo">
                       <input class="file" type="file" name="sliderImage" id="file" value=<%=locals.oldFile ? oldFile.sliderImage : null %>>
-                        
+                      <i class="cp_formulario__validacion-estado fas fa-times-circle"></i> 
                       <% if (locals.errors && errors.sliderImage) { %>
                       <p class="errors">
                           <%= errors.sliderImage.msg %>

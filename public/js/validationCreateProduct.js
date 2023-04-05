@@ -3,8 +3,8 @@ const inputs = document.querySelectorAll("#cp_formulario input");
 
 
 const expresiones = {
-	nombre:  /^[a-zA-Z0-9\_\-]{4,130}$/,
-    precio: /^\d{1,14}$/, // 7 a 14 numeros., 
+	nombre: /^[a-zA-ZÀ-ÿ0-9\s]{4,40}$/,
+    precio: /^[0-9]+(,[0-9]+)?$/, //  
     stock: /^\d{1,14}$/, // 7 a 14 numeros.
     descripcion: /^[a-zA-ZÀ-ÿ0-9\s]{20,500}$/, 
     sliderImage:"",
