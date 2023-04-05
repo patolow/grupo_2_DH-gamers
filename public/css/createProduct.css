@@ -37,7 +37,7 @@
 
 /*--FORM--*/
 
-.form {
+.cp_formulario {
   flex-direction: column;
   display: flex;
   width: 100%;
@@ -141,4 +141,96 @@ textarea {
   padding: 15px 0px;
   margin-bottom: 20px;
 
+}
+
+/*CSS de validaciones*/
+
+.cp_formulario__grupo-input {
+	position: relative;
+}
+
+.cp_formulario__input {
+	width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: all .5s ease;
+  border-color: 5px solid #061161;
+  border-left: 10px solid #061161;
+	transition: .3s ease all;
+}
+
+
+.cp_formulario__input-error {
+	font-size: 12px;
+  margin-top: 10px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.cp_formulario__validacion-estado {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  z-index: 100;
+  font-size:16px;
+  opacity: 0;
+}
+
+.cp_formulario__input-error-activo {
+	display: block;
+  color: red;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.cp_formulario__grupo-correcto .cp_formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.cp_formulario__grupo-incorrecto .cp_formulario__label {
+	color: #bb2929;
+}
+
+.cp_formulario__grupo-incorrecto .cp_formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.cp_formulario__grupo-incorrecto .cp_formulario__input {
+	border: 3px solid #bb2929;
+}
+
+
+/*DATA ENTRY BOXES*/
+.errors {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  display: block;
+  margin-left: 5px;
+  font-size: 12px;
+  color: #780206;
+  display: none
+}
+
+.register-boxes {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: all .5s ease;
+  border-color: 5px solid #061161;
+  border-left: 10px solid #061161;
+}
+
+#date {
+  margin-top: 2px;
+}
+
+.register-boxes:hover,
+.register-boxes:focus {
+  border-left: 10px solid #780206;
+  outline: none;
 }

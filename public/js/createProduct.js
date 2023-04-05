@@ -22,3 +22,5 @@ function showCategories() {
   ranuras.style.display = selectedCategory == 'motherboards' ? 'block' : 'none'
   capacidadMaxima.style.display = selectedCategory == 'motherboards' ? 'block' : 'none'
 }
+
+
