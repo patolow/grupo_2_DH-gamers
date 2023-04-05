@@ -187,6 +187,7 @@ textarea {
 .cp_formulario__grupo-correcto .cp_formulario__validacion-estado {
 	color: #1ed12d;
 	opacity: 1;
+  z-index: 1;
 }
 
 .cp_formulario__grupo-incorrecto .cp_formulario__label {

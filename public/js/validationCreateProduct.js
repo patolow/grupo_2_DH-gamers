@@ -32,7 +32,7 @@ const validarCpFormulario = (e) => {
 			validarCpCampo(expresiones.stock, e.target, "stock");
 		break;
 		case "description":
-			validarCpCampo(expresiones.descipcion, e.target, "descripcion");
+			validarCpCampo(expresiones.descripcion, e.target, "descripcion");
 		break;
 		
 	}
@@ -82,7 +82,7 @@ inputs.forEach((input) => {
 
           formulario.addEventListener('submit', (e) => {
             const termino = document.getElementById('terminos');
-            if(campos.nombre && campos.precio && campos.stock && campos.descripcion){
+            if(campos.nombre && campos.precio /*&& campos.stock && campos.descripcion*/){
                 Swal.fire({
                     position: 'top-center',
                     icon: 'success',
