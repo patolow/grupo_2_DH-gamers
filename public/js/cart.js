@@ -25,12 +25,18 @@ agregarItem.forEach(form => {
     console.log(carrito);
 
     // Enviar los productos al servidor usando axios
+
+
+
     axios.post('/cart', carrito)
       .then(response => {
         console.log(response);
       })
       .catch(error => {
         console.error(error);
+        if(error.response?.data?.redirectToLogin) {
+          window.location.replace("../../users/login");
+        }
       });
   });
 });

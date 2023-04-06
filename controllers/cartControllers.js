@@ -14,6 +14,12 @@ const controller = {
 
   addItemtoCart: (req, res) => {
 
+    if(req.mustRedirect) {
+      return res.status(401).send({
+        redirectToLogin: true,
+      })
+    }
+
     // guardar los datos del último producto en la base de datos
     db.Cart.create({
       "productId": req.body[req.body.length - 1].id,
