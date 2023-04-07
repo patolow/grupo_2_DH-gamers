@@ -1,7 +1,7 @@
 const agregarItem = document.querySelectorAll('.agregarCarrito');
 let carrito = [];
 
-agregarItem.forEach(form => { 
+agregarItem.forEach(form => {
   form.addEventListener('submit', e => {
     e.preventDefault();
 
@@ -12,15 +12,15 @@ agregarItem.forEach(form => {
     const productStock = form.querySelector('[name="productStock"]').value;
     const productImage = form.querySelector('[name="productImage"]').value;
 
-    const product = { 
-      id: productId, 
-      name: productName, 
+    const product = {
+      id: productId,
+      name: productName,
       price: productPrice,
-      category: productCategory, 
-      stock: productStock, 
-      image: productImage 
+      category: productCategory,
+      stock: productStock,
+      image: productImage
     };
-    
+
     carrito.push(product);
     console.log(carrito);
 
@@ -33,9 +33,14 @@ agregarItem.forEach(form => {
         console.log(response);
       })
       .catch(error => {
-        console.error(error);
-        if(error.response?.data?.redirectToLogin) {
-          window.location.replace("../../users/login");
+
+        //si no esta loggeado, redirecciona al login segun la URL en la que apretamos el boton
+        if (error.response?.data?.redirectToLogin) {
+          //ToDo: esto debe ser una util function
+          const protocol = location.protocol
+          const host     = location.host
+          const result   = protocol + '//' + host
+          window.location.replace(result+"/users/login")
         }
       });
   });

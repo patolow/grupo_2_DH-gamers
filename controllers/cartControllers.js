@@ -14,11 +14,12 @@ const controller = {
 
   addItemtoCart: (req, res) => {
 
-    if(req.mustRedirect) {
+    if (req.mustRedirect) {
       return res.status(401).send({
         redirectToLogin: true,
       })
     }
+    console.log(req.params)
 
     // guardar los datos del último producto en la base de datos
     db.Cart.create({
@@ -28,7 +29,7 @@ const controller = {
       "productCategory": req.body[req.body.length - 1].category,
       "productStock": req.body[req.body.length - 1].stock,
       "productImage": req.body[req.body.length - 1].image,
-      // "userId": 'no se como registrar el id de la persona que agregar el producto'
+      "userId": req.session.usuarioLogueado.id
     })
       .then(() => {
         return res.status(200).send('Producto agregado al carrito'); // enviar una respuesta satisfactoria al cliente y detener la ejecución
@@ -43,6 +44,7 @@ const controller = {
   getCart: (req, res) => {
     //tomo la base de datos exluyendo duplicados
     db.Cart.findAll({
+      where: {userId: req.session.usuarioLogueado.id},
       attributes: [
         'productId',
         'productName',
@@ -59,7 +61,7 @@ const controller = {
         'productStock',
         'productImage'
       ]
-    })    
+    })
       .then(items => {
         let precioTotal = 0;
         let carrito = [];
@@ -88,10 +90,8 @@ const controller = {
   },
 
   deleteItem: (req, res) => {
-
     db.Cart.destroy({ where: { productId: req.params.id } })
       .then(res.redirect("/cart"))
-
   },
 };
 
