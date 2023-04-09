@@ -161,11 +161,12 @@
                                 <input type="hidden" name="productId" value="<%=bestSeller.id%>">
                                 <input type="hidden" name="productName" value="<%=bestSeller.name%>">
                                 <input type="hidden" name="productPrice" value="<%=bestSeller.price%>">
-                                <input type="hidden" name="productCategory" value="<%=bestSeller.category%>">
+                                <input type="hidden" name="productCategory" value="<%=bestSeller.id_category%>">
                                 <input type="hidden" name="productStock" value="<%=bestSeller.stock%>">
                                 <input type="hidden" name="productImage" value="<%=bestSeller.sliderImage%>">
                                 <input id="submit" type="submit" value='AGREGAR AL CARRITO'>
                             </form>
+                            
                         </div>
 
                         <% }); %>
@@ -190,6 +191,7 @@
                 <script src="/js/main.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
                 <!-- para usar Axios y enviar data al servidor -->
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     </body>

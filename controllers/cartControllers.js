@@ -33,6 +33,7 @@ const controller = {
     })
       .then(() => {
         return res.status(200).send('Producto agregado al carrito'); // enviar una respuesta satisfactoria al cliente y detener la ejecución
+
       })
       .catch((error) => {
         console.error(error);
@@ -79,11 +80,11 @@ const controller = {
           carrito.push(producto);
           precioTotal += item.dataValues.quantity * item.dataValues.productPrice; // actualizar el precio total con la cantidad de productos y su precio
         });
-        console.log(carrito)
+        // console.log(carrito)
         res.render("productCart.ejs", { carrito, precioTotal });
       })
       .catch(error => {
-        console.error(error);
+        // console.error(error);
         res.status(500).send('Error al obtener el carrito');
       });
 

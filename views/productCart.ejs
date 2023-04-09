@@ -47,16 +47,17 @@
                           </p>
                         </div>
 
-                <form action="/cart/delete/<%=item.productId%>/?_method=DELETE" method="POST">
-                  <button class="edit-button" type="submit" ><i class="fas fa-trash-alt"></i></button>
-                </form>
+                        <form action="/cart/delete/<%=item.productId%>/?_method=DELETE" method="POST">
+                          <button class="edit-button" type="submit"><i class="fas fa-trash-alt"></i></button>
+                        </form>
 
                       </div>
 
                       <div class="price-qty-container">
                         <form class="qty-picker-container">
                           <input type='button' value='-' class='qty-picker qty-minus' field='quantity' />
-                          <input type='text' class='quantity' name='quantity' value=<%= item.quantity %> class='qty-picker' />
+                          <input type='text' class='quantity' name='quantity' value=<%=item.quantity %>
+                          class='qty-picker' />
                           <input type='button' value='+' class='qty-picker qty-plus' field='quantity' />
                         </form>
                         <div class="price"> $ <%= item.productPrice %>
@@ -82,9 +83,8 @@
                                 class="fas fa-truck"></i></label>
                           </div>
                           <div class="input-radio">
-                            <input type="radio" name="shipment-method" value="envio"><label for="" id="shipment"> Envío
-                              a
-                              domicilio</label>
+                            <input type="radio" name="shipment-method" value="envio" checked><label for=""
+                              id="shipment"> Envío a domicilio</label>
                           </div>
                           <div class="input-radio">
                             <input type="radio" name="shipment-method" value="envioExpress"><label for="" id="shipment">
@@ -107,7 +107,7 @@
                                 class="fas fa-credit-card"></i></label>
                           </div>
                           <div class="input-radio">
-                            <input type="radio" name="payment-methods" value="tarjeta"><label for="" id="payment">
+                            <input type="radio" name="payment-methods" value="tarjeta" checked><label for="" id="payment">
                               Tarjeta Crédito/
                               Débito</label>
                           </div>
@@ -124,7 +124,8 @@
                         <p class="summary">Resumen de compra <i id="cart" class="fas fa-shopping-cart"></i></p>
                         <div class="total-price">
                           <p>Total</p>
-                          <p class="final-price">$ <%= precioTotal %></p>
+                          <p class="final-price">$ <%= precioTotal %>
+                          </p>
                         </div>
 
                       </article>

@@ -26,14 +26,18 @@ agregarItem.forEach(form => {
 
     // Enviar los productos al servidor usando axios
 
-
-
     axios.post('/cart', carrito)
       .then(response => {
         console.log(response);
+        Swal.fire({
+          position: 'top-center',
+          icon: 'success',
+          title: 'Producto agregado al carrito!',
+          showConfirmButton: false,
+          timer: 1500
+        })
       })
       .catch(error => {
-
         //si no esta loggeado, redirecciona al login segun la URL en la que apretamos el boton
         if (error.response?.data?.redirectToLogin) {
           //ToDo: esto debe ser una util function

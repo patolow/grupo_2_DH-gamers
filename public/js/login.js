@@ -3,36 +3,36 @@ const inputs = document.querySelectorAll('#formulario input');
 
 
 const expresiones = {
-	
+
 	password: /^.{8,16}$/, // 4 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	
+
 }
 
 const campos = {
-	
+
 	password: false,
 	correo: false,
-	
+
 }
 
 const validarFormulario = (e) => {
 	switch (e.target.name) {
-		
+
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
 			validarPassword2();
-		break;
-		
+			break;
+
 		case "email":
 			validarCampo(expresiones.correo, e.target, 'email');
-		break;
-		
+			break;
+
 	}
 }
 
 const validarCampo = (expresion, input, campo) => {
-	if(expresion.test(input.value)){
+	if (expresion.test(input.value)) {
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
 		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
@@ -58,21 +58,22 @@ inputs.forEach((input) => {
 });
 
 formulario.addEventListener('submit', (e) => {
-	
+
 
 	const terminos = document.getElementById('terminos');
-	if(campos.password && campos.email){
-		
-        Swal.fire({
-            position: 'top-center',
-            icon: 'success',
-            title: 'Login exitoso!',
-            showConfirmButton: false,
-            timer: 1500
-          })
+	//CORREGIR LOGICA ESTE SWAL.FIRE, SOLO ESTA EVALUANDO QUE ESTEN COMPLETOS SIN ERRRORES
+	if (campos.password && campos.email) {
+
+		Swal.fire({
+			position: 'top-center',
+			icon: 'success',
+			title: 'Login exitoso!',
+			showConfirmButton: false,
+			timer: 1500
+		})
 
 	} else {
-        e.preventDefault();
+		e.preventDefault();
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
 	}
 });
