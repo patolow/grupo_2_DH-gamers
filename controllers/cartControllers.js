@@ -73,6 +73,7 @@ const controller = {
       .then(items => {
         let precioTotal = 0;
         let carrito = [];
+        contadorItems = 0
         items.forEach(item => {
           const producto = {
             "productId": item.dataValues.productId,
@@ -85,10 +86,12 @@ const controller = {
             // también puedes incluir aquí otros campos si los necesitas
           };
           carrito.push(producto);
+          contadorItems ++
+          //COMO LOGRO ACTUALIZAR EL CARRITO DEL HEADER??
           precioTotal += item.dataValues.quantity * item.dataValues.productPrice; // actualizar el precio total con la cantidad de productos y su precio
         });
         // console.log(carrito)
-        res.render("productCart.ejs", { carrito, precioTotal });
+        res.render("productCart.ejs", { carrito, precioTotal, contadorItems});
       })
       .catch(error => {
         // console.error(error);

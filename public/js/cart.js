@@ -37,7 +37,7 @@ agregarItem.forEach(form => {
         Swal.fire({
           position: 'top-center',
           icon: 'success',
-          title: 'Producto(s() agregado(s) al carrito!',
+          title: 'Producto(s) agregado(s) al carrito!',
           showConfirmButton: false,
           timer: 1500
         })
