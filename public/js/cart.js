@@ -5,6 +5,8 @@ agregarItem.forEach(form => {
   form.addEventListener('submit', e => {
     e.preventDefault();
 
+    const cantidad = document.querySelector('.quantity');
+
     const productId = form.querySelector('[name="productId"]').value;
     const productName = form.querySelector('[name="productName"]').value;
     const productPrice = form.querySelector('[name="productPrice"]').value;
@@ -12,13 +14,16 @@ agregarItem.forEach(form => {
     const productStock = form.querySelector('[name="productStock"]').value;
     const productImage = form.querySelector('[name="productImage"]').value;
 
+    const quantityCheck = cantidad !== null && cantidad.value !== null ? parseInt(cantidad.value) : 1;
+
     const product = {
       id: productId,
       name: productName,
       price: productPrice,
       category: productCategory,
       stock: productStock,
-      image: productImage
+      image: productImage,
+      quantity: quantityCheck 
     };
 
     carrito.push(product);
@@ -28,11 +33,11 @@ agregarItem.forEach(form => {
 
     axios.post('/cart', carrito)
       .then(response => {
-        console.log(response);
+        // console.log(response);
         Swal.fire({
           position: 'top-center',
           icon: 'success',
-          title: 'Producto agregado al carrito!',
+          title: 'Producto(s() agregado(s) al carrito!',
           showConfirmButton: false,
           timer: 1500
         })

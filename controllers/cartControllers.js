@@ -12,6 +12,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 
 const controller = {
 
+
   addItemtoCart: (req, res) => {
 
     if (req.mustRedirect) {
@@ -19,28 +20,34 @@ const controller = {
         redirectToLogin: true,
       })
     }
-    console.log(req.params)
-
-    // guardar los datos del último producto en la base de datos
-    db.Cart.create({
-      "productId": req.body[req.body.length - 1].id,
-      "productName": req.body[req.body.length - 1].name,
-      "productPrice": req.body[req.body.length - 1].price,
-      "productCategory": req.body[req.body.length - 1].category,
-      "productStock": req.body[req.body.length - 1].stock,
-      "productImage": req.body[req.body.length - 1].image,
-      "userId": req.session.usuarioLogueado.id
-    })
+  
+    const promises = [];
+  
+    for (let i = 0; i < req.body[req.body.length - 1].quantity; i++) {
+      // guardar los datos del último producto en la base de datos
+      promises.push(
+        db.Cart.create({
+          "productId": req.body[req.body.length - 1].id,
+          "productName": req.body[req.body.length - 1].name,
+          "productPrice": req.body[req.body.length - 1].price,
+          "productCategory": req.body[req.body.length - 1].category,
+          "productStock": req.body[req.body.length - 1].stock,
+          "productImage": req.body[req.body.length - 1].image,
+          "userId": req.session.usuarioLogueado.id
+        })
+      );
+    }
+  
+    Promise.all(promises)
       .then(() => {
-        return res.status(200).send('Producto agregado al carrito'); // enviar una respuesta satisfactoria al cliente y detener la ejecución
-
+        return res.status(200).send('Producto(s) agregado(s) al carrito');
       })
       .catch((error) => {
         console.error(error);
-        return res.status(500).send('Error al agregar el producto al carrito'); // enviar una respuesta de error al cliente y detener la ejecución
+        return res.status(500).send('Error al agregar el/los producto(s) al carrito');
       });
-
   },
+  
 
   getCart: (req, res) => {
     //tomo la base de datos exluyendo duplicados

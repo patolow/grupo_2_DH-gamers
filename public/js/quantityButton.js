@@ -13,10 +13,10 @@ window.addEventListener('load', function (){
         if (cantidadActual > 1) {
             cantidadActual--;
         }
-
+        
         // Actualizar el valor del campo de cantidad
-        cantidad.value = cantidadActual.toString();
-});
+        cantidad.value = cantidadActual.toString()
+    });
 
     // Agregar evento de clic al botón "+"
     aumentarBtn.addEventListener('click', function () {
@@ -24,6 +24,6 @@ window.addEventListener('load', function (){
         let cantidadActual = parseInt(cantidad.value);
         cantidadActual++;
         cantidad.value = cantidadActual.toString();
-    })
+    });
 
 })
