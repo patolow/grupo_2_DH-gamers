@@ -76,6 +76,10 @@
   height: fit-content;
 }
 
+.quantity {
+  font-size: 77%;
+}
+
 .price-qty-container {
   display: flex;
   justify-content: space-between;
@@ -165,8 +169,9 @@
   margin: 0 3.5% 3.5% 3.5%;
   width: 93%;
   background-color: white;
+  border: solid #919191 1px;
   border-radius: 3px;
-  box-shadow: -2px -2px 2px #919191;
+  box-shadow: -2px -2px 2px #c9c8c8;
 }
 
 .container {
@@ -275,6 +280,9 @@
 }
 
 @media (min-width: 768px) {
+  .product-name {
+    width: max-content ;
+  }
 
   .main-content-grey {
     font-size: 18px;

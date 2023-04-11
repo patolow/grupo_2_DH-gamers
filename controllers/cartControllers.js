@@ -20,9 +20,9 @@ const controller = {
         redirectToLogin: true,
       })
     }
-  
+
     const promises = [];
-  
+
     for (let i = 0; i < req.body[req.body.length - 1].quantity; i++) {
       // guardar los datos del último producto en la base de datos
       promises.push(
@@ -37,7 +37,7 @@ const controller = {
         })
       );
     }
-  
+
     Promise.all(promises)
       .then(() => {
         return res.status(200).send('Producto(s) agregado(s) al carrito');
@@ -47,12 +47,13 @@ const controller = {
         return res.status(500).send('Error al agregar el/los producto(s) al carrito');
       });
   },
-  
+
 
   getCart: (req, res) => {
     //tomo la base de datos exluyendo duplicados
     db.Cart.findAll({
-      where: {userId: req.session.usuarioLogueado.id},
+      include: [{ association: "category" }],
+      where: { userId: req.session.usuarioLogueado.id },
       attributes: [
         'productId',
         'productName',
@@ -79,19 +80,19 @@ const controller = {
             "productId": item.dataValues.productId,
             'productName': item.dataValues.productName,
             'productPrice': item.dataValues.productPrice,
-            'productCategory': item.dataValues.productCategory,
+            'productCategory': item.dataValues.category.name,
             'productStock': item.dataValues.productStock,
             'productImage': item.dataValues.productImage,
             "quantity": item.dataValues.quantity,
             // también puedes incluir aquí otros campos si los necesitas
           };
           carrito.push(producto);
-          contadorItems ++
+          contadorItems++
           //COMO LOGRO ACTUALIZAR EL CARRITO DEL HEADER??
           precioTotal += item.dataValues.quantity * item.dataValues.productPrice; // actualizar el precio total con la cantidad de productos y su precio
         });
         // console.log(carrito)
-        res.render("productCart.ejs", { carrito, precioTotal, contadorItems});
+        res.render("productCart.ejs", { carrito, precioTotal, contadorItems });
       })
       .catch(error => {
         // console.error(error);
@@ -112,22 +113,22 @@ const controller = {
     console.log(req.session.usuarioLogueado.id)
     db.Cart.destroy({
       where: {
-        id: req.body.productId,
+        productId: req.body.productId,
         userId: req.session.usuarioLogueado.id
       },
       limit: 1
     })
-    .then(() => {
-      res.redirect('/cart');
-    })
-    .catch(err => {
-      console.error(err);
-      // Manejo del error
-    });
+      .then(() => {
+        res.redirect('/cart');
+      })
+      .catch(err => {
+        console.error(err);
+        // Manejo del error
+      });
 
     //REVISAR ESTO!
   },
-  
+
 
 };
 

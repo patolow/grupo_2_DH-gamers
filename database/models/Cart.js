@@ -19,8 +19,9 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     productCategory: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      foreignKey: true
     },
     productStock: {
       type: DataTypes.INTEGER,
@@ -49,9 +50,13 @@ module.exports = function (sequelize, DataTypes) {
 
   Cart.associate = function (models) {
     Cart.belongsTo(models.User, {
-      as: "cart",
+      as: "user",
       foreignKey: 'userId'
-    });
+    }),
+      Cart.belongsTo(models.Category, {
+        as: "category",
+        foreignKey: "productCategory"
+      });
   };
 
   // sequelize.sync({alter:true}) //para crear la tabla, sino entendí mal debería sacarse el {alter:true}
