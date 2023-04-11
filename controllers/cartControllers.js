@@ -104,6 +104,31 @@ const controller = {
     db.Cart.destroy({ where: { productId: req.params.id } })
       .then(res.redirect("/cart"))
   },
+
+
+
+  removerUnItem: (req, res) => {
+    console.log(req.body.productId)
+    console.log(req.session.usuarioLogueado.id)
+    db.Cart.destroy({
+      where: {
+        id: req.body.productId,
+        userId: req.session.usuarioLogueado.id
+      },
+      limit: 1
+    })
+    .then(() => {
+      res.redirect('/cart');
+    })
+    .catch(err => {
+      console.error(err);
+      // Manejo del error
+    });
+
+    //REVISAR ESTO!
+  },
+  
+
 };
 
 module.exports = controller;
