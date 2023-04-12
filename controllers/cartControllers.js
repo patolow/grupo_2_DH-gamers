@@ -109,8 +109,8 @@ const controller = {
 
 
   removerUnItem: (req, res) => {
-    console.log(req.body.productId)
-    console.log(req.session.usuarioLogueado.id)
+    // console.log(req.body.productId)
+    // console.log(req.session.usuarioLogueado.id)
     db.Cart.destroy({
       where: {
         productId: req.body.productId,
@@ -125,6 +125,27 @@ const controller = {
         console.error(err);
         // Manejo del error
       });
+
+    //REVISAR ESTO!
+  },
+
+  agregarUnItem: (req, res) => {
+    // console.log(req.body.productId)
+    // console.log(req.session.usuarioLogueado.id)
+    db.Cart.findOne({
+      where: {
+        productId: req.body.productId,
+        userId: req.session.usuarioLogueado.id
+      }    
+    })
+    .then(itemAgregar => {
+      console.log(itemAgregar)
+      res.redirect('/cart');
+    })
+    .catch(err => {
+      console.error(err);
+      // Manejo del error
+    });  
 
     //REVISAR ESTO!
   },
