@@ -26,7 +26,7 @@
 
                 <hr class="line">
 
-                <% carrito.forEach(function(item) { %>
+                <% carrito.forEach(function(item, index) { %>
 
                   <div class="product">
 
@@ -56,13 +56,16 @@
                       <div class="price-qty-container">
                         <form class="qty-picker-container">
 
-                          <input type='button' value='-' id= <%= 'qty-minus-' + item.productId  %> class='qty-picker qty-minus' field='quantity' />
-                          <input type='text' id= <%= 'quantity-' + item.productId  %> class='quantity' name='quantity' value=<%=item.quantity %> class='qty-picker' max=<%=item.stock%> />
-                          <input type='button' value='+ ' id= <%= 'qty-plus-' + item.productId  %> class='qty-picker qty-plus' field='quantity' />
-                          <input type="hidden" name="productId" value="<%=item.productId%>">
-                          <input type="hidden" name="productStock" value="<%=item.productStock%>">
-                          
-                      </form>
+                          <input type='button' value='-' id=<%='qty-minus-' + index %> class='qty-picker qty-minus'
+                          field='quantity' />
+                          <input type='text' id=<%='quantity-' + index %> class='quantity' name='quantity' value=
+                          <%=item.quantity %> class='qty-picker' max=<%=item.stock%> />
+                              <input type='button' value='+ ' id=<%='qty-plus-' + index %> class='qty-picker qty-plus'
+                              field='quantity' />
+                              <input type="hidden" name="productId" value="<%=item.productId%>">
+                              <input type="hidden" name="productStock" value="<%=item.productStock%>">
+
+                        </form>
 
                         <div class="price"> $ <%= item.productPrice %>
                         </div>
@@ -111,7 +114,8 @@
                                 class="fas fa-credit-card"></i></label>
                           </div>
                           <div class="input-radio">
-                            <input type="radio" name="payment-methods" value="tarjeta" checked><label for="" id="payment">
+                            <input type="radio" name="payment-methods" value="tarjeta" checked><label for=""
+                              id="payment">
                               Tarjeta Crédito/
                               Débito</label>
                           </div>
@@ -159,11 +163,11 @@
 
 
       <%- include("./partials/footer") %>
-      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
-      <!-- para usar Axios y enviar data al servidor -->
-      <script src="/js/quantityButtonCart.js"></script>
-      <script src="/js/cart.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <!-- para usar Axios y enviar data al servidor -->
+        <script src="/js/quantityButtonCart.js"></script>
+        <script src="/js/cart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 
 </html>
