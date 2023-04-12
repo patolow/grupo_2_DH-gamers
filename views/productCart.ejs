@@ -60,6 +60,8 @@
                           <input type='text' id= <%= 'quantity-' + item.productId  %> class='quantity' name='quantity' value=<%=item.quantity %> class='qty-picker' max=<%=item.stock%> />
                           <input type='button' value='+ ' id= <%= 'qty-plus-' + item.productId  %> class='qty-picker qty-plus' field='quantity' />
                           <input type="hidden" name="productId" value="<%=item.productId%>">
+                          <input type="hidden" name="productStock" value="<%=item.productStock%>">
+                          
                       </form>
 
                         <div class="price"> $ <%= item.productPrice %>
