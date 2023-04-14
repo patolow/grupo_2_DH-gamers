@@ -130,26 +130,32 @@ const controller = {
   },
 
   agregarUnItem: (req, res) => {
-    // console.log(req.body.productId)
-    // console.log(req.session.usuarioLogueado.id)
-    db.Cart.findOne({
+    db.Product.findOne({
       where: {
-        productId: req.body.productId,
-        userId: req.session.usuarioLogueado.id
-      }    
+        id: req.body.productId,
+      }
     })
     .then(itemAgregar => {
-      console.log(itemAgregar)
-      res.redirect('/cart');
+      db.Cart.create({
+        "productId": itemAgregar.id,
+        "productName": itemAgregar.name,
+        "productPrice": itemAgregar.price,
+        "productCategory": itemAgregar.id_category,
+        "productStock": itemAgregar.stock,
+        "productImage": itemAgregar.sliderImage,
+        "userId": req.session.usuarioLogueado.id
+      })
+    })
+    .then(() => {
+      return res.redirect('./cart');
     })
     .catch(err => {
       console.error(err);
       // Manejo del error
-    });  
+    });
 
     //REVISAR ESTO!
-  },
-
+  }
 
 };
 
