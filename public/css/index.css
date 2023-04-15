@@ -23,9 +23,9 @@ font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 .menu-hamburguesa {
-    width: 100%;
+    width: 80%;
     position: absolute;
-    left: 0px;
+    left: 10%;
     top: 38px;
     background-color: -webkit-linear-gradient(to left, #061161, #780206);
     
@@ -41,9 +41,12 @@ font-family: 'Roboto Condensed', sans-serif !important;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: white;
+    /* background-color: white; */
+    background: -webkit-linear-gradient(to left, white, grey);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, white, grey);
     border: solid 1px black;
-    height: 60px;
+    height: 50px;
     cursor: pointer;
 }
 
@@ -65,6 +68,58 @@ font-family: 'Roboto Condensed', sans-serif !important;
     color: white;
     
 }
+
+/* Menu USER */
+
+.menu-user {
+    width: 80%;
+    position: absolute;
+    right: 0px;
+    top: 38px;
+    background-color: -webkit-linear-gradient(to left, #061161, #780206);
+    
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    
+
+}
+
+.sub-menu-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: -webkit-linear-gradient(to left, white, grey);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, white, grey);
+    border: solid 1px black;
+    height: 50px;
+    cursor: pointer;
+}
+
+.sub-menu-user a {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    transition: all 500ms ;
+    font-weight: bold;
+}
+
+.sub-menu-user:hover {
+    border: 1px solid rgb(98, 17, 17);
+    background-color: black;
+    
+}
+
+.sub-menu-user:hover a{
+    color: white;
+    
+}
+
+
+
+/* Fin menu user */
 
 .contacto-whatsapp {
     display: none;
@@ -198,16 +253,22 @@ font-family: 'Roboto Condensed', sans-serif !important;
 .slider-grande {
     display: none;
 }
+
+.agregarCarritoDisplay {
+    display: none 
+}
   
-  .productos-mas-vendidos:hover .agregarCarrito {
+.productos-mas-vendidos:hover .agregarCarritoDisplay {
     display: block;
   }
       
-  .productos-mas-vendidos p {
+.productos-mas-vendidos p {
     font-size: 13px;
     height: 25px;
     text-align: center;
 }
+
+
 
 
 

@@ -12,5 +12,14 @@ const subMenuHamburguesa = document.getElementsByClassName("sub-menu-hamburguesa
 
 hamburguesaDesplegable.addEventListener("click", function(){
     menuHamburguesa.classList.toggle("inactive")
-    
+    menuUSer.classList.add("inactive")
+})
+
+const userDesplegable = document.getElementById("user-desplegable");
+const menuUSer = document.querySelector("#menu-user");
+const subMenuUser = document.getElementsByClassName("sub-menu-user");
+
+userDesplegable.addEventListener("click", function(){
+    menuUSer.classList.toggle("inactive")
+    menuHamburguesa.classList.add("inactive")
 })

@@ -197,6 +197,7 @@ main {
   width: 30px;
   cursor: pointer;
   font-size: 22px;
+  padding-left: 50% !important
 }
 
 .main-product-list img {

@@ -48,6 +48,7 @@ const controller = {
       db.User
         .create(newUser)
         .then((newUser) => {
+          
           return res.redirect('./login');
         })
         .catch(error => console.log(error));
