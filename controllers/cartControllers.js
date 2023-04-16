@@ -37,7 +37,6 @@ const controller = {
         })
       );
     }
-
     Promise.all(promises)
       .then(() => {
         return res.status(200).send('Producto(s) agregado(s) al carrito');

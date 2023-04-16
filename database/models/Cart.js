@@ -12,28 +12,22 @@ module.exports = function (sequelize, DataTypes) {
     },
     productName: {
       type: DataTypes.STRING,
-      allowNull: false
     },
     productPrice: {
       type: DataTypes.FLOAT,
-      allowNull: false
     },
     productCategory: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       foreignKey: true
     },
     productStock: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
     productImage: {
       type: DataTypes.STRING,
-      allowNull: false
     },
     quantity: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       defaultValue: 1
     },
     userId: {
@@ -53,9 +47,9 @@ module.exports = function (sequelize, DataTypes) {
       as: "user",
       foreignKey: 'userId'
     }),
-      Cart.belongsTo(models.Category, {
-        as: "category",
-        foreignKey: "productCategory"
+      Cart.belongsTo(models.Product, {
+        as: "product",
+        foreignKey: "productId"
       });
   };
 
