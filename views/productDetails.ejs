@@ -103,10 +103,9 @@
                                 <input type='button' value='+' class='qty-picker qty-plus' field='quantity' />
                             </form>
                             <br>
-                        <a href="/cart/"> <input class="boton-comprar" type="button" value="Comprar ahora"
-                                onclick="msg()"> </a>
+
                         </a>
-                        <form id='agregarCarrito-<%=productDetail.id%>' class="agregarCarrito" class="agregarCarrito2" method="post" action="#">
+                        <form id='agregarCarrito-<%=productDetail.id%>' class="agregarCarrito  boton-comprar" class="agregarCarrito2" method="post" action="#">
                             <input type="hidden" name="productId" value="<%=productDetail.id%>">
                             <input type="hidden" name="productName" value="<%=productDetail.name%>">
                             <input type="hidden" name="productPrice" value="<%=productDetail.price%>">
@@ -147,7 +146,7 @@
                     }, 5000);
                 </script>
 
-    <script src="/js/quantityButton.js"></script>
+    <script src="/js/quantityButton.js"></script> 
     <script src="/js/cart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
     <!-- para usar Axios y enviar data al servidor -->
