@@ -28,11 +28,6 @@ const controller = {
       promises.push(
         db.Cart.create({
           "productId": req.body[req.body.length - 1].id,
-          "productName": req.body[req.body.length - 1].name,
-          "productPrice": req.body[req.body.length - 1].price,
-          "productCategory": req.body[req.body.length - 1].category,
-          "productStock": req.body[req.body.length - 1].stock,
-          "productImage": req.body[req.body.length - 1].image,
           "userId": req.session.usuarioLogueado.id
         })
       );
