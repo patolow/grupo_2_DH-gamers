@@ -532,6 +532,51 @@ width: 100%;
 
 /*FIN CARRUSEL MANUAL*/
 
+.fondo form {
+    max-width: 500px;
+    width: 85%;
+    margin: 40px auto;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+  }  
+  
+  .fondo label, input, textarea {
+    display: block;
+    width: 100%;
+    margin: 10px;
+  }
+  
+  .fondo label {
+    font-weight: bold;
+  }
+  
+  .fondo input[type="text"], input[type="email"], textarea {
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+  }
+  
+  .fondo input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .fondo input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+  .fondo {
+    background-color: white;
+  }
+  
+
 .titular-mas-vendidos {
     display: flex;
     align-items: center;
@@ -568,10 +613,7 @@ width: 100%;
 .productos-mas-vendidos img {
     cursor: pointer;
     width: 100%;
-    
-    
     border-radius: 10px;
-    
     margin-bottom: 5px;
 }
 
@@ -607,13 +649,21 @@ width: 100%;
 }
 
 .marcas-trabajadas img {
-    width: 95%;
+    width: 100%;
     border: 1px solid black;
     background-color: white;
     margin-top: 20px;
     margin-bottom: 20px;
 
     box-shadow: 0px 2px 10px 1px rgba(255, 255, 255, 0.5);
+}
+
+.fondo h1 {
+    font-size: 1.5em;
+    margin: 0.67em 0;
+    color: black;
+    text-align: center;
+    padding-top: 25px;
 }
 
 

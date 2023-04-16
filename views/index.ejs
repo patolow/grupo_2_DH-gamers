@@ -141,6 +141,9 @@
                     </div>
 
                 </div>
+
+
+                
                 <div class="titular-mas-vendidos">
                     <img src="/images/index/img-mas-vendidos.png" alt="Productos mas vendidos">
                 </div>
@@ -157,7 +160,8 @@
                                     <p>Ver detalles</p>
                                 </div>
                             </a>
-                            <form id='agregarCarrito-<%=bestSeller.id%>' class="agregarCarrito agregarCarritoDisplay" method="post" action="#">
+                            <form id='agregarCarrito-<%=bestSeller.id%>' class="agregarCarrito agregarCarritoDisplay"
+                                method="post" action="#">
                                 <input type="hidden" name="productId" value="<%=bestSeller.id%>">
                                 <input type="hidden" name="productName" value="<%=bestSeller.name%>">
                                 <input type="hidden" name="productPrice" value="<%=bestSeller.price%>">
@@ -166,10 +170,11 @@
                                 <input type="hidden" name="productImage" value="<%=bestSeller.sliderImage%>">
                                 <input id="submit" type="submit" value='AGREGAR AL CARRITO'>
                             </form>
-                            
+
                         </div>
 
                         <% }); %>
+
 
                             <div class="marcas-trabajadas">
                                 <img src="/images/index/marcas-trabajadas.png" alt="Marcas con las que trabajamos"></a>
@@ -178,8 +183,32 @@
 
             </section>
 
+        <div class="fondo">
 
 
+            <h1>Formulario de contacto</h1>
+
+            <form action="enviar.php" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <input type="submit" value="Enviar">
+            </form>
+
+            <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26277.278626041374!2d-58.424268!3d-34.58747300000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb58720ff2f79%3A0x8751ce184cf7b293!2sSoler%20%26%20Armenia%2C%20Buenos%20Aires!5e0!3m2!1sit!2sar!4v1681664568540!5m2!1sit!2sar" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
 
             </main>
 
@@ -189,7 +218,7 @@
                 <script src="js/slider.js"></script>
                 <script src="/js/cart.js"></script>
                 <script src="/js/main.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
                 <!-- para usar Axios y enviar data al servidor -->
                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
