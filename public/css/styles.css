@@ -65,7 +65,7 @@ body {
 .search-nav {
   background-color: white;
   margin: auto;
-  width: 60%;
+  width: 45%;
   max-width: 600px;
   height: 40px;
   border-radius: 10px;
@@ -111,7 +111,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 10%;
+  width:22%;
   cursor: pointer;
 }
 
@@ -146,7 +146,8 @@ body {
 }
 
 .imagen-ingreso-chica {
-  width: 40px;
+  width: 46px;
+  height: 46px;
   border-radius: 50px;
 }
 
@@ -177,8 +178,8 @@ main {
   position: fixed;
   top: 80px;
   z-index: 10;
-  padding-left: 10px;
-  padding-right: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
@@ -344,15 +345,13 @@ footer {
   .menu-barra-gris {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 96%;
     align-items: center;
   }
 
   .menu-barra-gris li {
     list-style: none;
-    padding: 0px 10px 0px 10px;
-    font-size: 11px;
-
+    font-size: 0.6rem;
   }
 
   .menu-barra-gris a {
@@ -394,6 +393,12 @@ footer {
     width: 25%;
 
   }
+
+  .menu-barra-gris li {
+    list-style: none;
+    font-size: 0.7rem;
+  }
+
 
   .imagen-ingreso-grande {
     display: block;

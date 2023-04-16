@@ -8,13 +8,23 @@
     <%- include("./partials/header") %>
 
       <div class="titulo-bienvenida-profile">
-        <h1 class="h1-bienvenida">Bienvenido <%= usuarioBase.completeName %>, estas logueado en tu perfil DH GAMERS! </h1>
+        <h1 class="h1-bienvenida">Bienvenido <%= usuarioBase.completeName %>, estas logueado en tu perfil DH GAMERS!
+        </h1>
       </div>
+      
       <div class="datosUsuarios">
-        <section>
+        <div>
+          <h2>Tu Información personal</h2>
+        </div>
+        <section class="meta-flex">
+
+          
+
+          <div class="cajaImagenUsuario">
+            <img src="<%= usuarioBase.image%>">
+          </div>
+
           <div class="cajaDatos">
-            <h2>Tu Información personal</h2>
-            <br>
             <p><b>Nombre:</b>
               <%= usuarioBase.completeName %>
             </p>
@@ -35,15 +45,10 @@
             </p>
             <p><b>Editar Usuario:</b><a href="/users/edit/<%=locals.usuarioLogueado.id%>"> Click acá</a></p>
             <p><b>Ver mi carrito:</b><a href="/cart"> Click acá</a></p>
-
           </div>
 
         </section>
 
-        <div class="cajaImagenUsuario">
-          <img src="<%= usuarioBase.image%>">
-        </div>
-        
       </div>
       </main>
 
