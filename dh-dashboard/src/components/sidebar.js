@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 
 function Sidebar() {
   return (
-    <div style={{ width: '20%', padding: '10px', backgroundColor: '#f0f0f0' }}>
-      <ul style={{ listStyleType: 'none', padding: 0 }}>
+    <div style={{ width: '10%', padding: '10px', backgroundColor: '#f0f0f0', height: '100vh' }}>
+      <ul style={{ listStyleType: 'none', padding: 0, marginTop: 100 }}>
         <li><NavLink exact to="/">Dashboard</NavLink></li>
         <li><NavLink to="/products">Products</NavLink></li>
         <li><NavLink to="/users">Users</NavLink></li>
@@ -14,3 +14,4 @@ function Sidebar() {
 }
 
 export default Sidebar;
+

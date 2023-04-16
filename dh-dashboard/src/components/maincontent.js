@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-//import Products from './Products';
+import Products from './Products';
 //import Users from './Users';
 
 function MainContent() {
@@ -12,7 +12,8 @@ function MainContent() {
           <h1>Welcome to DH Dashboard</h1>
         </Route>
         <Route path="/products">
-          <h1>Welcome to products</h1>
+        <h1>Welcome to products</h1>
+          <Products />
         </Route>
         <Route path="/users">
           <h1>Welcome to users</h1>
