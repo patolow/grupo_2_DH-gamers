@@ -124,29 +124,18 @@ const controller = {
   },
 
   agregarUnItem: (req, res) => {
-    db.Product.findOne({
-      where: {
-        id: req.body.productId,
-      }
+
+    db.Cart.create({
+      "productId": req.body.productId,
+      "userId": req.session.usuarioLogueado.id
     })
-    .then(itemAgregar => {
-      db.Cart.create({
-        "productId": itemAgregar.id,
-        "productName": itemAgregar.name,
-        "productPrice": itemAgregar.price,
-        "productCategory": itemAgregar.id_category,
-        "productStock": itemAgregar.stock,
-        "productImage": itemAgregar.sliderImage,
-        "userId": req.session.usuarioLogueado.id
+      .then(() => {
+        return res.redirect('./cart');
       })
-    })
-    .then(() => {
-      return res.redirect('./cart');
-    })
-    .catch(err => {
-      console.error(err);
-      // Manejo del error
-    });
+      .catch(err => {
+        console.error(err);
+        // Manejo del error
+      });
 
     //REVISAR ESTO!
   }
