@@ -28,10 +28,16 @@ const controller = {
       promises.push(
         db.Cart.create({
           "productId": req.body[req.body.length - 1].id,
+          "productName": req.body[req.body.length - 1].name,
+          "productPrice": req.body[req.body.length - 1].price,
+          "productCategory": req.body[req.body.length - 1].category,
+          "productStock": req.body[req.body.length - 1].stock,
+          "productImage": req.body[req.body.length - 1].image,
           "userId": req.session.usuarioLogueado.id
         })
       );
     }
+
     Promise.all(promises)
       .then(() => {
         return res.status(200).send('Producto(s) agregado(s) al carrito');
@@ -46,51 +52,53 @@ const controller = {
   getCart: (req, res) => {
     //tomo la base de datos exluyendo duplicados
     db.Cart.findAll({
+      include: [{ association: "category" }],
+      where: { userId: req.session.usuarioLogueado.id },
       attributes: [
         'productId',
-        [Sequelize.fn('SUM', Sequelize.col('product.price')), 'totalPrice'],
-        [Sequelize.fn('COUNT', Sequelize.col('productId')), 'quantity']
+        'productName',
+        'productCategory',
+        'productStock',
+        'productImage',
+        [sequelize.fn('COUNT', sequelize.col('productId')), 'quantity'],
+        [sequelize.fn('SUM', sequelize.col('productPrice')), 'productPrice']
       ],
-      include: [{
-        model: db.Product,
-        as: 'product',
-        include: [{
-          model: db.Category,
-          as: 'category'
-        }]
-      }],
-      where: {
-        userId: req.session.usuarioLogueado.id
-      },
-      group: ['product.id']
+      group: [
+        'productId',
+        'productName',
+        'productCategory',
+        'productStock',
+        'productImage'
+      ]
     })
-    .then(items => {
-      let precioTotal = 0;
-      let carrito = [];
-      let contadorItems = 0;
-
-      items.forEach(item => {
-        const producto = {
-          "productId": item.dataValues.productId,
-          'productName': item.dataValues.product.name,
-          'productPrice': item.dataValues.product.price,
-          'productCategory': item.dataValues.product.category.name,
-          'productStock': item.dataValues.product.stock,
-          'productImage': item.dataValues.product.sliderImage.split(",")[0],
-          "quantity": item.dataValues.quantity,
-          // también puedes incluir aquí otros campos si los necesitas
-        };
-        carrito.push(producto);
-        contadorItems += item.dataValues.quantity; // update the counter with the quantity of each product
-        precioTotal += item.dataValues.quantity * item.dataValues.product.price; // actualizar el precio total con la cantidad de productos y su precio
+      .then(items => {
+        let precioTotal = 0;
+        let carrito = [];
+        contadorItems = 0
+        items.forEach(item => {
+          const producto = {
+            "productId": item.dataValues.productId,
+            'productName': item.dataValues.productName,
+            'productPrice': item.dataValues.productPrice,
+            'productCategory': item.dataValues.category.name,
+            'productStock': item.dataValues.productStock,
+            'productImage': item.dataValues.productImage,
+            "quantity": item.dataValues.quantity,
+            // también puedes incluir aquí otros campos si los necesitas
+          };
+          carrito.push(producto);
+          contadorItems++
+          //COMO LOGRO ACTUALIZAR EL CARRITO DEL HEADER??
+          precioTotal += item.dataValues.quantity * item.dataValues.productPrice; // actualizar el precio total con la cantidad de productos y su precio
+        });
+        // console.log(carrito)
+        res.render("productCart.ejs", { carrito, precioTotal, contadorItems });
+      })
+      .catch(error => {
+        // console.error(error);
+        res.status(500).send('Error al obtener el carrito');
       });
-      // console.log(carrito)
-      res.render("productCart.ejs", { carrito, precioTotal, contadorItems });
-    })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).send('Error al obtener el carrito');
-    });
+
   },
 
   deleteItem: (req, res) => {
@@ -122,21 +130,33 @@ const controller = {
   },
 
   agregarUnItem: (req, res) => {
-
-    db.Cart.create({
-      "productId": req.body.productId,
-      "userId": req.session.usuarioLogueado.id
+    db.Product.findOne({
+      where: {
+        id: req.body.productId,
+      }
     })
-      .then(() => {
-        return res.redirect('./cart');
+    .then(itemAgregar => {
+      db.Cart.create({
+        "productId": itemAgregar.id,
+        "productName": itemAgregar.name,
+        "productPrice": itemAgregar.price,
+        "productCategory": itemAgregar.id_category,
+        "productStock": itemAgregar.stock,
+        "productImage": itemAgregar.sliderImage,
+        "userId": req.session.usuarioLogueado.id
       })
-      .catch(err => {
-        console.error(err);
-        // Manejo del error
-      });
+    })
+    .then(() => {
+      return res.redirect('./cart');
+    })
+    .catch(err => {
+      console.error(err);
+      // Manejo del error
+    });
 
     //REVISAR ESTO!
-  }
+  },
+
 
 };
 
