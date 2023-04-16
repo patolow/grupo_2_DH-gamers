@@ -23,7 +23,9 @@ index: (req, res)=> {
 
     .catch(err => console.error(err))
 
-    }
+    },
+
+error: (req, res) => res.render("error404.ejs")
 
 }
 

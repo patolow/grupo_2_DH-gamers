@@ -1,0 +1,67 @@
+    /* Contenedor principal */
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+        background-image: url("/images/404/alien.png");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: contain;
+      }
+  
+      /* Contenido de la página */
+      .content {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        text-align: left;
+        color: black;
+        z-index: 1;
+      }
+  
+      /* Títulos */
+      h1 {
+        font-size: 4em;
+        margin-top: 0;
+        color: blueviolet;
+      }
+  
+      h2 {
+        font-size: 2.5em;
+        margin-top: 20px;
+      }
+  
+      /* Párrafos */
+      p {
+        font-size: 1.5em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+  
+      /* Media queries */
+      @media only screen and (min-width: 768px) {
+        /* Centrado del contenido en dispositivos grandes */
+        .content {
+          position: absolute;
+          top: 43%;
+          left: 10%;
+          transform: translate(-10%, -20%);
+          max-width: 50%;
+        }
+  
+        /* Alineación del contenido a la izquierda en dispositivos grandes */
+        h1, h2, p {
+          text-align: left;
+        }
+      }
+  
+      @media only screen and (max-width: 767px) {
+        /* Centrado del contenido en dispositivos pequeños */
+        .content {
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }

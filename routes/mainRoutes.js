@@ -6,6 +6,7 @@ const cartMiddleware = require('../middlewares/cartMiddleware')
 
 
 
+router.get("/error", mainControllers.error);
 
 router.get("/", mainControllers.index);
 
