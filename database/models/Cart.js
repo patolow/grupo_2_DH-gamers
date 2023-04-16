@@ -8,31 +8,13 @@ module.exports = function (sequelize, DataTypes) {
     },
     productId: {
       type: DataTypes.INTEGER,
+      foreignKey: true,
       allowNull: false
-    },
-    productName: {
-      type: DataTypes.STRING,
-    },
-    productPrice: {
-      type: DataTypes.FLOAT,
-    },
-    productCategory: {
-      type: DataTypes.INTEGER,
-      foreignKey: true
-    },
-    productStock: {
-      type: DataTypes.INTEGER,
-    },
-    productImage: {
-      type: DataTypes.STRING,
-    },
-    quantity: {
-      type: DataTypes.INTEGER,
-      defaultValue: 1
     },
     userId: {
       type: DataTypes.STRING,
-      foreignKey: true
+      foreignKey: true,
+      allowNull: false  
     }
   }
   let config = {
