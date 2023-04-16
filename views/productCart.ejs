@@ -30,14 +30,14 @@
 
                   <div class="product">
 
-                    <a class="img-product monitor"><img src=<%=item.productImage %>
+                    <a class="img-product monitor"  href="/product/detail/<%=item.productId%>/"><img src=<%=item.productImage %>
                       alt="product"></a>
 
                     <div class="product-without-image">
 
                       <div class="product-details">
                         <div class="product-info">
-                          <a class="url-product" href="/product">
+                          <a class="url-product" href="/product/detail/<%=item.productId%>/">
                             <p class="product-name">
                               <%= item.productName %>
                             </p>
