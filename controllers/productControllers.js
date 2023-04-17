@@ -2,6 +2,8 @@ const express = require("express");
 const db = require("../database/models")
 const { validationResult } = require('express-validator')
 const path = require("path");
+const { Op } = require("sequelize");
+
 
 
 const getImagesIndex = (category) => {
@@ -47,7 +49,7 @@ const controller = {
         }
       } else {
         sliderImage = '/images/users/profile-photo-default.jpg'
-      } 
+      }
 
       db.Product.create({
         "name": req.body.name,
@@ -248,6 +250,23 @@ const controller = {
       .catch(err => console.error(err));
   },
 
+  productSales: (req, res) => {
+      db.Product.findAll({
+        where: {
+          discount: { [Op.gt]: 0 }
+        }
+      })
+      .then(products => {
+        let imagenesindex = [];
+        for (let i = 0; i <= products.length - 1; i++) {
+          let firstImage = products[i].sliderImage.split(",")[0]
+          products[i].sliderImage = firstImage
+        }
+        // console.log(products)
+        res.render("productSales", { products})
+      })
+      .catch(err => console.error(err))
+  }  
 
 }
 

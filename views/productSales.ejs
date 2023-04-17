@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head") %>
+
+    <body>
+
+        <%- include("./partials/header") %>
+            <!--pegar codigo-->
+
+
+            <div class="titulo-productAll">
+                <h1 class="productAll-listaProductos">HOT SALES</h1>
+            </div>
+
+            <section class="productAll-section">
+
+                <div class="productos-mas-vendidos-container">
+                    <% products.forEach((products)=> { %>
+                        <div class="productos-mas-vendidos">
+                            <a href="/product/detail/<%=products.id%>">
+                                <div>
+                                    <img src="<%=products.sliderImage%>" alt="imagen del Producto">
+                                    <h5>
+                                        <%=products.name%>
+                                    </h5>
+                                    <p>Ver detalles</p>
+                                </div>
+                            </a>
+                            <form id='agregarCarrito-<%=products.id%>' class="agregarCarrito agregarCarritoDisplay" method="post" action="#">
+                                <input type="hidden" name="productId" value="<%=products.id%>">
+                                <input type="hidden" name="productName" value="<%=products.name%>">
+                                <input type="hidden" name="productPrice" value="<%=products.price%>">
+                                <input type="hidden" name="productCategory" value="<%=products.id_category%>">
+                                <input type="hidden" name="productStock" value="<%=products.stock%>">
+                                <input type="hidden" name="productImage" value="<%=products.sliderImage%>">
+                                <input id="submit" type="submit" value='AGREGAR AL CARRITO'>
+                            </form>
+                        </div>
+
+                        <% }); %>
+
+                </div>
+            </section>
+
+            </section>
+            <!--pegar codigo-->
+
+
+            <!--pegar codigo-->
+            </section>
+
+            </main>
+
+
+
+            <%- include("./partials/footer") %>
+            <script src="/js/cart.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+            <!-- para usar Axios y enviar data al servidor -->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    </body>
+
+
+</html>

@@ -5,6 +5,8 @@ const cartMiddleware = require('../middlewares/cartMiddleware')
 const createProductValidationsMiddleware = require('../middlewares/createProductValidationsMiddleware')
 const path = require("path");
 const fs = require("fs");
+const { Op } = require('sequelize');
+
 
 const multer = require('multer');
 const storage = multer.diskStorage({
@@ -26,6 +28,8 @@ router.get("/create/", productControllers.getCreateProduct); //done
 router.post("/create/", upload.any(), createProductValidationsMiddleware, productControllers.createProduct); //to do
 
 router.get("/list/", productControllers.getProductsList); //done
+
+router.get("/sales/", productControllers.productSales); //done
 
 router.get("/all/placasdevideo/", productControllers.placasdevideo);
 router.get("/all/monitores/", productControllers.monitores);
