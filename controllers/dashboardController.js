@@ -1,5 +1,6 @@
+const {productsList, usersList} = require("../data-access")
 
-const {productsList} = require("../data-access")
+//consumo la consulta de la base de datos (data-access/index.js) y armo la lógica
 
 const productsListController = async (req, res) => {
     try {
@@ -14,6 +15,20 @@ const productsListController = async (req, res) => {
     }
 }
 
+const usersListController = async (req, res) => {
+  try {
+    const users = await usersList()
+    return res.json({
+      total: users.length,
+      data: users,
+      status: 200
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
-  productsListController,
+  productsListController, 
+  usersListController
 };

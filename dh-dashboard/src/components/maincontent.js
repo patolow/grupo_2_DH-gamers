@@ -1,6 +1,6 @@
 import { Switch, Route } from 'react-router-dom';
 import Products from './Products';
-//import Users from './Users';
+import Users from './Users';
 
 function MainContent() {
   return (
@@ -8,6 +8,8 @@ function MainContent() {
       <Switch>
         <Route exact path="/">
           <h1>Welcome to DH Dashboard</h1>
+          <Users/>
+          <Products />
         </Route>
         <Route path="/products">
         <h1>Welcome to products</h1>
@@ -15,6 +17,7 @@ function MainContent() {
         </Route>
         <Route path="/users">
           <h1>Welcome to users</h1>
+          <Users/>
         </Route>
       </Switch>
     </div>
