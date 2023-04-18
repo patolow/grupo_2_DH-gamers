@@ -618,12 +618,16 @@ width: 100%;
 .fondo-contacto h1 {
     font-size: 1.5em;
     margin: 0.67em 0;
-    color: black;
+    color: white;
     text-align: center;
     padding-top: 25px;
 }
 
 .fondo-contacto form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 500px;
     width: 85%;
     margin: 40px auto;
@@ -653,7 +657,9 @@ width: 100%;
 
 
   .fondo-contacto {
-    background-color: white;
+    background: -webkit-linear-gradient(to left, #061161, #780206);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #061161, #780206);
   } 
 
  .fondo-contacto input[type="text"], .fondo-contacto input[type="email"], .fondo-contacto textarea {
