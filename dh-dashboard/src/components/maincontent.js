@@ -9,7 +9,7 @@ function MainContent() {
         <Route exact path="/">
           <h1>Welcome to DH Dashboard</h1>
         </Route>
-        <Route path="/api/products">
+        <Route path="/products">
         <h1>Welcome to products</h1>
           <Products />
         </Route>
