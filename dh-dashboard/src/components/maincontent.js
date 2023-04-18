@@ -1,6 +1,4 @@
-import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-
 import Products from './Products';
 //import Users from './Users';
 
@@ -11,7 +9,7 @@ function MainContent() {
         <Route exact path="/">
           <h1>Welcome to DH Dashboard</h1>
         </Route>
-        <Route path="/products">
+        <Route path="/api/products">
         <h1>Welcome to products</h1>
           <Products />
         </Route>
