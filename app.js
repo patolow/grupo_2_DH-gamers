@@ -3,12 +3,14 @@ const app = express();
 const mainRoutes = require("./routes/mainRoutes");
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
 const methodOverride = require('method-override');
 const session = require("express-session");
 const cookies = require("cookie-parser")
 const bodyParser = require('body-parser');
 const db = require('./database/models')
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware"); //middleware global
+const cors = require('cors');
 
 const port = 3000;
 const path = require("path");
@@ -25,11 +27,14 @@ app.use(session({
 }));; //Para usar la propiedad secret, "express-session"
 app.use(cookies())
 app.use(userLoggedMiddleware) //va siempre luego de la session
+app.use(cors()); 
 
 app.listen(port, () => console.log("server listening on port", port));
 
 app.use("/", mainRoutes)
 app.use("/product", productRoutes)
 app.use("/users", userRoutes)
+app.use("/dashboard", dashboardRoutes)
+
 
 module.exports = app;

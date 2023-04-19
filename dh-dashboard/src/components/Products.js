@@ -1,15 +1,24 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import Product from "./Product";
 
-function Products(products) {
-  products = [{name: 'monitor', price: '9000'}, {name: 'mouse', price: '1000'}]
+function Products() {
+  const [products, setProducts] = useState(null)
+
+  useEffect(() => {
+    console.log("rendering")
+    fetch("http://localhost:3000/dashboard/products")
+      .then((response) => response.json())
+      .then((products) => setProducts(products.data))
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <div>
       <h2>Products:</h2>
-      {products.map((product, index) => (
-        <Product key={index} name={product.name} price={product.price} />
-      ))}
+      {products &&
+        products.map((product, index) => (
+          <Product key={index} name={product.name} price={product.price} />
+        ))}
     </div>
   );
 }
