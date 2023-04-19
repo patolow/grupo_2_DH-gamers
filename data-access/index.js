@@ -21,7 +21,9 @@ const usersList = async () => {
   }
 }
 
+
+
 module.exports = {
   productsList, 
-  usersList
+  usersList  
 };

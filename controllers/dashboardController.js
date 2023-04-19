@@ -1,4 +1,6 @@
 const {productsList, usersList} = require("../data-access")
+const db = require("../database/models");
+const Sequelize = require('sequelize');
 
 //consumo la consulta de la base de datos (data-access/index.js) y armo la lógica
 
@@ -28,7 +30,33 @@ const usersListController = async (req, res) => {
   }
 }
 
+//Products detail
+
+const productsDetailController = (req, res)=> {
+  db
+  .Product.findByPk(req.params.id)
+  .then(product => {
+    return res.json({
+      data: product,
+      status: 200
+    })
+  })
+}
+
+const userDetailController = (req, res)=> {
+  db
+  .User.findByPk(req.params.id)
+  .then(user => {
+    return res.json({
+      data: user,
+      status: 200
+    })
+  })
+}
+
 module.exports = {
   productsListController, 
-  usersListController
+  usersListController,
+  productsDetailController,
+  userDetailController
 };
