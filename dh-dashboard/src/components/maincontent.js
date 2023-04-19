@@ -7,16 +7,23 @@ function MainContent() {
     <div style={{ flex: 1, padding: '10px' }}>
       <Switch>
         <Route exact path="/">
+          
           <h1>Welcome to DH Dashboard</h1>
-          <Users/>
-          <Products />
+          
+          
         </Route>
         <Route path="/products">
-        <h1>Welcome to products</h1>
+        <div className='header-dashboard'>
+        <h1>DASHBOARD PRODUCTOS</h1>
+        </div>
+        <div className="container-division">
           <Products />
+          </div>
         </Route>
         <Route path="/users">
-          <h1>Welcome to users</h1>
+        <div className='header-dashboard'>
+          <h1>DASHBOARD USUARIOS</h1>
+          </div>
           <Users/>
         </Route>
       </Switch>

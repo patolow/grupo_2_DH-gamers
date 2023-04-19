@@ -8,16 +8,29 @@ function Products() {
     console.log("rendering")
     fetch("http://localhost:3000/dashboard/products")
       .then((response) => response.json())
-      .then((products) => setProducts(products.data))
+      .then((products) => setProducts(products.data, products.total))
       .catch((error) => console.log(error));
+      
   }, []);
 
   return (
-    <div>
-      <h2>Products:</h2>
+    <div className="container-dashboard">
+      <h2>Todos los productos: </h2>
+      
       {products &&
+      
         products.map((product, index) => (
-          <Product key={index} name={product.name} price={product.price} />
+          
+          <div className="dashboard-division">
+          <Product 
+          key={index} 
+          name={product.name} 
+          price={product.price}
+          stock={product.stock}
+          category={product.category} 
+          />
+          </div>
+          
         ))}
     </div>
   );
