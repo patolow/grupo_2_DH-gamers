@@ -1,10 +1,14 @@
 import React from "react";
 
-function Product({ name, price }) {
+function Product({ name, price, stock, category}) {
   return (
     <div>
-      <h3>{name}</h3>
-      <p>Price: {price}</p>
+      <h2>{name}</h2>
+      <p>Precio: ${price}</p>
+      <p>Stock: {stock}</p>
+      <p>Categoría: {category.name}</p>
+      
+
     </div>
   );
 }

@@ -13,11 +13,18 @@ function Users() {
   }, []);
 
   return (
-    <div>
-      <h2>Users:</h2>
+    <div className="container-dashboard">
+      <h2>Todos los usuarios:</h2>
       {users &&
         users.map((user, index) => (
-          <User key={index} name={user.completeName} email={user.email} />
+          <div className="dashboard-division">
+          <User 
+          key={index} 
+          name={user.completeName} 
+          email={user.email} 
+          username = {user.userName}
+          />
+          </div>
         ))}
     </div>
   );
