@@ -63,3 +63,9 @@
     font-weight: 800;
 }
 
+.container-datos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+

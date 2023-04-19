@@ -23,6 +23,7 @@ function Users() {
           name={user.completeName} 
           email={user.email} 
           username = {user.userName}
+          image = {user.image}
           />
           </div>
         ))}
