@@ -1,176 +1,182 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .welcome-h1 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 80px;
-    background-color: rgb(20, 20, 105);
-    align-items: center;
-    border-radius: 20px;
-    border: 2px solid rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  background-color: rgb(20, 20, 105);
+  align-items: center;
+  border-radius: 20px;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 .welcome-h1 h1 {
-    color: white;
+  color: white;
 }
 
 .logo-sidebar {
-    width: 50%;
+  width: 50%;
 }
 
 .total-boxes-container {
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    height: 120px;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
 }
 
 .total-box {
-    display: flex;
-    justify-content: flex-start;
-    width: 30%;
-    border: 1px solid rgb(193, 182, 182);
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px 0px rgb(171, 161, 161);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 27%;
+  border: 1px solid rgb(193, 182, 182);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgb(171, 161, 161);
 }
 
-.total-box h2{
-    padding-top: 20px;
-    padding-left: 20px;
-    font-size: 18px;
+.total-box h2 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 18px;
 }
 
+.total-box p {
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 30px;
+}
 
 
 .sidebar-container {
-    width: 15%;
-    padding: 10px;
-    height: 98vh;
-    background-color: rgb(20, 20, 105);
-    border: 2px solid rgb(0, 0, 0);
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    align-items: center;
-    border-radius: 20px;
-    margin-left: 5px;
-    margin-top: 11px;
-    
+  width: 15%;
+  padding: 10px;
+  height: 98vh;
+  background-color: rgb(20, 20, 105);
+  border: 2px solid rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  margin-left: 5px;
+  margin-top: 11px;
+
 }
 
 .nav-link {
-    text-decoration: none;
-    color: white;
-    
+  text-decoration: none;
+  color: white;
+
 }
 
 .nav-link:hover {
-    
-    color: rgb(60, 57, 57);
-    
+
+  color: rgb(60, 57, 57);
+
 }
 
 .sidebar-container li {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
 
 
 .header-dashboard {
-    width: 100%;
-    height: 80px;
-    background-color: rgb(20, 20, 105);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid black;
-    margin-bottom: 15px;
-    border-radius: 20px;
-    
+  width: 100%;
+  height: 80px;
+  background-color: rgb(20, 20, 105);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid black;
+  margin-bottom: 15px;
+  border-radius: 20px;
+
 }
 
 .header-dashboard h1 {
-    font-size: 25px;
-    margin: auto;
-    color: white;
-    font-weight: 800;
-    ;
-    
+  font-size: 25px;
+  margin: auto;
+  color: white;
+  font-weight: 800;
+  ;
+
 }
 
 .container-division {
-    width: 100%;
-    display: flex;
-    background-color: white;
-    
+  width: 100%;
+  display: flex;
+  background-color: white;
+
 }
 
-.container-dashboard{
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.container-dashboard {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.container-dashboard h2{
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
+.container-dashboard h2 {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .dashboard-division {
-    width: 90%;
-    display: flex;
-    background-color: white;
-    border: 1px solid rgb(130, 126, 126) ;
-    margin: 10px;
-    padding: 15px;
-    box-shadow: 0px 0px 10px 0px rgb(171, 161, 161);
-    border-radius: 10px;
+  width: 90%;
+  display: flex;
+  background-color: white;
+  border: 1px solid rgb(130, 126, 126);
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0px 0px 10px 0px rgb(171, 161, 161);
+  border-radius: 10px;
 
 }
 
 .dashboard-division p {
-    padding: 3px;
-    font-weight: 800;
+  padding: 3px;
+  font-weight: 800;
 }
 
 .container-datos {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .datos-texto {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  align-items: flex-start;
 }
 
 .datos-imagen {
-    width: 50%;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-.datos-imagen img{
-    margin-right: 25px;
-    width: 10%;
+.datos-imagen img {
+  margin-right: 25px;
+  width: 10%;
 }
-
-

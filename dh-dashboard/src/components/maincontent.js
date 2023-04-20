@@ -1,6 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
 import Products from './Products';
 import Users from './Users';
+import Home from './Home';
 
 
 function MainContent() {
@@ -8,21 +9,7 @@ function MainContent() {
     <div style={{ flex: 1, padding: '10px' }}>
       <Switch>
         <Route exact path="/">
-          <div className='welcome-h1'>
-          <h1>DASHBOARD - DH GAMERS</h1>
-          </div>
-          <div className='total-boxes-container'>
-            <div className='total-box'>
-              <h2>TOTAL PRODUCTOS:</h2>
-            </div>
-            <div className='total-box'>
-              <h2>TOTAL USUARIOS:</h2>
-            </div>
-            <div className='total-box'>
-              <h2>TOTAL CATEGORIAS:</h2>
-            </div>
-          </div>
-          
+          <Home/>
         </Route>
         <Route path="/products">
         <div className='header-dashboard'>
