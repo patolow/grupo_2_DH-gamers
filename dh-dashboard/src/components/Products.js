@@ -28,6 +28,7 @@ function Products() {
           price={product.price}
           stock={product.stock}
           category={product.category} 
+          image={product.sliderImage}
           />
           </div>
           
