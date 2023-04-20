@@ -10,7 +10,7 @@ function User({ name, email, username, image }) {
         <p>Nombre de usuario: {username}</p>
       </div>
       <div className="datos-imagen">
-        <img style={{ width: "10%" }}
+        <img 
           src={url}
           alt="imagen usuario"
         />
