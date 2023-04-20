@@ -110,14 +110,15 @@
     position: relative;
 }
 .eye {
-    color: #6d058a;
+    color: black;
     position: absolute;
     right: 20px;
     top: 52%;
     height: 60%;
     cursor: pointer;
-    opacity: 0.4;
 }
+
+
 
 @media (min-width: 1200px) {
     .main-form-login {
