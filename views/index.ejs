@@ -187,7 +187,7 @@
 
             <h1>Formulario de contacto</h1>
 
-            <form action="enviar.php" method="post">
+            <form action="https://formsubmit.co/2a52e6ce030b9aa50e9c26b3ca098b4a" method="POST">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
 
@@ -198,9 +198,15 @@
                 <input type="text" id="asunto" name="asunto" required>
 
                 <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
+                <textarea id="mensaje" name="mensaje" cols="15" required></textarea>
 
                 <input type="submit" value="Enviar">
+                
+                <!-- FormSubmit Advanced Features -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Nueva consulta recibida!">
+                <input type="hidden" name="_template" value="box">
+
             </form>
 
             <div>
@@ -218,6 +224,7 @@
                 <script src="/js/cart.js"></script>
                 <script src="/js/main.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                <input type="hidden" name="_autoresponse" value="Gracias, estaremos respondiendo a la brevedad a su consulta!">
                 <!-- para usar Axios y enviar data al servidor -->
                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
