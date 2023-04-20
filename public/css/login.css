@@ -2,12 +2,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif; 
+    font-family: sans-serif;
 }
+
 .main-form-login {
-    background-color: white; 
+    background-color: white;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     margin: 180px 30px 80px 30px;
     position: relative;
     padding-top: 20px;
@@ -32,7 +33,7 @@
     font-size: 18px;
 }
 
-.form{
+.form {
     flex-direction: column;
     display: flex;
     width: 100%;
@@ -45,7 +46,7 @@
 }
 
 
-.boxes{
+.boxes {
     width: 100%;
     max-width: 500px;
     padding: 15px;
@@ -57,7 +58,8 @@
     border-left: 10px solid #061161;
 }
 
-.boxes:hover, .boxes:focus {
+.boxes:hover,
+.boxes:focus {
     border-left: 10px solid #780206;
 }
 
@@ -79,13 +81,13 @@
     background-color: #061161;
     color: white;
     box-shadow: 0px 0px 10px rgb(141, 47, 47);
-    font-weight:lighter 
+    font-weight: lighter
 }
 
 .button {
     text-align: center;
     margin: 0 3.5% 3.5% 3.5%;
-  }
+}
 
 
 
@@ -94,6 +96,7 @@
     margin-bottom: 1.5em;
     font-size: 16px;
 }
+
 .olv-contraseña {
     margin: auto;
     padding: 15px;
@@ -103,9 +106,21 @@
     color: red;
 }
 
+.formulario__grupo-input{
+    position: relative;
+}
+.eye {
+    color: #6d058a;
+    position: absolute;
+    right: 20px;
+    top: 52%;
+    height: 60%;
+    cursor: pointer;
+    opacity: 0.4;
+}
 
 @media (min-width: 1200px) {
     .main-form-login {
-       min-height: 800;
+        min-height: 800;
     }
 }
