@@ -172,7 +172,7 @@ span {
 }
 
 .boton-agrega-carrito,
-.boton-comprar {
+.boton-agregar {
     height: 25px;
     width: 250px;
     border-radius: 5px;
@@ -194,11 +194,44 @@ span {
     /* opacity: 0.4; */
 }
 
-.boton-comprar {
+.boton-agregar {
     background-color: #02CFB7;
 }
 
-.boton-comprar:hover,
+
+.boton-editar input[type=submit] {
+    cursor: pointer;
+  }
+  
+  .boton-editar {
+    background-color: red;
+    display: block;
+    border-radius: 5px;
+    width: 250px;
+    margin: 8px auto;
+    height: 28px;
+    font-size: 14px;
+    border: none;
+  }
+  
+  .boton-editar:hover {
+    background-color: whitesmoke;
+    box-shadow: 0px 2px 10px 1px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .boton-editar input {
+    border: none;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    background-color: transparent
+  }
+
+.boton-agregar:hover, .boton-editar:hover,
 .boton-agrega-carrito:hover {
     opacity: 0.5;
 }

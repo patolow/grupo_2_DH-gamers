@@ -114,6 +114,10 @@
                             <input type="hidden" name="productImage" value="<%=firstImage%>">
                             <input id="submit" type="submit" value='AGREGAR AL CARRITO'>
                         </form>
+
+                            <% if (locals.isLogged && locals.usuarioLogueado.isAdmin==1) { %>
+                                <a href="/product/edit/<%=productDetail.id%>"><input id="boton-editar" class="boton-editar" type="submit" value='EDITAR PRODUCTO'></a>
+                            <% } %>
                     </div>
 
                 </div>

@@ -11,14 +11,14 @@
         <h1 class="h1-bienvenida">Bienvenido <%= usuarioBase.completeName %>, estas logueado en tu perfil DH GAMERS!
         </h1>
       </div>
-      
+
       <div class="datosUsuarios">
         <div>
           <h2>Tu Información personal</h2>
         </div>
         <section class="meta-flex">
 
-          
+
 
           <div class="cajaImagenUsuario">
             <img src="<%= usuarioBase.image%>">
@@ -28,7 +28,7 @@
             <p><b>Nombre Completo:</b>
               <%= usuarioBase.completeName %>
             </p>
-            <p><b>User:</b>
+            <p><b>Nombre Usuario:</b>
               <%= usuarioBase.userName %>
             </p>
             <p><b>Fecha de Nacimiento:</b>
@@ -50,9 +50,9 @@
 
         </section>
 
-      </div>
-      </main>
 
+        </main>
+      </div>
       <%- include("./partials/footer") %>
 
   </body>

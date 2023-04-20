@@ -107,7 +107,7 @@ const controller = {
 
   profile: (req, res) => {
     let usuarioLogueado = req.session.usuarioLogueado
-    console.log(usuarioLogueado);
+    // console.log(usuarioLogueado);
     db.User.findByPk(usuarioLogueado.id)
       .then(function (usuario) {
         res.render("profile", { usuario: usuarioLogueado, usuarioBase: usuario })
@@ -132,13 +132,25 @@ const controller = {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
 
+      // let profilePhoto = ''
+      // if (req.file) {
+      //   profilePhoto = '/images/users/' + req.file.filename
+      // }
+      // if ()
+      // else {
+      //   profilePhoto = '/images/users/profile-photo-default.jpg'
+      // }
+
+      
       let profilePhoto = ''
       if (req.file) {
         profilePhoto = '/images/users/' + req.file.filename
       } else {
-        profilePhoto = '/images/users/profile-photo-default.jpg'
+        profilePhoto = db.User.image
       }
-
+      
+      console.log(req.file);
+      
       let password = req.body.password
       let confirmPassword = req.body.confirmPassword
       if (password && password == confirmPassword) {
@@ -146,7 +158,7 @@ const controller = {
       } else {
         password = db.User.password
       }
-
+      
       const updateData = {
         completeName: req.body.completeName,
         userName: req.body.userName,
@@ -157,11 +169,11 @@ const controller = {
         image: profilePhoto,
         password: password,
       };
-
-      console.log(updateData)
+      
       db.User.update(updateData, {
         where: { id: req.params.id }
       })
+      
         .then(user => {
 
           return res.redirect("/users/profile");
