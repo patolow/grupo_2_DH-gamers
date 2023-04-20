@@ -15,15 +15,23 @@ const productsList = async () => {
 
 const usersList = async () => {
   try {
-    return await db.User.findAll( )
+    return await db.User.findAll()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const categoryList = async () => {
+  try {
+    return await db.Category.findAll()
   } catch (error) {
     console.log(error)
   }
 }
 
 
-
 module.exports = {
-  productsList, 
-  usersList  
+  productsList,
+  usersList,
+  categoryList
 };

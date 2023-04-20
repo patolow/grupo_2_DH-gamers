@@ -1,4 +1,4 @@
-const {productsList, usersList} = require("../data-access")
+const {productsList, usersList, categoryList} = require("../data-access")
 const db = require("../database/models");
 const Sequelize = require('sequelize');
 
@@ -23,6 +23,19 @@ const usersListController = async (req, res) => {
     return res.json({
       total: users.length,
       data: users,
+      status: 200
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const categoryListController = async (req, res) => {
+  try {
+    const category = await categoryList()
+    return res.json({
+      total: category.length,
+      data: category,
       status: 200
     })
   } catch (error) {
@@ -57,6 +70,7 @@ const userDetailController = (req, res)=> {
 module.exports = {
   productsListController, 
   usersListController,
+  categoryListController,
   productsDetailController,
   userDetailController
 };
