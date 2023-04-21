@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
+import UltimoCargado from "./UltimoCargado";
 
 function Home() {
+
+
   //USERS
   const [totalUsers, setTotalUsers] = useState(null)
 
@@ -56,6 +59,9 @@ function Home() {
           cardName='TOTAL CATEGORÍAS'
         />
       </div>
+      <UltimoCargado 
+      
+      />
     </>
   );
 }
