@@ -55,6 +55,63 @@
   font-size: 30px;
 }
 
+.ultimo-producto-cargado-container {
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin-top: 40px;
+}
+
+.ultimo-producto-cargado {
+  padding-top: 10px;
+  width: 80%;
+  border: 1px solid rgb(193, 182, 182);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgb(171, 161, 161);
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.ultimo-producto-cargado-info p {
+  padding-top: 20px;
+  padding-left: 20px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.ultimo-producto-cargado-info h1 {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.ultimo-producto-cargado-info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  
+}
+
+.ultimo-producto-cargado-imagen {
+  display: flex;
+  justify-content: right;
+  
+  align-items: center;
+  width: 50%;
+  
+  
+}
+
+.ultimo-producto-cargado-imagen img {
+  max-width: 100%;
+  margin-right: 50px;
+}
+
 
 .sidebar-container {
   width: 15%;
