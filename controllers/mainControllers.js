@@ -25,7 +25,10 @@ index: (req, res)=> {
 
     },
 
-error: (req, res) => res.render("error404.ejs")
+error: (req, res) => res.render("error404.ejs"),
+
+aboutUs: (req, res) => res.render("aboutUs.ejs")
+
 
 }
 

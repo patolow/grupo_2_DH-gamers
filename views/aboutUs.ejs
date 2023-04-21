@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<%- include("./partials/head") %>
+
+		<title>Equipo</title>
+		<style>
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				color: white;
+				width: 80%;
+				margin: 0px auto;
+			}
+			.first-member {
+				padding-top: 130px;
+			}
+
+			.member {
+				text-align: center;
+				margin-top: 50px;
+				margin-bottom: 30px;
+			}
+
+			.member img {
+				width: 200px;
+				height: 200px;
+				object-fit: cover;
+				border-radius: 50%;
+				margin-bottom: 10px;
+			}
+
+			.last-member p {
+				margin-bottom: 20px;
+			}
+
+			.member h3 {
+				margin-bottom: 20px;
+			}
+
+			.member p {
+				line-height: 20px;
+			}
+
+			@media (min-width: 605px) {
+
+			.container {
+				width: 57%;
+			}
+
+		}
+
+		</style>
+</head>
+
+<body>
+	<%- include("./partials/header") %>
+		<div class="container">
+			<div class="member first-member">
+				<img src="images/aboutUs/cri.jpeg">
+				<h3>Cristian Díaz</h3>
+				<p>37 años, médico especializado en clínica médica. Emprendedor nato, con conocimientos en finanzas y
+					actividad bursátil desde el año 2015, ajedrecista de toda la vida, actualmente trabajando en un
+					servicio de urgencias de un hospital público de la ciudad de Rosario como planta permanente, desde
+					el año 2013..</p>
+			</div>
+			<div class="member">
+				<img src="images/aboutUs/fabio.jpeg" alt="Foto de Fabio">
+				<h3>Fabio Capriotti</h3>
+				<p>29 años, Licenciado en Economía, y con un máster en Comercio exterior. Dejó su Italia a los 23 para
+					recorrer el mundo, y terminó en Buenos Aires luego de haber vivido en Inglaterra y México donde pudo
+					trabajar, aprender de otras culturas y sus idiomas.
+					Actualmente trabajando desde hace 3 años como Data Analyst para una empresa de Business
+					Intelligence, pero con deseo de moverse al desarrollo backend. Tiene un perrito de nombre Pacino y
+					una van Kefi armada para viajar por Argentina.</p>
+			</div>
+			<div class="member">
+				<img src="images/aboutUs/flor.jpeg" alt="Foto de Florencia">
+				<h3>Florencia Berardi</h3>
+				<p>Flor, de 36 años, Licenciada en Biotecnología, y con un máster en Tecnología de los Alimentos.
+					Actualmente trabajando por su cuenta como asesora de calidad de Normas ISO 9001, pero buscando un
+					cambio. Madre de una niña de 4 años y madre del corazón de dos adolescentes de 15 y 17 años.</p>
+			</div>
+			<div class="member">
+				<img src="images/aboutUs/lea.jpeg" alt="Foto de Leandro">
+				<h3>Leandro Dichiara</h3>
+				<p>31 años, de Trenque Lauquen, provincia de Buenos Aires. Hace 5 años dejó su trabajo en una
+					multinacional por un problema de salud, y decidió ir a recorrer Europa y vivir un poco. Luego, de
+					vuelta en Argentina empezó a trabajar por su cuenta, comercializando frutas y hortalizas, con una
+					sucursal que abastecía a muchos negocios de la provincia. Más adelante, junto a un grupo de socios
+					con su distribuidora, lograron crecer mucho más, y ampliar la gama de clientes a más ciudades. Hoy
+					quiere seguir creciendo, y adaptarse a un mercado cambiante digital entre otras cosas.</p>
+			</div>
+			<div class="member last-member">
+				<img src="images/aboutUs/patosol.jpeg" alt="Foto de Pato">
+				<h3>Pato Sol Löwenstein</h3>
+				<p>36 años, Lic. en Cs. Químicas de la UBA. Empezó a trabajar en INTI en el año 2009 donde se desempeñó
+					como jefa del laboratorio de Combustibles. En el año 2017 se cambió al Departamento de Tecnologías
+					en nuevas formulaciones dentro del área de I+D de dicha institución. Tía de 6 sobrinos, le gusta
+					viajar y disfrutar del aire libre. Viajó por un proyecto a Berlín durante gran parte del 2022, y
+					volvió entusiasmada por empezar este nuevo camino.</p>
+			</div>
+		</div>
+		<%- include("./partials/footer") %>
+</body>
+
+</html>
