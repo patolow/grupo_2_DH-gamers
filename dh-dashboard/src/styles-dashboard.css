@@ -5,6 +5,7 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+
 .welcome-h1 {
   display: flex;
   justify-content: center;
@@ -25,10 +26,10 @@
 }
 
 .total-boxes-container {
-  margin-top: 20px;
+  margin-top: 30px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 100px;
 }
 
@@ -36,7 +37,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 27%;
+  width: 30%;
   border: 1px solid rgb(193, 182, 182);
   border-radius: 20px;
   box-shadow: 0px 0px 10px 0px rgb(171, 161, 161);
@@ -57,27 +58,25 @@
 
 .ultimo-producto-cargado-container {
   width: 100%;
-  
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  margin-top: 40px;
-}
+  margin-top: 30px;
+  }
 
 .ultimo-producto-cargado {
-  padding-top: 10px;
-  width: 80%;
+  padding: 30px;
+  width: 100%;
   border: 1px solid rgb(193, 182, 182);
   border-radius: 20px;
   box-shadow: 0px 0px 10px 0px rgb(171, 161, 161);
-  height: 100%;
   display: flex;
   justify-content: space-between;
-  
+  margin-left: 5px;
+
 }
 
-.ultimo-producto-cargado-info p {
+.ultimo-producto-cargado-info li {
   padding-top: 20px;
   padding-left: 20px;
   text-align: left;
@@ -87,31 +86,28 @@
 .ultimo-producto-cargado-info h1 {
   text-align: left;
   padding-left: 20px;
-  padding-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .ultimo-producto-cargado-info {
   display: flex;
   flex-direction: column;
   width: 50%;
-  
+
 }
 
 .ultimo-producto-cargado-imagen {
   display: flex;
   justify-content: right;
-  
   align-items: center;
   width: 50%;
-  
-  
 }
 
 .ultimo-producto-cargado-imagen img {
   max-width: 100%;
   margin-right: 50px;
 }
-
 
 .sidebar-container {
   width: 15%;
@@ -136,9 +132,7 @@
 }
 
 .nav-link:hover {
-
   color: rgb(60, 57, 57);
-
 }
 
 .sidebar-container li {
@@ -146,8 +140,6 @@
   margin-bottom: 20px;
   font-size: 16px;
 }
-
-
 
 .header-dashboard {
   width: 100%;
@@ -159,7 +151,6 @@
   border-bottom: 2px solid black;
   margin-bottom: 15px;
   border-radius: 20px;
-
 }
 
 .header-dashboard h1 {
@@ -167,8 +158,6 @@
   margin: auto;
   color: white;
   font-weight: 800;
-  ;
-
 }
 
 .container-division {

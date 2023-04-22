@@ -9,6 +9,13 @@ const productsListController = async (req, res) => {
       const products = await productsList()
       return res.json({
         total: products.length,
+        GPU: products.filter(item => item.category.name === "GPU").length,
+        Monitores: products.filter(item => item.category.name === "Monitores").length,
+        Microprocesadores: products.filter(item => item.category.name === "Microprocesadores").length,
+        Motherboards: products.filter(item => item.category.name === "Motherboards").length,
+        WaterCooling: products.filter(item => item.category.name === "WaterCooling").length,
+        Joysticks: products.filter(item => item.category.name === "Joysticks").length,
+        Others: products.filter(item => item.category.name === "Others").length,
         data: products,
         status: 200
       })
