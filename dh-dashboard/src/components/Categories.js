@@ -91,7 +91,7 @@ function Categories() {
 
         <SmallCard
           text={totalMotherboards}
-          cardName='Total Microprocesadores:'
+          cardName='Total Motherboards:'
         />
         <SmallCard
           text={totalWaterCooling}
