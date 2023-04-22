@@ -63,11 +63,13 @@ const controller = {
   login: (req, res) => {
 
     let errors = validationResult(req);
+    console.log(errors)
 
     if (req.session?.usuarioLogueado) {
       return res.redirect("./profile")
-    }
+    } 
 
+  
     if (errors.isEmpty()) {
 
       let userToLogin = db.User.findOne({
@@ -93,14 +95,17 @@ const controller = {
           res.redirect("./profile")
         })
         .catch(error => {
-          console.error("Error al intentar loguearse: ", error);
-          res.status(500).send('Error al intentar loguearse.');
+          return res.render('login', { errors: [{ msg: 'Credenciales invalidas. Vuelva a intentarlo' }], old: req.body });
         })
     }
 
     else {
-      res.render('login', { errors: errors.mapped(), old: req.body });
-    }
+        res.render('login', { 
+          errors: errors.array(),  // aquí se envía solo el array de errores
+          old: req.body 
+        });
+      }
+      
 
   },
 

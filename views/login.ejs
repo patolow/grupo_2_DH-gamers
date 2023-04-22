@@ -12,12 +12,15 @@
                 <!-- TITLE -->
                 <h1 class="title-login">Bienvenido a DH-GAMERS</h1>
                 <h2 class="subtitle-login">Ingresá a tu cuenta personal</h2>
+                
                 <!-- DATA ENTRY BOXES -->
                 <% if (locals.errors) { locals.errors.forEach(error=> { %>
                 <p class="feedback" color="red">
                     <%= error.msg %>
                 </p>
                 <% }); } %>
+
+                
                 <div class="formulario__grupo" id="grupo__email">
                     <div class="formulario__grupo-input">
                         <input class="formulario__input" type="email" name="email" placeholder="Email" id="email">

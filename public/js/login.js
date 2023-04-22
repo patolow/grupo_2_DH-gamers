@@ -4,14 +4,14 @@ const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
 
-	password: /^.{8,16}$/, // 4 a 12 digitos.
+	// password: /^.{8,16}$/, // 4 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 
 }
 
 const campos = {
 
-	password: false,
+	// password: false,
 	correo: false,
 
 }
@@ -19,10 +19,10 @@ const campos = {
 const validarFormulario = (e) => {
 	switch (e.target.name) {
 
-		case "password":
-			validarCampo(expresiones.password, e.target, 'password');
-			validarPassword2();
-			break;
+		// case "password":
+		// 	validarCampo(expresiones.password, e.target, 'password');
+		// 	validarPassword2();
+		// 	break;
 
 		case "email":
 			validarCampo(expresiones.correo, e.target, 'email');
@@ -50,30 +50,7 @@ const validarCampo = (expresion, input, campo) => {
 }
 
 
-
-
 inputs.forEach((input) => {
 	input.addEventListener('keyup', validarFormulario);
 	input.addEventListener('blur', validarFormulario);
-});
-
-formulario.addEventListener('submit', (e) => {
-
-
-	const terminos = document.getElementById('terminos');
-	//CORREGIR LOGICA ESTE SWAL.FIRE, SOLO ESTA EVALUANDO QUE ESTEN COMPLETOS SIN ERRRORES
-	if (campos.password && campos.email) {
-
-		Swal.fire({
-			position: 'top-center',
-			icon: 'success',
-			title: 'Login exitoso!',
-			showConfirmButton: false,
-			timer: 1500
-		})
-
-	} else {
-		e.preventDefault();
-		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-	}
 });

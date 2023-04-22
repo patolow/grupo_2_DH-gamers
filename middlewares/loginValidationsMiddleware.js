@@ -8,7 +8,7 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, "utf8"));
 const loginValidationsMiddleware = [
   body('email').notEmpty().withMessage('Debes escribir tu correo electrónico').bail()
   .isEmail().withMessage('Debes escribir un formato de correo electrónico válido'),
-  body('password').notEmpty().withMessage('Debes escribir una contraseña').isLength({min: 8}).withMessage('Mínimo 8 catacteres'),
+  body('password').notEmpty().withMessage('Debes escribir una contraseña').bail()
 ]
 
 
