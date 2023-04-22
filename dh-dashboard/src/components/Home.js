@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import UltimoCargado from "./UltimoCargado";
+import Categories from "./Categories"
+
 
 function Home() {
 
@@ -59,9 +61,14 @@ function Home() {
           cardName='TOTAL CATEGORÍAS'
         />
       </div>
-      <UltimoCargado 
-      
-      />
+      <div className="categories-ultimoCargado-container">
+        <div>
+          <UltimoCargado />
+        </div>
+        <div>
+          <Categories />
+        </div>
+      </div>
     </>
   );
 }
