@@ -5,71 +5,25 @@ function Categories() {
 
   //GPU
   const [totalGPU, setTotalGPU] = useState(null)
-
-  useEffect(() => {
-    fetch("http://localhost:3000/dashboard/products")
-      .then((response) => response.json())
-      .then(jsonResponse => setTotalGPU(jsonResponse.GPU))
-      .catch((error) => console.log(error));
-  }, []);
-
-  //Monitores
   const [totalMonitores, setTotalMonitores] = useState(null)
-
-  useEffect(() => {
-    fetch("http://localhost:3000/dashboard/products")
-      .then((response) => response.json())
-      .then(jsonResponse => setTotalMonitores(jsonResponse.Monitores))
-      .catch((error) => console.log(error));
-  }, []);
-
-  // Microprocesadores
   const [totalMicroprocesadores, setTotalMicroprocesadores] = useState(null)
-
-  useEffect(() => {
-    fetch("http://localhost:3000/dashboard/products")
-      .then((response) => response.json())
-      .then(jsonResponse => setTotalMicroprocesadores(jsonResponse.Microprocesadores))
-      .catch((error) => console.log(error));
-  }, []);
-
-  //Motherboards
   const [totalMotherboards, setTotalMotherboards] = useState(null)
-
-  useEffect(() => {
-    fetch("http://localhost:3000/dashboard/products")
-      .then((response) => response.json())
-      .then(jsonResponse => setTotalMotherboards(jsonResponse.Motherboards))
-      .catch((error) => console.log(error));
-  }, []);
-
-  //WaterCooling
-  const [totalWaterCooling, setTotalWaterCooling] = useState(null)
-
-  useEffect(() => {
-    fetch("http://localhost:3000/dashboard/products")
-      .then((response) => response.json())
-      .then(jsonResponse => setTotalWaterCooling(jsonResponse.WaterCooling))
-      .catch((error) => console.log(error));
-  }, []);
-
-  //Joysticks
   const [totalJoysticks, setTotalJoysticks] = useState(null)
-
-  useEffect(() => {
-    fetch("http://localhost:3000/dashboard/products")
-      .then((response) => response.json())
-      .then(jsonResponse => setTotalJoysticks(jsonResponse.Joysticks))
-      .catch((error) => console.log(error));
-  }, []);
-
-  //Others
+  const [totalWaterCooling, setTotalWaterCooling] = useState(null)
   const [totalOthers, setTotalOthers] = useState(null)
 
   useEffect(() => {
     fetch("http://localhost:3000/dashboard/products")
-      .then((response) => response.json())
-      .then(jsonResponse => setTotalOthers(jsonResponse.Others))
+      .then(response => response.json())
+      .then(jsonResponse => {
+        setTotalMicroprocesadores(jsonResponse.Microprocesadores)
+        setTotalMotherboards(jsonResponse.Motherboards)
+        setTotalWaterCooling(jsonResponse.WaterCooling)
+        setTotalMonitores(jsonResponse.Monitores)
+        setTotalJoysticks(jsonResponse.Joysticks)
+        setTotalOthers(jsonResponse.Others)
+        setTotalGPU(jsonResponse.GPU)
+      })
       .catch((error) => console.log(error));
   }, []);
 
