@@ -557,6 +557,7 @@ width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 10px;
 }
 
 .productos-mas-vendidos{
@@ -565,10 +566,17 @@ width: 100%;
 }
 
 .productos-mas-vendidos img {
+    width: 98%;
+    object-fit: contain;
+    padding: 3px;
+}
+
+.imagen-container {
     cursor: pointer;
     width: 100%;
     border-radius: 10px;
     margin-bottom: 5px;
+    background-color: -webkit-linear-gradient(to left, #061161, #780206);
 }
 
 .productos-mas-vendidos img:hover {
@@ -629,10 +637,10 @@ width: 100%;
     justify-content: center;
     align-items: center;
     max-width: 500px;
-    width: 85%;
-    margin: 40px auto;
+    width: 88%;
+    margin: 20px auto;
     background-color: #f1f1f1;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
   }  
 
@@ -665,7 +673,7 @@ width: 100%;
  .fondo-contacto input[type="text"], .fondo-contacto input[type="email"], .fondo-contacto textarea {
     border-radius: 5px;
     border: none;
-    padding: 10px;
+    padding: 4px;
   } 
     .fondo-contacto label, .fondo-contacto input, .fondo-contacto textarea {
     display: block;

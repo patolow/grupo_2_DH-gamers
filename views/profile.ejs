@@ -7,14 +7,10 @@
   <body>
     <%- include("./partials/header") %>
 
-      <div class="titulo-bienvenida-profile">
-        <h1 class="h1-bienvenida">Bienvenido <%= usuarioBase.completeName %>, estas logueado en tu perfil DH GAMERS!
-        </h1>
-      </div>
-
       <div class="datosUsuarios">
-        <div>
-          <h2>Tu Información personal</h2>
+        <div class="titulo-bienvenida-profile">
+          <h1 class="h1-bienvenida">Bienvenido <%= usuarioBase.completeName %>, estas logueado en tu perfil DH GAMERS!
+          </h1>
         </div>
         <section class="meta-flex">
 
@@ -25,6 +21,9 @@
           </div>
 
           <div class="cajaDatos">
+            <div>
+              <h2>Tu Información personal</h2>
+            </div>
             <p><b>Nombre Completo:</b>
               <%= usuarioBase.completeName %>
             </p>

@@ -6,10 +6,10 @@
 }
 
 .h1-bienvenida {
-    color: white;
+    color: black;
     font-size: 1.1rem;
-    margin: 25px;
     text-align: center;
+    padding-top: 35px;
 }
 
 .titulo-bienvenida-profile {
@@ -18,12 +18,14 @@
 
 div.datosUsuarios{
     background-color: white;
-    padding: 10px;
+    margin: 165px auto 30px auto;
+    width: 90%;
 }
 
 .datosUsuarios h2{
-    text-align: center;
-    margin-top: 35px;
+    text-align: left;
+    padding-bottom: 10px;
+    font-size: 1.1rem;
 }
 
 div.cajaDatos{
@@ -33,8 +35,8 @@ div.cajaDatos{
     padding: 11px 12px;
     border-radius: 0%;
     line-height: 23px;
-    text-align: center;
-    width: 80%;
+    text-align: left;
+    width: 85%;
     font-size: 0.9rem;
 }
 
@@ -71,7 +73,6 @@ a {
         justify-content: space-around;
         padding: 15px;
         flex-direction: row-reverse;
-        width: 70%;
         max-width: 700px;
         margin: auto;
     }

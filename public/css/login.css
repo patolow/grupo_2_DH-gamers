@@ -9,13 +9,12 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    margin: 180px 30px 80px 30px;
+    margin: 165px auto 30px auto;
     position: relative;
     padding-top: 20px;
-    margin-bottom: 5%;
-    width: 70%;
-    margin-left: 15%;
-}
+    width: 90%;
+  }
+  
 
 
 .title-login {
