@@ -13,13 +13,13 @@
 }
 
 .descripcion-producto h4 {
-    font-size: 20px;
+    font-size: 1rem;
     padding-bottom: 22px;
 
 }
 
 .descripcion-producto h3 {
-    font-size: 13px;
+    font-size: 0.8rem;
     text-align: justify;
     padding-bottom: 12px;
 }
@@ -42,6 +42,7 @@ span {
 
 .rating {
     background-color: white;
+    padding-bottom: 15px;
 }
 
 .main-imagen img {
@@ -80,33 +81,31 @@ span {
 
 .costo-producto {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    font-size: 16px;
-}
+    font-size: 1rem;}
 
 .descuento {
-    font-size: 17px;
-}
+    font-size: 1.1rem;}
 
 .precio {
     text-align: left;
-    font-size: 22px;
+    font-size: 2rem;
     padding: 6px;
 }
 
 .box-producto h4 {
-    font-size: 11px;
+    font-size: 0.8rem;
     color: grey;
 }
 
 .box-producto h6 {
-    font-size: 12px;
+    font-size: 0.8rem;
     color: black;
 }
 
 .box-producto h5 {
-    font-size: 16px;
+    font-size: 1rem;
     color: green;
 }
 
@@ -115,7 +114,8 @@ span {
 }
 
 .detalle-costo-envio {
-    padding: 18px
+    padding: 30px;
+    text-align: center;
 }
 
 .descripcion-producto {
@@ -182,7 +182,7 @@ span {
 
 .botones-de-compra {
     border-radius: 10px;
-    padding: 40px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -303,7 +303,7 @@ span {
     width: 97%;
     display: flex;
     justify-content: center;
-    margin-top: 62%;
+    margin-top: 10px;
 }
 
 .manual-btn {
@@ -356,7 +356,7 @@ span {
     display: flex;
     width: 97%;
     justify-content: center;
-    margin-top: 62%;
+    margin-top: 10px;
 }
 
 .navigation-auto div {
@@ -411,7 +411,7 @@ span {
 } 
 
 
-@media (min-width: 768px) {
+@media (min-width: 605px) {
 
     .box-producto {
         display: flex;
@@ -482,8 +482,8 @@ span {
 
     .carrusell-producto .navigation-manual,
     .navigation-auto {
-        margin-top: 32%;
-        width: 45%;
+        width: 38%;
+        margin-top: 10px;
     }
 
     .contenedor-version-laptop {
@@ -568,7 +568,7 @@ span {
     }
 
     .box-producto {
-        height: 350px;
+        height: fit-content;
     }
 
 }
