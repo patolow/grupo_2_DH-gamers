@@ -25,7 +25,7 @@ const createProductValidationsMiddleware = [
   body('price').notEmpty().withMessage('Debes escribir el precio de tu producto').bail().isLength({ max: 6 }).withMessage('El precio de tu producto no es válido, prueba un valor menor'),
   body('bestSellers').notEmpty().withMessage('Debes seleccionar si tu producto es un best seller'),
   body('stock').notEmpty().withMessage('Debes seleccionar la cantidad de productos disponibles'),
-  body('description').notEmpty().withMessage('La descripción del producto es obligatoria').bail().isLength({ min: 50 }).withMessage('Debes escribir los detalles de tu prodcuto'),
+  body('description').notEmpty().withMessage('La descripción del producto es obligatoria').bail().isLength({ min: 10 }).withMessage('Descripción minima 10 caracteres'),
   body('sliderImage').custom((value, { req }) => {
     let file = req.file
     let acceptedExtension = ['.jpg', '.jepg', '.png', '.gif']

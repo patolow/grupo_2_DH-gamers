@@ -1,23 +1,32 @@
 const formulario = document.getElementById("cp_formulario");
 const inputs = document.querySelectorAll("#cp_formulario input");
+const textarea = document.querySelectorAll("#cp_formulario textarea");
+
 
 
 const expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ0-9\s]{4,40}$/,
+    categoria: /^[a-zA-ZÀ-ÿ0-9\s]{4,40}$/,
     precio: /^[0-9]+(,[0-9]+)?$/, //  
-    stock: /^\d{1,14}$/, // 7 a 14 numeros.
-    descripcion: /^[a-zA-ZÀ-ÿ0-9\s]{20,500}$/, 
-    sliderImage:"",
+    descuento: /^[0-9]+(,[0-9]+)?$/, //  
     bestSellers: true,
+    stock: /^\d{1,14}$/, // 7 a 14 numeros.
+    reviews: /^\d{1,14}$/, // 7 a 14 numeros.
+    description: /^[a-zA-ZÀ-ÿ0-9\s]{20,500}$/, 
+    sliderImage:"",
 	
 }
 
 const campos = {
 	nombre: false,
+    categoria: false,
     precio: false,
-    bestSellers: false,
+    descuento: false,
+    bestSellers: true,
 	stock: false,
-    descripcion: false
+    reviews: false,
+    description: false,
+    bestSellers: false,
 }
 
 const validarCpFormulario = (e) => {
@@ -25,14 +34,23 @@ const validarCpFormulario = (e) => {
 		case "name":
 			validarCpCampo(expresiones.nombre, e.target, "nombre");
 		break;
+        case "id_category":
+            validarCpCampo(input.value !== "none", e.input, "categoria");
+        break;  
+        case "discount":
+			validarCpCampo(expresiones.descuento, e.target, "descuento");
+        break;        
 		case "price":
 			validarCpCampo(expresiones.precio, e.target, "precio");
 		break;
     	case "stock":
 			validarCpCampo(expresiones.stock, e.target, "stock");
 		break;
+        case "reviews":
+			validarCpCampo(expresiones.reviews, e.target, "reviews");
+		break;
 		case "description":
-			validarCpCampo(expresiones.descripcion, e.target, "descripcion");
+			validarCpCampo(expresiones.descripcion, e.target, "description");
 		break;
 		
 	}
