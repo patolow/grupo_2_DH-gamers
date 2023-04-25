@@ -173,7 +173,7 @@ textarea {
   position: absolute;
   right: 10px;
   bottom: 15px;
-  z-index 50;
+  z-index: 50;
   font-size:16px;
   opacity: 0;
 }
@@ -203,6 +203,9 @@ textarea {
 	border: 3px solid #bb2929;
 }
 
+.categoria_cp_formulario__validacion-estado fas fa-times-circle {
+  align-items: center;
+}
 
 /*DATA ENTRY BOXES*/
 .errors {
@@ -234,4 +237,9 @@ textarea {
 .register-boxes:focus {
   border-left: 10px solid #780206;
   outline: none;
+}
+
+.cp_fecha {
+  padding-top: 15px;
+  padding-bottom: 0px;
 }

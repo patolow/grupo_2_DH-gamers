@@ -41,7 +41,7 @@
             <div class="cp_formulario__grupo-input">
               <select class="boxes-product-create" name="id_category" id="id_category" onchange="showCategories()"
                 value=<%=locals.oldData ? oldData.id_category : null %>>
-                <i class="cp_formulario__validacion-estado fas fa-times-circle"></i>
+                
                 <option value="none" disabled selected>Categoria del Producto</option>
                 <option value="1" id="GPU">GPU</option>
                 <option value="2" id="monitores">Monitores</option>
@@ -51,6 +51,7 @@
                 <option value="6" id="joysticks">Joysticks</option>
                 <option value="7" id="others">Otras</option>
               </select>
+              <i class="cp_formulario__validacion-estado fas fa-times-circle"></i>
               <% if (locals.errors && errors.id_category) { %>
                 <p class="errors">
                   <%= errors.id_category.msg %>
@@ -145,6 +146,7 @@
           </div>
 
           <!--Input: Fecha de Entrega-->
+          <label class="cp_fecha">Fecha de Entrega:</label>
           <input class="boxes-product-create" type="date" name="deliveryDate" placeholder="Fecha de entrega">
           <i class="cp_formulario__validacion-estado fas fa-times-circle"></i>
 
@@ -187,7 +189,7 @@
 
           <!--BUTTON-->
           <div class="input-button">
-            <button type="submit" class="button-create-product">Crear producto</button>
+            <button type="submit"  class="button-create-product" onclick="categoria()">Crear producto</button>
           </div>
       </div>
       </form>
