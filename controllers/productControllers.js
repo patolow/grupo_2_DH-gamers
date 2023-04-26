@@ -89,6 +89,17 @@ const controller = {
   }, //done
 
   editProduct: (req, res) => {
+    let sliderImage = ''
+
+    if (req.files) {
+      for (let i = 0; i < req.files.length; i++) {
+        let nombreImagen = '/images/products/' + req.files[i].filename + ',';
+        sliderImage += nombreImagen;
+      }
+    } else {
+      sliderImage = '/images/users/profile-photo-default.jpg'
+    }
+
     db.Product.update({
       "name": req.body.name,
       "price": req.body.price,
