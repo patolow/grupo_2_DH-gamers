@@ -124,8 +124,8 @@ font-family: 'Roboto Condensed', sans-serif !important;
 .contacto-whatsapp {
     display: none;
     position: fixed;
-    bottom: 130px;
-    right: 10px;
+    bottom: 135px;
+    right: 30px;
     width: 100px;
     opacity: 65%;
     cursor: pointer;
@@ -142,14 +142,12 @@ font-family: 'Roboto Condensed', sans-serif !important;
     display: none;
     position: fixed;
     bottom: 50px;
-    right: 10px;
+    right: 30px;
     width: 80px;
     opacity: 65%;
     cursor: pointer;
-    z-index: 50;
-    
+    z-index: 50;   
 }
-
 
 
 .inactive {
@@ -638,7 +636,7 @@ width: 100%;
     align-items: center;
     max-width: 500px;
     width: 88%;
-    margin: 20px auto;
+    margin: 20px auto 60px auto;
     background-color: #f1f1f1;
     padding: 15px;
     border-radius: 10px;
