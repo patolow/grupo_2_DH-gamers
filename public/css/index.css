@@ -1,15 +1,14 @@
-
-html body{
+html body {
     font-family: 'Oswald', sans-serif;
-font-family: 'Roboto', sans-serif;
-font-family: 'Roboto Condensed', sans-serif !important;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&family=Roboto+Condensed&display=swap');
 
 
 .main-content {
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,9 +16,9 @@ font-family: 'Roboto Condensed', sans-serif !important;
     color: white;
     position: relative;
     margin-top: 120px;
-    
-   width: 100%;
-    
+
+    width: 100%;
+
 }
 
 .menu-hamburguesa {
@@ -28,11 +27,11 @@ font-family: 'Roboto Condensed', sans-serif !important;
     left: 10%;
     top: 38px;
     background-color: -webkit-linear-gradient(to left, #061161, #780206);
-    
+
     display: flex;
     flex-direction: column;
     z-index: 100;
-    
+
 
 }
 
@@ -43,8 +42,8 @@ font-family: 'Roboto Condensed', sans-serif !important;
     width: 100%;
     /* background-color: white; */
     background: -webkit-linear-gradient(to left, white, grey);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, white, grey);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, white, grey);
     border: solid 1px black;
     height: 50px;
     cursor: pointer;
@@ -54,19 +53,19 @@ font-family: 'Roboto Condensed', sans-serif !important;
     text-decoration: none;
     font-size: 16px;
     color: black;
-    transition: all 500ms ;
+    transition: all 500ms;
     font-weight: bold;
 }
 
 .sub-menu-hamburguesa:hover {
     border: 1px solid rgb(98, 17, 17);
     background-color: black;
-    
+
 }
 
-.sub-menu-hamburguesa:hover a{
+.sub-menu-hamburguesa:hover a {
     color: white;
-    
+
 }
 
 /* Menu USER */
@@ -77,11 +76,11 @@ font-family: 'Roboto Condensed', sans-serif !important;
     right: 0px;
     top: 38px;
     background-color: -webkit-linear-gradient(to left, #061161, #780206);
-    
+
     display: flex;
     flex-direction: column;
     z-index: 100;
-    
+
 
 }
 
@@ -91,8 +90,8 @@ font-family: 'Roboto Condensed', sans-serif !important;
     align-items: center;
     width: 100%;
     background: -webkit-linear-gradient(to left, white, grey);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, white, grey);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, white, grey);
     border: solid 1px black;
     height: 50px;
     cursor: pointer;
@@ -102,19 +101,19 @@ font-family: 'Roboto Condensed', sans-serif !important;
     text-decoration: none;
     font-size: 16px;
     color: black;
-    transition: all 500ms ;
+    transition: all 500ms;
     font-weight: bold;
 }
 
 .sub-menu-user:hover {
     border: 1px solid rgb(98, 17, 17);
     background-color: black;
-    
+
 }
 
-.sub-menu-user:hover a{
+.sub-menu-user:hover a {
     color: white;
-    
+
 }
 
 
@@ -130,12 +129,12 @@ font-family: 'Roboto Condensed', sans-serif !important;
     opacity: 65%;
     cursor: pointer;
     z-index: 50;
-    
+
 }
 
 .contacto-whatsapp:hover {
     opacity: 100%;
-    
+
 }
 
 .chatbot {
@@ -146,7 +145,7 @@ font-family: 'Roboto Condensed', sans-serif !important;
     width: 80px;
     opacity: 65%;
     cursor: pointer;
-    z-index: 50;   
+    z-index: 50;
 }
 
 
@@ -155,21 +154,21 @@ font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 .chatbot-window {
-    
+
     position: fixed;
     bottom: 140px;
     right: 100px;
     width: 20%;
     min-width: 300px;
-    
+
     cursor: pointer;
     z-index: 50;
-    
+
 }
 
 .chatbot:hover {
     opacity: 100%;
-    
+
 }
 
 
@@ -183,18 +182,18 @@ font-family: 'Roboto Condensed', sans-serif !important;
 
 
 .slider-pequeño {
-    max-width: 1400px;
+    /* max-width: 1400px; */
     width: 100%;
     max-height: 400px;
     margin: auto;
     overflow: hidden;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    
-    
+
+
 }
 
 .slider-pequeño ul {
-    
+
     display: flex;
     max-height: 400px;
     padding: 0;
@@ -222,12 +221,12 @@ font-family: 'Roboto Condensed', sans-serif !important;
     margin: auto;
     overflow: hidden;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    
-    
+
+
 }
 
 .slider-grande ul {
-    
+
     display: flex;
     max-height: 100%;
     padding: 0;
@@ -253,13 +252,13 @@ font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 .agregarCarritoDisplay {
-    display: none 
+    display: none
 }
-  
+
 .productos-mas-vendidos:hover .agregarCarritoDisplay {
     display: block;
-  }
-      
+}
+
 .productos-mas-vendidos p {
     font-size: 13px;
     height: 25px;
@@ -271,42 +270,62 @@ font-family: 'Roboto Condensed', sans-serif !important;
 
 
 @keyframes cambio {
-    0% { margin-left:0;}
-    20% { margin-left:0;}
+    0% {
+        margin-left: 0;
+    }
 
-    25% { margin-left:-100%;}
-    45% { margin-left:-100%;}
+    20% {
+        margin-left: 0;
+    }
 
-    50% { margin-left:-200%;}
-    70% { margin-left:-200%;}
+    25% {
+        margin-left: -100%;
+    }
 
-    75% { margin-left:-300%;}
-    100% { margin-left:-300%;}
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
 }
 
 .ofertas-semanales {
     max-width: 1400px;
     padding-top: 10px;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
     display: flex;
     flex-direction: column;
     width: 100%;
-    
-    
-    
-    
+
+
+
+
     justify-content: center;
     align-items: center;
 }
 
 .ofertas-semanales img {
-    
+
     padding: 10px 0px 10px 0px;
-    width: 100%;
+    width: 85%;
 }
 
 .banner-ofertas-semanales {
-    border-bottom: 1px solid rgb(90, 89, 89);
+    border-bottom: 1px solid white;
 }
 
 
@@ -337,8 +356,8 @@ font-family: 'Roboto Condensed', sans-serif !important;
 .ofertas-left {
     width: 15%;
     height: 828px;
-    
-    
+
+
 }
 
 .ofertas-left img {
@@ -352,8 +371,8 @@ font-family: 'Roboto Condensed', sans-serif !important;
     height: 828px;
     display: flex;
     justify-content: end;
-    
-    
+
+
 }
 
 .ofertas-right img {
@@ -370,9 +389,9 @@ font-family: 'Roboto Condensed', sans-serif !important;
     padding: 10px;
     margin-top: 10px;
     width: 70%;
-    
-    
-    
+
+
+
     color: transparent;
 }
 
@@ -387,10 +406,10 @@ font-family: 'Roboto Condensed', sans-serif !important;
     background-color: black;
     border: 1px solid rgb(255, 255, 255);
     padding: 10px !important;
-   margin-top: 20px !important;
+    margin-top: 20px !important;
     width: 80% !important;
-    transition: all 500ms ;
-    
+    transition: all 500ms;
+
 }
 
 .hot-sale-img:hover {
@@ -400,13 +419,8 @@ font-family: 'Roboto Condensed', sans-serif !important;
 
 
 .carrusel-ofertas-1 {
-    
-    padding: 10px;
-    margin-top: 10px;
-    
-    
-    
-    
+    padding: 15px;
+    margin-top: 20px;
     color: transparent;
 }
 
@@ -425,8 +439,8 @@ font-family: 'Roboto Condensed', sans-serif !important;
     max-width: 900px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 0 4px #fff,
-                0 15px 50px;
+    border-radius: 4%;
+    /* box-shadow: 0 0 0 1px #fff, 0 15px 50px; */
 }
 
 #c-slider2 {
@@ -436,7 +450,7 @@ font-family: 'Roboto Condensed', sans-serif !important;
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 0 4px #fff,
-                0 15px 50px;
+        0 15px 50px;
 }
 
 #slider {
@@ -450,17 +464,18 @@ font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 #slider section {
-width: 100%;
+    width: 100%;
 }
 
 #slider2 section {
     width: 100%;
-    }
+}
 
 #slider img {
     display: block;
     width: 100%;
     height: 100%;
+    border-radius: 5%;
 }
 
 #slider2 img {
@@ -469,7 +484,8 @@ width: 100%;
     height: 100%;
 }
 
-#btn-prev, #btn-next {
+#btn-prev,
+#btn-next {
     width: 40px;
     height: 40px;
     background: rgba(255, 255, 255, 0.7);
@@ -486,7 +502,8 @@ width: 100%;
     color: black;
 }
 
-#btn-prev2, #btn-next2 {
+#btn-prev2,
+#btn-next2 {
     width: 40px;
     height: 40px;
     background: rgba(255, 255, 255, 0.7);
@@ -503,11 +520,13 @@ width: 100%;
     color: black;
 }
 
-#btn-prev:hover, #btn-next:hover {
+#btn-prev:hover,
+#btn-next:hover {
     background: rgba(255, 255, 255, 1);
 }
 
-#btn-prev2:hover, #btn-next2:hover {
+#btn-prev2:hover,
+#btn-next2:hover {
     background: rgba(255, 255, 255, 1);
 }
 
@@ -536,15 +555,13 @@ width: 100%;
     justify-content: center;
     max-width: 1400px;
     width: 100%;
-    }
+}
 
-    .titular-mas-vendidos img {
-        margin-top: 5px;
-        border-top: 1px solid white;
-        border-bottom: 1px solid white;
-        margin-bottom: 5px;
-        width: 100%;
-        }
+.titular-mas-vendidos img {
+    margin-top: 5px;
+    border-bottom: 1px solid white;
+    width: 85%;
+}
 
 
 .productos-mas-vendidos-container {
@@ -555,10 +572,10 @@ width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 10px;
+    margin: 20px auto 20px auto;
 }
 
-.productos-mas-vendidos{
+.productos-mas-vendidos {
     padding: 10px;
     max-width: 80%;
 }
@@ -574,7 +591,7 @@ width: 100%;
     width: 100%;
     border-radius: 10px;
     margin-bottom: 5px;
-    background-color: -webkit-linear-gradient(to left, #061161, #780206);
+    background-color: white;
 }
 
 .productos-mas-vendidos img:hover {
@@ -599,13 +616,13 @@ width: 100%;
 }
 
 .productos-mas-vendidos p:hover {
-    color:#02CFB7;
+    color: #02CFB7;
     text-decoration: underline;
 }
 
 .marcas-trabajadas {
     width: 100%;
-    
+
 }
 
 .marcas-trabajadas img {
@@ -613,12 +630,14 @@ width: 100%;
     border: 1px solid black;
     background-color: white;
     margin-top: 20px;
-    margin-bottom: 20px;
     box-shadow: 0px 2px 10px 1px rgba(255, 255, 255, 0.5);
 }
 
 .hot-sales {
     text-align: center;
+}
+.fondo-contacto {
+    background-color: black;
 }
 
 .fondo-contacto h1 {
@@ -626,7 +645,7 @@ width: 100%;
     margin: 0.67em 0;
     color: white;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 35px;
 }
 
 .fondo-contacto form {
@@ -636,17 +655,17 @@ width: 100%;
     align-items: center;
     max-width: 500px;
     width: 88%;
-    margin: 20px auto 60px auto;
-    background-color: #f1f1f1;
+    margin: auto;
     padding: 15px;
     border-radius: 10px;
-  }  
+    border: 5px solid #FFFFFF;
+}
 
-  .fondo-contacto label {
+.fondo-contacto label {
     font-weight: bold;
-  }
-  
-  .fondo-contacto input[type="submit"] {
+}
+
+.fondo-contacto input[type="submit"] {
     background-color: #4CAF50;
     color: white;
     border-radius: 5px;
@@ -655,45 +674,59 @@ width: 100%;
     cursor: pointer;
     margin-top: 20px;
     font-weight: bold;
-  }
-   
-  .fondo-contacto input[type="submit"]:hover {
+}
+
+.fondo-contacto input[type="submit"]:hover {
     background-color: #3e8e41;
-  }
+}
 
 
-  .fondo-contacto {
-    background: -webkit-linear-gradient(to left, #061161, #780206);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #061161, #780206);
-  } 
+.imagen-contacto img {
+    width: 800px;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+  
 
- .fondo-contacto input[type="text"], .fondo-contacto input[type="email"], .fondo-contacto textarea {
+.fondo-contacto input[type="text"],
+.fondo-contacto input[type="email"],
+.fondo-contacto textarea {
     border-radius: 5px;
     border: none;
-    padding: 4px;
-  } 
-    .fondo-contacto label, .fondo-contacto input, .fondo-contacto textarea {
+    padding: 0.2rem;
+}
+
+.fondo-contacto label {
     display: block;
     width: 100%;
-    margin: 10px;
-  } 
+    margin: 7px;
+    color: white;
+}
+
+.fondo-contacto input,
+.fondo-contacto textarea {
+    display: block;
+    width: 100%;
+    margin: 0.3rem;
+    color: black;
+}
 
 
-@media (min-width: 600px){
+@media (min-width: 600px) {
 
     .menu-hamburguesa {
         display: none;
     }
 
-    .productos-mas-vendidos{
+    .productos-mas-vendidos {
         max-width: 50%;
     }
 }
 
-@media (min-width: 768px){
-    .productos-mas-vendidos{
-        max-width: 33%;
+@media (min-width: 768px) {
+    .productos-mas-vendidos {
+        max-width: 25%;
     }
 
     .chatbot {
@@ -708,7 +741,6 @@ width: 100%;
 
 
 
-
 @media (min-width: 1400px) {
     .ofertas-index {
         width: 100%;
@@ -716,6 +748,7 @@ width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 20px;
     }
 
     .carrusel-ofertas-1 {
@@ -734,7 +767,7 @@ width: 100%;
         padding-top: 30px;
     }
 
-    .productos-mas-vendidos{
+    .productos-mas-vendidos {
         max-width: 25%;
     }
 
@@ -742,4 +775,3 @@ width: 100%;
         width: 100%;
     }
 }
-

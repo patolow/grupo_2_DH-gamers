@@ -183,7 +183,6 @@ main {
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
-
   height: 40px;
   width: 100%;
   background-color: rgb(232, 229, 229);
@@ -342,10 +341,14 @@ footer {
     display: none;
   }
 
+  .main-product-list {
+    height: 50px;
+  }
+
   .menu-barra-gris {
     display: flex;
     justify-content: space-around;
-    width: 96%;
+    width: 97%;
     align-items: center;
   }
 
@@ -509,6 +512,10 @@ footer {
   .saludo {
     display: block;
     color: white
+  }
+
+  .menu-barra-gris li {
+    font-size: 0.8rem;
   }
 
 }
