@@ -52,6 +52,44 @@
                         <li><img src="/images/index/img-slider4.jpg" alt="Slider grande" class="img-slider-sup-4"></li>
                     </ul>
                 </div>
+
+
+
+                <div class="titular-mas-vendidos">
+                    <img src="/images/index/img-mas-vendidos.png" alt="Productos mas vendidos">
+                </div>
+
+                <div class="productos-mas-vendidos-container">
+                    <% bestSeller.forEach((bestSeller)=> { %>
+                        <div class="productos-mas-vendidos">
+                            <a href="/product/detail/<%=bestSeller.id%>">
+                                <div>
+                                    <div class="imagen-container">
+                                        <img src="<%=bestSeller.sliderImage%>" alt="imagen del Producto">
+                                    </div>
+                                    <h5>
+                                        <%=bestSeller.name%>
+                                    </h5>
+                                    <p>Ver detalles</p>
+                                </div>
+                            </a>
+                            <form id='agregarCarrito-<%=bestSeller.id%>' class="agregarCarrito agregarCarritoDisplay"
+                                method="post" action="#">
+                                <input type="hidden" name="productId" value="<%=bestSeller.id%>">
+                                <input type="hidden" name="productName" value="<%=bestSeller.name%>">
+                                <input type="hidden" name="productPrice" value="<%=bestSeller.price%>">
+                                <input type="hidden" name="productCategory" value="<%=bestSeller.id_category%>">
+                                <input type="hidden" name="productStock" value="<%=bestSeller.stock%>">
+                                <input type="hidden" name="productImage" value="<%=bestSeller.sliderImage%>">
+                                <input id="submit" type="submit" value='AGREGAR AL CARRITO'>
+                            </form>
+
+                        </div>
+
+                        <% }); %>
+
+                </div>
+
                 <div class="ofertas-semanales">
 
                     <img src="/images/index/ofertas-de-la-semana.png" alt="Ofertas semanales"
@@ -86,12 +124,7 @@
 
                         <!--FIN DE CARRUSEL MANUAL-->
 
-
-
-
                     </div>
-
-
 
 
                     <div class="ofertas-index">
@@ -127,7 +160,8 @@
                                 <div id="btn-next2">&#62;</div>
                             </div>
 
-                            <a href="/product/sales" class="hot-sales"><img src="/images/index/hot-sale.png" alt="Hot sale" class="hot-sale-img"></a>
+                            <a href="/product/sales" class="hot-sales"><img src="/images/index/hot-sale.png"
+                                    alt="Hot sale" class="hot-sale-img"></a>
                             <!--FIN DE CARRUSEL MANUAL-->
 
 
@@ -138,84 +172,51 @@
                         <div class="ofertas-right">
                             <img src="/images/index/Aside-right.png" alt="Realidad virtual">
                         </div>
+
+
                     </div>
 
                 </div>
 
-
-                
-                <div class="titular-mas-vendidos">
-                    <img src="/images/index/img-mas-vendidos.png" alt="Productos mas vendidos">
-                </div>
-
-                <div class="productos-mas-vendidos-container">
-                    <% bestSeller.forEach((bestSeller)=> { %>
-                        <div class="productos-mas-vendidos">
-                            <a href="/product/detail/<%=bestSeller.id%>">
-                                <div>
-                                    <div class="imagen-container">
-                                        <img src="<%=bestSeller.sliderImage%>" alt="imagen del Producto">
-                                    </div>
-                                    <h5>
-                                        <%=bestSeller.name%>
-                                    </h5>
-                                    <p>Ver detalles</p>
-                                </div>
-                            </a>
-                            <form id='agregarCarrito-<%=bestSeller.id%>' class="agregarCarrito agregarCarritoDisplay"
-                                method="post" action="#">
-                                <input type="hidden" name="productId" value="<%=bestSeller.id%>">
-                                <input type="hidden" name="productName" value="<%=bestSeller.name%>">
-                                <input type="hidden" name="productPrice" value="<%=bestSeller.price%>">
-                                <input type="hidden" name="productCategory" value="<%=bestSeller.id_category%>">
-                                <input type="hidden" name="productStock" value="<%=bestSeller.stock%>">
-                                <input type="hidden" name="productImage" value="<%=bestSeller.sliderImage%>">
-                                <input id="submit" type="submit" value='AGREGAR AL CARRITO'>
-                            </form>
-
-                        </div>
-
-                        <% }); %>
-
-
-                            <div class="marcas-trabajadas">
-                                <img src="/images/index/marcas-trabajadas.png" alt="Marcas con las que trabajamos"></a>
-                            </div>
-                </div>
-
             </section>
 
-        <div class="fondo-contacto">
-
-            <h1>Formulario de contacto</h1>
-
-            <form action="https://formsubmit.co/2a52e6ce030b9aa50e9c26b3ca098b4a" method="POST">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="asunto">Asunto:</label>
-                <input type="text" id="asunto" name="asunto" required>
-
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" cols="15" required></textarea>
-
-                <input type="submit" value="Enviar">
-                
-                <!-- FormSubmit Advanced Features -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="Nueva consulta recibida!">
-                <input type="hidden" name="_template" value="box">
-
-            </form>
-
-            <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26277.278626041374!2d-58.424268!3d-34.58747300000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb58720ff2f79%3A0x8751ce184cf7b293!2sSoler%20%26%20Armenia%2C%20Buenos%20Aires!5e0!3m2!1sit!2sar!4v1681664568540!5m2!1sit!2sar" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="marcas-trabajadas">
+                <img src="/images/index/marcas-trabajadas.png" alt="Marcas con las que trabajamos"></a>
             </div>
+            <div class="fondo-contacto">
 
-        </div>
+                <h1>Formulario de contacto</h1>
+
+                <form action="https://formsubmit.co/2a52e6ce030b9aa50e9c26b3ca098b4a" method="POST">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" required>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" cols="15" required></textarea>
+
+                    <input type="submit" value="Enviar">
+
+                    <!-- FormSubmit Advanced Features -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="Nueva consulta recibida!">
+                    <input type="hidden" name="_template" value="box">
+
+                </form>
+
+                <div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26277.278626041374!2d-58.424268!3d-34.58747300000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb58720ff2f79%3A0x8751ce184cf7b293!2sSoler%20%26%20Armenia%2C%20Buenos%20Aires!5e0!3m2!1sit!2sar!4v1681664568540!5m2!1sit!2sar"
+                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
 
             </main>
 
@@ -226,7 +227,8 @@
                 <script src="/js/cart.js"></script>
                 <script src="/js/main.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-                <input type="hidden" name="_autoresponse" value="Gracias, estaremos respondiendo a la brevedad a su consulta!">
+                <input type="hidden" name="_autoresponse"
+                    value="Gracias, estaremos respondiendo a la brevedad a su consulta!">
                 <!-- para usar Axios y enviar data al servidor -->
                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
