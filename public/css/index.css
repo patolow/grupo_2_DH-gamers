@@ -269,6 +269,7 @@ html body {
 
 
 
+
 @keyframes cambio {
     0% {
         margin-left: 0;
@@ -409,6 +410,7 @@ html body {
     margin-top: 20px !important;
     width: 80% !important;
     transition: all 500ms;
+    
 
 }
 
@@ -565,6 +567,7 @@ html body {
 
 
 .productos-mas-vendidos-container {
+    
     display: flex;
     flex-wrap: wrap;
     max-width: 1400px;
@@ -578,6 +581,7 @@ html body {
 .productos-mas-vendidos {
     padding: 10px;
     max-width: 80%;
+    position: relative;
 }
 
 .productos-mas-vendidos img {
@@ -596,7 +600,8 @@ html body {
 
 .productos-mas-vendidos img:hover {
     box-shadow: 0px 2px 10px 1px rgba(255, 255, 255, 0.5);
-    opacity: 0.8;
+    opacity: 0.7;
+    
 }
 
 .productos-mas-vendidos p {
@@ -621,7 +626,12 @@ html body {
 }
 
 .marcas-trabajadas {
+    max-width: 1550px;
+    display: flex;
+    margin: auto;
     width: 100%;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -631,13 +641,25 @@ html body {
     background-color: white;
     margin-top: 20px;
     box-shadow: 0px 2px 10px 1px rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
 }
 
 .hot-sales {
     text-align: center;
+    
 }
 .fondo-contacto {
-    background-color: black;
+    /*ESTILO CONTACTO*/
+    border-radius: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    /*FIN ESTILO CONTACTO*/
+    background-color: #050505;
 }
 
 .fondo-contacto h1 {
@@ -686,6 +708,12 @@ html body {
     display: block;
     margin: 0 auto;
     max-width: 100%;
+    opacity: 100%;
+    margin-bottom: 45px;
+}
+
+.mapa-contacto {
+    margin-top: 20px;
 }
   
 
@@ -771,7 +799,9 @@ html body {
         max-width: 25%;
     }
 
+    
+
     .marcas-trabajadas img {
-        width: 100%;
+        max-width: 1400px;
     }
 }
