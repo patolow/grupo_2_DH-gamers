@@ -232,7 +232,6 @@
 .button-register-account:hover {
   background-color: #061161;
   color: white;
-  box-shadow: 0px 0px 10px rgb(141, 47, 47);
   font-weight: lighter
 }
 

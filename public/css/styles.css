@@ -111,7 +111,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width:22%;
+  width: 22%;
   cursor: pointer;
 }
 
@@ -231,7 +231,6 @@ main {
   position: absolute;
   top: 110px;
   left: 75px
-  
 }
 
 .agregarCarrito:hover {
@@ -240,11 +239,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
 }
 
 .agregarCarrito input {
-  
+
 
   border: none;
   font-size: 14px;
@@ -348,7 +347,7 @@ footer {
 
 @media (min-width: 606px) {
 
-  
+
 
   .main-product-list i {
     display: none;
@@ -395,7 +394,7 @@ footer {
 
 @media (min-width: 768px) {
 
-  
+
   .logo-nav {
     width: 12%;
   }
@@ -512,7 +511,7 @@ footer {
 
 }
 
-@media (min-width: 1030px){
+@media (min-width: 1030px) {
   .user-nav {
     display: flex;
     flex-direction: row;
@@ -527,7 +526,7 @@ footer {
 
 @media (min-width: 1000px) {
 
-  
+
 
   .logo-nav {
     width: 10%;
