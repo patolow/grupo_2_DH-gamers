@@ -80,7 +80,7 @@
                   </div>
                   <div class="formulario__grupo" id="grupo__password">
                     <div class="formulario__grupo-input">
-                          <input id="formulario__input" class="formulario__input" type="password" id="password" name="password" placeholder="Contraseña"
+                          <input class="formulario__input" type="password" id="password" name="password" placeholder="Contraseña"
                             value=<%=locals.oldData ? oldData.password : null %>>
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                             <i id="eye" class="fa-regular fas fa-eye-slash eye"></i>
@@ -98,7 +98,7 @@
                   </div>
                   <div class="formulario__grupo" id="grupo__password2">
                     <div class="formulario__grupo-input">
-                              <input id="formulario__input2" class="formulario__input" type="password"  name="confirmPassword"
+                              <input id="password2" class="formulario__input" type="password"  name="confirmPassword"
                                 placeholder="Confirmar Contraseña" value=<%=locals.oldData ? oldData.confirmPassword :
                                 null %>>
                                 <i class="formulario__validacion-estado fas fa-times-circle"></i>
