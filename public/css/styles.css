@@ -401,9 +401,8 @@ footer {
 
   .user-nav {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
     padding-right: 15px;
     width: 25%;
 
@@ -510,6 +509,18 @@ footer {
   }
 
 
+}
+
+@media (min-width: 1030px){
+  .user-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+    padding-right: 15px;
+    width: 25%;
+
+  }
 }
 
 
