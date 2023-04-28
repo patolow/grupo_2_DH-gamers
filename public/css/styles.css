@@ -215,7 +215,8 @@ main {
   cursor: pointer;
 }
 
-.agregarCarrito {
+.agregarCarrito2 {
+  font-weight: 700;
   background-color: whitesmoke;
   display: block;
   border-radius: 5px;
@@ -244,7 +245,7 @@ main {
 
 .agregarCarrito input {
   
-  font-weight: 700;
+
   border: none;
   font-size: 14px;
   width: 100%;

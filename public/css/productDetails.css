@@ -204,7 +204,7 @@ span {
   }
   
   .boton-editar {
-    background-color: red;
+    background-color: rgb(130, 130, 130)
     display: block;
     border-radius: 5px;
     width: 250px;
