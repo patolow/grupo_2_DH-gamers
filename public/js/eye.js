@@ -1,5 +1,5 @@
 let eye = document.getElementById("eye")
-let input = document.getElementById("formulario__input")
+let input = document.getElementById("password")
 
 eye.addEventListener("click", function() {
 
@@ -14,7 +14,7 @@ eye.addEventListener("click", function() {
 })
 
 let eye2 = document.getElementById("eye2")
-let input2 = document.getElementById("formulario__input2")
+let input2 = document.getElementById("password2")
 
 eye2.addEventListener("click", function() {
 
