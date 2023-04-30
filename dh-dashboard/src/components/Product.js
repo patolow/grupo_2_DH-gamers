@@ -1,8 +1,9 @@
 import React from "react";
 
-function Product({ name, price, stock, category, image }) {
+function Product({ name, price, stock, category, image, id }) {
 
   const url = "http://localhost:3000"  + image.split(",")[0]
+  const urlProduct = 
 
   return (
     <div className="container-datos">
