@@ -53,7 +53,7 @@ function UltimoCargado() {
         <div className="ultimo-producto-cargado-imagen">
           {ultimoCargado.sliderImage && (
             <div className="ultimo-producto-cargado-imagen">
-              <img src={`http://localhost:3000${ultimoCargado.sliderImage.split(",")[0]}`} />
+              <img src={`http://localhost:3000${ultimoCargado.sliderImage.split(",")[0]}`} alt="img"/>
             </div>
           )}
         </div>
