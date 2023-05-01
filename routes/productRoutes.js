@@ -3,6 +3,7 @@ const router = express.Router();
 const productControllers = require("../controllers/productControllers")
 const cartMiddleware = require('../middlewares/cartMiddleware')
 const createProductValidationsMiddleware = require('../middlewares/createProductValidationsMiddleware')
+const editProductValidationsMiddleware = require('../middlewares/editProductValidationsMiddleware')
 const path = require("path");
 const fs = require("fs");
 const { Op } = require('sequelize');
@@ -21,7 +22,7 @@ const upload = multer({ storage })
 router.get("/detail/:id/", productControllers.getProductDetail); //done
 
 router.get("/edit/:id/", productControllers.getEditProduct); //done
-router.put("/edit/:id/",  upload.any(), productControllers.editProduct); //to do
+router.put("/edit/:id/",  upload.any(),editProductValidationsMiddleware, productControllers.editProduct); //to do
 
 
 router.get("/create/", productControllers.getCreateProduct); //done

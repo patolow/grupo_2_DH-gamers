@@ -11,118 +11,175 @@
 
       <!--Registration Form-->
       <div class="main-form-createProduct">
-        <form action="/product/edit/<%= productToEdit.id%>?_method=PUT" method="POST" class="form" enctype="multipart/form-data">
+        <form action="/product/edit/<%= productToEdit.id%>?_method=PUT" method="POST" class="form"
+          enctype="multipart/form-data">
           <!--TITLE-->
           <h1 class="title">DH-GAMERS</h1>
           <h2 class="subtitle-edit-product">Modificar producto: <%= productToEdit.name %>
           </h2>
-    
+
           <!--DATA ENTRY boxes-->
-          <label class = "fieldName">Producto: </label>
-          <input class="boxes-product" type="text" name="name" placeholder="Producto, marca y modelo" value ="<%=  productToEdit.name %>" >
-          
-          <label class = "fieldName">Categoria del Producto: </label>
-          <select class="boxes-product" name="category" id="category" required >
-            <option value="none" disabled selected>Categoria del Producto</option>
-            <% if (productToEdit.id_category=="1" ) { %>
-              <option value="placasDeVideo" id="placasDeVideo" selected>Placas de Video</option>
-              <option value="monitores" id="monitores">Monitores</option>
-              <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
-              <option value="motherboards" id="motherboards">Motherboards</option>
-              <option value="waterCooling" id="waterCooling">Water Cooling</option>
-              <option value="joysticks" id="joysticks">Joysticks</option>
-              <option value="others" id="others">Otras</option>
-              <% } else if (productToEdit.id_category=="2") { %>
-                <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
-                <option value="monitores" id="monitores" selected>Monitores</option>
-                <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
-                <option value="motherboards" id="motherboards">Motherboards</option>
-                <option value="joysticks" id="joysticks">Joysticks</option>
-                <option value="waterCooling" id="waterCooling">Water Cooling</option>
-                <option value="others" id="others">Otras</option>
-                <% } else if (productToEdit.id_category=="3" ) { %>
-                  <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
+          <label class="fieldName">Producto: </label>
+          <input class="boxes-product" type="text" name="name" placeholder="Producto, marca y modelo"
+            value="<%=  productToEdit.name %>">
+          <% if (locals.errors && errors.name) { %>
+            <p class="errors">
+              <%= errors.name.msg %>
+            </p>
+            <% } %>
+
+              <label class="fieldName">Categoria del Producto: </label>
+              <select class="boxes-product" name="category" id="category" required>
+                <option value="none" disabled selected>Categoria del Producto</option>
+                <% if (productToEdit.id_category=="1" ) { %>
+                  <option value="placasDeVideo" id="placasDeVideo" selected>Placas de Video</option>
                   <option value="monitores" id="monitores">Monitores</option>
-                  <option value="microprocesadores" id="microprocesadores" selected>Microprocesadores</option>
+                  <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
                   <option value="motherboards" id="motherboards">Motherboards</option>
                   <option value="waterCooling" id="waterCooling">Water Cooling</option>
                   <option value="joysticks" id="joysticks">Joysticks</option>
                   <option value="others" id="others">Otras</option>
-                  <% } else if (productToEdit.id_category=="4" ) { %>
+                  <% } else if (productToEdit.id_category=="2" ) { %>
                     <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
-                    <option value="monitores" id="monitores">Monitores</option>
+                    <option value="monitores" id="monitores" selected>Monitores</option>
                     <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
-                    <option value="motherboards" id="motherboards" selected>Motherboards</option>
-                    <option value="waterCooling" id="waterCooling">Water Cooling</option>
+                    <option value="motherboards" id="motherboards">Motherboards</option>
                     <option value="joysticks" id="joysticks">Joysticks</option>
+                    <option value="waterCooling" id="waterCooling">Water Cooling</option>
                     <option value="others" id="others">Otras</option>
-                    <% } else if (productToEdit.id_category=="5" ) { %>
+                    <% } else if (productToEdit.id_category=="3" ) { %>
                       <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
                       <option value="monitores" id="monitores">Monitores</option>
-                      <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
+                      <option value="microprocesadores" id="microprocesadores" selected>Microprocesadores</option>
                       <option value="motherboards" id="motherboards">Motherboards</option>
-                      <option value="waterCooling" id="waterCooling" selected>Water Cooling</option>
+                      <option value="waterCooling" id="waterCooling">Water Cooling</option>
                       <option value="joysticks" id="joysticks">Joysticks</option>
                       <option value="others" id="others">Otras</option>
-                      <option value="others" id="others">Otras</option>
-                      <% } else if (productToEdit.id_category=="6" ) { %>
+                      <% } else if (productToEdit.id_category=="4" ) { %>
                         <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
                         <option value="monitores" id="monitores">Monitores</option>
                         <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
-                        <option value="motherboards" id="motherboards">Motherboards</option>
-                        <option value="waterCooling" id="waterCooling">Water Cooling</option>
-                        <option value="joysticks" id="joysticks" selected>Joysticks</option>
-                        <option value="others" id="others">Otras</option>
-                      <% } else { %>
-                        <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
-                        <option value="monitores" id="monitores">Monitores</option>
-                        <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
-                        <option value="motherboards" id="motherboards">Motherboards</option>
+                        <option value="motherboards" id="motherboards" selected>Motherboards</option>
                         <option value="waterCooling" id="waterCooling">Water Cooling</option>
                         <option value="joysticks" id="joysticks">Joysticks</option>
-                        <option value="others" id="others" selected>Otras</option>
-                        <% } %>
-          </select>
-          <label class = "fieldName">Precio: </label>
-          <input class="boxes-product" type="text" name="price" placeholder="Precio del Producto" value=<%=productToEdit.price %>>
-          <label class = "fieldName">Descuento (%): </label>
-          <input class="boxes-product" type="text" name="discount" placeholder="Descuento (0-50%)" value=<%=productToEdit.discount %>
-          maxlength="2">
-          <label class = "fieldName">Best Sellers: </label>
-          <select class="boxes-product" name="bestSellers" id="bestSellers" required>
-            <option value="none" disabled selected>Best Sellers</option>
-            <% if (productToEdit.bestSellers=="true") { %>
-              <option value="si" id="si" selected>Sí</option>
-              <option value="no" id="no">No</option>
-              <% } else { %>
-                <option value="si" id="si">Sí</option>
-                <option value="no" id="no" selected>No</option>
+                        <option value="others" id="others">Otras</option>
+                        <% } else if (productToEdit.id_category=="5" ) { %>
+                          <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
+                          <option value="monitores" id="monitores">Monitores</option>
+                          <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
+                          <option value="motherboards" id="motherboards">Motherboards</option>
+                          <option value="waterCooling" id="waterCooling" selected>Water Cooling</option>
+                          <option value="joysticks" id="joysticks">Joysticks</option>
+                          <option value="others" id="others">Otras</option>
+                          <option value="others" id="others">Otras</option>
+                          <% } else if (productToEdit.id_category=="6" ) { %>
+                            <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
+                            <option value="monitores" id="monitores">Monitores</option>
+                            <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
+                            <option value="motherboards" id="motherboards">Motherboards</option>
+                            <option value="waterCooling" id="waterCooling">Water Cooling</option>
+                            <option value="joysticks" id="joysticks" selected>Joysticks</option>
+                            <option value="others" id="others">Otras</option>
+                            <% } else { %>
+                              <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
+                              <option value="monitores" id="monitores">Monitores</option>
+                              <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
+                              <option value="motherboards" id="motherboards">Motherboards</option>
+                              <option value="waterCooling" id="waterCooling">Water Cooling</option>
+                              <option value="joysticks" id="joysticks">Joysticks</option>
+                              <option value="others" id="others" selected>Otras</option>
+                              <% } %>
+                            </select>
+              <% if (locals.errors && errors.category) { %>
+                <p class="errors">
+                  <%= errors.category.msg %>
+                </p>
                 <% } %>
-          </select>
+                
+              <label class="fieldName">Precio: </label>
+              <input class="boxes-product" type="text" name="price" placeholder="Precio del Producto"
+                value=<%=productToEdit.price %>>
+              <% if (locals.errors && errors.price) { %>
+                <p class="errors">
+                  <%= errors.price.msg %>
+                </p>
+                <% } %>
 
-          <label class = "fieldName">Stock: </label>
-          <input class="boxes-product" type="text" name="stock" placeholder="Cantidad de productos disponibles" value=<%=productToEdit.stock %>
-          maxlength="3">
-          <label class = "fieldName">Cantidad de reviews: </label>
-          <input class="boxes-product" type="text" name="reviews" placeholder="Cantidad de reviews" value=<%=productToEdit.reviews %>>
+                  <label class="fieldName">Descuento (%): </label>
+                  <input class="boxes-product" type="text" name="discount" placeholder="Descuento (0-50%)"
+                    value=<%=productToEdit.discount %>
+                  maxlength="2">
+                  <% if (locals.errors && errors.discount) { %>
+                    <p class="errors">
+                      <%= errors.discount.msg %>
+                    </p>
+                    <% } %>
 
-          <label class = "fieldName">Fecha de Entrega: </label>
-          <input class="boxes-product" type="date" name="deliveryDate" placeholder="Fecha de entrega" value=<%=productToEdit.deliveryDate %>>
+                      <label class="fieldName">Best Sellers: </label>
+                      <select class="boxes-product" name="bestSellers" id="bestSellers" required>
+                        <option value="none" disabled selected>Best Sellers</option>
+                        <% if (productToEdit.bestSellers=="true" ) { %>
+                          <option value="si" id="si" selected>Sí</option>
+                          <option value="no" id="no">No</option>
+                          <% } else { %>
+                            <option value="si" id="si">Sí</option>
+                            <option value="no" id="no" selected>No</option>
+                            <% } %>
+                      </select>
+                      <% if (locals.errors && errors.bestSellers) { %>
+                        <p class="errors">
+                          <%= errors.bestSellers.msg %>
+                        </p>
+                        <% } %>
+
+                          <label class="fieldName">Stock: </label>
+                          <input class="boxes-product" type="text" name="stock"
+                            placeholder="Cantidad de productos disponibles" value=<%=productToEdit.stock %>
+                          maxlength="3">
+                          <% if (locals.errors && errors.stock) { %>
+                            <p class="errors">
+                              <%= errors.stock.msg %>
+                            </p>
+                            <% } %>
+
+                              <label class="fieldName">Cantidad de reviews: </label>
+                              <input class="boxes-product" type="text" name="reviews" placeholder="Cantidad de reviews"
+                                value=<%=productToEdit.reviews %>>
+                              <% if (locals.errors && errors.reviews) { %>
+                                <p class="errors">
+                                  <%= errors.reviews.msg %>
+                                </p>
+                                <% } %>
+
+                                  <label class="fieldName">Fecha de Entrega: </label>
+                                  <input class="boxes-product" type="date" name="deliveryDate"
+                                    placeholder="Fecha de entrega" value=<%=productToEdit.deliveryDate %>>
 
 
-          <label class = "fieldName">Descripción: </label>
-          <textarea class="boxes-product" name="description" placeholder="Descripción del producto" id="description" cols="20" rows="5" minlength="50"
-            maxlength="2500" required><%= productToEdit.description %></textarea>
+                                  <label class="fieldName">Descripción: </label>
+                                  <textarea class="boxes-product" name="description"
+                                    placeholder="Descripción del producto" id="description" cols="20" rows="5"
+                                    minlength="50" maxlength="2500" required><%= productToEdit.description %></textarea>
+                                  <% if (locals.errors && errors.description) { %>
+                                    <p class="errors">
+                                      <%= errors.description.msg %>
+                                    </p>
+                                    <% } %>
 
-          <label>Imágen del producto:</label>
-          <div class="product-photo">
-            <input class="file" type="file" name="sliderImage">
-          </div>
+                                      <label>Imágen del producto:</label>
+                                      <div class="product-photo">
+                                        <input class="file" type="file" name="sliderImage">
+                                        <% if (locals.errors && errors.sliderImage) { %>
+                                          <p class="errors">
+                                            <%= errors.sliderImage.msg %>
+                                          </p>
+                                          <% } %>
+                                      </div>
 
-          <!--BUTTON-->
-          <div class="input-button">
-            <button type="submit" class="button-create-product">Guardar cambios</button>
-          </div>
+                                      <!--BUTTON-->
+                                      <div class="input-button">
+                                        <button type="submit" class="button-create-product">Guardar cambios</button>
+                                      </div>
       </div>
       </form>
 
