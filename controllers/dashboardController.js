@@ -54,7 +54,10 @@ const categoryListController = async (req, res) => {
 
 const productsDetailController = (req, res)=> {
   db
-  .Product.findByPk(req.params.id)
+  .Product.findByPk(
+    req.params.id,
+    {include: [{ association: "category" }]}
+    )
   .then(product => {
     return res.json({
       data: product,

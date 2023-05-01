@@ -5,7 +5,7 @@ const { productsListController, usersListController, categoryListController, pro
 router.get("/products", productsListController)
 router.get("/users", usersListController)
 router.get("/category", categoryListController)
-router.get("/products/:id", productsDetailController)
+router.get("/product/:id", productsDetailController)
 router.get("/users/:id", userDetailController)
 
 
