@@ -11,7 +11,7 @@
 
       <!--Registration Form-->
       <div class="main-form-createProduct">
-        <form action="/product/edit/<%= productToEdit.id%>?_method=PUT" method="POST" class="form">
+        <form action="/product/edit/<%= productToEdit.id%>?_method=PUT" method="POST" class="form" enctype="multipart/form-data">
           <!--TITLE-->
           <h1 class="title">DH-GAMERS</h1>
           <h2 class="subtitle-edit-product">Modificar producto: <%= productToEdit.name %>
