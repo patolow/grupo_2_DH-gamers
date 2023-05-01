@@ -9,7 +9,7 @@ function User({ name, email, username, image }) {
         <p>Email: {email}</p>
         <p>Nombre de usuario: {username}</p>
       </div>
-      <div className="datos-imagen">
+      <div className="datos-imagen-user">
         <img 
           src={url}
           alt="imagen usuario"

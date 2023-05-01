@@ -64,10 +64,11 @@
   margin-top: 30px;
 }
 
+
 .spinner-ultimo-cargado {
   padding: 30px;
   width: 100%;
-  min-width: 800px;
+  min-width: 780px  ;
   min-height: 300px;
   border: 1px solid rgb(193, 182, 182);
   border-radius: 20px;
@@ -76,6 +77,21 @@
   display: grid;
   justify-content: center;
   align-items: center;
+}
+
+.spinner-ultimo-cargado-categories {
+  padding: 30px;
+  width: 100%;
+  min-width: 310px;
+  min-height: 300px;
+  border: 1px solid rgb(193, 182, 182);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgb(171, 161, 161);
+  margin-left: 5px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
 }
 
 .ultimo-producto-cargado {
@@ -236,7 +252,7 @@
   align-items: flex-start;
 }
 
-.datos-imagen {
+.datos-imagen, .datos-imagen-user {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -248,4 +264,10 @@
   margin-top: 8%;
   margin-right: 25px;
   width: 30%;
+}
+
+.datos-imagen-user img {
+  margin-top: 8%;
+  margin-right: 25px;
+  width: 15%;
 }

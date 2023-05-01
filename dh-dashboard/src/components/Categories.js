@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
 import SmallCard from "./SmallCard"
 
 function Categories() {
 
-  //GPU
   const [totalGPU, setTotalGPU] = useState(null)
   const [totalMonitores, setTotalMonitores] = useState(null)
   const [totalMicroprocesadores, setTotalMicroprocesadores] = useState(null)
@@ -11,8 +11,10 @@ function Categories() {
   const [totalJoysticks, setTotalJoysticks] = useState(null)
   const [totalWaterCooling, setTotalWaterCooling] = useState(null)
   const [totalOthers, setTotalOthers] = useState(null)
+  const [loadingCategories, setLoadingCategories] = useState(false)
 
   useEffect(() => {
+    setLoadingCategories(true)
     fetch("http://localhost:3000/dashboard/products")
       .then(response => response.json())
       .then(jsonResponse => {
@@ -24,8 +26,24 @@ function Categories() {
         setTotalOthers(jsonResponse.Others)
         setTotalGPU(jsonResponse.GPU)
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => setLoadingCategories(false))
   }, []);
+
+  if (loadingCategories) {
+    return (
+      <div className="ultimo-producto-cargado-container">
+        <div className='spinner-ultimo-cargado-categories'>
+          <ClipLoader
+            loading={loadingCategories}
+            size={40}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
+      </div>
+    )
+  }
 
   return (
     <>

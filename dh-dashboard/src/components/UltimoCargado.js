@@ -41,7 +41,6 @@ function UltimoCargado() {
   }
   return (
 
-
     <div className="ultimo-producto-cargado-container">
       <Link className="product-link" to={`/product/detail?id=${ultimoCargado.id}`} replace>
         <div className="ultimo-producto-cargado">
