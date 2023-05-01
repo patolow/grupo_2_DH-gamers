@@ -1,6 +1,5 @@
 const express = require("express");
 const db = require("../database/models");
-
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
@@ -11,7 +10,6 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 });
 
 const controller = {
-
 
   addItemtoCart: (req, res) => {
 
@@ -34,6 +32,7 @@ const controller = {
     }
     Promise.all(promises)
       .then(() => {
+        res.locals.foo = '5'
         return res.status(200).send('Producto(s) agregado(s) al carrito');
       })
       .catch((error) => {
@@ -85,6 +84,7 @@ const controller = {
           precioTotal += item.dataValues.quantity * item.dataValues.product.price; // actualizar el precio total con la cantidad de productos y su precio
         });
         // console.log(carrito)
+        //res.locals.foo = contadorItems
         res.render("productCart.ejs", { carrito, precioTotal, contadorItems });
       })
       .catch((error) => {
@@ -97,8 +97,6 @@ const controller = {
     db.Cart.destroy({ where: { productId: req.params.id } })
       .then(res.redirect("/cart"))
   },
-
-
 
   removerUnItem: (req, res) => {
     // console.log(req.body.productId)
@@ -132,6 +130,44 @@ const controller = {
         console.error(err);
         // Manejo del error
       });
+  },
+
+  itemCount: (req, res) => {
+    //similar al get, pero devolviendo un json
+    if (req.session?.usuarioLogueado) {
+      db.Cart.findAll({
+        attributes: [
+          'productId',
+          [Sequelize.fn('COUNT', Sequelize.col('productId')), 'quantity']
+        ],
+        include: [{
+          model: db.Product,
+          as: 'product'
+        }],
+        where: {
+          userId: req.session.usuarioLogueado.id
+        },
+        group: ['product.id']
+      })
+        .then(items => {
+          let contadorItems = 0
+
+          items.forEach(item => {
+            const producto = {
+              "quantity": item.dataValues.quantity,
+            }
+            contadorItems += item.dataValues.quantity
+          })
+
+          res.json({ count: contadorItems })
+        })
+        .catch(error => {
+          console.error(error);
+          res.status(500).json({ error: 'Error retrieving cart item count' })
+        });
+    } else {
+      res.json({ count: 0 }) //si el usuario está deslogueado
+    }
   }
 };
 

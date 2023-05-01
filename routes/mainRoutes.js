@@ -15,6 +15,8 @@ router.get('/cart', cartMiddleware, cartControllers.getCart);
 router.post('/cart', cartMiddleware, cartControllers.addItemtoCart);
 router.post('/cart/remove', cartMiddleware, cartControllers.removerUnItem);
 router.post('/cart/add', cartMiddleware, cartControllers.agregarUnItem);
+router.get('/cart/itemCount', cartMiddleware, cartControllers.itemCount);
+
 
 router.get("/aboutUs", mainControllers.aboutUs);
 
