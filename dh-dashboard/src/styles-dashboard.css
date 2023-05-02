@@ -222,7 +222,8 @@
 }
 
 .dashboard-division {
-  width: 90%;
+  width: 80%;
+  max-width: 1200px;
   display: flex;
   background-color: white;
   border: 1px solid rgb(130, 126, 126);
@@ -261,8 +262,8 @@
 }
 
 .datos-imagen img {
-  margin-top: 8%;
-  margin-right: 25px;
+  margin: 5px;
+  margin-right: 15px;
   width: 30%;
 }
 
