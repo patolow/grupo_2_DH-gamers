@@ -16,7 +16,6 @@
             </form>
           </div>
 
-
           <div class="user-nav">
 
             <% if (locals.isLogged) { %>
@@ -30,27 +29,24 @@
 
               <% } else { %>
                 <a href="/users/register">
-                  <button class="imagen-ingreso-grande">
-                    <i class="fa-solid fa-user-plus" style="color: #000000; font-size: 0.8rem; margin-right: 13px;"></i>
-                    REGISTRO
-                  </button>
+                  <div class="imagen-ingreso-grande">
+                    <i class="fa-solid fa-user-plus"
+                        style="color: #000000; font-size: 1rem; margin-right: 13px;"></i>
+                    <span>REGISTRO</span>
+                  </div>
                 </a>
                 <a href="/users/login">
-                  <button class="imagen-ingreso-grande">
+                  <div class="imagen-ingreso-grande">
                     <i class="fa-solid fa-circle-user"
-                      style="color: #000000; font-size: 0.8rem; margin-right: 13px;"></i>
-                    LOGIN
-                  </button>
+                        style="color: #000000; font-size: 1rem; margin-right: 13px;"></i>
+                    <span>LOGIN</span>
+                  </div>
                 </a>
+                
                 <img src="/images/index/user.png" class="imagen-default-chica" id="user-desplegable">
 
                 <% } %>
-
-
           </div>
-
-
-
 
     </div>
   </nav>
@@ -63,25 +59,39 @@
       <!--Menu hamburguesa-->
       <div class="menu-hamburguesa inactive" id="menu-hamburguesa">
         <div class="sub-menu-hamburguesa">
-          <a href="/product/all">TODOS LOS PRODUCTOS</a>
+          <a href="/product/all">
+            <div><i class="fa-solid fa-boxes-stacked"></i></div> TODOS LOS PRODUCTOS
+          </a>
         </div>
         <div class="sub-menu-hamburguesa">
-          <a href="/product/all/placasdevideo/">PLACAS DE VIDEO</a>
+          <a href="/product/all/placasdevideo/">
+            <div> <i class="fa-solid fa-fan"></i></div> PLACAS DE VIDEO
+          </a>
         </div>
         <div class="sub-menu-hamburguesa">
-          <a href="/product/all/monitores/">MONITORES</a>
+          <a href="/product/all/monitores/">
+            <div><i class="fa-solid fa-desktop"></i></div>MONITORES
+          </a>
         </div>
         <div class="sub-menu-hamburguesa">
-          <a href="/product/all/microprocesadores/">MICROPROCESADORES</a>
+          <a href="/product/all/microprocesadores/">
+            <div> <i class="fa-solid fa-microchip"></i></div> MICROPROCESADORES
+          </a>
         </div>
         <div class="sub-menu-hamburguesa">
-          <a href="/product/all/motherboards/">MOTHERBOARDS</a>
+          <a href="/product/all/motherboards/">
+            <div> <i class="fa-solid fa-microchip"></i></div> MOTHERBOARDS
+          </a>
         </div>
         <div class="sub-menu-hamburguesa">
-          <a href="/product/all/joystick/">JOYSTICK</a>
+          <a href="/product/all/joystick/">
+            <div><i class="fa-solid fa-gamepad"></i></div>JOYSTICK
+          </a>
         </div>
         <div class="sub-menu-hamburguesa">
-          <a href="#">CONTACTANOS</a>
+          <a href="#">
+            <div> <i class="fa-solid fa-phone-volume"></i></div> CONTACTANOS
+          </a>
         </div>
 
 
@@ -91,11 +101,15 @@
       <!--Menu USER-->
 
       <div class="menu-user inactive" id="menu-user">
+
         <div class="sub-menu-user">
-          <a href="/users/register">REGISTRATE</a>
+          <div><a href="/users/register"><i class="fa-solid fa-user-plus"
+                style="color: #000000; font-size: 0.9rem; margin-right: 13px;"></i> </div> REGISTRO</a>
         </div>
+
         <div class="sub-menu-user">
-          <a href="/users/login">LOGUEATE</a>
+          <a href="/users/login"><div><i class="fa-solid fa-circle-user"
+                style="color: #000000; font-size: 0.9rem; margin-right: 13px;"></i> </div> LOGIN</a>
         </div>
 
       </div>
@@ -103,9 +117,10 @@
 
       <!--Fin menú USER-->
 
-
       <ul class="menu-barra-gris">
-        <li><a href="/product/all">PRODUCTOS</a></li>
+        <li><a href="/product/all">
+            <div><i class="fa-solid fa-desktop"></i></div>PRODUCTOS
+          </a></li>
         <li><a href="/product/all/placasdevideo/">PLACAS DE VIDEO</a></li>
         <li><a href="/product/all/monitores/">MONITORES</a></li>
         <li><a href="/product/all/microprocesadores/">MICROPROCESADORES</a></li>
