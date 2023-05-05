@@ -16,9 +16,8 @@
             </form>
           </div>
 
-          <div class="user-nav">
-
-            <% if (locals.isLogged) { %>
+          <% if (locals.isLogged) { %>
+            <div class="user-nav-logged">
               <div class="saludo">
                 <i class="fa-solid fa-hand-peace"></i> Hola <%= locals.usuarioLogueado.userName %>
               </div>
@@ -26,27 +25,25 @@
                   class="imagen-ingreso-chica"></a>
               <!--    <a href="/users/logout"><button class="imagen-ingreso-grande">LOGOUT</button></a>-->
               <a href="/users/logout" class="logout-icon"><i class="fas fa-sign-out-alt"></i></a>
-
-              <% } else { %>
+            </div>
+            <% } else { %>
+              <div class="user-nav">
                 <a href="/users/register">
                   <div class="imagen-ingreso-grande">
-                    <i class="fa-solid fa-user-plus"
-                        style="color: #000000; font-size: 1rem; margin-right: 13px;"></i>
+                    <i class="fa-solid fa-user-plus" style="color: #000000; font-size: 1rem; margin-right: 13px;"></i>
                     <span>REGISTRO</span>
                   </div>
                 </a>
                 <a href="/users/login">
                   <div class="imagen-ingreso-grande">
-                    <i class="fa-solid fa-circle-user"
-                        style="color: #000000; font-size: 1rem; margin-right: 13px;"></i>
+                    <i class="fa-solid fa-circle-user" style="color: #000000; font-size: 1rem; margin-right: 13px;"></i>
                     <span>LOGIN</span>
                   </div>
                 </a>
-                
                 <img src="/images/index/user.png" class="imagen-default-chica" id="user-desplegable">
-
-                <% } %>
-          </div>
+              </div>
+              <% } %>
+    </div>
 
     </div>
   </nav>
@@ -108,8 +105,10 @@
         </div>
 
         <div class="sub-menu-user">
-          <a href="/users/login"><div><i class="fa-solid fa-circle-user"
-                style="color: #000000; font-size: 0.9rem; margin-right: 13px;"></i> </div> LOGIN</a>
+          <a href="/users/login">
+            <div><i class="fa-solid fa-circle-user" style="color: #000000; font-size: 0.9rem; margin-right: 13px;"></i>
+            </div> LOGIN
+          </a>
         </div>
 
       </div>
