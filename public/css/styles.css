@@ -410,8 +410,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     padding-right: 15px;
-    width: 25%;
-
+    width: 17%;
   }
 
   .user-nav-logged {
@@ -428,7 +427,6 @@ footer {
     font-size: 0.7rem;
   }
 
-
   .imagen-ingreso-grande {
     display: block;
 
@@ -437,8 +435,6 @@ footer {
   .imagen-default-chica {
     display: none;
   }
-
-
 
   .footer-container {
     display: none;
@@ -449,14 +445,12 @@ footer {
     width: 100%;
     height: 90px;
     background-color: black;
-    ;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   .footer-tablet-izquierda {
-
     padding-left: 20px;
     line-height: 20px;
     display: flex;
@@ -468,7 +462,6 @@ footer {
     padding-left: 10px;
   }
 
-
   .footer-tablet-list li a {
     text-decoration: none;
     color: white;
@@ -477,26 +470,20 @@ footer {
   }
 
   .footer-tablet-redes-sociales {
-
     padding-top: 10px;
-
     height: 100%;
     line-height: 30px;
     text-align: center;
-
   }
 
   .footer-tablet-redes-sociales p {
     color: #02CFB7;
     font-size: 16px;
-
   }
 
   .footer-tablet-redes-sociales img {
-
     width: 20px;
     color: black;
-
   }
 
   .footer-tablet-derecha {
@@ -532,7 +519,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     padding-right: 15px;
-    width: 25%;
+    width: 11%;
     gap: 0px;
 
   }
