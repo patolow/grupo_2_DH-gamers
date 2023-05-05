@@ -21,7 +21,7 @@
 
             <% if (locals.isLogged) { %>
               <div class="saludo">
-                Hola <%= locals.usuarioLogueado.userName %>
+                <i class="fa-solid fa-hand-peace"></i> Hola <%= locals.usuarioLogueado.userName %>
               </div>
               <a href="/users/profile" class="profile-photo"><img src="<%= locals.usuarioLogueado.image %> "
                   class="imagen-ingreso-chica"></a>

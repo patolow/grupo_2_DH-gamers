@@ -24,27 +24,27 @@
             <div>
               <h2>Tu Información personal</h2>
             </div>
-            <p><b>Nombre Completo:</b>
+            <p><b><i class="fa-solid fa-signature"></i>Nombre Completo:</b>
               <%= usuarioBase.completeName %>
             </p>
-            <p><b>Nombre Usuario:</b>
+            <p><b><i class="fa-solid fa-user-secret"></i> Nombre Usuario:</b>
               <%= usuarioBase.userName %>
             </p>
-            <p><b>Fecha de Nacimiento:</b>
+            <p><b><i class="fa-solid fa-cake-candles"></i> Fecha de Nacimiento:</b>
               <%= usuarioBase.birthday %>
             </p>
-            <p><b>Domicilio:</b>
+            <p><b><i class="fa-solid fa-location-dot"></i> Domicilio:</b>
               <%= usuarioBase.address %>
             </p>
-            <p><b>Telefono:</b>
+            <p><b><i class="fa-solid fa-phone"></i> Telefono:</b>
               <%= usuarioBase.phone %>
             </p>
-            <p><b>Email:</b>
+            <p><b><i class="fa-solid fa-at"></i> Email:</b>
               <%= usuarioBase.email %>
             </p>
             <br>
-            <p><b>Editar Usuario:</b><a href="/users/edit/<%=locals.usuarioLogueado.id%>"> Click acá</a></p>
-            <p><b>Ver mi carrito:</b><a href="/cart"> Click acá</a></p>
+            <p><b> <i class="fa-solid fa-user-pen"></i> Editar Usuario:</b><a href="/users/edit/<%=locals.usuarioLogueado.id%>"> Click acá </a></p>
+            <p><b><i class="fa-solid fa-cart-flatbed-suitcase"></i> Ver mi carrito:</b><a href="/cart"> Click acá </i></a></p>
           </div>
 
         </section>
