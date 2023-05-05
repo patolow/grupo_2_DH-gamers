@@ -29,9 +29,20 @@
               <a href="/users/logout" class="logout-icon"><i class="fas fa-sign-out-alt"></i></a>
 
               <% } else { %>
-                  <a href="/users/register"><button class="imagen-ingreso-grande">REGISTRO</button></a>
-                  <a href="/users/login"><button class="imagen-ingreso-grande">LOGIN</button></a>
-                  <img src="/images/index/user.png" class="imagen-default-chica" id="user-desplegable">
+                <a href="/users/register">
+                  <button class="imagen-ingreso-grande">
+                    <i class="fa-solid fa-user-plus" style="color: #000000; font-size: 0.8rem; margin-right: 13px;"></i>
+                    REGISTRO
+                  </button>
+                </a>
+                <a href="/users/login">
+                  <button class="imagen-ingreso-grande">
+                    <i class="fa-solid fa-circle-user"
+                      style="color: #000000; font-size: 0.8rem; margin-right: 13px;"></i>
+                    LOGIN
+                  </button>
+                </a>
+                <img src="/images/index/user.png" class="imagen-default-chica" id="user-desplegable">
 
                 <% } %>
 
@@ -86,7 +97,7 @@
         <div class="sub-menu-user">
           <a href="/users/login">LOGUEATE</a>
         </div>
-        
+
       </div>
 
 
@@ -105,9 +116,11 @@
       <% if (locals.isLogged) { %>
 
         <div id="cart-icon-container">
-          <div id="cart-item-count" class="cart-item-count"><%= locals.items %></div>
+          <div id="cart-item-count" class="cart-item-count">
+            <%= locals.items %>
+          </div>
 
-         <!-- <input id="cart-item-count" type='text' class="cart-item-count" name='cart-item-count' value='<%= locals.items %>' /> -->
+          <!-- <input id="cart-item-count" type='text' class="cart-item-count" name='cart-item-count' value='<%= locals.items %>' /> -->
           <a href="/cart"><img src="/images/index/8145764.png" alt="Carrito de compras"></a>
         </div>
 
@@ -123,7 +136,7 @@
     <img src="/images/index/chatbot-window.png" alt="Chat Bot" class="chatbot-window inactive">
 
   </section>
-  
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/cartIcon.js"></script>
