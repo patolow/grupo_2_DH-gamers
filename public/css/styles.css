@@ -124,10 +124,9 @@ body {
 
 
 .imagen-ingreso-grande {
-  margin: 5px;
-  padding: 5px;
-  width: 150px;
-  height: 30px;
+  padding: 7px 10px;
+  width: 155px;
+  height: 35px;
   background-color: aliceblue;
   border: 1px solid black;
   border-radius: 10px;
@@ -194,7 +193,7 @@ main {
 
 }
 
-.main-product-list i {
+.fa-list {
   color: #061161;
   width: 30px;
   cursor: pointer;

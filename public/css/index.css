@@ -55,6 +55,9 @@ html body {
     color: black;
     transition: all 500ms;
     font-weight: bold;
+    text-align: center;
+    color: #061161;
+    cursor: pointer;
 }
 
 .sub-menu-hamburguesa:hover {
