@@ -102,7 +102,7 @@ const controller = {
         }
       }
 
-      updatedValues = {
+      let updatedValues = {
         "name": req.body.name,
         "price": req.body.price,
         "discount": req.body.discount,
@@ -111,7 +111,7 @@ const controller = {
         "reviews": req.body.reviews,
         "deliveryDate": req.body.deliveryDate,
         "description": req.body.description,
-        "id_category": req.body.id_category
+        "id_category": req.body.category,
       }
 
       if (req.files != '') {

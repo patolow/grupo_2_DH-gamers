@@ -30,72 +30,25 @@
 
               <label class="fieldName">Categoria del Producto: </label>
               <select class="boxes-product" name="category" id="category" required>
-                <option value="none" disabled selected>Categoria del Producto</option>
-                <% if (productToEdit.id_category=="1" ) { %>
-                  <option value="placasDeVideo" id="placasDeVideo" selected>Placas de Video</option>
-                  <option value="monitores" id="monitores">Monitores</option>
-                  <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
-                  <option value="motherboards" id="motherboards">Motherboards</option>
-                  <option value="waterCooling" id="waterCooling">Water Cooling</option>
-                  <option value="joysticks" id="joysticks">Joysticks</option>
-                  <option value="others" id="others">Otras</option>
-                  <% } else if (productToEdit.id_category=="2" ) { %>
-                    <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
-                    <option value="monitores" id="monitores" selected>Monitores</option>
-                    <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
-                    <option value="motherboards" id="motherboards">Motherboards</option>
-                    <option value="joysticks" id="joysticks">Joysticks</option>
-                    <option value="waterCooling" id="waterCooling">Water Cooling</option>
-                    <option value="others" id="others">Otras</option>
-                    <% } else if (productToEdit.id_category=="3" ) { %>
-                      <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
-                      <option value="monitores" id="monitores">Monitores</option>
-                      <option value="microprocesadores" id="microprocesadores" selected>Microprocesadores</option>
-                      <option value="motherboards" id="motherboards">Motherboards</option>
-                      <option value="waterCooling" id="waterCooling">Water Cooling</option>
-                      <option value="joysticks" id="joysticks">Joysticks</option>
-                      <option value="others" id="others">Otras</option>
-                      <% } else if (productToEdit.id_category=="4" ) { %>
-                        <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
-                        <option value="monitores" id="monitores">Monitores</option>
-                        <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
-                        <option value="motherboards" id="motherboards" selected>Motherboards</option>
-                        <option value="waterCooling" id="waterCooling">Water Cooling</option>
-                        <option value="joysticks" id="joysticks">Joysticks</option>
-                        <option value="others" id="others">Otras</option>
-                        <% } else if (productToEdit.id_category=="5" ) { %>
-                          <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
-                          <option value="monitores" id="monitores">Monitores</option>
-                          <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
-                          <option value="motherboards" id="motherboards">Motherboards</option>
-                          <option value="waterCooling" id="waterCooling" selected>Water Cooling</option>
-                          <option value="joysticks" id="joysticks">Joysticks</option>
-                          <option value="others" id="others">Otras</option>
-                          <option value="others" id="others">Otras</option>
-                          <% } else if (productToEdit.id_category=="6" ) { %>
-                            <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
-                            <option value="monitores" id="monitores">Monitores</option>
-                            <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
-                            <option value="motherboards" id="motherboards">Motherboards</option>
-                            <option value="waterCooling" id="waterCooling">Water Cooling</option>
-                            <option value="joysticks" id="joysticks" selected>Joysticks</option>
-                            <option value="others" id="others">Otras</option>
-                            <% } else { %>
-                              <option value="placasDeVideo" id="placasDeVideo">Placas de Video</option>
-                              <option value="monitores" id="monitores">Monitores</option>
-                              <option value="microprocesadores" id="microprocesadores">Microprocesadores</option>
-                              <option value="motherboards" id="motherboards">Motherboards</option>
-                              <option value="waterCooling" id="waterCooling">Water Cooling</option>
-                              <option value="joysticks" id="joysticks">Joysticks</option>
-                              <option value="others" id="others" selected>Otras</option>
-                              <% } %>
-                            </select>
+                <option value="" disabled selected>Categoria del Producto</option>
+                <% const categories = [
+                  { id: 1, name: 'Placas de Video' },
+                  { id: 2, name: 'Monitores' },
+                  { id: 3, name: 'Microprocesadores' },
+                  { id: 4, name: 'Motherboards' },
+                  { id: 5, name: 'Water Cooling' },
+                  { id: 6, name: 'Joysticks' },
+                  { id: 7, name: 'Otras' }
+                ]; %>
+                <% categories.forEach(category => { %>
+                  <option value="<%= category.id %>" <%= category.id === productToEdit.id_category ? 'selected' : '' %>><%= category.name %></option>
+                <% }); %>
+              </select>
               <% if (locals.errors && errors.category) { %>
                 <p class="errors">
                   <%= errors.category.msg %>
                 </p>
                 <% } %>
-                
               <label class="fieldName">Precio: </label>
               <input class="boxes-product" type="text" name="price" placeholder="Precio del Producto"
                 value=<%=productToEdit.price %>>
@@ -175,7 +128,6 @@
                                           </p>
                                           <% } %>
                                       </div>
-
                                       <!--BUTTON-->
                                       <div class="input-button">
                                         <button type="submit" class="button-create-product">Guardar cambios</button>
