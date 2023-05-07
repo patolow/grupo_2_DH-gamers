@@ -119,9 +119,9 @@
                                     </p>
                                     <% } %>
 
-                                      <label>Imágen del producto:</label>
+                                      <label class="fieldNameImg">Imágen del producto:</label>
                                       <div class="product-photo">
-                                        <input class="file" type="file" name="sliderImage">
+                                        <input class="file" id="fileImg" type="file" name="sliderImage">
                                         <% if (locals.errors && errors.sliderImage) { %>
                                           <p class="errors">
                                             <%= errors.sliderImage.msg %>

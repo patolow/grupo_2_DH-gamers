@@ -52,7 +52,7 @@
   width: 100%;
   max-width: 500px;
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 3px;
   border-radius: 10px;
   transition: all .5s ease;
   border: 2px solid #4f4c4c;
@@ -77,8 +77,9 @@ textarea {
   font-size: 20px;
   margin-left: 4px;
 }
-.fieldName {
+.fieldName, .fieldNameImg {
 padding: 5px;
+margin-top: 20px;
 }
 
 /* BUTTON */
@@ -109,10 +110,10 @@ padding: 5px;
   margin: 0;
 }
 
-.file {
+#fileImg {
   width: 100%;
   max-width: 500px;
-  padding: 15px 0px;
-  margin-bottom: 20px;
+  padding: 10px 0px 15px;
+  margin-bottom: 2px;
 
 }
