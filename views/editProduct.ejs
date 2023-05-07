@@ -49,73 +49,56 @@
                   <%= errors.category.msg %>
                 </p>
                 <% } %>
-              <label class="fieldName">Precio: </label>
-              <input class="boxes-product" type="text" name="price" placeholder="Precio del Producto"
-                value=<%=productToEdit.price %>>
-              <% if (locals.errors && errors.price) { %>
-                <p class="errors">
-                  <%= errors.price.msg %>
-                </p>
-                <% } %>
-
-                  <label class="fieldName">Descuento (%): </label>
-                  <input class="boxes-product" type="text" name="discount" placeholder="Descuento (0-50%)"
-                    value=<%=productToEdit.discount %>
-                  maxlength="2">
-                  <% if (locals.errors && errors.discount) { %>
+                  <label class="fieldName">Precio: </label>
+                  <input class="boxes-product" type="text" name="price" placeholder="Precio del Producto"
+                    value=<%=productToEdit.price %>>
+                  <% if (locals.errors && errors.price) { %>
                     <p class="errors">
-                      <%= errors.discount.msg %>
+                      <%= errors.price.msg %>
                     </p>
                     <% } %>
 
-                      <label class="fieldName">Best Sellers: </label>
-                      <select class="boxes-product" name="bestSellers" id="bestSellers" required>
-                        <option value="none" disabled selected>Best Sellers</option>
-                        <% if (productToEdit.bestSellers=="true" ) { %>
-                          <option value="si" id="si" selected>Sí</option>
-                          <option value="no" id="no">No</option>
-                          <% } else { %>
-                            <option value="si" id="si">Sí</option>
-                            <option value="no" id="no" selected>No</option>
-                            <% } %>
-                      </select>
-                      <% if (locals.errors && errors.bestSellers) { %>
+                      <label class="fieldName">Descuento (%): </label>
+                      <input class="boxes-product" type="text" name="discount" placeholder="Descuento (0-50%)"
+                        value=<%=productToEdit.discount %>>
+                      <% if (locals.errors && errors.discount) { %>
                         <p class="errors">
-                          <%= errors.bestSellers.msg %>
+                          <%= errors.discount.msg %>
                         </p>
                         <% } %>
 
-                          <label class="fieldName">Stock: </label>
-                          <input class="boxes-product" type="text" name="stock"
-                            placeholder="Cantidad de productos disponibles" value=<%=productToEdit.stock %>
-                          maxlength="3">
-                          <% if (locals.errors && errors.stock) { %>
+                          <label class="fieldName">Best Sellers: </label>
+                          <select class="boxes-product" name="bestSellers" id="bestSellers" required>
+                            <option value="none" disabled selected>Best Sellers</option>
+                            <% if (productToEdit.bestSellers=="true" ) { %>
+                              <option value="si" id="si" selected>Sí</option>
+                              <option value="no" id="no">No</option>
+                              <% } else { %>
+                                <option value="si" id="si">Sí</option>
+                                <option value="no" id="no" selected>No</option>
+                                <% } %>
+                          </select>
+                          <% if (locals.errors && errors.bestSellers) { %>
                             <p class="errors">
-                              <%= errors.stock.msg %>
+                              <%= errors.bestSellers.msg %>
                             </p>
                             <% } %>
 
-                              <label class="fieldName">Cantidad de reviews: </label>
-                              <input class="boxes-product" type="text" name="reviews" placeholder="Cantidad de reviews"
-                                value=<%=productToEdit.reviews %>>
-                              <% if (locals.errors && errors.reviews) { %>
+                              <label class="fieldName">Stock: </label>
+                              <input class="boxes-product" type="text" name="stock"
+                                placeholder="Cantidad de productos disponibles" value=<%=productToEdit.stock %>>
+                              <% if (locals.errors && errors.stock) { %>
                                 <p class="errors">
-                                  <%= errors.reviews.msg %>
+                                  <%= errors.stock.msg %>
                                 </p>
                                 <% } %>
 
-                                  <label class="fieldName">Fecha de Entrega: </label>
-                                  <input class="boxes-product" type="date" name="deliveryDate"
-                                    placeholder="Fecha de entrega" value=<%=productToEdit.deliveryDate %>>
-
-
-                                  <label class="fieldName">Descripción: </label>
-                                  <textarea class="boxes-product" name="description"
-                                    placeholder="Descripción del producto" id="description" cols="20" rows="5"
-                                    minlength="50" maxlength="2500" required><%= productToEdit.description %></textarea>
-                                  <% if (locals.errors && errors.description) { %>
+                                  <label class="fieldName">Cantidad de reviews: </label>
+                                  <input class="boxes-product" type="text" name="reviews"
+                                    placeholder="Cantidad de reviews" value=<%=productToEdit.reviews %>>
+                                  <% if (locals.errors && errors.reviews) { %>
                                     <p class="errors">
-                                      <%= errors.description.msg %>
+                                      <%= errors.reviews.msg %>
                                     </p>
                                     <% } %>
 
@@ -132,6 +115,34 @@
                                       <div class="input-button">
                                         <button type="submit" class="button-create-product">Guardar cambios</button>
                                       </div>
+                                      <label class="fieldName">Fecha de Entrega: </label>
+                                      <input class="boxes-product" type="date" name="deliveryDate"
+                                        placeholder="Fecha de entrega" value=<%=productToEdit.deliveryDate %>>
+
+
+                                      <label class="fieldName">Descripción: </label>
+                                      <textarea class="boxes-product" name="description"
+                                        placeholder="Descripción del producto" id="description" cols="20" rows="5"
+                                        required><%= productToEdit.description %></textarea>
+                                      <% if (locals.errors && errors.description) { %>
+                                        <p class="errors">
+                                          <%= errors.description.msg %>
+                                        </p>
+                                        <% } %>
+
+                                          <label class="fieldNameImg">Imágen del producto:</label>
+                                          <div class="product-photo">
+                                            <input class="file" id="fileImg" type="file" name="sliderImage">
+                                            <% if (locals.errors && errors.sliderImage) { %>
+                                              <p class="errors">
+                                                <%= errors.sliderImage.msg %>
+                                              </p>
+                                              <% } %>
+                                          </div>
+                                          <!--BUTTON-->
+                                          <div class="input-button">
+                                            <button type="submit" class="button-create-product">Guardar cambios</button>
+                                          </div>
       </div>
       </form>
 

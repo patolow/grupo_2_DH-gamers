@@ -2,7 +2,7 @@ const express = require("express");
 const db = require("../database/models")
 const { validationResult } = require('express-validator')
 const path = require("path");
-const { Op } = require("sequelize");
+const { Op, where } = require("sequelize");
 
 
 
@@ -90,7 +90,7 @@ const controller = {
 
   editProduct: (req, res) => {
     let errors = validationResult(req);
-    
+
     if (errors.isEmpty()) {
 
       let imageSlider = ''
@@ -133,9 +133,26 @@ const controller = {
           console.error("Error al editar el producto: ", error);
           res.status(500).send('Error al editar el producto.');
         })
-        
+
     } else {
-      res.render('editProduct', { errors: errors.mapped(), productToEdit: { ...req.body, id: req.params.id } });
+      db.Category.findAll({
+        where: { id: req.body.category }
+      })
+        .then(data => {
+          let productToEdit = {
+            "name": req.body.name,
+            "price": req.body.price,
+            "discount": req.body.discount,
+            "bestSellers": req.body.bestSellers == "si" ? "true" : "false",
+            "stock": req.body.stock,
+            "reviews": req.body.reviews,
+            "deliveryDate": req.body.deliveryDate,
+            "description": req.body.description,
+            "id_category": data[0].dataValues.id,
+            "id": req.params.id
+          }
+          res.render('editProduct', { errors: errors.mapped(), productToEdit: productToEdit });
+        })
     }
   }, //done
 
