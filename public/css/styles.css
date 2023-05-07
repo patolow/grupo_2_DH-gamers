@@ -194,6 +194,10 @@ main {
 
 }
 
+.list-admin i {
+  color: rgb(88, 8, 8) !important;
+}
+
 .main-product-list i {
   color: #061161;
   width: 30px;

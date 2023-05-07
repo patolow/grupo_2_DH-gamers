@@ -85,6 +85,13 @@
             <div><i class="fa-solid fa-gamepad"></i></div>JOYSTICK
           </a>
         </div>
+        <% if (locals.isLogged) { %>
+          <div class="sub-menu-hamburguesa list-admin">
+            <a href="/product/list">
+              <div><i class="fa-solid fa-boxes-stacked"></i></div>LISTA PRODUCTOS ADMIN
+            </a>
+          </div>
+          <% } %>
         <div class="sub-menu-hamburguesa">
           <a href="#">
             <div> <i class="fa-solid fa-phone-volume"></i></div> CONTACTANOS
@@ -100,14 +107,12 @@
       <div class="menu-user inactive" id="menu-user">
 
         <div class="sub-menu-user">
-          <div><a href="/users/register"><i class="fa-solid fa-user-plus"
-                style="color: #000000; font-size: 0.9rem; margin-right: 13px;"></i> </div> REGISTRO</a>
+          <a href="/users/register"> REGISTRO</a>
         </div>
 
         <div class="sub-menu-user">
           <a href="/users/login">
-            <div><i class="fa-solid fa-circle-user" style="color: #000000; font-size: 0.9rem; margin-right: 13px;"></i>
-            </div> LOGIN
+             LOGIN
           </a>
         </div>
 
