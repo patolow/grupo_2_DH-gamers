@@ -31,18 +31,14 @@
               <label class="fieldName">Categoria del Producto: </label>
               <select class="boxes-product" name="category" id="category" required>
                 <option value="" disabled selected>Categoria del Producto</option>
-                <% const categories = [
-                  { id: 1, name: 'Placas de Video' },
-                  { id: 2, name: 'Monitores' },
-                  { id: 3, name: 'Microprocesadores' },
-                  { id: 4, name: 'Motherboards' },
-                  { id: 5, name: 'Water Cooling' },
-                  { id: 6, name: 'Joysticks' },
-                  { id: 7, name: 'Otras' }
-                ]; %>
-                <% categories.forEach(category => { %>
-                  <option value="<%= category.id %>" <%= category.id === productToEdit.id_category ? 'selected' : '' %>><%= category.name %></option>
-                <% }); %>
+                <% const categories=[ { id: 1, name: 'Placas de Video' }, { id: 2, name: 'Monitores' }, { id: 3,
+                  name: 'Microprocesadores' }, { id: 4, name: 'Motherboards' }, { id: 5, name: 'Water Cooling' }, { id:
+                  6, name: 'Joysticks' }, { id: 7, name: 'Otras' } ]; %>
+                  <% categories.forEach(category=> { %>
+                    <option value="<%= category.id %>" <%=category.id===productToEdit.id_category ? 'selected' : '' %>>
+                      <%= category.name %>
+                    </option>
+                    <% }); %>
               </select>
               <% if (locals.errors && errors.category) { %>
                 <p class="errors">
@@ -102,23 +98,9 @@
                                     </p>
                                     <% } %>
 
-                                      <label class="fieldNameImg">Imágen del producto:</label>
-                                      <div class="product-photo">
-                                        <input class="file" id="fileImg" type="file" name="sliderImage">
-                                        <% if (locals.errors && errors.sliderImage) { %>
-                                          <p class="errors">
-                                            <%= errors.sliderImage.msg %>
-                                          </p>
-                                          <% } %>
-                                      </div>
-                                      <!--BUTTON-->
-                                      <div class="input-button">
-                                        <button type="submit" class="button-create-product">Guardar cambios</button>
-                                      </div>
                                       <label class="fieldName">Fecha de Entrega: </label>
                                       <input class="boxes-product" type="date" name="deliveryDate"
                                         placeholder="Fecha de entrega" value=<%=productToEdit.deliveryDate %>>
-
 
                                       <label class="fieldName">Descripción: </label>
                                       <textarea class="boxes-product" name="description"
