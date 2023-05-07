@@ -42,7 +42,7 @@ const controller = {
 
       let sliderImage = ''
 
-      if (req.files) {
+      if (req.files != '') {
         for (let i = 0; i < req.files.length; i++) {
           let nombreImagen = '/images/products/' + req.files[i].filename + ',';
           sliderImage += nombreImagen;
